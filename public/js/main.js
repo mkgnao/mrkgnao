@@ -1,3 +1,11 @@
+var supports = {};
+var style = document.body.style;
+
+
+var flexbox = function() {
+  return supports.flexbox || (supports.flexbox = ('flexBasis' in style ||
+      'msFlexAlign' in style || 'webkitBoxDirection' in style));
+};
 
 // Add an `is-legacy` class on browsers that don't supports flexbox.
 if (!supports.flexbox()) {

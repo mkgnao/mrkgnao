@@ -775,5 +775,3 @@
     }, {"closest": 11}]
 }, {}, [1])
 
-
-//# sourceMappingURL=main.js.map2

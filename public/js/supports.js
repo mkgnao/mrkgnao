@@ -1,5 +1,5 @@
-let supports = {};
-let style = document.body.style;
+var supports = {};
+var style = document.body.style;
 
 export default {
   flexbox: function() {

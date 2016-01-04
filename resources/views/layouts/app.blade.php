@@ -12,8 +12,6 @@
     <meta name="description"
           content="A showcase of problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox.">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
-
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
 

@@ -936,13 +936,10 @@ strong {
     font-size: 1.8em;
     /*font-weight: 600;*/
     line-height: 1;
-    word-spacing: .08em
+    /*word-spacing: .08em*/
 }
 
 .Header-title i {
-    font-family: serif;
-    font-style: italic;
-    font-weight: 400
 }
 
 .Header-title a {

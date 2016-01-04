@@ -69,7 +69,7 @@
         </div>
         <div class="Header-actions">
             @if (Auth::guest())
-                <a class="loginout" href="{{ url('/login') }}">sign in</a></br>
+                <a class="loginout" href="{{ url('/login') }}">sign in</a> /
                 <a class="loginout" href="{{ url('/register') }}">register</a>
             @else
                 {{ Auth::user()->name }}

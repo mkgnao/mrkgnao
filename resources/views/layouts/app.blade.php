@@ -66,14 +66,16 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title">mrkgnao</h1>
-            <h2 class="Header-subTitle">These heavy sands are language tide and wind have silted here...</h2>
+            <h1 class="Header-title">ht</h1>
+            <h2 class="Header-subTitle">hst</h2>
+        </div>
+        <div class="Header-actions">
         </div>
     </div>
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
-        <h1>mrkgnao</h1>
+        <h1>c</h1>
     </article>
     <nav class="HolyGrail-nav u-textCenter">
         <strong>n</strong>

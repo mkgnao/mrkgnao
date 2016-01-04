@@ -541,7 +541,7 @@ strong {
 .Footer {
     padding: 24px;
     padding: 1.5rem;
-    background: #404040;
+    /*background: #404040;*/
     color: #999;
     font-size: .85em;
     text-align: center
@@ -550,11 +550,11 @@ strong {
 .Footer a {
     padding-bottom: 1px;
     border: 0;
-    color: #e5e5e5
+    /*color: #e5e5e5*/
 }
 
 .Footer a:active, .Footer a:focus, .Footer a:hover {
-    color: #fff;
+    /*color: #fff;*/
     text-decoration: underline
 }
 
@@ -920,9 +920,9 @@ strong {
 
 .Header {
     padding: 1.5em;
-    background-color: #93806c;
+    /*background-color: #93806c;
     background-color: hsla(31, 15%, 50%, .1);
-    text-align: center
+    text-align: center*/
 }
 
 @media (min-width: 768px) {
@@ -1124,8 +1124,8 @@ strong {
 .HolyGrail-ads, .HolyGrail-nav {
     padding: 1em;
     border-radius: 3px;
-    background: #93806c;
-    background: hsla(31, 15%, 50%, .1)
+    /*background: #93806c;
+    background: hsla(31, 15%, 50%, .1)*/
 }
 
 @media (min-width: 768px) {
@@ -1199,9 +1199,9 @@ strong {
 }
 
 .InputAddOn-item {
-    background-color: #93806c;
+    /*background-color: #93806c;
     background-color: hsla(31, 15%, 50%, .1);
-    color: #666;
+    color: #666;*/
     font: inherit;
     font-weight: 400
 }
@@ -1267,7 +1267,7 @@ strong {
 }
 
 .Notice {
-    background-color: #edffdb;
+    /*background-color: #edffdb;*/
     color: rgba(0, 0, 0, .6);
     font-size: .9em;
     margin-bottom: 1.5em;
@@ -1279,7 +1279,7 @@ strong {
 }
 
 .Section:nth-child(2n) {
-    background-color: hsla(31, 15%, 50%, .1);
+    /*background-color: hsla(31, 15%, 50%, .1);*/
     overflow: hidden
 }
 
@@ -1690,7 +1690,7 @@ strong {
     overflow-x: auto;
     padding: .5em;
     color: #333;
-    background: #f8f8f8;
+    /*background: #f8f8f8;*/
     -webkit-text-size-adjust: none
 }
 

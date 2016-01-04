@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('/fonts', function () {
+    //fonts
+});
+
+Route::get('/css', function () {
+    //css
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -28,14 +36,6 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['web']], function () {
     //
-});
-
-Route::get('/fonts', function () {
-    //fonts
-});
-
-Route::get('/css', function () {
-    //css
 });
 
 

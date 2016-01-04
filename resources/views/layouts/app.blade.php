@@ -67,7 +67,7 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">mkgnao</h1>
-            <h2 class="Header-subTitle">These heavy sands are language tide and wind have silted here…</h2>
+            <h2 class="Header-subTitle"></h2>
         </div>
         <div class="Header-actions">
         </div>
@@ -76,14 +76,14 @@
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
-        <h1>c</h1>
-        <p>xxx</p>
+        <h1></h1>
+        <p></p>
     </article>
     <nav class="HolyGrail-nav u-textCenter">
-        <strong>n</strong>
+        <strong></strong>
     </nav>
     <aside class="HolyGrail-ads u-textCenter">
-        <strong>a</strong>
+        <strong></strong>
     </aside>
 </main>
 <footer class="HolyGrail-footer">

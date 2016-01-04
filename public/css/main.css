@@ -1,36 +1,36 @@
 @import '/css/normalize.css';
 @import '/css/suitcss-utils-display.css';
-@import '/css/suitcss-utils-text';
+@import '/css/suitcss-utils-text.css';
 
-@import '/css/base/variables';
-@import '/css/base/custom-media';
-@import '/css/base/elements';
+@import '/css/base/variables.css';
+@import '/css/base/custom-media.css';
+@import '/css/base/elements.css';
 
-@import '/css/components/aligner';
-@import '/css/components/browser';
-@import '/css/components/button';
-@import '/css/components/container';
-@import '/css/components/demo';
-@import '/css/components/error';
-@import '/css/components/feature';
-@import '/css/components/footer';
-@import '/css/components/grid';
-@import '/css/components/header';
-@import '/css/components/holy-grail';
-@import '/css/components/image';
-@import '/css/components/input-add-on';
-@import '/css/components/media';
-@import '/css/components/notice';
-@import '/css/components/section';
-@import '/css/components/site';
+@import '/css/components/aligner.css';
+@import '/css/components/browser.css';
+@import '/css/components/button.css';
+@import '/css/components/container.css';
+@import '/css/components/demo.css';
+@import '/css/components/error.css';
+@import '/css/components/feature.css';
+@import '/css/components/footer.css';
+@import '/css/components/grid.css';
+@import '/css/components/header.css';
+@import '/css/components/holy-grail.css';
+@import '/css/components/image.css';
+@import '/css/components/input-add-on.css';
+@import '/css/components/media.css';
+@import '/css/components/notice.css';
+@import '/css/components/section.css';
+@import '/css/components/site.css';
 
-@import '/css/utils/compat.css';
-@import '/css/utils/media';
-@import '/css/utils/size';
-@import '/css/utils/spacing';
+@import '/css/utils/compat.css.css';
+@import '/css/utils/media.css';
+@import '/css/utils/size.css';
+@import '/css/utils/spacing.css';
 
-@import '/css/vendor/font-awesome-extensions';
-@import '/css/vendor/highlight';
+@import '/css/vendor/font-awesome-extensions.css';
+@import '/css/vendor/highlight.css';
 
 body {
     font-family: 'didotregularx';

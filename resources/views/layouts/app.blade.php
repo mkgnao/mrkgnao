@@ -19,10 +19,10 @@
 
 <div class="loginout">
     @if (Auth::guest())
-        <a href="{{ url('/login') }}">sign in</a>/<a href="{{ url('/register') }}">register</a>
+        <a class="loginout" href="{{ url('/login') }}">sign in</a>/<a href="{{ url('/register') }}">register</a>
     @else
         {{ Auth::user()->name }}
-        <a href="{{ url('/logout') }}">sign out</a>
+        <a class="loginout" href="{{ url('/logout') }}">sign out</a>
     @endif
 </div>
 

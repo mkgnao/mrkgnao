@@ -10,12 +10,10 @@
     <meta name="MobileOptimized" content="320">
     <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <!-- Fonts -->
-    <link href="https://mrkgnao.co/css/dr.css" rel='stylesheet' type='text/css'>
+    <link href="/css/dr.css" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://mrkgnao.co/css/main.css" rel='stylesheet' type='text/css'>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-
     <link href="/css/main.css" rel="stylesheet" type="text/css">
 
     <script class="js-allow-before-footer">

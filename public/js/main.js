@@ -1,5 +1,3 @@
-import supports from './supports';
-
 
 // Add an `is-legacy` class on browsers that don't supports flexbox.
 if (!supports.flexbox()) {

@@ -30,6 +30,15 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
+Route::get('/fonts', function () {
+    //fonts
+});
+
+Route::get('/css', function () {
+    //css
+});
+
+
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 

@@ -8,10 +8,10 @@
     <title>m r k g n a o</title>
 
     <!-- Fonts -->
-    <link href="https://mrkgnao.co/fonts/dr.css" rel='stylesheet' type='text/css'>
+    <link href="https://mrkgnao.co/css/dr.css" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://mrkgnao.co/fonts/main.css" rel='stylesheet' type='text/css'>
+    <link href="https://mrkgnao.co/css/main.css" rel='stylesheet' type='text/css'>
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
 </head>

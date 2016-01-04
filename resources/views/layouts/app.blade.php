@@ -9,7 +9,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/default.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
     <!-- Fonts -->
@@ -95,6 +95,28 @@
 
 <!-- JavaScripts -->
 <script src="/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
+<script>
+    HTMLInspector.rules.extend('unused-classes', function(config) {
+        config.whitelist = config.whitelist.concat([
+            /^icon/,
+            /^wf-/,
+            /^hljs-/,
+            /^twitter-/
+        ]);
+        return config;
+    })
+
+    HTMLInspector.rules.extend('script-placement', function(config) {
+        config.whitelist = config.whitelist.concat([
+            '[async]',
+            '.js-allow-before-footer'
+        ]);
+        return config;
+    });
+
+    HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}

@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link href="/css/dr.css" rel='stylesheet' type='text/css'>
 
+    <script src="/js/main.js"></script>
     <!-- Styles -->
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
     <link href="/css/main.css" rel="stylesheet" type="text/css">
@@ -58,8 +59,6 @@
 
 
     </script>
-
-
 </head>
 <body class="HolyGrail">
 <header class="HolyGrail-header">
@@ -90,7 +89,6 @@
     </div>
 </footer>
 
-<script src="/js/main.js"></script>
 <!-- JavaScripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

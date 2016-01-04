@@ -68,15 +68,6 @@
             <h1 class="Header-title">mrkgnao</h1>
             <h2 class="Header-subTitle">These heavy sands are language tide and wind have silted here...</h2>
         </div>
-        <div class="Header-actions">
-            @if (Auth::guest())
-                <a class="loginout" href="{{ url('/login') }}">sign in</a>/<a class="loginout" href="{{ url('/register') }}">register</a>
-            @else
-                {{ Auth::user()->name }}
-                <a class="loginout" href="{{ url('/logout') }}">sign out</a>
-            @endif
-        </div>
-
     </div>
 </header>
 <main class="HolyGrail-body">

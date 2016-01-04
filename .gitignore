@@ -1,5 +1,15 @@
+/bootstrap/compiled.php
 /vendor
 /node_modules
+/build/logs
+/build/coverage
+/app/tests/_log
+composer.phar
+.DS_Store
+/_ide_helper.php
+/app/config/packages
+/public/packages
 Homestead.yaml
 Homestead.json
 .env
+comoposer.lock

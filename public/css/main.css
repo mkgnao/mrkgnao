@@ -986,7 +986,7 @@ strong {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    font-size: .9em
+    font-size: .5em
 }
 
 @media (min-width: 384px) {

@@ -69,7 +69,8 @@
         </div>
         <div class="Header-actions">
             @if (Auth::guest())
-                <a class="loginout" href="{{ url('/login') }}">sign in</a>/<a class="loginout" href="{{ url('/register') }}">register</a>
+                <a class="loginout" href="{{ url('/login') }}">sign in</a></br>
+                <a class="loginout" href="{{ url('/register') }}">register</a>
             @else
                 {{ Auth::user()->name }}
                 <a class="loginout" href="{{ url('/logout') }}">sign out</a>
@@ -79,8 +80,7 @@
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
-        <h1></h1>
-        <p></p>
+        @yield('content')
     </article>
     <nav class="HolyGrail-nav u-textCenter">
         <strong></strong>

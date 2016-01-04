@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>Solved by Flexbox &mdash; Cleaner, hack-free CSS</title>
+    <title>Holy Grail Layout &mdash; Solved by Flexbox &mdash; Cleaner, hack-free CSS</title>
 
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
@@ -17,6 +17,7 @@
     <link href="/css/main.css" rel="stylesheet" type="text/css">
 
     <script class="js-allow-before-footer">
+
 
         var mediaQueryOpts = {
             mediaQueryDefinitions: [
@@ -59,11 +60,11 @@
 
 </head>
 
-<body class="Site">
-<header class="Site-header">
-    <div class="Header" role="banner">
+<body class="HolyGrail">
+<header class="HolyGrail-header">
+    <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title"><a href="index.html">Solved <i>by</i> Flexbox</a></h1>
+            <h1 class="Header-title"><a href="../../index.html">Solved <i>by</i> Flexbox</a></h1>
             <h2 class="Header-subTitle">Cleaner, hack-free CSS</h2>
         </div>
         <div class="Header-actions">
@@ -77,7 +78,7 @@
             <a class="Header-button Button Button--wide"
                data-social-network="Twitter"
                data-social-action="tweet"
-               data-social-target="http://philipwalton.github.com/solved-by-flexbox/"
+               data-social-target="http://philipwalton.github.com/solved-by-flexbox/demos/holy-grail/"
                href="https://twitter.com/intent/tweet?text=A%20showcase%20of%20traditionally%20hard%20CSS%20problems%2C%20easily%20solved%20using%20flexbox.&url=http://philipwalton.github.com/solved-by-flexbox/&via=philwalton">
                 <span class="icon-twitter icon-large twitter-color"></span>&nbsp; Spread the Word
             </a>
@@ -85,159 +86,100 @@
 
     </div>
 </header>
-<main class="Site-content Site-content--full">
+<main class="HolyGrail-body">
+    <article class="HolyGrail-content">
+        <h1>Holy Grail Layout</h1>
+        <p>The <a href="http://en.wikipedia.org/wiki/Holy_Grail_(web_design)">Holy Grail Layout</a> is a classic CSS problem with various solutions presented over time. If you’re unfamiliar with the history of the Holy Grail layout, this <a href="http://alistapart.com/article/holygrail">A List Apart article</a> offers a pretty good summary and links to a few of the more well-known solutions.</p>
+        <p>At its core, the Holy Grail Layout is a page with a header, footer, and three columns. The center column contains the main content, and the left and right columns contain supplemental content like ads or navigation.</p>
+        <p>Most CSS solutions to this problem aim to meet a few goals:</p>
+        <ul>
+            <li>They should have a fluid center with fixed-width sidebars.</li>
+            <li>The center column (main content) should appear first in the HTML source.</li>
+            <li>All columns should be the same height, regardless of which column is actually the tallest.</li>
+            <li>They should require minimal markup.</li>
+            <li>The footer should “stick” to the bottom of the page when content is sparse.</li>
+        </ul>
+        <p>Unfortunately, because of the nature of these goals and the original limitations of CSS, none of the classic solutions to this problem were ever able to satisfy all of them.</p>
+        <p>With Flexbox, a complete solution is finally possible.</p>
+        <h2>The HTML</h2>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"HolyGrail"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"HolyGrail-body"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">main</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"HolyGrail-content"</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-title">main</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">nav</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"HolyGrail-nav"</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-title">nav</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">aside</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"HolyGrail-ads"</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-title">aside</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>…<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+    </code></pre>
+        <h2>The CSS</h2>
+        <p>Getting the center content row to stretch and the footer to stick to the bottom is solved with the same technique shown in the <a href="../sticky-footer/index.html">Sticky Footer</a> example. The only difference is the center row of the Holy Grail layout (<code>.HolyGrail-body</code>) needs to be <code>display:flex</code> in order to properly arrange its children.</p>
+<pre><code class="language-css"><span class="hljs-class">.HolyGrail</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> flex</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">min-height</span>:<span class="hljs-value"> <span class="hljs-number">100vh</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">flex-direction</span>:<span class="hljs-value"> column</span></span>;
+}</span>
 
-    <section class="Section">
-        <div class="Container">
-            <h2 class="Section-heading">Introduction</h2>
-            <p>CSS has been lacking proper layout mechanisms for far too long. Transitions, animations, filters, all of these are great and useful additions to the language, but they don't address the major problems that Web developers have been complaining about for what seems like an eternity.</p>
-            <p>Finally, thanks to <a href="http://www.w3.org/TR/css3-flexbox/">Flexbox</a>, we have a solution.</p>
-            <p>This site is not another CSS framework. Instead, its purpose is to showcase problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox. And with the recent release of Internet Explorer 11 and Safari 6.1, the latest Flexbox spec is now supported in every modern browser.</p>
-            <p>Check out the demos below. View the styles in the Web inspector or dive into <a href="https://github.com/philipwalton/solved-by-flexbox">the source</a> to see just how easy CSS layout will become once Flexbox becomes mainstream.</p>
-        </div>
-    </section>
+        <span class="hljs-class">.HolyGrail-body</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> flex</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+}</span>
+    </code></pre>
+        <p>Styling three equal-height columns with a fluid center and fixed-width sidebars is just as easy:</p>
+<pre><code class="language-css"><span class="hljs-class">.HolyGrail-content</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+}</span>
 
-    <section class="Section">
-        <div class="Container">
-            <h2 class="Section-heading">Showcase</h2>
-            <ul class="Grid Grid--guttersLg">
+        <span class="hljs-class">.HolyGrail-nav</span>, <span class="hljs-class">.HolyGrail-ads</span> <span class="hljs-rules">{
+  <span class="hljs-comment">/* 12em is the width of the columns */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">12em</span></span></span>;
+}</span>
 
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/grids/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Better, Simpler Grid Systems" src="images/grids.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Better, Simpler Grid Systems</h3>
-                        </a>
-                        <p class="Feature-description">Flexbox gives us most of the features we want from a grid system out of the box. And sizing and alignment are just one or two properties away.</p>
-                    </div>
-                </li>
+        <span class="hljs-class">.HolyGrail-nav</span> <span class="hljs-rules">{
+  <span class="hljs-comment">/* put the nav on the left */</span>
+  <span class="hljs-rule"><span class="hljs-attribute">order</span>:<span class="hljs-value"> -<span class="hljs-number">1</span></span></span>;
+}</span>
+    </code></pre>
+        <aside class="Notice"><strong>Note:</strong>&nbsp; the CSS required to make this demo work cross-browser is slightly different from the CSS shown in the examples above, which assume a fully spec-compliant browser. See the <a href="https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/holy-grail.css">comments in the source</a> for more details.</aside>
+        <h3>Being Responsive</h3>
+        <p>The Holy Grail layout came from an era of Web design when pretty much everyone was browsing on a computer. But with the increasing number of mobile devices and the rising popularity of responsive design, the Holy Grail layout has gone mostly out of fashion.</p>
+        <p>Either way, with Flexbox, creating a mobile-first and mobile-friendly version of the Holy Grail layout is easy. The gist is to simply make the center section <code>flex-direction:column</code> by default and then <code>flex-direction:row</code> for larger screens.</p>
+        <p>Here’s a complete example that is responsive and mobile-first. You can also resize this browser window to see it in action.</p>
+<pre><code class="language-css"><span class="hljs-class">.HolyGrail</span>,
+        <span class="hljs-class">.HolyGrail-body</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value"> flex</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">flex-direction</span>:<span class="hljs-value"> column</span></span>;
+}</span>
 
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/holy-grail/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Holy Grail Layout" src="images/holy-grail.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Holy Grail Layout</h3>
-                        </a>
-                        <p class="Feature-description">This classic problem has been challenging CSS hackers for years, yet none of the historical solutions have fully solved it. With Flexbox, it's finally possible.</p>
-                    </div>
-                </li>
+        <span class="hljs-class">.HolyGrail-nav</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">order</span>:<span class="hljs-value"> -<span class="hljs-number">1</span></span></span>;
+}</span>
 
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/input-add-ons/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Input Add-ons" src="images/input-add-ons.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Input Add-ons</h3>
-                        </a>
-                        <p class="Feature-description">Creating full-width, fluid input/button pairs has been impossible for most of the history of CSS. With Flexbox it couldn't be easier.</p>
-                    </div>
-                </li>
+        <span class="hljs-at_rule">@<span class="hljs-keyword">media</span> (min-width: <span class="hljs-number">768px</span>) </span>{
+        <span class="hljs-class">.HolyGrail-body</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">flex-direction</span>:<span class="hljs-value"> row</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+  }</span>
+        <span class="hljs-class">.HolyGrail-content</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+  }</span>
+        <span class="hljs-class">.HolyGrail-nav</span>, <span class="hljs-class">.HolyGrail-ads</span> <span class="hljs-rules">{
+    <span class="hljs-comment">/* 12em is the width of the columns */</span>
+    <span class="hljs-rule"><span class="hljs-attribute">flex</span>:<span class="hljs-value"> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">12em</span></span></span>;
+  }</span>
+        }
+    </code></pre>
+        <p>View the full <a href="https://github.com/philipwalton/solved-by-flexbox/blob/master/assets/css/components/holy-grail.css">source</a> for the <code>HolyGrail</code> component used in this demo on Github.</p>
 
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/media-object/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Media Object" src="images/media-object.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Media Object</h3>
-                        </a>
-                        <p class="Feature-description">Create media objects with fixed or varying figure sizes without worrying about overflow, clearfixing, or block formatting context hacks.</p>
-                    </div>
-                </li>
-
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/sticky-footer/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Sticky Footer" src="images/sticky-footer.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Sticky Footer</h3>
-                        </a>
-                        <p class="Feature-description">Getting your footer to stick to the bottom of sparsely contented pages has always been tricky. And if the footer's height is unknown, it's basically impossible. Not so anymore.</p>
-                    </div>
-                </li>
-
-                <li class="Grid-cell u-full u-med-1of2 u-large-1of3">
-                    <div class="Feature">
-                        <a href="demos/vertical-centering/index.html">
-                            <figure class="Feature-figure">
-                                <img class="Feature-image" alt="Vertical Centering" src="images/vertical-centering.jpg">
-                            </figure>
-                            <h3 class="Feature-title">Vertical Centering</h3>
-                        </a>
-                        <p class="Feature-description">This classic problem has been challenging CSS hackers for years, yet none of the historical solutions have fully solved it. With Flexbox, it's finally possible.</p>
-                    </div>
-                </li>
-
-            </ul>
-        </div>
-    </section>
-
-    <section class="Section">
-        <div class="Container">
-            <h2 class="Section-heading">Browser Support</h2>
-
-            <ul class="Grid Grid--guttersLg Grid--justifyCenter">
-                <li class="Grid-cell Grid-cell--autoSize">
-                    <div class="Browser Browser--chrome" title="Since 2012-07-31">
-                        <figure class="Browser-image"></figure>
-                        Chrome<br>21+
-                    </div>
-                </li>
-                <li class="Grid-cell Grid-cell--autoSize">
-                    <div class="Browser Browser--opera" title="Since 2012-11-05">
-                        <figure class="Browser-image"></figure>
-                        Opera<br>12.1+
-                    </div>
-                </li>
-                <li class="Grid-cell Grid-cell--autoSize">
-                    <div class="Browser Browser--firefox" title="Since 2013-06-25">
-                        <figure class="Browser-image"></figure>
-                        Firefox<br>22+
-                    </div>
-                </li>
-                <li class="Grid-cell Grid-cell--autoSize">
-                    <div class="Browser Browser--safari" title="Since 2013-06-11">
-                        <figure class="Browser-image"></figure>
-                        Safari<br>6.1+
-                    </div>
-                </li>
-                <li class="Grid-cell Grid-cell--autoSize">
-                    <div class="Browser Browser--ie" title="Since 2012-09-04">
-                        <figure class="Browser-image"></figure>
-                        IE<br>10+
-                    </div>
-                </li>
-            </ul>
-
-            <h3 class="Section-heading">Caveats and Known Issues</h3>
-            <ul class="Section-list">
-                <li>IE 10 has Flexbox support but for a <a href="http://www.w3.org/TR/2012/WD-css3-flexbox-20120322/">draft version</a> of the current spec: (<code>display:flexbox</code>).</li>
-                <li>Safari 6 and earlier support the <a href="http://www.w3.org/TR/2009/WD-css3-flexbox-20090723/">original</a> Flexbox syntax, which is now obsolete: (<code>display:box</code>).</li>
-                <li>Firefox 27 and earlier do not support multi-line flexboxes. See <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=702508">this bug</a> for more details.</li>
-                <li>For a full browser support comparison, check out <a href="http://caniuse.com/flexbox">caniuse.com/flexbox</a></li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="Section">
-        <div class="Container">
-            <h2 class="Section-heading">About the Code</h2>
-            <p>All of the code samples on this site show how to solve a particular design problem with Flexbox. They show just the code that's needed to make the demos work in a spec-compliant browser. Some browsers do not fully comply with the latest version of the spec, so sadly, a few workarounds were necessary.</p>
-            <p>Workarounds for non-compliant browsers are not shown in the code samples, but if you're curious about those implementation details, you can check out the source files. Each demo links to its source, and all browser-specific workarounds are well-documented, so don't be afraid to take a look.</p>
-            <p>The vendor prefixing and translating of current flex properties to their legacy equivalents is all handled by <a href="https://github.com/ai/autoprefixer">autoprefixer</a>. If you're writing Flexbox code and not using autoprefixer, well, you're making a horrible mistake.</p>
-            <p>The class naming convention used in the code samples and source files is taken from <a href="https://github.com/suitcss/suit">SUIT CSS</a>, which is based on BEM methodologies. Each example includes one or more reusable CSS components allowing you to adapt or copy these patterns in to your own projects. Links are provided to their respective components on each example page.</p>
-            <p>If you find a mistake or would like to suggest an additional example, feel free to open an issue or submit a pull request on <a href="https://github.com/philipwalton/solved-by-flexbox">Github</a>.</p>
-        </div>
-    </section>
-
+    </article>
+    <nav class="HolyGrail-nav u-textCenter">
+        <strong>Navigation</strong>
+    </nav>
+    <aside class="HolyGrail-ads u-textCenter">
+        <strong>Advertisements</strong>
+    </aside>
 </main>
-<footer class="Site-footer">
+<footer class="HolyGrail-footer">
     <div class="Footer">
         <span class="Footer-social">
   <iframe class="github-btn" src="https://ghbtns.com/github-btn.html?user=philipwalton&repo=solved-by-flexbox&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="106px" height="20px"></iframe>
@@ -254,7 +196,7 @@
 
     </div>
 </footer>
-<script src="main.js"></script>
+<script src="/js/main.js"></script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>

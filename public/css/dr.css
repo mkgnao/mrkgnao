@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'didotregularx';
-    src: url('http://mrkgnao.co/fonts/dr.eot');
-    src: url('http://mrkgnao.co/fonts/dr.eot?#iefix') format('embedded-opentype'),
-         url('http://mrkgnao.co/fonts/dr.woff2') format('woff2'),
-         url('http://mrkgnao.co/fonts/dr.woff') format('woff'),
-         url('http://mrkgnao.co/fonts/dr.ttf') format('truetype'),
-         url('http://mrkgnao.co/fonts/dr.svg#DidotRegular') format('svg');
+    src: url('https://mrkgnao.co/fonts/dr.eot');
+    src: url('https://mrkgnao.co/fonts/dr.eot?#iefix') format('embedded-opentype'),
+         url('https://mrkgnao.co/fonts/dr.woff2') format('woff2'),
+         url('https://mrkgnao.co/fonts/dr.woff') format('woff'),
+         url('https://mrkgnao.co/fonts/dr.ttf') format('truetype'),
+         url('https://mrkgnao.co/fonts/dr.svg#DidotRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

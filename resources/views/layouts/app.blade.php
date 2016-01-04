@@ -37,11 +37,15 @@
                     name: 'Resolution',
                     dimensionIndex: 2,
                     items: [
-                        {name: '1x',   media: 'all'},
-                        {name: '1.5x', media: '(-webkit-min-device-pixel-ratio: 1.5), ' +
-                        '(min-resolution: 144dpi)'},
-                        {name: '2x',   media: '(-webkit-min-device-pixel-ratio: 2), ' +
-                        '(min-resolution: 192dpi)'},
+                        {name: '1x', media: 'all'},
+                        {
+                            name: '1.5x', media: '(-webkit-min-device-pixel-ratio: 1.5), ' +
+                        '(min-resolution: 144dpi)'
+                        },
+                        {
+                            name: '2x', media: '(-webkit-min-device-pixel-ratio: 2), ' +
+                        '(min-resolution: 192dpi)'
+                        },
                     ]
                 },
                 {
@@ -49,12 +53,11 @@
                     dimensionIndex: 3,
                     items: [
                         {name: 'landscape', media: '(orientation: landscape)'},
-                        {name: 'portrait',  media: '(orientation: portrait)'}
+                        {name: 'portrait', media: '(orientation: portrait)'}
                     ]
                 }
             ]
         };
-
 
 
     </script>
@@ -71,7 +74,6 @@
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
         <h1>mrkgnao</h1>
-        @yield('content')
     </article>
     <nav class="HolyGrail-nav u-textCenter">
         <strong>n</strong>

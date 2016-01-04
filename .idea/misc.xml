@@ -20,8 +20,4 @@
     <option name="myConnectionType" value="DEPLOYMENT_SERVER" />
     <option name="myConnectionId" value="2ebfadd5-27fe-4f62-99a7-b420c3b56722" />
   </component>
-  <component name="VagrantProjectSettings">
-    <option name="instanceFolder" value="" />
-    <option name="provider" value="" />
-  </component>
 </project>

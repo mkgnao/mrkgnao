@@ -4,6 +4,9 @@
     <form role="form" method="POST" action="{{ url('/register') }}">
         {!! csrf_field() !!}
         <div class="Container">
+            @if ($errors)
+                {{ $errors }}
+            @endif
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
                 <div class="Grid-cell">
@@ -15,8 +18,6 @@
                         @if ($errors->has('name'))
                             console.log({{ $errors->first('name') }});
                         @endif
-
-                        console.log('name');
 
                     </div>
                     <div class="InputAddOn">

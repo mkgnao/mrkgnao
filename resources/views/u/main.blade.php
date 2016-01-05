@@ -17,10 +17,11 @@
 
     <script type="text/javascript">
         var tw = {{json_encode($tw)}};
-        var node = prettyPrint(tw);
-        console.log(node);
+        console.log(tw);
+        var n = prettyPrint(tw);
+        console.log(n);
         var c = document.getElementById("tw");
-        c.appendChild(node);
+        c.appendChild(n);
     </script>
 
 @endsection

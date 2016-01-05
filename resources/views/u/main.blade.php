@@ -13,8 +13,6 @@
         </div>
 </div>
 
-    @yield('/includes/scriptsend')
-
             <script>
         n = prettyPrint(window.tw);
         e = document.getElementById("twcontent");

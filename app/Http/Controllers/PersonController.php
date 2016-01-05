@@ -53,7 +53,7 @@ class PersonController extends Controller
 
 
         \JavaScript::put([
-            'tw' => $this->model
+            'tw' => json_encode($value),
         ]);
 
         return view('/u/main');

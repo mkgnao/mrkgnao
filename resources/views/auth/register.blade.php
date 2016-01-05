@@ -13,7 +13,7 @@
                         <input class="InputAddOn-field" type="text" name="name" value="{{ old('name') }}">
 
                         @if ($errors->has('name'))
-                            {{ $errors->first('name') }}
+                            console.log({{ $errors->first('name') }});
                         @endif
 
                     </div>
@@ -24,7 +24,7 @@
 
                         @if ($errors->has('email'))
 
-                            {{ $errors->first('email') }}
+                            console.log({{ $errors->first('email') }});
                         @endif
                     </div>
                     <div class="InputAddOn">
@@ -33,7 +33,7 @@
                         <input type="password" class="InputAddOn-field" name="password">
 
                         @if ($errors->has('password'))
-                            {{ $errors->first('password') }}
+                            console.log({{ $errors->first('password') }});
                         @endif
 
                     </div>
@@ -44,7 +44,7 @@
                         <input type="password" class="InputAddOn-field" name="password_confirmation">
 
                         @if ($errors->has('password_confirmation'))
-                            {{ $errors->first('password_confirmation') }}
+                            console.log(({{ $errors->first('password_confirmation') }});
                         @endif
                     </div>
 

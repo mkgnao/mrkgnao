@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/register') }}">
-        {!! csrf_field() !!}
-        <div class="Container">
+    <div class="Container">
+        <form role="form" method="POST" action="{{ url('/register') }}">
+            {!! csrf_field() !!}
 
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
@@ -14,9 +14,7 @@
                         <input class="InputAddOn-field" type="text" name="name" value="{{ old('name') }}">
 
                         @if ($errors->has('name'))
-                            <script>
-                                console.log({{ $errors->first('name') }});
-                            </script>
+                            {{ $errors->first('name') }}
                         @endif
 
                     </div>
@@ -27,7 +25,7 @@
 
                         @if ($errors->has('email'))
 
-                            console.log({{ $errors->first('email') }});
+                            {{ $errors->first('email') }}
                         @endif
                     </div>
                     <div class="InputAddOn">
@@ -36,7 +34,7 @@
                         <input type="password" class="InputAddOn-field" name="password">
 
                         @if ($errors->has('password'))
-                            console.log({{ $errors->first('password') }});
+                            {{ $errors->first('password') }}
                         @endif
 
                     </div>
@@ -47,7 +45,7 @@
                         <input type="password" class="InputAddOn-field" name="password_confirmation">
 
                         @if ($errors->has('password_confirmation'))
-                            console.log(({{ $errors->first('password_confirmation') }});
+                            {{ $errors->first('password_confirmation') }}
                         @endif
                     </div>
 
@@ -58,6 +56,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 @endsection

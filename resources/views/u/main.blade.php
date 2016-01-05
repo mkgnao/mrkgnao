@@ -12,7 +12,8 @@
             </div>
         </div>
 </div>
-    <!--script>
+
+            <!--script>
         n = prettyPrint(window.tw);
         e = document.getElementById("twcontent");
         e.appendChild(n);

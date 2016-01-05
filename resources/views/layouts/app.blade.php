@@ -89,6 +89,8 @@
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
+        content:
+
         @yield('content')
     </article>
     <nav class="HolyGrail-nav u-textCenter">

@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/login') }}">
+    <form class=".HolyGrail-form" role="form" method="POST" action="{{ url('/login') }}">
         {!! csrf_field() !!}
-        <div>
+        <div class="HolyGrail-form-email">
             email
             <input type="email" name="email" value="{{ old('email') }}">
 

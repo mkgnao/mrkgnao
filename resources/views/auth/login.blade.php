@@ -11,7 +11,7 @@
                     <div class="InputAddOn">
                         <span class="InputAddOn-item">email</span>
 
-                        <input type="email" class="InputAddOn-field-short" name="email" value="{{ old('email') }}">
+                        <input type="email" class="InputAddOn-field" name="email" value="{{ old('email') }}">
 
                         @if ($errors->has('email'))
                             {{ $errors->first('email') }}
@@ -19,7 +19,7 @@
                     </div>
                     <div class="InputAddOn">
                         <span class="InputAddOn-item">password</span>
-                        <input type="password" class="InputAddOn-field-short" name="password">
+                        <input type="password" class="InputAddOn-field" name="password">
 
                         @if ($errors->has('password'))
                             {{ $errors->first('password') }}

@@ -1202,14 +1202,6 @@ strong {
     border-right: 0
 }
 
-.InputAddOn-field-short {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    width: 60%;
-}
-
 .InputAddOn-item {
     /*background-color: #93806c;
     background-color: hsla(31, 15%, 50%, .1);

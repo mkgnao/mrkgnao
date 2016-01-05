@@ -4,4 +4,6 @@
 
 {{ Auth::user()->id }}
 
+{{ Auth::user()->name }}
+
 @endsection

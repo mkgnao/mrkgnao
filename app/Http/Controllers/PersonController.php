@@ -50,8 +50,7 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        $value = \ltrim($value, '\'');
-        $value = \rtrim($value, '\'');
+        $value = substr($value, 1, -1);
 
         \JavaScript::put([
             'tw' => $value

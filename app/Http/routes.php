@@ -23,8 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('includes.scriptsend', function() {
-    return View::make('includes.scriptsend');
+Route::get('/includes/scriptsend', function() {
+    return View::make('/includes/scriptsend');
 });
 
 /*

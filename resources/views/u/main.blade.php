@@ -13,7 +13,7 @@
         </div>
 </div>
 
-    @include('includes.scriptsend')
+    @include('/includes/scriptsend')
 
             <script>
         n = prettyPrint(window.tw);

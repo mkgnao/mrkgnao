@@ -38,7 +38,7 @@ final class Rest
             $this->url = $url;
         }
         $format          = strtoupper(self::$FORMAT);
-        $request         = '\TeamWorkPm\Request\\' . $format;
+        $request         = 'App\Http\TeamWorkPm\Request\\' . $format;
         $this->request  = new $request;
     }
 

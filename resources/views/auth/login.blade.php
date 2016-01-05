@@ -10,7 +10,7 @@
             {{ $errors->first('email') }}
         @endif
 
-        <input type="password" class="form-control" name="password">
+        <input type="password" name="password">
 
         @if ($errors->has('password'))
             {{ $errors->first('password') }}

@@ -43,7 +43,7 @@ class PersonController extends Controller
     {
         static $auth = false;
         if (!$auth) {
-            TeamWorkPm\Auth::set(API_COMPANY, API_KEY);
+            TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
             $this->model = TeamWorkPm\Factory::build('account');
             //TeamWorkPm\Rest::setFormat(API_FORMAT);
             $account = $this->model->get();

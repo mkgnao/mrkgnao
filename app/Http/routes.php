@@ -24,7 +24,7 @@ Route::get('/', function () {
 });
 
 Route::get('scriptsend', function() {
-    return View::make('/u/main.scriptsend');
+    return View::make('includes.scriptsend');
 });
 
 /*

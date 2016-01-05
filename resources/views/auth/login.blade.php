@@ -34,7 +34,7 @@
                         </button>
                     </div>
                     <div class="InputAddOn">
-                        <a href="{{ url('/password/reset') }}">forgot</a>
+                        <a class="InputAddOn-item" href="{{ url('/password/reset') }}">forgot?</a>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\TeamWorkPm;
-use Laracasts\Utilities\JavaScript;
 
 class PersonController extends Controller
 {

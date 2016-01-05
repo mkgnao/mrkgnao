@@ -23,7 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('partials.scriptsend', function() {
+    return View::make('partials/scriptsend');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -40,11 +42,6 @@ Route::group(['middleware' => ['web']], function () {
     //
 });
 
-Route::group(['middleware' => ['web']], function () {
-    Route::get('partials.scriptsend', function() {
-         View::make('partials/scriptsend');
-    });
-});
 
 
 Route::group(['middleware' => 'web'], function () {

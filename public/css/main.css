@@ -1790,5 +1790,12 @@ pre {
     color: black;
     font-size: 1.35em;
     opacity: 0.20;
-    text-align: center !important
+    text-align: center !important;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
 }

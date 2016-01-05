@@ -5,7 +5,9 @@
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
-                    you are not allowed
+                    <div class="joyce">
+                        may i see your invitation please
+                    </div>
                 </div>
             </div>
         </div>

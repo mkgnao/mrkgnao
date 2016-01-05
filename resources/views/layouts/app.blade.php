@@ -136,7 +136,7 @@
     HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
 </script>
 
-@include('/includes/scriptsend')
+@include('parials.scriptsend')
 
 </body>
 </html>

@@ -23,10 +23,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/includes/scriptsend', function() {
-    return View::make('/includes/scriptsend');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -40,6 +36,10 @@ Route::get('/includes/scriptsend', function() {
 
 Route::group(['middleware' => ['web']], function () {
     //
+});
+
+Route::group(['middleware' => ['web']], function () {
+    View::make('partials/scriptsend');
 });
 
 

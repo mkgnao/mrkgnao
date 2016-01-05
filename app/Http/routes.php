@@ -23,6 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -39,7 +41,9 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::group(['middleware' => ['web']], function () {
-    View::make('partials/scriptsend');
+    Route::get('partials.scriptsend', function() {
+         View::make('partials/scriptsend');
+    });
 });
 
 

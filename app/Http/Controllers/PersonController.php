@@ -107,9 +107,6 @@ class PersonController extends Controller
             $auth = true;
         }
 
-
-        $json_string = $this->prettyPrint($value);
-
-        return view('/u/main', array('tw' => $json_string));
+        return view('/u/main', array('tw' => $value));
     }
 }

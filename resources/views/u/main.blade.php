@@ -7,8 +7,6 @@
     {{ Auth::user()->id }}
 
     <div id="tw_response">
-
-
     </div>
 
     <script>

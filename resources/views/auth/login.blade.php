@@ -28,17 +28,13 @@
                     <div class="InputAddOn">
                         <input type="checkbox" class="InputAddOn-item" name="remember">
                     </div>
-                    <!--div class="InputAddOn">
+                    <div class="InputAddOn">
                         <button class="InputAddOn-item" type="submit">
                             login
                         </button>
-                    </div-->
-                    <div class="InputAddOn">
-                        <a class="InputAddOn-item" onclick="form.submit();">submit</a>
                     </div>
-
                     <div class="InputAddOn">
-                        <a class="InputAddOn-item" href="{{ url('/password/reset') }}">reset</a>
+                        <a class="InputAddOn-item" href="{{ url('/password/reset') }}">forgot?</a>
                     </div>
                 </div>
             </div>

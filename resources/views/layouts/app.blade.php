@@ -69,11 +69,20 @@
         </div>
         <div class="Header-actions">
             @if (Auth::guest())
-                <a class="loginout" href="{{ url('/login') }}">sign in</a> /
-                <a class="loginout" href="{{ url('/register') }}">register</a>
+                <div>
+                    <a class="loginout" href="{{ url('/login') }}">login</a>
+                </div>
+                <div>
+                    <a class="loginout" href="{{ url('/register') }}">register</a>
+                </div>
+
             @else
-                {{ Auth::user()->name }}
-                <a class="loginout" href="{{ url('/logout') }}">sign out</a>
+                <div>
+                    {{ Auth::user()->name }}
+                </div>
+                <div>
+                    <a class="loginout" href="{{ url('/logout') }}">logout</a>
+                </div>
             @endif
         </div>
     </div>
@@ -92,7 +101,7 @@
 <footer class="HolyGrail-footer">
     <div class="Footer">
         <div class="Footer-credits">
-            <span class="Footer-credit">copyright</span>
+            <span class="Footer-credit">copyright © 2016 mkgnao</span>
         </div>
     </div>
 </footer>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\TeamWorkPm;
+use Javascript;
 
 class PersonController extends Controller
 {
@@ -107,6 +108,10 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        return view('/u/main', array('tw' => $value->toArray()));
+        JavaScript::put([
+            'tw' => $value
+        ]);
+
+        return view('/u/main');
     }
 }

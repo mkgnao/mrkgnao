@@ -20,12 +20,7 @@
 </div>
 
     <script type="text/javascript">
-        var tw = {{json_encode($tw)}};
-        console.log(tw);
-        var n = prettyPrint(tw);
-        console.log(n);
-        var c = document.getElementById("tw");
-        c.appendChild(n);
+
     </script>
 
 @endsection

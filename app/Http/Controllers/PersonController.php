@@ -51,7 +51,7 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        \Laracasts\Utilities\JavaScript\JavaScriptFacade::put([
+        JavaScript:put([
             'tw' => $value
         ]);
 

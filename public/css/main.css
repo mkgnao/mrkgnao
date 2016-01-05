@@ -98,7 +98,7 @@ pre {
 }
 
 code, kbd, pre, samp {
-    font-family: monospace;
+    /*font-family: monospace;*/
     font-size: 1em
 }
 
@@ -311,7 +311,7 @@ h3, p, pre {
 }
 
 code, pre {
-    font-family: Menlo, Monaco, monospace
+    /*font-family: Menlo, Monaco, monospace*/
 }
 
 code {

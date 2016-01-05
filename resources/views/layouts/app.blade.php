@@ -13,6 +13,7 @@
           content="A showcase of problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox.">
 
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/dr.css" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
 
     <script class="js-allow-before-footer">

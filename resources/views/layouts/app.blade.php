@@ -69,22 +69,25 @@
             <h2 class="Header-subTitle"></h2>
         </div>
         <div class="Header-actions">
-            @if (Auth::guest())
-                <div>
-                    <a class="loginout" href="{{ url('/login') }}">login</a>
+            <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
+                <div class="Grid-cell">
+                    @if (Auth::guest())
+                        <div class="loginout">
+                            <a class="loginout" href="{{ url('/login') }}">login</a>
+                        </div>
+                        <div class="loginout">
+                            <a class="loginout" href="{{ url('/register') }}">register</a>
+                        </div>
+                    @else
+                        <div class="loginout">
+                            {{ Auth::user()->name }}
+                        </div>
+                        <div class="loginout">
+                            <a class="loginout" href="{{ url('/logout') }}">logout</a>
+                        </div>
+                    @endif
                 </div>
-                <div>
-                    <a class="loginout" href="{{ url('/register') }}">register</a>
-                </div>
-
-            @else
-                <div>
-                    {{ Auth::user()->name }}
-                </div>
-                <div>
-                    <a class="loginout" href="{{ url('/logout') }}">logout</a>
-                </div>
-            @endif
+            </div>
         </div>
     </div>
 </header>

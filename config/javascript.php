@@ -13,7 +13,7 @@ return [
     | Example: 'footer' or ['footer', 'bottom']
     |
     */
-    'bind_js_vars_to_this_view' => 'content',
+    'bind_js_vars_to_this_view' => 'scriptsend',
 
     /*
     |--------------------------------------------------------------------------

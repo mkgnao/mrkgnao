@@ -23,6 +23,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('scriptsend', function() {
+    return View::make('/u/main.scriptsend');
+});
 
 /*
 |--------------------------------------------------------------------------

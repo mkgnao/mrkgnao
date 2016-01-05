@@ -91,7 +91,7 @@ final class Rest
         $headers['X-Action']  = $action;
         // for chrome use
         $headers['X-Authorization'] = 'BASIC '. base64_encode($this->key . ':xxx');
-        $response = '\TeamWorkPm\Response\\' . strtoupper(self::$FORMAT);
+        $response = 'App\Http\TeamWorkPm\Response\\' . strtoupper(self::$FORMAT);
         $response = new $response;
 
         return $response->parse($body, $headers);

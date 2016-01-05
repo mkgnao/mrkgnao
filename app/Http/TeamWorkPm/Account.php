@@ -1,6 +1,6 @@
 <?php namespace App\Http\TeamWorkPm;
 
-class Account extends App\Http\TeamWorkPm\Rest\Model
+class Account extends Rest\Model
 {
     /**
      * Get Account Details

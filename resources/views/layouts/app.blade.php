@@ -9,8 +9,7 @@
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
-    <meta name="description"
-          content="A showcase of problems once hard or impossible to solve with CSS alone, now made trivially easy with Flexbox.">
+    <meta name="description" content="mkgnao">
 
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/dr.css" rel="stylesheet" type="text/css">
@@ -18,7 +17,6 @@
     <script src="/js/prettyprint.js"></script>
 
     <script class="js-allow-before-footer">
-
 
         var mediaQueryOpts = {
             mediaQueryDefinitions: [

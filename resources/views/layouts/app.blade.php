@@ -66,7 +66,7 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title"></h1>
+            <h1 class="Header-title"><div class="joyce" unselectable="on">m k g n a o</div></h1>
             <h2 class="Header-subTitle"></h2>
         </div>
         <div class="Header-actions">

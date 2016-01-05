@@ -16,6 +16,8 @@
                             console.log({{ $errors->first('name') }});
                         @endif
 
+                        console.log('name');
+
                     </div>
                     <div class="InputAddOn">
                         <span class="InputAddOn-item">email</span>

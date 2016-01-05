@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/register') }}">
+    <!--form role="form" method="POST" action="{{ url('/register') }}"-->
+        <form role="form">
         {!! csrf_field() !!}
         <div class="Container">
 

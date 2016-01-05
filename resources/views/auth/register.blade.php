@@ -3,33 +3,58 @@
 @section('content')
     <form role="form" method="POST" action="{{ url('/register') }}">
         {!! csrf_field() !!}
+        <div class="Container">
+            <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-        <input type="text" name="name" value="{{ old('name') }}">
+                <div class="Grid-cell">
+                    <div class="InputAddOn">
+                        <span class="InputAddOn-item">name</span>
 
-        @if ($errors->has('name'))
-            {{ $errors->first('name') }}
-        @endif
+                        <input class="InputAddOn-field" type="text" name="name" value="{{ old('name') }}">
 
-        <input type="email" name="email" value="{{ old('email') }}">
+                        @if ($errors->has('name'))
+                            {{ $errors->first('name') }}
+                        @endif
 
-        @if ($errors->has('email'))
+                    </div>
+                    <div class="InputAddOn">
+                        <span class="InputAddOn-item">email</span>
 
-            {{ $errors->first('email') }}
-        @endif
+                        <input type="email" class="InputAddOn-field" name="email" value="{{ old('email') }}">
 
-        <input type="password" name="password">
+                        @if ($errors->has('email'))
 
-        @if ($errors->has('password'))
-            {{ $errors->first('password') }}
-        @endif
+                            {{ $errors->first('email') }}
+                        @endif
+                    </div>
+                    <div class="InputAddOn">
+                        <span class="InputAddOn-item">password</span>
 
-        <input type="password" name="password_confirmation">
+                        <input type="password" class="InputAddOn-field" name="password">
 
-        @if ($errors->has('password_confirmation'))
-            {{ $errors->first('password_confirmation') }}
-        @endif
+                        @if ($errors->has('password'))
+                            {{ $errors->first('password') }}
+                        @endif
 
-        <button type="submit">
-        </button>
+                    </div>
+
+                    <div class="InputAddOn">
+                        <span class="InputAddOn-item">password confirmation</span>
+
+                        <input type="password" class="InputAddOn-field" name="password_confirmation">
+
+                        @if ($errors->has('password_confirmation'))
+                            {{ $errors->first('password_confirmation') }}
+                        @endif
+                    </div>
+
+                    <div class="InputAddOn">
+                        <button class="InputAddOn-item" type="submit">
+                            register
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 @endsection

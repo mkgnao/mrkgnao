@@ -6,6 +6,6 @@
 
     {{ Auth::user()->id }}
 
-
+    {{ dd(get_defined_vars()) }}
 
 @endsection

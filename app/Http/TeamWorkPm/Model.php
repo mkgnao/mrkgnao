@@ -1,6 +1,6 @@
 <?php namespace App\Http\TeamWorkPm;
 
-abstract class Model extends App\Http\TeamWorkPm\Model
+abstract class Model extends Rest\Model
 {
 
     /*------------------------------

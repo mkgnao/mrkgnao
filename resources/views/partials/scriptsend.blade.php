@@ -1,3 +1,1 @@
-<div class="scriptsend">
-
-</div>
+/* END */

@@ -6,4 +6,5 @@
 
     {{ Auth::user()->id }}
 
+    {{{ $tw }}}
 @endsection

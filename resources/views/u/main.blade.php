@@ -7,15 +7,19 @@
     @if ($tw != null)
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
             <div class="Grid-cell">
+                <div id="tw">
 
-                <script type="text/javascript">
-                    var langs = {{json_encode($tw)}};
-                    console.log(langs);
-                </script>
-
+                </div>
             </div>
         </div>
     @endif
 </div>
+
+    <script type="text/javascript">
+        var tw = {{json_encode($tw)}};
+        var node = prettyPrint(tw);
+        var c = document.getElementById("c");
+        c.appendChild(node);
+    </script>
 
 @endsection

@@ -2,6 +2,6 @@
 
 @section('content')
 
-01
+{{ Auth::user()->id }}
 
 @endsection

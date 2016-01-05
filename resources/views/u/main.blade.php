@@ -15,10 +15,10 @@
 
     @include('includes.scriptsend')
 
-            <!--script>
+            <script>
         n = prettyPrint(window.tw);
         e = document.getElementById("twcontent");
         e.appendChild(n);
-    </script-->
+    </script>
 
 @endsection

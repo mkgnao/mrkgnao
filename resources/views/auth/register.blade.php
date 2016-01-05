@@ -14,7 +14,9 @@
                         <input class="InputAddOn-field" type="text" name="name" value="{{ old('name') }}">
 
                         @if ($errors->has('name'))
-                            console.log({{ $errors->first('name') }});
+                            <script>
+                                console.log({{ $errors->first('name') }});
+                            </script>
                         @endif
 
                     </div>

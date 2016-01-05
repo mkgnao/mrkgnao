@@ -46,13 +46,13 @@ class PersonController extends Controller
             TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
             $this->model = TeamWorkPm\Factory::build('account');
             //TeamWorkPm\Rest::setFormat(API_FORMAT);
-            $value = $this->model->get();
+            $value = $this->model->getContent();
             $auth = true;
         }
 
 
         \JavaScript::put([
-            'tw' => addslashes($value)
+            'tw' => $value
         ]);
 
         return view('/u/main');

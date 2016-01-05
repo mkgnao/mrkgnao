@@ -51,7 +51,7 @@ class PersonController extends Controller
         }
 
 
-        return view('/u/main', array('tw' => $account->name));
+        return view('/u/main', array('tw' => $account));
     }
 
 }

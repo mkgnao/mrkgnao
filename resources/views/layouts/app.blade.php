@@ -75,9 +75,11 @@
                         <div class="loginout">
                             <a class="loginout" href="{{ url('/login') }}">login</a>
                         </div>
-                        <div class="loginout">
-                            <a class="loginout" href="{{ url('/register') }}">register</a>
-                        </div>
+                        @if(url('') == 'https://mrkgnao.co')
+                            <div class="loginout">
+                                <a class="loginout" href="{{ url('/register') }}">register</a>
+                            </div>
+                        @endif
                     @else
                         <div class="loginout">
                             <a class="loginout" href="#">{{ strtolower(Auth::user()->name) }} </a>

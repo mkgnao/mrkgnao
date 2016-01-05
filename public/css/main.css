@@ -1791,7 +1791,7 @@ pre {
 
 .joyce {
     color: black;
-    font-size: 0.9em;
+    font-size: 1.5em;
     opacity: 0.04;
     text-align: center !important;
     -webkit-user-select: none; /* Chrome/Safari */
@@ -1802,4 +1802,5 @@ pre {
     -o-user-select: none;
     user-select: none;
     cursor:default;
+    text-align: center !important
 }

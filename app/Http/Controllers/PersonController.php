@@ -44,14 +44,14 @@ class PersonController extends Controller
         static $auth = false;
         if (!$auth) {
             TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
-            $this->model = TeamWorkPm\Factory::build('account');
+            $this->model = TeamWorkPm\Factory::build('projects');
             //TeamWorkPm\Rest::setFormat(API_FORMAT);
-            $account = $this->model->get();
+            $value = $this->model->get();
             $auth = true;
         }
 
         //$json_string = json_encode($account, JSON_PRETTY_PRINT);
 
-        return view('/u/main', array('tw' => $account));
+        return view('/u/main', array('tw' => $value));
     }
 }

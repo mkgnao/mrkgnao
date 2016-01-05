@@ -5,8 +5,7 @@
     @if ($tw != null)
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-        $atw = explode("\n", $tw);
-        @foreach($atw as $ltw)
+        @foreach(explode("\n", $tw) as $ltw)
             <div class="Grid-cell">
                 {{{ $ltw }}}
             </div>

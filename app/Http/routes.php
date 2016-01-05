@@ -23,6 +23,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -42,5 +43,6 @@ Route::group(['middleware' => ['web']], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    //Route::get('/home', 'HomeController@index');
+    Route::get('/u/0{id}', 'PersonController@index');
 });

@@ -437,7 +437,7 @@ strong {
     transition: background-color .2s;
     display: inline-block;
     padding: .6em 1em;
-    background: hsla(31, 15%, 50%, .15);
+    /*background: hsla(31, 15%, 50%, .15);*/
     color: inherit;
     border: 0;
     border-radius: 2px;

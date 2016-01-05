@@ -50,10 +50,9 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        $value = substr($value, 1, -1);
 
         \JavaScript::put([
-            'tw' => $value
+            'tw' => addslashes($value)
         ]);
 
         return view('/u/main');

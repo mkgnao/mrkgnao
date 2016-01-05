@@ -1802,5 +1802,6 @@ pre {
     -o-user-select: none;
     user-select: none;
     cursor:default;
-    text-align: center !important
+    text-align: center !important;
+    letter-spacing: -70px;
 }

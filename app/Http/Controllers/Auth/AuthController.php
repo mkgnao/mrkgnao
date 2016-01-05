@@ -38,7 +38,7 @@ class AuthController extends Controller
      */
     public function redirectPath()
     {
-        return '/u/0' . \Auth::user()->id . '/main';
+        return '/u/main';
     }
 
     /**

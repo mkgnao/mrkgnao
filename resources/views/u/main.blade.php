@@ -2,8 +2,8 @@
 
 @section('content')
 
-{{ Auth::user()->id }}
+    {{ Auth::user()->name }}
 
-{{ Auth::user()->name }}
+    {{ Auth::user()->id }}
 
 @endsection

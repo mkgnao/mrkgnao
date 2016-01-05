@@ -44,5 +44,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     //Route::get('/home', 'HomeController@index');
-    Route::get('/u/0{id}/main', 'PersonController@index');
+    Route::get('/u/0/main', 'PersonController@index');
 });

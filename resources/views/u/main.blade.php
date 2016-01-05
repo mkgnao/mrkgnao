@@ -18,7 +18,7 @@
     <script type="text/javascript">
         var tw = {{json_encode($tw)}};
         var node = prettyPrint(tw);
-        var c = document.getElementById("c");
+        var c = document.getElementById("tw");
         c.appendChild(node);
     </script>
 

@@ -28,7 +28,18 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    //protected $redirectTo = '/home';
+
+
+    /**
+     * Get the post register / login redirect path.
+     *
+     * @return string
+     */
+    public function redirectPath()
+    {
+        return '/u/0' + \Auth::user()->id;
+    }
 
     /**
      * Create a new authentication controller instance.

@@ -6,4 +6,6 @@
 
     {{ Auth::user()->id }}
 
+
+
 @endsection

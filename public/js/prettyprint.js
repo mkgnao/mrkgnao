@@ -517,7 +517,7 @@ var prettyPrint = (function(){
                     return util.common.depthReached(obj, settings);
                 }
 
-                var table = util.table(['Object', null],'object'),
+                var table = util.table(['', null],'object'),
                     isEmpty = true;
 
                 for (var i in obj) {
@@ -537,16 +537,18 @@ var prettyPrint = (function(){
                 }
 
                 if (isEmpty) {
-                    table.addRow(['<small>[empty]</small>']);
+                    table.addRow(['']);
+                    //table.addRow(['<small>[empty]</small>']);
                 } else {
                     table.thead.appendChild(
-                        util.hRow(['key','value'], 'colHeader')
+                        util.hRow(['',''], 'colHeader')
+                        //util.hRow(['key','value'], 'colHeader')
                     );
                 }
 
                 var ret = (settings.expanded || hasRunOnce) ? table.node : util.expander(
                     util.stringify(obj),
-                    'Click to show more',
+                    'click to show more',
                     function() {
                         this.parentNode.appendChild(table.node);
                     }
@@ -571,7 +573,8 @@ var prettyPrint = (function(){
                 }
 
                 /* Accepts a table and modifies it */
-                var me = jquery ? 'jQuery' : 'Array', table = util.table([me + '(' + arr.length + ')', null], jquery ? 'jquery' : me.toLowerCase()),
+                //var me = jquery ? 'jQuery' : 'Array', table = util.table([me + '(' + arr.length + ')', null], jquery ? 'jquery' : me.toLowerCase()),
+                var me = jquery ? '' : '', table = util.table([me, null], jquery ? '' : me.toLowerCase()),
                     isEmpty = true,
                     count = 0;
 
@@ -588,20 +591,23 @@ var prettyPrint = (function(){
                         return false;
                     }
                     isEmpty = false;
-                    table.addRow([i, typeDealer[ util.type(item) ](item, depth+1, i)]);
+                    //table.addRow([i, typeDealer[ util.type(item) ](item, depth+1, i)]);
+                    table.addRow([typeDealer[ util.type(item) ](item, depth+1, i)]);
                 });
 
                 if (!jquery){
                     if (isEmpty) {
-                        table.addRow(['<small>[empty]</small>']);
+                        table.addRow(['']);
+                        //table.addRow(['<small>[empty]</small>']);
                     } else {
-                        table.thead.appendChild( util.hRow(['index','value'], 'colHeader') );
+                        table.thead.appendChild( util.hRow(['',''], 'colHeader'));
+                        //table.thead.appendChild( util.hRow(['index','value'], 'colHeader') );
                     }
                 }
 
                 return settings.expanded ? table.node : util.expander(
                     util.stringify(arr),
-                    'Click to show more',
+                    'click to show more',
                     function() {
                         this.parentNode.appendChild(table.node);
                     }
@@ -666,7 +672,7 @@ var prettyPrint = (function(){
             }
         };
 
-        container.appendChild( typeDealer[ (settings.forceObject) ? 'object' : util.type(obj) ](obj, currentDepth) );
+        container.appendChild( typeDealer[ (settings.forceObject) ? '' : util.type(obj) ](obj, currentDepth) );
 
         return container;
 
@@ -682,72 +688,73 @@ var prettyPrint = (function(){
         expanded: true,
 
         forceObject: false,
-        maxDepth: 3,
+        maxDepth: 6,
         maxArray: -1,  // default is unlimited
         styles: {
             array: {
                 th: {
-                    backgroundColor: '#6DBD2A',
-                    color: 'white'
+                    //backgroundColor: '#6DBD2A',
+                    //color: 'white'
                 }
             },
             'function': {
                 th: {
-                    backgroundColor: '#D82525'
+                    //backgroundColor: '#D82525'
                 }
             },
             regexp: {
                 th: {
-                    backgroundColor: '#E2F3FB',
-                    color: '#000'
+                    //backgroundColor: '#E2F3FB',
+                    //color: '#000'
                 }
             },
             object: {
                 th: {
-                    backgroundColor: '#1F96CF'
+                    //backgroundColor: '#1F96CF'
                 }
             },
             jquery : {
                 th: {
-                    backgroundColor: '#FBF315'
+                    //backgroundColor: '#FBF315'
                 }
             },
             error: {
                 th: {
-                    backgroundColor: 'red',
-                    color: 'yellow'
+                    //backgroundColor: 'red',
+                    //color: 'yellow'
                 }
             },
             domelement: {
                 th: {
-                    backgroundColor: '#F3801E'
+                    //backgroundColor: '#F3801E'
                 }
             },
             date: {
                 th: {
-                    backgroundColor: '#A725D8'
+                    //backgroundColor: '#A725D8'
                 }
             },
             colHeader: {
                 th: {
-                    backgroundColor: '#EEE',
-                    color: '#000',
-                    textTransform: 'uppercase'
+                    //backgroundColor: '#EEE',
+                    //color: '#000',
+                    textTransform: 'lowercase'
                 }
             },
             'default': {
                 table: {
                     borderCollapse: 'collapse',
-                    width: '100%'
+                    width: '60%',
+                    textTransform: 'lowercase'
                 },
                 td: {
-                    padding: '5px',
-                    fontSize: '12px',
-                    backgroundColor: '#FFF',
-                    color: '#222',
-                    border: '1px solid #000',
+                    padding: '1px',
+                    fontSize: '14px',
+                    //backgroundColor: '#FFF',
+                    //color: '#222',
+                    border: '1px solid silver',
                     verticalAlign: 'top',
-                    fontFamily: '"Consolas","Lucida Console",Courier,mono',
+                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
                     whiteSpace: 'nowrap'
                 },
                 td_hover: {
@@ -755,16 +762,16 @@ var prettyPrint = (function(){
                      - Be aware that "inheritable" properties (e.g. fontWeight) WILL BE INHERITED */
                 },
                 th: {
-                    padding: '5px',
+                    padding: '1px',
                     fontSize: '12px',
-                    backgroundColor: '#222',
-                    color: '#EEE',
+                    //backgroundColor: '#222',
+                    //color: '#EEE',
                     textAlign: 'left',
-                    border: '1px solid #000',
-                    verticalAlign: 'top',
-                    fontFamily: '"Consolas","Lucida Console",Courier,mono',
-                    backgroundImage: util.headerGradient,
-                    backgroundRepeat: 'repeat-x'
+                    //border: '1px solid #000',
+                    verticalAlign: 'top'
+                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
+                    //backgroundImage: util.headerGradient,
+                    //backgroundRepeat: 'repeat-x'
                 }
             }
         }

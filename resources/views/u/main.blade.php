@@ -8,11 +8,11 @@
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
             <div class="Grid-cell">
 
-        @foreach(explode("\n", $tw) as $ltw)
-            <div>
-                {{{ $ltw }}}
-            </div>
-        @endforeach
+                <script type="text/javascript">
+                    var langs = {{json_encode($tw)}};
+                    console.log(langs);
+                </script>
+
             </div>
         </div>
     @endif

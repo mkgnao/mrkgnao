@@ -107,6 +107,6 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        return view('/u/main', array('tw' => $value));
+        return view('/u/main', array('tw' => $value->toArray()));
     }
 }

@@ -16,7 +16,6 @@
 </div>
 
     <script type="text/javascript">
-        console.log(' {{{ $tw }}} ');
         var tw = {{json_encode($tw)}};
         var node = prettyPrint(tw);
         console.log(node);

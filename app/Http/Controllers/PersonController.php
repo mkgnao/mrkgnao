@@ -50,8 +50,8 @@ class PersonController extends Controller
             $auth = true;
         }
 
+        $json_string = json_encode($account, JSON_PRETTY_PRINT);
 
-        return view('/u/main', array('tw' => $account));
+        return view('/u/main', array('tw' => $json_string));
     }
-
 }

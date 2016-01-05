@@ -22,8 +22,8 @@ class PersonController extends Controller
      *
      * @return Response
      */
-    public function index($idfull)
+    public function index($id)
     {
-        return view('/u/0' . $idfull);
+        return view('/u/0' . $id);
     }
 }

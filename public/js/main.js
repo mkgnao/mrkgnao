@@ -28,14 +28,6 @@
             return obj && obj.__esModule ? obj["default"] : obj;
         };
 
-        require("autotrack/lib/plugins/media-query-tracker");
-
-        require("autotrack/lib/plugins/outbound-link-tracker");
-
-        require("autotrack/lib/plugins/session-duration-tracker");
-
-        require("autotrack/lib/plugins/social-tracker");
-
         var supports = _interopRequire(require("./supports"));
 
 // Add an `is-legacy` class on browsers that don't supports flexbox.
@@ -49,10 +41,7 @@
 
     }, {
         "./supports": 2,
-        "autotrack/lib/plugins/media-query-tracker": 3,
-        "autotrack/lib/plugins/outbound-link-tracker": 4,
-        "autotrack/lib/plugins/session-duration-tracker": 5,
-        "autotrack/lib/plugins/social-tracker": 6
+
     }], 2: [function (require, module, exports) {
         "use strict";
 

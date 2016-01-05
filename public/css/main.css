@@ -1785,3 +1785,10 @@ pre {
     font-size: 1.2em;
     opacity: 0.7;
 }
+
+.joyce {
+    color: black;
+    font-size: 1.4em;
+    opacity: 0.5;
+    text-align: center !important
+}

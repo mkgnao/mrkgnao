@@ -2,19 +2,17 @@
 
 @section('content')
 
-    {{ Auth::user()->name }}
+    @if ($tw != null)
+        <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-    {{ Auth::user()->id }}
+        $atw = explode("\n", $tw);
+        @foreach($atw as $ltw)
+            <div class="Grid-cell">
+                {{{ $ltw }}}
+            </div>
+        @endforeach
 
-    <div id="tw_response">
-    </div>
+        </div>
+    @endif
 
-    <script>
-        var tw = '{{ $tw }}';
-        var tws = prettyPrint(tw);
-        var e = document.getElementById('tw_response');
-        var d = document.createElement('div');
-        d.id = "tw_response_content";
-        e.appendChild(d);
-    </script>
 @endsection

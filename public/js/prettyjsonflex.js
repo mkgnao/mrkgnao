@@ -39,7 +39,7 @@
 
 var mkgnaoNs = mkgnaoNs || {};
 
-mkgnaoNs.prettyPrint = (function () {
+mkgnaoNs.prettyJsonFlex = (function () {
 
     /* These "util" functions are not part of the core
      functionality but are  all necessary - mostly DOM helpers */
@@ -132,11 +132,7 @@ mkgnaoNs.prettyPrint = (function () {
                     td.appendChild(cell);
                 } else {
                     /* IsString */
-                    var cellStr = cell.toString();
-                    if (cellStr == null || cellStr.length == 0)
-                        td.innerHTML = "";
-                    else
-                        td.innerHTML = util.shorten();
+                    td.innerHTML = util.shorten(cell.toString());
                 }
 
                 tr.appendChild(td);

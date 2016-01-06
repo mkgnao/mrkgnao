@@ -21,7 +21,7 @@
                 mkgnaoNs.twAddJson(mkgnaoNs.tw_me, "twcontent");
             } else {
                 var e = document.getElementById("twcontent");
-                var n = document.createElement("<div id=\"notfound\">not on teamwork</div>")
+                var n = document.createElement("<div id=\"notfound\">not on teamwork</div>");
                 e.appendChild(n);
             }
         } catch (e) {

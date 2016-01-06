@@ -3,30 +3,15 @@
 class File extends Rest\Model
 {
 
-    protected function init()
-    {
-        $this->fields = [
-            'pending_file_ref' => true,
-            'description'=>false,
-            'category_id'=>[
-                'required'=>false,
-                'attributes'=>[
-                    'type'=>'integer'
-                ]
-            ],
-            'category_name'=> false,
-            'private'=>false
-        ];
-    }
-
     public function get($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         if ($id <= 0) {
             throw new Exception('Invalid param id');
         }
         return $this->rest->get("$this->action/$id");
     }
+
     /**
      * List Files on a Project
      *
@@ -39,11 +24,37 @@ class File extends Rest\Model
      */
     public function getByProject($project_id)
     {
-        $project_id = (int) $project_id;
+        $project_id = (int)$project_id;
         if ($project_id <= 0) {
             throw new Exception('Invalid param project_id');
         }
         return $this->rest->get("projects/$project_id/$this->action");
+    }
+
+    /**
+     * Add a File to a Project
+     *
+     * POST /projects/#{file_id}/files
+     *
+     * @param int $id
+     * @param array $params [filename, category_id, category_name, description, private, pending_file_ref, project_id]
+     * @return int File id
+     * @throws \App\Http\TeamWorkPm\Exception
+     */
+    public function save(array $data)
+    {
+        $project_id = empty($data['project_id']) ? 0 : (int)$data['project_id'];
+        if ($project_id <= 0) {
+            throw new Exception('Required field project_id');
+        }
+        if (empty($data['pending_file_ref']) && empty($data['filename'])) {
+            throw new Exception('Required field pending_file_ref or filename');
+        }
+        if (empty($data['pending_file_ref'])) {
+            $data['pending_file_ref'] = $this->upload($data['filename']);
+        }
+        unset($data['filename']);
+        return $this->rest->post("projects/$project_id/files", $data);
     }
 
     /**
@@ -63,7 +74,7 @@ class File extends Rest\Model
      */
     public function upload($files)
     {
-        $files = (array) $files;
+        $files = (array)$files;
         $pending_file_attachments = [];
         foreach ($files as $filename) {
             if (!is_file($filename)) {
@@ -71,7 +82,7 @@ class File extends Rest\Model
             }
         }
         foreach ($files as $filename) {
-            $params = ['file'=> self::getFileParam($filename)];
+            $params = ['file' => self::getFileParam($filename)];
             $pending_file_attachments[] = $this->rest->upload(
                 'pendingfiles',
                 $params
@@ -91,42 +102,32 @@ class File extends Rest\Model
     }
 
     /**
-     * Add a File to a Project
-     *
-     * POST /projects/#{file_id}/files
-     *
-     * @param int $id
-     * @param array $params [filename, category_id, category_name, description, private, pending_file_ref, project_id]
-     * @return int File id
-     * @throws \App\Http\TeamWorkPm\Exception
-     */
-    public function save(array $data)
-    {
-        $project_id = empty($data['project_id']) ? 0: (int) $data['project_id'];
-        if ($project_id <= 0) {
-            throw new Exception('Required field project_id');
-        }
-        if (empty($data['pending_file_ref']) && empty($data['filename'])) {
-            throw new Exception('Required field pending_file_ref or filename');
-        }
-        if (empty($data['pending_file_ref'])) {
-            $data['pending_file_ref'] = $this->upload($data['filename']);
-        }
-        unset($data['filename']);
-        return $this->rest->post("projects/$project_id/files", $data);
-    }
-
-    /**
      *
      * @param int $id
      * @return bool
      */
     public function delete($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         if ($id <= 0) {
             throw new Exception('Invalid param id');
         }
         return $this->rest->delete("$this->action/$id");
+    }
+
+    protected function init()
+    {
+        $this->fields = [
+            'pending_file_ref' => true,
+            'description' => false,
+            'category_id' => [
+                'required' => false,
+                'attributes' => [
+                    'type' => 'integer'
+                ]
+            ],
+            'category_name' => false,
+            'private' => false
+        ];
     }
 }

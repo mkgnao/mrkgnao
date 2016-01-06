@@ -1,18 +1,7 @@
 <?php namespace App\Http\TeamWorkPm\Category;
 
-class Project extends \App\Http\TeamWorkPm\Model
+class Project extends Model
 {
-
-    protected  function init()
-    {
-        list ($parent, $type) = explode('-', $this->parent);
-        $this->parent = $parent;
-        $this->action = $type . 'Categories';
-        $this->fields = [
-            'name'=>true,
-            'parent'=> false
-        ];
-    }
 
     /**
      * Retrieve all Project Categories
@@ -22,5 +11,16 @@ class Project extends \App\Http\TeamWorkPm\Model
     public function getAll()
     {
         return $this->rest->get($this->action);
+    }
+
+    protected function init()
+    {
+        list ($parent, $type) = explode('-', $this->parent);
+        $this->parent = $parent;
+        $this->action = $type . 'Categories';
+        $this->fields = [
+            'name' => true,
+            'parent' => false
+        ];
     }
 }

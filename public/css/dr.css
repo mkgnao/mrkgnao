@@ -2,10 +2,10 @@
     font-family: 'didotregularx';
     src: url('/fonts/dr.eot');
     src: url('fonts/dr.eot?#iefix') format('embedded-opentype'),
-         url('/fonts/dr.woff2') format('woff2'),
-         url('/fonts/dr.woff') format('woff'),
-         url('/fonts/dr.ttf') format('truetype'),
-         url('/fonts/dr.svg#DidotRegular') format('svg');
+    url('/fonts/dr.woff2') format('woff2'),
+    url('/fonts/dr.woff') format('woff'),
+    url('/fonts/dr.ttf') format('truetype'),
+    url('/fonts/dr.svg#DidotRegular') format('svg');
     font-weight: normal;
     font-style: normal;
 }

@@ -39,14 +39,14 @@
 
 var mkgnaoNs = mkgnaoNs || {};
 
-mkgnaoNs.prettyPrint = (function(){
+mkgnaoNs.prettyPrint = (function () {
 
     /* These "util" functions are not part of the core
      functionality but are  all necessary - mostly DOM helpers */
 
     var util = {
 
-        el: function(type, attrs) {
+        el: function (type, attrs) {
 
             /* Create new element */
             var el = document.createElement(type), attr;
@@ -57,7 +57,7 @@ mkgnaoNs.prettyPrint = (function(){
             /* Add attributes to el */
             if (attrs && attrs.style) {
                 var styles = attrs.style;
-                util.applyCSS( el, attrs.style );
+                util.applyCSS(el, attrs.style);
                 delete attrs.style;
             }
             for (attr in attrs) {
@@ -70,24 +70,25 @@ mkgnaoNs.prettyPrint = (function(){
 
         },
 
-        applyCSS: function(el, styles) {
+        applyCSS: function (el, styles) {
             /* Applies CSS to a single element */
             for (var prop in styles) {
                 if (styles.hasOwnProperty(prop)) {
-                    try{
+                    try {
                         /* Yes, IE6 SUCKS! */
                         el.style[prop] = styles[prop];
-                    }catch(e){}
+                    } catch (e) {
+                    }
                 }
             }
         },
 
-        txt: function(t) {
+        txt: function (t) {
             /* Create text node */
             return document.createTextNode(t);
         },
 
-        row: function(cells, type, cellType) {
+        row: function (cells, type, cellType) {
 
             /* Creates new <tr> */
             cellType = cellType || 'td';
@@ -98,25 +99,31 @@ mkgnaoNs.prettyPrint = (function(){
                 attrs = {
                     style: util.getStyles(cellType, type),
                     colSpan: colSpan,
-                    onmouseover: function() {
+                    onmouseover: function () {
                         var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function(cell){
-                            if (cell.nodeName.toLowerCase() !== 'td') { return; }
+                        util.forEach(tds, function (cell) {
+                            if (cell.nodeName.toLowerCase() !== 'td') {
+                                return;
+                            }
                             util.applyCSS(cell, util.getStyles('td_hover', type));
                         });
                     },
-                    onmouseout: function() {
+                    onmouseout: function () {
                         var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function(cell){
-                            if (cell.nodeName.toLowerCase() !== 'td') { return; }
+                        util.forEach(tds, function (cell) {
+                            if (cell.nodeName.toLowerCase() !== 'td') {
+                                return;
+                            }
                             util.applyCSS(cell, util.getStyles('td', type));
                         });
                     }
                 };
 
-            util.forEach(cells, function(cell){
+            util.forEach(cells, function (cell) {
 
-                if (cell === null) { return; }
+                if (cell === null) {
+                    return;
+                }
                 /* Default cell type is <td> */
                 td = util.el(cellType, attrs);
 
@@ -134,25 +141,25 @@ mkgnaoNs.prettyPrint = (function(){
             return tr;
         },
 
-        hRow: function(cells, type){
+        hRow: function (cells, type) {
             /* Return new <th> */
             return util.row(cells, type, 'th');
         },
 
-        table: function(headings, type){
+        table: function (headings, type) {
 
             headings = headings || [];
 
             /* Creates new table: */
             var attrs = {
                     thead: {
-                        style:util.getStyles('thead',type)
+                        style: util.getStyles('thead', type)
                     },
                     tbody: {
-                        style:util.getStyles('tbody',type)
+                        style: util.getStyles('tbody', type)
                     },
                     table: {
-                        style:util.getStyles('table',type)
+                        style: util.getStyles('table', type)
                     }
                 },
                 tbl = util.el('table', attrs.table),
@@ -161,7 +168,7 @@ mkgnaoNs.prettyPrint = (function(){
 
             if (headings.length) {
                 tbl.appendChild(thead);
-                thead.appendChild( util.hRow(headings, type) );
+                thead.appendChild(util.hRow(headings, type));
             }
             tbl.appendChild(tbody);
 
@@ -171,47 +178,47 @@ mkgnaoNs.prettyPrint = (function(){
                 node: tbl,
                 tbody: tbody,
                 thead: thead,
-                appendChild: function(node) {
+                appendChild: function (node) {
                     this.tbody.appendChild(node);
                 },
-                addRow: function(cells, _type, cellType){
+                addRow: function (cells, _type, cellType) {
                     this.appendChild(util.row.call(util, cells, (_type || type), cellType));
                     return this;
                 }
             };
         },
 
-        shorten: function(str) {
+        shorten: function (str) {
             var max = 40;
-            str = str.replace(/^\s\s*|\s\s*$|\n/g,'');
-            return str.length > max ? (str.substring(0, max-1) + '...') : str;
+            str = str.replace(/^\s\s*|\s\s*$|\n/g, '');
+            return str.length > max ? (str.substring(0, max - 1) + '...') : str;
         },
 
-        htmlentities: function(str) {
+        htmlentities: function (str) {
             return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
         },
 
-        merge: function(target, source) {
+        merge: function (target, source) {
 
             /* Merges two (or more) objects,
              giving the last one precedence */
 
-            if ( typeof target !== 'object' ) {
+            if (typeof target !== 'object') {
                 target = {};
             }
 
             for (var property in source) {
 
-                if ( source.hasOwnProperty(property) ) {
+                if (source.hasOwnProperty(property)) {
 
-                    var sourceProperty = source[ property ];
+                    var sourceProperty = source[property];
 
-                    if ( typeof sourceProperty === 'object' ) {
-                        target[ property ] = util.merge( target[ property ], sourceProperty );
+                    if (typeof sourceProperty === 'object') {
+                        target[property] = util.merge(target[property], sourceProperty);
                         continue;
                     }
 
-                    target[ property ] = sourceProperty;
+                    target[property] = sourceProperty;
 
                 }
 
@@ -224,9 +231,9 @@ mkgnaoNs.prettyPrint = (function(){
             return target;
         },
 
-        count: function(arr, item) {
+        count: function (arr, item) {
             var count = 0;
-            for (var i = 0, l = arr.length; i< l; i++) {
+            for (var i = 0, l = arr.length; i < l; i++) {
                 if (arr[i] === item) {
                     count++;
                 }
@@ -234,11 +241,11 @@ mkgnaoNs.prettyPrint = (function(){
             return count;
         },
 
-        thead: function(tbl) {
+        thead: function (tbl) {
             return tbl.getElementsByTagName('thead')[0];
         },
 
-        forEach: function(arr, max, fn) {
+        forEach: function (arr, max, fn) {
 
             if (!fn) {
                 fn = max;
@@ -249,7 +256,7 @@ mkgnaoNs.prettyPrint = (function(){
                 index = -1;
 
             while (++index < len) {
-                if(fn( arr[index], index, arr ) === false) {
+                if (fn(arr[index], index, arr) === false) {
                     break;
                 }
             }
@@ -257,12 +264,16 @@ mkgnaoNs.prettyPrint = (function(){
             return true;
         },
 
-        type: function(v){
+        type: function (v) {
             try {
                 /* Returns type, e.g. "string", "number", "array" etc.
                  Note, this is only used for precise typing. */
-                if (v === null) { return 'null'; }
-                if (v === undefined) { return 'undefined'; }
+                if (v === null) {
+                    return 'null';
+                }
+                if (v === undefined) {
+                    return 'undefined';
+                }
                 var oType = Object.prototype.toString.call(v).match(/\s(.+?)\]/)[1].toLowerCase();
                 if (v.nodeType) {
                     if (v.nodeType === 1) {
@@ -280,16 +291,16 @@ mkgnaoNs.prettyPrint = (function(){
                     return 'object';
                 }
                 return 'default';
-            } catch(e) {
+            } catch (e) {
                 return 'default';
             }
         },
 
-        within: function(ref) {
+        within: function (ref) {
             /* Check existence of a val within an object
              RETURNS KEY */
             return {
-                is: function(o) {
+                is: function (o) {
                     for (var i in ref) {
                         if (ref[i] === o) {
                             return i;
@@ -301,25 +312,25 @@ mkgnaoNs.prettyPrint = (function(){
         },
 
         common: {
-            circRef: function(obj, key, settings) {
+            circRef: function (obj, key, settings) {
                 return util.expander(
                     '[POINTS BACK TO <strong>' + (key) + '</strong>]',
                     'Click to show this item anyway',
-                    function() {
-                        this.parentNode.appendChild( prettyPrintThis(obj,{maxDepth:1}) );
+                    function () {
+                        this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
                     }
                 );
             },
-            depthReached: function(obj, settings) {
+            depthReached: function (obj, settings) {
                 return util.expander(
                     '[DEPTH REACHED]',
                     'Click to show this item anyway',
-                    function() {
+                    function () {
                         try {
-                            this.parentNode.appendChild( prettyPrintThis(obj,{maxDepth:1}) );
-                        } catch(e) {
+                            this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
+                        } catch (e) {
                             this.parentNode.appendChild(
-                                util.table(['ERROR OCCURED DURING OBJECT RETRIEVAL'],'error').addRow([e.message]).node
+                                util.table(['ERROR OCCURED DURING OBJECT RETRIEVAL'], 'error').addRow([e.message]).node
                             );
                         }
                     }
@@ -327,24 +338,24 @@ mkgnaoNs.prettyPrint = (function(){
             }
         },
 
-        getStyles: function(el, type) {
+        getStyles: function (el, type) {
             type = prettyPrintThis.settings.styles[type] || {};
             return util.merge(
                 {}, prettyPrintThis.settings.styles['default'][el], type[el]
             );
         },
 
-        expander: function(text, title, clickFn) {
+        expander: function (text, title, clickFn) {
             return util.el('a', {
-                innerHTML:  util.shorten(text) + ' <b style="visibility:hidden;">[+]</b>',
+                innerHTML: util.shorten(text) + ' <b style="visibility:hidden;">[+]</b>',
                 title: title,
-                onmouseover: function() {
+                onmouseover: function () {
                     this.getElementsByTagName('b')[0].style.visibility = 'visible';
                 },
-                onmouseout: function() {
+                onmouseout: function () {
                     this.getElementsByTagName('b')[0].style.visibility = 'hidden';
                 },
-                onclick: function() {
+                onclick: function () {
                     this.style.display = 'none';
                     clickFn.call(this);
                     return false;
@@ -355,7 +366,7 @@ mkgnaoNs.prettyPrint = (function(){
             });
         },
 
-        stringify: function(obj) {
+        stringify: function (obj) {
 
             /* Bit of an ugly duckling!
              - This fn returns an ATTEMPT at converting an object/array/anyType
@@ -364,18 +375,18 @@ mkgnaoNs.prettyPrint = (function(){
 
             var type = util.type(obj),
                 str, first = true;
-            if ( type === 'array' ) {
+            if (type === 'array') {
                 str = '[';
-                util.forEach(obj, function(item,i){
-                    str += (i===0?'':', ') + util.stringify(item);
+                util.forEach(obj, function (item, i) {
+                    str += (i === 0 ? '' : ', ') + util.stringify(item);
                 });
                 return str + ']';
             }
             if (typeof obj === 'object') {
                 str = '{';
-                for (var i in obj){
+                for (var i in obj) {
                     if (obj.hasOwnProperty(i)) {
-                        str += (first?'':', ') + i + ':' + util.stringify(obj[i]);
+                        str += (first ? '' : ', ') + i + ':' + util.stringify(obj[i]);
                         first = false;
                     }
                 }
@@ -385,25 +396,27 @@ mkgnaoNs.prettyPrint = (function(){
                 return '/' + obj.source + '/';
             }
             if (type === 'string') {
-                return '"' + obj.replace(/"/g,'\\"') + '"';
+                return '"' + obj.replace(/"/g, '\\"') + '"';
             }
             return obj.toString();
         },
 
-        headerGradient: (function(){
+        headerGradient: (function () {
 
             var canvas = document.createElement('canvas');
-            if (!canvas.getContext) { return ''; }
+            if (!canvas.getContext) {
+                return '';
+            }
             var cx = canvas.getContext('2d');
             canvas.height = 30;
             canvas.width = 1;
 
-            var linearGrad = cx.createLinearGradient(0,0,0,30);
-            linearGrad.addColorStop(0,'rgba(0,0,0,0)');
-            linearGrad.addColorStop(1,'rgba(0,0,0,0.25)');
+            var linearGrad = cx.createLinearGradient(0, 0, 0, 30);
+            linearGrad.addColorStop(0, 'rgba(0,0,0,0)');
+            linearGrad.addColorStop(1, 'rgba(0,0,0,0.25)');
 
             cx.fillStyle = linearGrad;
-            cx.fillRect(0,0,1,30);
+            cx.fillRect(0, 0, 1, 30);
 
             var dataURL = canvas.toDataURL && canvas.toDataURL();
             return 'url(' + (dataURL || '') + ')';
@@ -413,7 +426,7 @@ mkgnaoNs.prettyPrint = (function(){
     };
 
     // Main..
-    var prettyPrintThis = function(obj, options) {
+    var prettyPrintThis = function (obj, options) {
 
         /*
          *	  obj :: Object to be printed
@@ -422,7 +435,7 @@ mkgnaoNs.prettyPrint = (function(){
 
         options = options || {};
 
-        var settings = util.merge( {}, prettyPrintThis.config, options ),
+        var settings = util.merge({}, prettyPrintThis.config, options),
             container = util.el('div'),
             config = prettyPrintThis.config,
             currentDepth = 0,
@@ -435,20 +448,20 @@ mkgnaoNs.prettyPrint = (function(){
         prettyPrintThis.settings = settings;
 
         var typeDealer = {
-            string : function(item){
-                return util.txt('"' + util.shorten(item.replace(/"/g,'\\"')) + '"');
+            string: function (item) {
+                return util.txt('"' + util.shorten(item.replace(/"/g, '\\"')) + '"');
             },
-            number : function(item) {
+            number: function (item) {
                 return util.txt(item);
             },
-            regexp : function(item) {
+            regexp: function (item) {
 
-                var miniTable = util.table(['RegExp',null], 'regexp');
+                var miniTable = util.table(['RegExp', null], 'regexp');
                 var flags = util.table();
                 var span = util.expander(
                     '/' + item.source + '/',
                     'Click to show more',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
                 );
@@ -465,32 +478,32 @@ mkgnaoNs.prettyPrint = (function(){
 
                 return settings.expanded ? miniTable.node : span;
             },
-            domelement : function(element, depth) {
+            domelement: function (element, depth) {
 
-                var miniTable = util.table(['DOMElement',null], 'domelement'),
+                var miniTable = util.table(['DOMElement', null], 'domelement'),
                     props = ['id', 'className', 'innerHTML', 'src', 'href'], elname = element.nodeName || '';
 
                 miniTable.addRow(['tag', '&lt;' + elname.toLowerCase() + '&gt;']);
 
-                util.forEach(props, function(prop){
-                    if ( element[prop] ) {
-                        miniTable.addRow([ prop, util.htmlentities(element[prop]) ]);
+                util.forEach(props, function (prop) {
+                    if (element[prop]) {
+                        miniTable.addRow([prop, util.htmlentities(element[prop])]);
                     }
                 });
 
                 return settings.expanded ? miniTable.node : util.expander(
                     'DOMElement (' + elname.toLowerCase() + ')',
                     'Click to show more',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
                 );
             },
-            domnode : function(node){
+            domnode: function (node) {
 
                 /* Deals with all DOMNodes that aren't elements (nodeType !== 1) */
-                var miniTable = util.table(['DOMNode',null], 'domelement'),
-                    data =  util.htmlentities( (node.data || 'UNDEFINED').replace(/\n/g,'\\n') );
+                var miniTable = util.table(['DOMNode', null], 'domelement'),
+                    data = util.htmlentities((node.data || 'UNDEFINED').replace(/\n/g, '\\n'));
                 miniTable
                     .addRow(['nodeType', node.nodeType + ' (' + node.nodeName + ')'])
                     .addRow(['data', data]);
@@ -498,28 +511,28 @@ mkgnaoNs.prettyPrint = (function(){
                 return settings.expanded ? miniTable.node : util.expander(
                     'DOMNode',
                     'Click to show more',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
                 );
             },
-            jquery : function(obj, depth, key) {
+            jquery: function (obj, depth, key) {
                 return typeDealer['array'](obj, depth, key, true);
             },
-            object : function(obj, depth, key) {
+            object: function (obj, depth, key) {
 
                 /* Checking depth + circular refs */
                 /* Note, check for circular refs before depth; just makes more sense */
                 var stackKey = util.within(stack).is(obj);
-                if ( stackKey ) {
+                if (stackKey) {
                     return util.common.circRef(obj, stackKey, settings);
                 }
-                stack[key||'TOP'] = obj;
+                stack[key || 'TOP'] = obj;
                 if (depth === settings.maxDepth) {
                     return util.common.depthReached(obj, settings);
                 }
 
-                var table = util.table(['', null],'object'),
+                var table = util.table(['', null], 'object'),
                     isEmpty = true;
 
                 for (var i in obj) {
@@ -528,8 +541,8 @@ mkgnaoNs.prettyPrint = (function(){
                             type = util.type(item);
                         isEmpty = false;
                         try {
-                            table.addRow([i, typeDealer[ type ](item, depth+1, i)], type);
-                        } catch(e) {
+                            table.addRow([i, typeDealer[type](item, depth + 1, i)], type);
+                        } catch (e) {
                             /* Security errors are thrown on certain Window/DOM properties */
                             if (window.console && window.console.log) {
                                 console.log(e.message);
@@ -543,7 +556,7 @@ mkgnaoNs.prettyPrint = (function(){
                     //table.addRow(['<small>[empty]</small>']);
                 } else {
                     table.thead.appendChild(
-                        util.hRow(['',''], 'colHeader')
+                        util.hRow(['', ''], 'colHeader')
                         //util.hRow(['key','value'], 'colHeader')
                     );
                 }
@@ -551,7 +564,7 @@ mkgnaoNs.prettyPrint = (function(){
                 var ret = (settings.expanded || hasRunOnce) ? table.node : util.expander(
                     util.stringify(obj),
                     'click to show more',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(table.node);
                     }
                 );
@@ -561,15 +574,15 @@ mkgnaoNs.prettyPrint = (function(){
                 return ret;
 
             },
-            array : function(arr, depth, key, jquery) {
+            array: function (arr, depth, key, jquery) {
 
                 /* Checking depth + circular refs */
                 /* Note, check for circular refs before depth; just makes more sense */
                 var stackKey = util.within(stack).is(arr);
-                if ( stackKey ) {
+                if (stackKey) {
                     return util.common.circRef(arr, stackKey);
                 }
-                stack[key||'TOP'] = arr;
+                stack[key || 'TOP'] = arr;
                 if (depth === settings.maxDepth) {
                     return util.common.depthReached(arr);
                 }
@@ -580,29 +593,29 @@ mkgnaoNs.prettyPrint = (function(){
                     isEmpty = true,
                     count = 0;
 
-                if (jquery){
-                    table.addRow(['selector',arr.selector]);
+                if (jquery) {
+                    table.addRow(['selector', arr.selector]);
                 }
 
-                util.forEach(arr, function(item,i){
+                util.forEach(arr, function (item, i) {
                     if (settings.maxArray >= 0 && ++count > settings.maxArray) {
                         table.addRow([
-                            i + '..' + (arr.length-1),
-                            typeDealer[ util.type(item) ]('...', depth+1, i)
+                            i + '..' + (arr.length - 1),
+                            typeDealer[util.type(item)]('...', depth + 1, i)
                         ]);
                         return false;
                     }
                     isEmpty = false;
                     //table.addRow([i, typeDealer[ util.type(item) ](item, depth+1, i)]);
-                    table.addRow([typeDealer[ util.type(item) ](item, depth+1, i)]);
+                    table.addRow([typeDealer[util.type(item)](item, depth + 1, i)]);
                 });
 
-                if (!jquery){
+                if (!jquery) {
                     if (isEmpty) {
                         table.addRow(['']);
                         //table.addRow(['<small>[empty]</small>']);
                     } else {
-                        table.thead.appendChild( util.hRow(['',''], 'colHeader'));
+                        table.thead.appendChild(util.hRow(['', ''], 'colHeader'));
                         //table.thead.appendChild( util.hRow(['index','value'], 'colHeader') );
                     }
                 }
@@ -610,71 +623,73 @@ mkgnaoNs.prettyPrint = (function(){
                 return settings.expanded ? table.node : util.expander(
                     util.stringify(arr),
                     'click to show more',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(table.node);
                     }
                 );
 
             },
-            'function' : function(fn, depth, key) {
+            'function': function (fn, depth, key) {
 
                 /* Checking JUST circular refs */
                 var stackKey = util.within(stack).is(fn);
-                if ( stackKey ) { return util.common.circRef(fn, stackKey); }
-                stack[key||'TOP'] = fn;
+                if (stackKey) {
+                    return util.common.circRef(fn, stackKey);
+                }
+                stack[key || 'TOP'] = fn;
 
-                var miniTable = util.table(['Function',null], 'function'),
+                var miniTable = util.table(['Function', null], 'function'),
                     argsTable = util.table(['Arguments']),
                     args = fn.toString().match(/\((.+?)\)/),
-                    body = fn.toString().match(/\(.*?\)\s+?\{?([\S\s]+)/)[1].replace(/\}?$/,'');
+                    body = fn.toString().match(/\(.*?\)\s+?\{?([\S\s]+)/)[1].replace(/\}?$/, '');
 
                 miniTable
-                    .addRow(['arguments', args ? args[1].replace(/[^\w_,\s]/g,'') : '<small>[none/native]</small>'])
+                    .addRow(['arguments', args ? args[1].replace(/[^\w_,\s]/g, '') : '<small>[none/native]</small>'])
                     .addRow(['body', body]);
 
                 return settings.expanded ? miniTable.node : util.expander(
                     'function(){...}',
                     'Click to see more about this function.',
-                    function(){
+                    function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
                 );
             },
-            'date' : function(date) {
+            'date': function (date) {
 
-                var miniTable = util.table(['Date',null], 'date'),
+                var miniTable = util.table(['Date', null], 'date'),
                     sDate = date.toString().split(/\s/);
 
                 /* TODO: Make this work well in IE! */
                 miniTable
                     .addRow(['Time', sDate[4]])
-                    .addRow(['Date', sDate.slice(0,4).join('-')]);
+                    .addRow(['Date', sDate.slice(0, 4).join('-')]);
 
                 return settings.expanded ? miniTable.node : util.expander(
                     'Date (timestamp): ' + (+date),
                     'Click to see a little more info about this date',
-                    function() {
+                    function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
                 );
 
             },
-            'boolean' : function(bool) {
-                return util.txt( bool.toString().toUpperCase() );
+            'boolean': function (bool) {
+                return util.txt(bool.toString().toUpperCase());
             },
-            'undefined' : function() {
+            'undefined': function () {
                 return util.txt('UNDEFINED');
             },
-            'null' : function() {
+            'null': function () {
                 return util.txt('NULL');
             },
-            'default' : function() {
+            'default': function () {
                 /* When a type cannot be found */
                 return util.txt('prettyPrint: TypeNotFound Error');
             }
         };
 
-        container.appendChild( typeDealer[ (settings.forceObject) ? '' : util.type(obj) ](obj, currentDepth) );
+        container.appendChild(typeDealer[(settings.forceObject) ? '' : util.type(obj)](obj, currentDepth));
 
         return container;
 
@@ -715,7 +730,7 @@ mkgnaoNs.prettyPrint = (function(){
                     //backgroundColor: '#1F96CF'
                 }
             },
-            jquery : {
+            jquery: {
                 th: {
                     //backgroundColor: '#FBF315'
                 }

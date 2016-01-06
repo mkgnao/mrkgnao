@@ -1,15 +1,15 @@
 <?php namespace App\Http\TeamWorkPm\Message;
 
-class Reply extends \App\Http\TeamWorkPm\Model
+class Reply extends Model
 {
     public function init()
     {
         $this->fields = [
-            'body'=>true,
-            'notify'=>[
-                'required'=>false,
-                'attributes'=>['type'=>'array'],
-                'element'=>'person'
+            'body' => true,
+            'notify' => [
+                'required' => false,
+                'attributes' => ['type' => 'array'],
+                'element' => 'person'
             ],
         ];
         $this->parent = 'messagereply';
@@ -32,16 +32,16 @@ class Reply extends \App\Http\TeamWorkPm\Model
      *
      * @param <type> $id
      * @param <type> $params
-     * @return App\Http\TeamWorkPm\Response\Model
+     * @return \App\Http\TeamWorkPm\Response\Model
      */
     public function getByMessage($message_id, array $params = [])
     {
-        $message_id = (int) $message_id;
+        $message_id = (int)$message_id;
         if ($message_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Invalid param message_id');
         }
         $validate = ['page', 'pagesize'];
-        foreach ($params as $name=>$value) {
+        foreach ($params as $name => $value) {
             if (!in_array(strtolower($name), $validate)) {
                 unset ($params[$name]);
             }
@@ -63,7 +63,7 @@ class Reply extends \App\Http\TeamWorkPm\Model
     public function insert(array $data)
     {
 
-        $message_id = empty($data['message_id']) ? 0 : (int) $data['message_id'];
+        $message_id = empty($data['message_id']) ? 0 : (int)$data['message_id'];
         if ($message_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Required field message_id');
         }

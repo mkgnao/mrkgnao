@@ -2,51 +2,6 @@
 
 class Milestone extends Model
 {
-    protected function init()
-    {
-        // this is the list of fields that can send the api
-        $this->fields = [
-            'title'       => true,
-            'description' => false,
-            'deadline'    => [
-                'required'=>true,
-                'attributes'=>[
-                    'type'=>'integer'
-                ]
-            ],//format YYYYMMDD
-            'notify'      => [
-                'required'=>false,
-                'attributes'=>[
-                    'type'=>'boolean'
-                ]
-            ],
-            'reminder'=>[
-                'required'=>false,
-                'attributes'=>[
-                    'type'=>'boolean'
-                ]
-            ],
-            'private'=>[
-                'required'=>false,
-                'attributes'=>[
-                    'type'=>'boolean'
-                ]
-            ],
-            'responsible_party_ids' => true,
-            # USE ONLY FOR UPDATE OR PUT METHOD
-            'move_upcoming_milestones'=>[
-              'sibling'=>true,
-              'required'=>false,
-              'attributes'=>['type'=>'boolean']
-            ],
-            'move_upcoming_milestones_off_weekends'=>[
-              'sibling'=>true,
-              'required'=>false,
-              'attributes'=>['type'=>'boolean']
-            ]
-        ];
-    }
-
     /**
      * Complete
      *
@@ -58,7 +13,7 @@ class Milestone extends Model
      */
     public function complete($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         if ($id <= 0) {
             throw new Exception('Invalid param id');
         }
@@ -77,7 +32,7 @@ class Milestone extends Model
      */
     public function uncomplete($id)
     {
-        $id = (int) $id;
+        $id = (int)$id;
         if ($id <= 0) {
             throw new Exception('Invalid param id');
         }
@@ -94,28 +49,11 @@ class Milestone extends Model
         return $this->rest->get("$this->action", $this->getParams($filter));
     }
 
-    /**
-     * Get all milestone
-     *
-     * @return App\Http\TeamWorkPm\Response\Model
-     */
-    public function getByProject($project_id, $filter = 'all')
-    {
-        $project_id = (int) $project_id;
-        if ($project_id <= 0) {
-            throw new Exception('Invalid param project_id');
-        }
-        return $this->rest->get(
-            "projects/$project_id/$this->action",
-            $this->getParams($filter)
-        );
-    }
-
     private function getParams($filter)
     {
         $params = [];
         if ($filter) {
-            $filter = (string) $filter;
+            $filter = (string)$filter;
             $filter = strtolower($filter);
             if ($filter !== 'all') {
                 $validate = ['completed', 'incomplete', 'late', 'upcoming'];
@@ -129,16 +67,78 @@ class Milestone extends Model
     }
 
     /**
+     * Get all milestone
+     *
+     * @return App\Http\TeamWorkPm\Response\Model
+     */
+    public function getByProject($project_id, $filter = 'all')
+    {
+        $project_id = (int)$project_id;
+        if ($project_id <= 0) {
+            throw new Exception('Invalid param project_id');
+        }
+        return $this->rest->get(
+            "projects/$project_id/$this->action",
+            $this->getParams($filter)
+        );
+    }
+
+    /**
      *
      * @param array $data
      * @return int
      */
     public function insert(array $data)
     {
-        $project_id = empty($data['project_id']) ? 0: $data['project_id'];
+        $project_id = empty($data['project_id']) ? 0 : $data['project_id'];
         if ($project_id <= 0) {
             throw new Exception('Required field project_id');
         }
         return $this->rest->post("projects/$project_id/$this->action", $data);
+    }
+
+    protected function init()
+    {
+        // this is the list of fields that can send the api
+        $this->fields = [
+            'title' => true,
+            'description' => false,
+            'deadline' => [
+                'required' => true,
+                'attributes' => [
+                    'type' => 'integer'
+                ]
+            ],//format YYYYMMDD
+            'notify' => [
+                'required' => false,
+                'attributes' => [
+                    'type' => 'boolean'
+                ]
+            ],
+            'reminder' => [
+                'required' => false,
+                'attributes' => [
+                    'type' => 'boolean'
+                ]
+            ],
+            'private' => [
+                'required' => false,
+                'attributes' => [
+                    'type' => 'boolean'
+                ]
+            ],
+            'responsible_party_ids' => true,
+            # USE ONLY FOR UPDATE OR PUT METHOD
+            'move_upcoming_milestones' => [
+                'sibling' => true,
+                'required' => false,
+                'attributes' => ['type' => 'boolean']
+            ],
+            'move_upcoming_milestones_off_weekends' => [
+                'sibling' => true,
+                'required' => false,
+                'attributes' => ['type' => 'boolean']
+            ]
+        ];
     }
 }

@@ -1,9 +1,9 @@
 <?php namespace App\Http\TeamWorkPm\Response;
 
-use \IteratorAggregate;
-use \ArrayIterator;
-use \Countable;
-use \ArrayAccess;
+use ArrayAccess;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
 
 abstract class Model implements IteratorAggregate, Countable, ArrayAccess
 {
@@ -23,7 +23,7 @@ abstract class Model implements IteratorAggregate, Countable, ArrayAccess
     {
         if (strpos($filename, '.') === false) {
             $class = get_called_class();
-            $ext   = strtolower(substr($class, strrpos($class, '\\') + 1));
+            $ext = strtolower(substr($class, strrpos($class, '\\') + 1));
             $filename .= '.' . $ext;
         }
         $dirname = dirname($filename);

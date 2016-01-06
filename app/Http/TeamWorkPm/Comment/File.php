@@ -2,7 +2,7 @@
 
 class File extends Model
 {
-    protected  $resource = 'files';
+    protected $resource = 'files';
 
     /**
      * Creating a Comment
@@ -18,7 +18,7 @@ class File extends Model
     public function insert(array $data)
     {
         $resource_id = empty($data['resource_id']) ? 0 :
-                                (int) $data['resource_id'];
+            (int)$data['resource_id'];
         if ($resource_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Required field resource_id');
         }

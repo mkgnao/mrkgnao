@@ -3,35 +3,6 @@
 class Message extends Model
 {
 
-    protected function init()
-    {
-        $this->fields = [
-            'title'                    => true,
-            'category_id'              => [
-                'required'=>true,
-                'attributes'=>[
-                    'type'=>'integer'
-                ]
-            ],
-            'notify'                   => [
-                'required'=>false,
-                'attributes'=>['type'=>'array'],
-                'element'=>'person'
-            ],
-            'private'                  => [
-                'required'=>false,
-                'attributes'=>[
-                    'type'=>'boolean'
-                ]
-            ],
-            'body'                     => true,
-            'attachments'              => false,
-            'pending_file_attachments' => false
-        ];
-        $this->parent = 'post';
-        $this->action = 'posts';
-    }
-
     /**
      * Retrieve Multiple Messages
      *
@@ -50,7 +21,7 @@ class Message extends Model
      */
     public function getByProject($project_id, $archive = false)
     {
-        $project_id = (int) $project_id;
+        $project_id = (int)$project_id;
         if ($project_id <= 0) {
             throw new Exception('Invalid param project_id');
         }
@@ -81,11 +52,11 @@ class Message extends Model
      */
     public function getByProjectAndCategory($project_id, $category_id, $archive = false)
     {
-        $project_id  = (int) $project_id;
+        $project_id = (int)$project_id;
         if ($project_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Invalid param project_id');
         }
-        $category_id  = (int) $category_id;
+        $category_id = (int)$category_id;
         if ($category_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Invalid param category_id');
         }
@@ -109,7 +80,7 @@ class Message extends Model
      */
     public function insert(array $data)
     {
-        $project_id = empty($data['project_id']) ? 0: (int) $data['project_id'];
+        $project_id = empty($data['project_id']) ? 0 : (int)$data['project_id'];
         if ($project_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Required field project_id');
         }
@@ -119,5 +90,34 @@ class Message extends Model
             unset($data['files']);
         }
         return $this->rest->post("projects/$project_id/$this->action", $data);
+    }
+
+    protected function init()
+    {
+        $this->fields = [
+            'title' => true,
+            'category_id' => [
+                'required' => true,
+                'attributes' => [
+                    'type' => 'integer'
+                ]
+            ],
+            'notify' => [
+                'required' => false,
+                'attributes' => ['type' => 'array'],
+                'element' => 'person'
+            ],
+            'private' => [
+                'required' => false,
+                'attributes' => [
+                    'type' => 'boolean'
+                ]
+            ],
+            'body' => true,
+            'attachments' => false,
+            'pending_file_attachments' => false
+        ];
+        $this->parent = 'post';
+        $this->action = 'posts';
     }
 }

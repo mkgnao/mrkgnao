@@ -4,9 +4,9 @@ class XML extends Model
 {
     private $doc;
 
-    public function  __construct()
+    public function __construct()
     {
-        $this->doc               = new \DOMDocument();
+        $this->doc = new \DOMDocument();
         $this->doc->formatOutput = true;
     }
 
@@ -25,11 +25,11 @@ class XML extends Model
                     $parent->appendChild($element);
                 }
             } else {
-                foreach ($this->fields as $field=>$options) {
-                    $value   = $this->getValue($field, $options, $parameters);
+                foreach ($this->fields as $field => $options) {
+                    $value = $this->getValue($field, $options, $parameters);
                     $element = $this->doc->createElement($field);
                     if (isset ($options['attributes'])) {
-                        foreach ($options['attributes'] as $name=>$type) {
+                        foreach ($options['attributes'] as $name => $type) {
                             if (null !== $value) {
                                 $element->setAttribute($name, $type);
                                 if ($name == 'type') {

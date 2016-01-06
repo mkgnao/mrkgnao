@@ -2,18 +2,51 @@
 
 class Company extends Model
 {
+    /**
+     * Retrieve Companies
+     *
+     * GET /companies.xml
+     *
+     * The requesting user is returned a list of companies available to them.
+     *
+     * @return array|SimpleXMLElement
+     */
+    public function getAll()
+    {
+        return $this->rest->get($this->action);
+    }
+
+    /**
+     * Retrieving Companies within a Project
+     *
+     * GET /projects/#{project_id}/companies.xml
+     *
+     * All of the companies within the specified project are returned
+     *
+     * @param int $id
+     * @return App\Http\TeamWorkPm\Response\Model
+     */
+    public function getByProject($project_id)
+    {
+        $project_id = (int)$project_id;
+        if ($project_id <= 0) {
+            throw new \App\Http\TeamWorkPm\Exception('Invalid param project_id');
+        }
+        return $this->rest->get("projects/$project_id/$this->action");
+    }
+
     protected function init()
     {
         $this->fields = [
-            'name'=>true,
-            'address_one'=>false,
-            'address_two'=>false,
-            'zip'=>false,
-            'city'=>false,
-            'state'=>false,
-            'countrycode'=>[
-                'required'=> false,
-                'validate'=> [
+            'name' => true,
+            'address_one' => false,
+            'address_two' => false,
+            'zip' => false,
+            'city' => false,
+            'state' => false,
+            'countrycode' => [
+                'required' => false,
+                'validate' => [
                     'A2',
                     'AD',
                     'AE',
@@ -246,43 +279,9 @@ class Company extends Model
                     'ZW'
                 ]
             ],
-            'phone'=>false,
-            'fax'=>false,
-            'web_address'=>false
+            'phone' => false,
+            'fax' => false,
+            'web_address' => false
         ];
-    }
-
-
-    /**
-     * Retrieve Companies
-     *
-     * GET /companies.xml
-     *
-     * The requesting user is returned a list of companies available to them.
-     *
-     * @return array|SimpleXMLElement
-     */
-    public function getAll()
-    {
-        return $this->rest->get($this->action);
-    }
-
-    /**
-     * Retrieving Companies within a Project
-     *
-     * GET /projects/#{project_id}/companies.xml
-     *
-     * All of the companies within the specified project are returned
-     *
-     * @param int $id
-     * @return App\Http\TeamWorkPm\Response\Model
-     */
-    public function getByProject($project_id)
-    {
-        $project_id = (int) $project_id;
-        if ($project_id <= 0) {
-            throw new \App\Http\TeamWorkPm\Exception('Invalid param project_id');
-        }
-        return $this->rest->get("projects/$project_id/$this->action");
     }
 }

@@ -38,14 +38,14 @@ abstract class Model
      */
     private $hash = null;
 
-    final private function  __construct($url, $key, $class, $hash)
+    final private function __construct($url, $key, $class, $hash)
     {
-        $this->rest   = new \App\Http\TeamWorkPm\Rest($url, $key);
-        $this->hash   = $hash;
+        $this->rest = new \App\Http\TeamWorkPm\Rest($url, $key);
+        $this->hash = $hash;
         $this->parent = strtolower(str_replace(
-          ['TeamWorkPm\\', '\\'],
-          ['', '-'],
-          $class
+            ['TeamWorkPm\\', '\\'],
+            ['', '-'],
+            $class
         ));
         if (method_exists($this, 'init')) {
             $this->init();
@@ -61,24 +61,8 @@ abstract class Model
         }
         //configure request para put y post fields
         $this->rest->getRequest()
-                    ->setParent($this->parent)
-                    ->setFields($this->fields);
-
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    final public function  __destruct()
-    {
-        unset (self::$instances[$this->hash]);
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    final protected function __clone ()
-    {
+            ->setParent($this->parent)
+            ->setFields($this->fields);
 
     }
 
@@ -97,5 +81,21 @@ abstract class Model
         }
 
         return self::$instances[$hash];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    final public function __destruct()
+    {
+        unset (self::$instances[$this->hash]);
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    final protected function __clone()
+    {
+
     }
 }

@@ -1,7 +1,7 @@
 <?php namespace App\Http\TeamWorkPm\Response;
 
-use \App\Http\TeamWorkPm\Helper\Str;
-use \ArrayObject;
+use App\Http\TeamWorkPm\Helper\Str;
+use ArrayObject;
 
 class JSON extends Model
 {
@@ -17,7 +17,8 @@ class JSON extends Model
                 $headers['Status'] === 200 ||
                 $headers['Status'] === 409 ||
                 $headers['Status'] === 422
-            )) {
+            )
+            ) {
                 print_r($headers);
                 exit;
             }
@@ -25,18 +26,18 @@ class JSON extends Model
                 switch ($headers['Method']) {
                     case 'UPLOAD':
                         return empty($source->pendingFile->ref) ? null :
-                                            (string) $source->pendingFile->ref;
+                            (string)$source->pendingFile->ref;
                     case 'POST':
                         // print_r($headers);
                         if (!empty($headers['id'])) {
-                            return (int) $headers['id'];
+                            return (int)$headers['id'];
                         } elseif (!empty($source->fileId)) {
-                            return (int) $source->fileId;
+                            return (int)$source->fileId;
                         }
-                        // no break
+                    // no break
                     case 'PUT':
                     case 'DELETE':
-                         return true;
+                        return true;
 
                     default:
                         if (!empty($source->STATUS)) {
@@ -55,7 +56,7 @@ class JSON extends Model
                                 $headers['X-Action']
                             )
                         ) {
-                                $source = current($source->messageReplies);
+                            $source = current($source->messageReplies);
                         } elseif (
                             !empty($source->people) &&
                             preg_match(
@@ -76,7 +77,8 @@ class JSON extends Model
                             $source = current($source);
                         }
                         if ($headers['X-Action'] === 'links' ||
-                                        $headers['X-Action'] === 'notebooks') {
+                            $headers['X-Action'] === 'notebooks'
+                        ) {
                             $_source = [];
                             $wrapper = $headers['X-Action'];
                             foreach ($source as $project) {
@@ -94,10 +96,10 @@ class JSON extends Model
                         $this->headers = $headers;
                         $this->string = json_encode($source);
 
-                        $this->data   = self::camelizeObject($source);
+                        $this->data = self::camelizeObject($source);
 
                         if (!empty($this->data->id)) {
-                            $this->data->id = (int) $this->data->id;
+                            $this->data->id = (int)$this->data->id;
                         }
 
                         return $this;
@@ -110,17 +112,44 @@ class JSON extends Model
         }
 
         throw new \App\Http\TeamWorkPm\Exception([
-            'Message'  => $errors,
+            'Message' => $errors,
             'Response' => $data,
-            'Headers'  => $headers
+            'Headers' => $headers
         ]);
     }
 
-    protected function getContent()
+    /**
+     * @codeCoverageIgnore
+     */
+    private function getJsonErrors()
     {
-        $object = json_decode($this->string);
+        $errorCode = json_last_error();
+        if (!$errorCode) {
+            return null;
+        }
 
-        return json_encode($object, JSON_PRETTY_PRINT);
+        if (function_exists('json_last_error_msg')) {
+            return json_last_error_msg();
+        }
+
+        switch ($errorCode) {
+            case JSON_ERROR_DEPTH:
+                return 'Maximum stack depth exceeded';
+                break;
+            case JSON_ERROR_STATE_MISMATCH:
+                return 'Underflow or the modes mismatch';
+                break;
+            case JSON_ERROR_CTRL_CHAR:
+                return 'Unexpected control character found';
+                break;
+            case JSON_ERROR_SYNTAX:
+                return 'Syntax error, malformed JSON';
+                break;
+            case JSON_ERROR_UTF8:
+                return 'Malformed UTF-8 characters, possibly incorrectly encoded';
+                break;
+        }
+        return null;
     }
 
     protected static function camelizeObject($source)
@@ -132,41 +161,15 @@ class JSON extends Model
             }
             $key = Str::camel($key);
             $destination->$key = is_scalar($value) ?
-                                        $value : self::camelizeObject($value);
+                $value : self::camelizeObject($value);
         }
         return $destination;
     }
 
-    /**
-     * @codeCoverageIgnore
-     */
-    private function getJsonErrors()
+    protected function getContent()
     {
-        $errorCode = json_last_error();
-        if (!$errorCode) {
-            return;
-        }
+        $object = json_decode($this->string);
 
-        if (function_exists('json_last_error_msg')) {
-            return json_last_error_msg();
-        }
-
-        switch ($errorCode) {
-            case JSON_ERROR_DEPTH:
-                return 'Maximum stack depth exceeded';
-            break;
-            case JSON_ERROR_STATE_MISMATCH:
-                return 'Underflow or the modes mismatch';
-            break;
-            case JSON_ERROR_CTRL_CHAR:
-                return 'Unexpected control character found';
-            break;
-            case JSON_ERROR_SYNTAX:
-                return 'Syntax error, malformed JSON';
-            break;
-            case JSON_ERROR_UTF8:
-                return 'Malformed UTF-8 characters, possibly incorrectly encoded';
-            break;
-        }
+        return json_encode($object, JSON_PRETTY_PRINT);
     }
 }

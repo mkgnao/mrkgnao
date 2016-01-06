@@ -65,7 +65,9 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title"><div class="joyce"></div></h1>
+            <h1 class="Header-title">
+                <div class="joyce"></div>
+            </h1>
             <h2 class="Header-subTitle"></h2>
         </div>
         <div class="Header-actions">
@@ -79,21 +81,22 @@
                             <div class="loginout">
                                 <a class="loginout" href="{{ url('/register') }}">register</a>
                             </div>
-                        @endif
-                    @else
-                        <!--div class="loginout">
+                            @endif
+                            @else
+                                    <!--div class="loginout">
                             <a class="loginout" href="/">/</a><a class="loginout" href="/u/{{ Auth::id() }}"> u / {{ Auth::id() }} / </a><a-- class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
                         </div-->
-                        <div class="loginout">
-                            <a class="loginout" href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
-                        </div>
-                        <div class="loginout">
-                            <a class="loginout" href="{{ url('/logout') }}">logout</a>
-                        </div>
-                    @endif
-                </div>
+                            <div class="loginout">
+                                <a class="loginout"
+                                   href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
+                            </div>
+                            <div class="loginout">
+                                <a class="loginout" href="{{ url('/logout') }}">logout</a>
+                            </div>
+                @endif
             </div>
         </div>
+    </div>
     </div>
 </header>
 <main class="HolyGrail-body">
@@ -131,7 +134,7 @@
             /^twitter-/
         ]);
         return config;
-    })
+    });
 
     HTMLInspector.rules.extend('script-placement', function (config) {
         config.whitelist = config.whitelist.concat([

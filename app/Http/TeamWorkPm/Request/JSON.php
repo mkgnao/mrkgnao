@@ -1,6 +1,6 @@
 <?php namespace App\Http\TeamWorkPm\Request;
 
-use \stdClass;
+use stdClass;
 
 class JSON extends Model
 {
@@ -19,16 +19,17 @@ class JSON extends Model
                     $parent->{$this->parent}[] = $item;
                 }
             } else {
-                foreach ($this->fields as $field=>$options) {
-                    $value   = $this->getValue($field, $options, $parameters);
+                foreach ($this->fields as $field => $options) {
+                    $value = $this->getValue($field, $options, $parameters);
                     if (isset ($options['attributes'])) {
-                        foreach ($options['attributes'] as $name=>$type) {
+                        foreach ($options['attributes'] as $name => $type) {
                             if (null !== $value) {
                                 if ($name === 'type') {
                                     if ($type === 'array') {
                                         if (is_string($value) ||
-                                                        is_numeric($value)) {
-                                            $value = (array) $value;
+                                            is_numeric($value)
+                                        ) {
+                                            $value = (array)$value;
                                         } else {
                                             $value = null;
                                         }
@@ -53,7 +54,7 @@ class JSON extends Model
                     }
                 }
             }
-            $parameters =  json_encode($object);
+            $parameters = json_encode($object);
             $parameters = mb_decode_numericentity(
                 $parameters,
                 [0x80, 0xffff, 0, 0xffff],

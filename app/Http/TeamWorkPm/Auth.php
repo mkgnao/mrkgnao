@@ -21,7 +21,7 @@ class Auth
             if ($is_subdomain = (strpos($url, '.') === false)) {
                 self::$config['url'] = self::URL;
             }
-            self::$config['key']  = func_get_arg(1);
+            self::$config['key'] = func_get_arg(1);
             if ($is_subdomain) {
                 $url = Factory::build('account')->authenticate()->url;
             }

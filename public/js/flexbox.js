@@ -595,7 +595,7 @@
                         if (!timeout) context = args = null;
                     }
                 }
-            };
+            }
 
             return function debounced() {
                 context = this;
@@ -613,19 +613,19 @@
         };
 
     }, {"date-now": 10}], 10: [function (require, module, exports) {
-        module.exports = Date.now || now
+        module.exports = Date.now || now;
 
         function now() {
             return new Date().getTime()
         }
 
     }, {}], 11: [function (require, module, exports) {
-        var matches = require('matches-selector')
+        var matches = require('matches-selector');
 
 
         module.exports = function (element, selector, checkYoSelf) {
 
-            var parent = checkYoSelf ? element : element.parentNode
+            var parent = checkYoSelf ? element : element.parentNode;
 
 
             while (parent && parent !== document) {

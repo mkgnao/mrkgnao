@@ -1,6 +1,6 @@
 <?php namespace App\Http\TeamWorkPm\Request;
 
-use \App\Http\TeamWorkPm\Helper\Str;
+use App\Http\TeamWorkPm\Helper\Str;
 
 abstract class Model
 {
@@ -8,12 +8,6 @@ abstract class Model
     protected $action = null;
     protected $parent = null;
     protected $fields = [];
-
-    public function setParent($parent)
-    {
-        $this->parent = $parent;
-        return $this;
-    }
 
     public function setAction($action)
     {
@@ -25,80 +19,6 @@ abstract class Model
     {
         $this->fields = $fields;
         return $this;
-    }
-
-    protected function getValue(& $field, & $options, array $parameters)
-    {
-        static
-            $camelize = [
-                'pending_file_attachments' => true,
-                'date_format'              => true,
-                'send_welcome_email'       => true,
-                'receive_daily_reports'    => true,
-                'welcome_email_message'    => true,
-                'auto_give_project_access' => true,
-                'open_id'                  => true,
-                'user_language'            => true,
-                'pending_file_ref'         => true,
-                'new_company'              => true
-            ],
-            $yes_no_boolean = [
-                'welcome_email_message',
-                'send_welcome_email',
-                'receive_daily_reports',
-                'notes',
-                'auto_give_project_access'
-            ],
-            $preserve = [
-                'address_one' => true,
-                'address_two' => true
-            ];
-        $value = isset($parameters[$field]) ? $parameters[$field] : null;
-        if (!is_array($options)) {
-            $options = ['required'=>$options, 'attributes'=> []];
-        }
-        $isNull =  null === $value;
-        //verficando campos requeridos
-        if ($this->method == 'POST' && $options['required']) {
-            if ($isNull) {
-                throw new \App\Http\TeamWorkPm\Exception('Required field ' . $field);
-            }
-        }
-        //verficando campos que debe cumplir ciertos valores
-        if (!$isNull && isset($options['validate']) &&
-                        !in_array($value, $options['validate'])) {
-                throw new \App\Http\TeamWorkPm\Exception('Invalid value for field ' .
-                                                            $field);
-        }
-        // @todo Ojo la gente de team work no mainten constante el formato name-other
-        if (isset($camelize[$field])) {
-            if ($field === 'open_id') {
-                $field = 'openID';
-            } else {
-                $field = Str::camel($field);
-            }
-        } elseif (!isset($preserve[$field])) {
-            if ($field === 'company_id') {
-                if ($this->action === 'projects') {
-                    $field = Str::camel($field);
-                } elseif ($this->action == 'people') {
-                    $field = Str::dash($field);
-                }
-            } else {
-                $field = Str::dash($field);
-            }
-        }
-        return $value;
-    }
-
-    protected function actionInclude($value)
-    {
-        return false !== strrpos($this->action, $value);
-    }
-
-    protected function getParent()
-    {
-        return $this->parent . ($this->actionInclude('/reorder') ? 's' : '');
     }
 
     public function getParameters($method, $parameters)
@@ -124,4 +44,85 @@ abstract class Model
      * @return string
      */
     abstract protected function parseParameters($parameters);
+
+    protected function getValue(& $field, & $options, array $parameters)
+    {
+        static
+        $camelize = [
+            'pending_file_attachments' => true,
+            'date_format' => true,
+            'send_welcome_email' => true,
+            'receive_daily_reports' => true,
+            'welcome_email_message' => true,
+            'auto_give_project_access' => true,
+            'open_id' => true,
+            'user_language' => true,
+            'pending_file_ref' => true,
+            'new_company' => true
+        ],
+        $yes_no_boolean = [
+            'welcome_email_message',
+            'send_welcome_email',
+            'receive_daily_reports',
+            'notes',
+            'auto_give_project_access'
+        ],
+        $preserve = [
+            'address_one' => true,
+            'address_two' => true
+        ];
+        $value = isset($parameters[$field]) ? $parameters[$field] : null;
+        if (!is_array($options)) {
+            $options = ['required' => $options, 'attributes' => []];
+        }
+        $isNull = null === $value;
+        //verficando campos requeridos
+        if ($this->method == 'POST' && $options['required']) {
+            if ($isNull) {
+                throw new \App\Http\TeamWorkPm\Exception('Required field ' . $field);
+            }
+        }
+        //verficando campos que debe cumplir ciertos valores
+        if (!$isNull && isset($options['validate']) &&
+            !in_array($value, $options['validate'])
+        ) {
+            throw new \App\Http\TeamWorkPm\Exception('Invalid value for field ' .
+                $field);
+        }
+        // @todo Ojo la gente de team work no mainten constante el formato name-other
+        if (isset($camelize[$field])) {
+            if ($field === 'open_id') {
+                $field = 'openID';
+            } else {
+                $field = Str::camel($field);
+            }
+        } elseif (!isset($preserve[$field])) {
+            if ($field === 'company_id') {
+                if ($this->action === 'projects') {
+                    $field = Str::camel($field);
+                } elseif ($this->action == 'people') {
+                    $field = Str::dash($field);
+                }
+            } else {
+                $field = Str::dash($field);
+            }
+        }
+        return $value;
+    }
+
+    protected function getParent()
+    {
+        return $this->parent . ($this->actionInclude('/reorder') ? 's' : '');
+    }
+
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+        return $this;
+    }
+
+    protected function actionInclude($value)
+    {
+        return false !== strrpos($this->action, $value);
+    }
 }

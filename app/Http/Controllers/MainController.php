@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
-use Illuminate\Http\Request;
 use App\Http\TeamWorkPm;
-use DB;
-use Auth;
 use App\TwCoupling as TwCoupling;
+use Auth;
+use DB;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {

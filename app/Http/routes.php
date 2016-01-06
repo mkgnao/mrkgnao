@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('partials.scriptsend', function() {
+Route::get('partials.scriptsend', function () {
     return View::make('partials/scriptsend');
 });
 
@@ -51,7 +51,7 @@ Route::group(['middleware' != 'web'], function () {
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', function() {
+    Route::get('/', function () {
         //return Redirect::to('/u/' . \Auth::id() . '/main');
         return view('welcome');
     });

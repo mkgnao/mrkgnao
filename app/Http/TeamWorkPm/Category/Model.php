@@ -3,17 +3,6 @@
 abstract class Model extends App\Http\TeamWorkPm\Model
 {
 
-    protected  function init()
-    {
-        list ($parent, $type) = explode('-', $this->parent);
-        $this->parent = $parent;
-        $this->action = $type . 'Categories';
-        $this->fields = [
-            'name'=>true,
-            'parent'=> false
-        ];
-    }
-
     /**
      * Retrieving all of a Projects Categories
      *
@@ -26,7 +15,7 @@ abstract class Model extends App\Http\TeamWorkPm\Model
      */
     public function getByProject($project_id)
     {
-        $project_id = (int) $project_id;
+        $project_id = (int)$project_id;
         if ($project_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Invalid param project_id');
         }
@@ -45,10 +34,21 @@ abstract class Model extends App\Http\TeamWorkPm\Model
      */
     public function insert(array $data)
     {
-        $project_id = empty($data['project_id']) ? 0: (int) $data['project_id'];
+        $project_id = empty($data['project_id']) ? 0 : (int)$data['project_id'];
         if ($project_id <= 0) {
             throw new \App\Http\TeamWorkPm\Exception('Required field project_id');
         }
         return $this->rest->post("projects/$project_id/$this->action", $data);
+    }
+
+    protected function init()
+    {
+        list ($parent, $type) = explode('-', $this->parent);
+        $this->parent = $parent;
+        $this->action = $type . 'Categories';
+        $this->fields = [
+            'name' => true,
+            'parent' => false
+        ];
     }
 }

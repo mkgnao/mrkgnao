@@ -7,7 +7,7 @@ final class Str
     /**
      * Convert a value to camel case.
      *
-     * @param  string  $value
+     * @param  string $value
      * @return string
      */
     public static function camel($value)
@@ -18,7 +18,7 @@ final class Str
     /**
      * Convert a value to studly caps case.
      *
-     * @param  string  $value
+     * @param  string $value
      * @return string
      */
     public static function studly($value)
@@ -31,7 +31,7 @@ final class Str
     /**
      * Convert all undescores into dashes
      *
-     * @param string  $value
+     * @param string $value
      * @return string
      */
     public static function dash($value)

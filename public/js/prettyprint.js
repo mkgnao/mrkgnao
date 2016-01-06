@@ -136,7 +136,7 @@ mkgnaoNs.prettyPrint = (function () {
                     if (cellStr == null || cellStr.length == 0)
                         td.innerHTML = "";
                     else
-                        td.innerHTML = util.shorten();
+                        td.innerHTML = util.shorten(cellStr);
                 }
 
                 tr.appendChild(td);

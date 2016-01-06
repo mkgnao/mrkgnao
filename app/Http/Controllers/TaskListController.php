@@ -9,7 +9,7 @@ use DB;
 use Auth;
 use App\TwCoupling as TwCoupling;
 
-class MainController extends Controller
+class TaskListController extends Controller
 {
     const TW_API_COMPANY = 'mkgnao';
 

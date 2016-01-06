@@ -61,7 +61,7 @@ class PersonController extends Controller
 
     private function setTwApiKey()
     {
-        $user_id = Auth::user()->id;
+        $user_id = \Auth::id();
 
         $tw_user_id = DB::table('tw_coupling')->where('id', $user_id)->value('tw_api_key');
 

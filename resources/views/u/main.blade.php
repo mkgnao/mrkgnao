@@ -14,7 +14,9 @@
     </div>
 
     <script>
+        console.log(tw);
         n = prettyPrint(window.tw);
+        console.log(n);
         e = document.getElementById("twcontent");
         e.appendChild(n);
     </script>

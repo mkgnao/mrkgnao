@@ -52,8 +52,6 @@ class PersonController extends Controller
             $auth = true;
         }
 
-        //$value = json_encode($value);
-
         $value = trim(preg_replace('/\s+/', ' ', $value));
 
         \JavaScript::put([

@@ -11,7 +11,6 @@ class PersonController extends Controller
     // START configurtion
     const API_KEY = 'stripe730saloon';
     const API_COMPANY = 'mkgnao';
-    private $model;
 
     /**
      * Create a new controller instance.
@@ -35,24 +34,23 @@ class PersonController extends Controller
 
     private function twGet($what)
     {
-        $this->model = TeamWorkPm\Factory::build($what);
-        $value = $this->model->get();
-        $value = trim(preg_replace('/\s+/', ' ', $value));
+        $model = TeamWorkPm\Factory::build($what);
+        $value = $model->get();
 
         return $value;
     }
 
     private function twGetAll($what)
     {
-        $this->model = TeamWorkPm\Factory::build($what);
-        $value = $this->model->getAll();
-        $value = trim(preg_replace('/\s+/', ' ', $value));
+        $model = TeamWorkPm\Factory::build($what);
+        $value = $model->getAll();
 
         return $value;
     }
 
     private function jsPut($var, $value)
     {
+        $value = trim(preg_replace('/\s+/', ' ', $value));
 
         \JavaScript::put([
             $var => $value
@@ -66,7 +64,7 @@ class PersonController extends Controller
         $value = self::twGet('account');
         self::jsPut('tw_account', $value);
 
-        $value = self::twGet('project');
+        $value = self::twGetAll('project');
         self::jsPut('tw_project_all', $value);
     }
 

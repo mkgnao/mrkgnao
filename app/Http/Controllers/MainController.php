@@ -79,7 +79,7 @@ class MainController extends Controller
     private function setTwMe()
     {
         $this->tw_me = self::twGet('me');
-        self::jsPut('tw_me', $value);
+        self::jsPut('tw_me', $this->tw_me);
     }
 
     /**

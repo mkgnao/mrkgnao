@@ -42,6 +42,7 @@ class PersonController extends Controller
     public function index()
     {
         static $auth = false;
+
         if (!$auth) {
             TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
             $this->model = TeamWorkPm\Factory::build('account');
@@ -50,10 +51,12 @@ class PersonController extends Controller
             $auth = true;
         }
 
+        $value = json_encode($value);
 
+        $value = trim(preg_replace('/\s+/', ' ', $value));
 
         \JavaScript::put([
-            'tw' => json_encode($value),
+            'tw' => $value
         ]);
 
         return view('/u/main');

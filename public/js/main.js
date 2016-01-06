@@ -1,6 +1,6 @@
 mkgnaoNs = mkgnaoNs || {};
 
-function twAddJson(what, where) {
+mkgnaoNs.twAddJson = function(what, where) {
     //console.log(what);
     var j = JSON.parse(what);
     var n = prettyPrint(j);

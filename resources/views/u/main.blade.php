@@ -15,18 +15,15 @@
 
     <script>
         try {
-
-            console.log(window.mkgnaoNs);
             console.log(mkgnaoNs);
 
             if (mkgnaoNs.tw_me) {
-                twAddJson(mkgnaoNs.tw_me, "twcontent");
+                mkgnaoNs.twAddJson(mkgnaoNs.tw_me, "twcontent");
             } else {
                 var e = document.getElementById("twcontent");
                 var n = document.createElement("<div id=\"notfound\">not on teamwork</div>")
                 e.appendChild(n);
             }
-            //twAdd(window.tw_project_all);
         } catch (e) {
             console.log(e);
             if (window.tw_errors) {

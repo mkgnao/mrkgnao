@@ -15,9 +15,10 @@
 
     <script>
         console.log(tw);
-        n = prettyPrint(window.tw);
+        var j = JSON.parse(window.tw);
+        var n = prettyPrint(j);
         console.log(n);
-        e = document.getElementById("twcontent");
+        var e = document.getElementById("twcontent");
         e.appendChild(n);
     </script>
 

@@ -9,8 +9,10 @@ use App\Http\TeamWorkPm;
 class PersonController extends Controller
 {
     // START configurtion
-    const API_KEY = 'stripe730saloon';
+    //const API_KEY = 'stripe730saloon';
     const API_COMPANY = 'mkgnao';
+
+    private $api_key;
 
     /**
      * Create a new controller instance.
@@ -27,7 +29,7 @@ class PersonController extends Controller
         static $auth = false;
 
         if (!$auth) {
-            TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
+            TeamWorkPm\Auth::set(self::API_COMPANY, $this->api_key);
             $auth = true;
         }
     }
@@ -57,12 +59,21 @@ class PersonController extends Controller
         ]);
     }
 
+    private function setTwApiKey()
+    {
+        $tw_coupling = get();
+
+        $user_id = Auth::user()->id;
+
+        $tw_user_id = DB::table('tw_coupling')->where('id', $user_id)->value('tw_api_key');
+
+        $this->api_key = $tw_user_id;
+    }
+
     private function putTwJsValues()
     {
-        self::twauth();
-
-        $value = self::twGet('account');
-        self::jsPut('tw_account', $value);
+        //$value = self::twGet('account');
+        //self::jsPut('tw_account', $value);
 
         $value = self::twGet('me');
         self::jsPut('tw_me', $value);
@@ -79,6 +90,8 @@ class PersonController extends Controller
     public function index()
     {
         try {
+            self::setTwApiKey();
+            self::twAuth();
             self::putTwJsValues();
         } catch (Exception $e) {
             self::jsPut('tw_errors', $e);

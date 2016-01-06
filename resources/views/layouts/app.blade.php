@@ -81,7 +81,7 @@
                         @endif
                     @else
                         <div class="loginout">
-                            <a class="loginout" href="/">/</a> <a class="loginout" href="/u/{{ Auth::id() }}">u/{{ Auth::id() }}/</a> <a class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
+                            <a class="loginout" href="/">/</a><a class="loginout" href="/u/{{ Auth::id() }}"> u / {{ Auth::id() }} / </a><a class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
                         </div>
                         <div class="loginout">
                             <a class="loginout" href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>

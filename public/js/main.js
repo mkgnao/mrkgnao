@@ -7,7 +7,7 @@ mkgnaoNs.twAddJson = function(what, where) {
     //console.log(n);
     var e = document.getElementById(where);
     e.appendChild(n);
-}
+};
 
 (function e(t, n, r) {
     function s(o, u) {

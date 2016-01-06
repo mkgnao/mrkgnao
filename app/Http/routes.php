@@ -38,7 +38,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', function() {
-        Redirect::to('/u/' . \Auth()->id . '/main', array('as' => '/u/main', 'uses' => 'MainController@index'));
+        return Redirect::to('/u/' . \Auth()->id . '/main', array('as' => '/u/main', 'uses' => 'MainController@index'));
     });
 
     Route::get('/u/' . '{id}' . '/main', array('as' => '/u/main', 'uses' => 'MainController@index'));

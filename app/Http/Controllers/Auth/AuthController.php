@@ -38,7 +38,7 @@ class AuthController extends Controller
      */
     public function redirectPath()
     {
-        return '/u/main';
+        return '/u/' . Auth::id() . '/main';
     }
 
     /**
@@ -74,8 +74,6 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        //$result = File::makeDirectory('/path/to/directory');
-
         $result =  User::create([
             'name' => $data['name'],
             'email' => $data['email'],

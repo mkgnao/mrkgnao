@@ -14,12 +14,18 @@
     </div>
 
     <script>
-        console.log(tw);
-        var j = JSON.parse(window.tw);
-        var n = prettyPrint(j);
-        console.log(n);
-        var e = document.getElementById("twcontent");
-        e.appendChild(n);
+        function twAdd(what) {
+            //console.log(tw_account);
+            var j = JSON.parse(what);
+            var n = prettyPrint(j);
+            //console.log(n);
+            var e = document.getElementById("twcontent");
+            e.appendChild(n);
+
+        }
+
+        twAdd(window.tw_account);
+        twAdd(window.tw_project_all);
     </script>
 
 @endsection

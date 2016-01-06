@@ -13,7 +13,6 @@ class PersonController extends Controller
     const API_COMPANY = 'mkgnao';
     private $model;
 
-
     /**
      * Create a new controller instance.
      *
@@ -24,39 +23,61 @@ class PersonController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Show the application dashboard.
-     *
-     * @return Response
-     */
-    public function index2()
-    {
-        return view('/u/main');
-    }
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return Response
-     */
-    public function index()
+    private function twAuth()
     {
         static $auth = false;
 
         if (!$auth) {
             TeamWorkPm\Auth::set(self::API_COMPANY, self::API_KEY);
-
-            $this->model = TeamWorkPm\Factory::build('account');
-            //TeamWorkPm\Rest::setFormat(API_FORMAT);
-            $value = $this->model->get();
             $auth = true;
         }
+    }
 
+    private function twGet($what)
+    {
+        $this->model = TeamWorkPm\Factory::build($what);
+        $value = $this->model->get();
         $value = trim(preg_replace('/\s+/', ' ', $value));
 
+        return $value;
+    }
+
+    private function twGetAll($what)
+    {
+        $this->model = TeamWorkPm\Factory::build($what);
+        $value = $this->model->getAll();
+        $value = trim(preg_replace('/\s+/', ' ', $value));
+
+        return $value;
+    }
+
+    private function jsPut($var, $value)
+    {
+
         \JavaScript::put([
-            'tw' => $value
+            $var => $value
         ]);
+    }
+
+    private function putTwJsValues()
+    {
+        twauth();
+
+        $value = twGet('account');
+        jsPut('tw_account', $value);
+
+        $value = twGet('project');
+        jsPut('tw_project_all', $value);
+    }
+
+    /**
+     * Show the user main page.
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        putTwJsValues();
 
         return view('/u/main');
     }

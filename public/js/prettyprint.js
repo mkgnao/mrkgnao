@@ -543,7 +543,9 @@ mkgnaoNs.prettyPrint = (function () {
                             type = util.type(item);
                         isEmpty = false;
                         try {
-                            table.addRow([i, typeDealer[type](item, depth + 1, i)], type);
+                            tdValue = typeDealer[type](item, depth + 1, i);
+                            if (tdValue != null && tdValue.length > 0)
+                                table.addRow([i, tdValue], type);
                         } catch (e) {
                             /* Security errors are thrown on certain Window/DOM properties */
                             if (window.console && window.console.log) {
@@ -601,20 +603,24 @@ mkgnaoNs.prettyPrint = (function () {
 
                 util.forEach(arr, function (item, i) {
                     if (settings.maxArray >= 0 && ++count > settings.maxArray) {
-                        table.addRow([
-                            i + '..' + (arr.length - 1),
-                            typeDealer[util.type(item)]('...', depth + 1, i)
-                        ]);
+                        tdValue = typeDealer[util.type(item)](item, depth + 1, i);
+                        if (tdValue != null && tdValue.length > 0) {
+                            table.addRow([
+                                i + '..' + (arr.length - 1), tdValue]);
+                        }
                         return false;
                     }
                     isEmpty = false;
-                    //table.addRow([i, typeDealer[ util.type(item) ](item, depth+1, i)]);
-                    table.addRow([typeDealer[util.type(item)](item, depth + 1, i)]);
+                    tdValue = typeDealer[util.type(item)](item, depth + 1, i);
+                    if (tdValue != null && tdValue.length > 0) {
+                        //table.addRow([i, typeDealer[ util.type(item) ](item, depth+1, i)]);
+                        table.addRow([tdValue]);
+                    }
                 });
 
                 if (!jquery) {
                     if (isEmpty) {
-                        table.addRow(['']);
+                        //table.addRow(['']);
                         //table.addRow(['<small>[empty]</small>']);
                     } else {
                         table.thead.appendChild(util.hRow(['', ''], 'colHeader'));
@@ -691,7 +697,9 @@ mkgnaoNs.prettyPrint = (function () {
             }
         };
 
-        container.appendChild(typeDealer[(settings.forceObject) ? '' : util.type(obj)](obj, currentDepth));
+        tdValue = typeDealer[(settings.forceObject) ? '' : util.type(obj)](obj, currentDepth);
+        if (tdValue != null && tdValue.length > 0)
+            container.appendChild();
 
         return container;
 

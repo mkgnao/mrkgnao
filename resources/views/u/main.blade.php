@@ -24,7 +24,7 @@
 
         }
         try {
-            twAdd(window.tw_account);
+            //twAdd(window.tw_account);
             twAdd(window.tw_me);
             //twAdd(window.tw_project_all);
         } catch (e) {

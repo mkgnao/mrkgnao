@@ -58,7 +58,7 @@ class MainController extends Controller
 
         $tw_coupling = DB::table('tw_coupling');
 
-        $tw_api_key = $tw_coupling::find($user_id)->value('tw_api_key');
+        $tw_api_key = $tw_coupling->find($user_id)->value('tw_api_key');
 
         $this->api_key = $tw_api_key;
     }
@@ -70,7 +70,7 @@ class MainController extends Controller
 
         $tw_coupling = DB::table('tw_coupling');
 
-        $tw_coupling_user = $tw_coupling::find($user_id);
+        $tw_coupling_user = $tw_coupling->find($user_id);
 
         if ($tw_coupling_user->tw_id < 0) {
             $tw_coupling_user->tw_id = $this->tw_me->id;

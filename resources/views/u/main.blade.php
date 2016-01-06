@@ -15,17 +15,20 @@
 
     <script>
         function twAdd(what) {
-            //console.log(tw_account);
+            console.log(what);
             var j = JSON.parse(what);
             var n = prettyPrint(j);
-            //console.log(n);
+            console.log(n);
             var e = document.getElementById("twcontent");
             e.appendChild(n);
 
         }
-
-        twAdd(window.tw_account);
-        twAdd(window.tw_project_all);
+        try {
+            twAdd(window.tw_account);
+            twAdd(window.tw_project_all);
+        } catch (e) {
+            console.log(e);
+        }
     </script>
 
 @endsection

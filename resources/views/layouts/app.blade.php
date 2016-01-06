@@ -69,7 +69,7 @@
         </div>
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-                <div class="Grid-cell">
+                <div-- class="Grid-cell">
                     @if (Auth::guest())
                         <div class="loginout">
                             <a class="loginout" href="{{ url('/login') }}">login</a>
@@ -80,9 +80,9 @@
                             </div>
                         @endif
                     @else
-                        <div class="loginout">
-                            <a class="loginout" href="/">/</a><a class="loginout" href="/u/{{ Auth::id() }}"> u / {{ Auth::id() }} / </a><a class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
-                        </div>
+                        <!--div class="loginout">
+                            <a class="loginout" href="/">/</a><a class="loginout" href="/u/{{ Auth::id() }}"> u / {{ Auth::id() }} / </a><a-- class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
+                        </div-->
                         <div class="loginout">
                             <a class="loginout" href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
                         </div>

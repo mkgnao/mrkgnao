@@ -94,6 +94,9 @@
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
+
+        @include('partials.scriptsend')
+
         @yield('content')
     </article>
     <nav class="HolyGrail-nav u-textCenter">
@@ -135,8 +138,6 @@
 
     HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
 </script>
-
-@include('partials.scriptsend')
 
 </body>
 </html>

@@ -10,8 +10,6 @@ use Auth;
 
 class PersonController extends Controller
 {
-    // START configurtion
-    //const API_KEY = 'stripe730saloon';
     const API_COMPANY = 'mkgnao';
 
     private $api_key;

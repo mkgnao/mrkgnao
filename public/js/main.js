@@ -1,3 +1,5 @@
+mkgnaoNs = mkgnaoNs || {};
+
 function twAddJson(what, where) {
     //console.log(what);
     var j = JSON.parse(what);

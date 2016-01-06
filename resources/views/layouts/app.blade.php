@@ -64,7 +64,7 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title"><div class="joyce" unselectable="on"></div></h1>
+            <h1 class="Header-title"><div class="joyce"></div></h1>
             <h2 class="Header-subTitle"></h2>
         </div>
         <div class="Header-actions">
@@ -80,6 +80,9 @@
                             </div>
                         @endif
                     @else
+                        <div class="loginout">
+                            <a class="loginout" href="/">/</a> <a class="loginout" href="/u/{{ Auth::id() }}">u/{{ Auth::id() }}/</a> <a class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
+                        </div>
                         <div class="loginout">
                             <a class="loginout" href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
                         </div>

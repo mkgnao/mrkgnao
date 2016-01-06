@@ -74,6 +74,7 @@ class MainController extends Controller
 
         if ($tw_coupling_user->tw_id < 0) {
             $tw_coupling_user->tw_id = $this->tw_me->id;
+            $tw_coupling_user->save();
         }
     }
 

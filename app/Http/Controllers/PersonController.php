@@ -75,7 +75,11 @@ class PersonController extends Controller
      */
     public function index()
     {
-        self::putTwJsValues();
+        try {
+            self::putTwJsValues();
+        } catch (Exception $e) {
+            self::jsPut('tw_errors', Array($e));
+        }
 
         return view('/u/main');
     }

@@ -28,6 +28,9 @@
             twAdd(window.tw_project_all);
         } catch (e) {
             console.log(e);
+            if (window.tw_errors) {
+                console.log(window.tw_errors);
+            }
         }
     </script>
 

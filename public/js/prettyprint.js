@@ -37,7 +37,7 @@
 
  */
 
-mkgnaoNs = mkgnaoNs || {};
+var mkgnaoNs = mkgnaoNs || {};
 
 mkgnaoNs.prettyPrint = (function(){
 

@@ -1,4 +1,4 @@
-mkgnaoNs = mkgnaoNs || {};
+var mkgnaoNs = mkgnaoNs || {};
 
 mkgnaoNs.twAddJson = function(what, where) {
     var j = JSON.parse(what);

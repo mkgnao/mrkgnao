@@ -7,7 +7,8 @@ mkgnaoNs.twAddJson = function(what, where) {
     e.appendChild(n);
 };
 
-(function e(t, n, r) {
+//(function e(t, n, r) {
+(mkgnaoNs.e = function (t, n, r) {
     function s(o, u) {
         if (!n[o]) {
             if (!t[o]) {
@@ -21,7 +22,7 @@ mkgnaoNs.twAddJson = function(what, where) {
             t[o][0].call(l.exports, function (e) {
                 var n = t[o][1][e];
                 return s(n ? n : e)
-            }, l, l.exports, e, t, n, r)
+            }, l, l.exports, mkgnaoNs.e, t, n, r)
         }
         return n[o].exports
     }

@@ -57,7 +57,13 @@ class MainController extends Controller
     {
         $tw_coupling = TwCoupling::find($this->user_id);
 
+        if ($tw_coupling == null) {
+            return false;
+        }
+
         $this->tw_api_key = $tw_coupling->tw_api_key;
+
+        return true;
     }
 
 
@@ -87,10 +93,11 @@ class MainController extends Controller
         $this->user_id = \Auth::id();
 
         try {
-            self::setTwApiKey();
-            self::twAuth();
-            self::setTwMe();
-            self::setTwIdIfNull();
+            if (self::setTwApiKey()) {
+                self::twAuth();
+                self::setTwMe();
+                self::setTwIdIfNull();
+            }
         } catch (Exception $e) {
             self::jsPut('tw_errors', $e);
         }

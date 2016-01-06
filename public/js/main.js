@@ -1,3 +1,12 @@
+function twAddJson(what, where) {
+    //console.log(what);
+    var j = JSON.parse(what);
+    var n = prettyPrint(j);
+    //console.log(n);
+    var e = document.getElementById(where);
+    e.appendChild(n);
+}
+
 (function e(t, n, r) {
     function s(o, u) {
         if (!n[o]) {

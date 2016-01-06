@@ -14,19 +14,13 @@
     </div>
 
     <script>
-        function twAdd(what) {
-            console.log(what);
-            var j = JSON.parse(what);
-            var n = prettyPrint(j);
-            console.log(n);
-            var e = document.getElementById("twcontent");
-            e.appendChild(n);
-
-        }
         try {
-            //twAdd(window.tw_account);
-            //twAdd(window.tw_me);
-            twAdd(window.tw_task_list);
+            if (mkgnaoNs.tw_task_list) {
+                twAddJson(mkgnaoNs.tw_task_list, "twcontent");
+            } else {
+
+            }
+            //twAdd(window.tw_project_all);
         } catch (e) {
             console.log(e);
             if (window.tw_errors) {

@@ -20,8 +20,16 @@ Route::group(['middleware' != 'web'], function () {
         //fonts
     });
 
+    Route::get('/js', function () {
+        //js
+    });
+
     Route::get('/css', function () {
         //css
+    });
+
+    Route::get('/img', function () {
+        //img
     });
 
     Route::get('/', function () {

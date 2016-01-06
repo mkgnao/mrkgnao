@@ -54,24 +54,19 @@ class MainController extends Controller
 
     private function setTwApiKey()
     {
-        $user_id = \Auth::id();
+        $tw_coupling = TwCoupling::find($this->user_id);
 
-        $tw_coupling = DB::table('tw_coupling');
-
-        $this->tw_api_key =  $tw_coupling->find($user_id)->tw_api_key;
+        $this->tw_api_key = $tw_coupling->tw_api_key;
     }
 
 
     private function setTwIdIfNull()
     {
-        $user_id = \Auth::id();
+        $tw_coupling = TwCoupling::find($this->user_id);
 
-        $tw_coupling = DB::table('tw_coupling');
-
-        $tw_coupling_user = $tw_coupling->find($user_id);
-
-        if ($tw_coupling_user->tw_id < 0) {
-            $tw_coupling_user->update('tw_id', Array($this->tw_me->id));
+        if ($tw_coupling->tw_id < 0) {
+            $tw_coupling->tw_id = $this->tw_me->id;
+            $tw_coupling->save();
         }
     }
 
@@ -88,6 +83,8 @@ class MainController extends Controller
      */
     public function index()
     {
+        $this->user_id = \Auth::id();
+
         try {
             self::setTwApiKey();
             self::twAuth();

@@ -77,7 +77,7 @@ class MainController extends Controller
 
     private function setTwTaskList()
     {
-        $this->tw_task_list = self::twGet('task_List');
+        $this->tw_task_list = self::twGetById('task_List', $this->tw_me->id);
         self::jsPut('tw_task_list', $this->tw_task_list);
     }
 

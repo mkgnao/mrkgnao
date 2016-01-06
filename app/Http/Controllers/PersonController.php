@@ -61,13 +61,13 @@ class PersonController extends Controller
 
     private function putTwJsValues()
     {
-        twauth();
+        self::twauth();
 
-        $value = twGet('account');
-        jsPut('tw_account', $value);
+        $value = self::twGet('account');
+        self::jsPut('tw_account', $value);
 
-        $value = twGet('project');
-        jsPut('tw_project_all', $value);
+        $value = self::twGet('project');
+        self::jsPut('tw_project_all', $value);
     }
 
     /**
@@ -77,7 +77,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        putTwJsValues();
+        self::putTwJsValues();
 
         return view('/u/main');
     }

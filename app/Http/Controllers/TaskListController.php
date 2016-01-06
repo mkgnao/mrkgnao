@@ -91,10 +91,10 @@ class MainController extends Controller
         $this->user_id = \Auth::id();
 
         try {
-            self::setTwApiKey();
-            self::twAuth();
-            self::setTwMe();
-            self::setTwTaskList();
+            //self::setTwApiKey();
+            //self::twAuth();
+            //self::setTwMe();
+            //self::setTwTaskList();
         } catch (Exception $e) {
             self::jsPut('tw_errors', $e);
         }

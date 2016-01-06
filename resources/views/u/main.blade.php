@@ -15,6 +15,10 @@
 
     <script>
         try {
+
+            console.log(window.mkgnaoNs);
+            console.log(mkgnaoNs);
+
             if (mkgnaoNs.tw_me) {
                 twAddJson(mkgnaoNs.tw_me, "twcontent");
             } else {

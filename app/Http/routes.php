@@ -44,7 +44,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
     Route::get('/', function() {
-        return Redirect::to('/u/' . \Auth::id() . '/main');
+        //return Redirect::to('/u/' . \Auth::id() . '/main');
+        return view('welcome');
     });
 
     Route::get('/u/' . '{id}' . '/main', array('as' => '/u/main', 'uses' => 'MainController@index'));

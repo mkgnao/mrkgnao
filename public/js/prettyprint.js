@@ -132,11 +132,7 @@ mkgnaoNs.prettyPrint = (function () {
                     td.appendChild(cell);
                 } else {
                     /* IsString */
-                    var cellStr = cell.toString();
-                    if (cellStr == null || cellStr.length == 0)
-                        td.innerHTML = "";
-                    else
-                        td.innerHTML = util.shorten(cellStr);
+                    td.innerHTML = util.shorten(cell.toString());
                 }
 
                 tr.appendChild(td);
@@ -319,7 +315,7 @@ mkgnaoNs.prettyPrint = (function () {
             circRef: function (obj, key, settings) {
                 return util.expander(
                     '[POINTS BACK TO <strong>' + (key) + '</strong>]',
-                    'Click to show this item anyway',
+                    'click to show this item anyway',
                     function () {
                         this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
                     }
@@ -328,7 +324,7 @@ mkgnaoNs.prettyPrint = (function () {
             depthReached: function (obj, settings) {
                 return util.expander(
                     '[DEPTH REACHED]',
-                    'Click to show this item anyway',
+                    'click to show this item anyway',
                     function () {
                         try {
                             this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
@@ -400,7 +396,8 @@ mkgnaoNs.prettyPrint = (function () {
                 return '/' + obj.source + '/';
             }
             if (type === 'string') {
-                return '"' + obj.replace(/"/g, '\\"') + '"';
+                //return '"' + obj.replace(/"/g, '\\"') + '"';
+                return obj;
             }
             return obj.toString();
         },

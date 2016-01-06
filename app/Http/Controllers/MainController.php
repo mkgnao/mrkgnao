@@ -58,7 +58,7 @@ class MainController extends Controller
 
         $tw_coupling = DB::table('tw_coupling');
 
-        $tw_api_key = $tw_coupling->find($user_id)->value('tw_api_key');
+        $tw_api_key = $tw_coupling->find($user_id)->tw_api_key;
 
         $this->api_key = $tw_api_key;
     }

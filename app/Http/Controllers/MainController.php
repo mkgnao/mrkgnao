@@ -8,11 +8,12 @@ use App\Http\TeamWorkPm;
 use DB;
 use Auth;
 
-class PersonController extends Controller
+class MainController extends Controller
 {
-    const API_COMPANY = 'mkgnao';
+    const TW_API_COMPANY = 'mkgnao';
 
-    private $api_key;
+    private $tw_api_key;
+    private $tw_me;
 
     /**
      * Create a new controller instance.
@@ -29,7 +30,7 @@ class PersonController extends Controller
         static $auth = false;
 
         if (!$auth) {
-            TeamWorkPm\Auth::set(self::API_COMPANY, $this->api_key);
+            TeamWorkPm\Auth::set(self::TW_API_COMPANY, $this->tw_api_key);
             $auth = true;
         }
     }
@@ -38,14 +39,6 @@ class PersonController extends Controller
     {
         $model = TeamWorkPm\Factory::build($what);
         $value = $model->get();
-
-        return $value;
-    }
-
-    private function twGetAll($what)
-    {
-        $model = TeamWorkPm\Factory::build($what);
-        $value = $model->getAll();
 
         return $value;
     }
@@ -63,21 +56,31 @@ class PersonController extends Controller
     {
         $user_id = \Auth::id();
 
-        $tw_user_id = DB::table('tw_coupling')->where('id', $user_id)->value('tw_api_key');
+        $tw_coupling = DB::table('tw_coupling');
 
-        $this->api_key = $tw_user_id;
+        $tw_api_key = $tw_coupling::find('id')->value('tw_api_key');
+
+        $this->api_key = $tw_api_key;
     }
 
-    private function putTwJsValues()
+
+    private function setTwIdIfNull()
     {
-        //$value = self::twGet('account');
-        //self::jsPut('tw_account', $value);
+        $user_id = \Auth::id();
 
-        $value = self::twGet('me');
+        $tw_coupling = DB::table('tw_coupling');
+
+        $tw_coupling_user = $tw_coupling::find('id');
+
+        if ($tw_coupling_user->tw_id < 0) {
+            $tw_coupling_user->tw_id = $this->tw_me->id;
+        }
+    }
+
+    private function setTwMe()
+    {
+        $this->tw_me = self::twGet('me');
         self::jsPut('tw_me', $value);
-
-        //$value = self::twGetAll('project');
-        //self::jsPut('tw_project_all', $value);
     }
 
     /**
@@ -90,7 +93,8 @@ class PersonController extends Controller
         try {
             self::setTwApiKey();
             self::twAuth();
-            self::putTwJsValues();
+            self::setTwMe();
+            self::setTwIdIfNull();
         } catch (Exception $e) {
             self::jsPut('tw_errors', $e);
         }

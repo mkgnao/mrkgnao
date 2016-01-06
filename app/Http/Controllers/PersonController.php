@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use App\Http\TeamWorkPm;
+use DB;
+use Auth;
 
 class PersonController extends Controller
 {

@@ -450,7 +450,8 @@ mkgnaoNs.prettyPrint = (function () {
 
         var typeDealer = {
             string: function (item) {
-                return util.txt('"' + util.shorten(item.replace(/"/g, '\\"')) + '"');
+                //return util.txt('"' + util.shorten(item.replace(/"/g, '\\"')) + '"');
+                return util.txt(util.shorten(item));
             },
             number: function (item) {
                 return util.txt(item);
@@ -461,7 +462,7 @@ mkgnaoNs.prettyPrint = (function () {
                 var flags = util.table();
                 var span = util.expander(
                     '/' + item.source + '/',
-                    'Click to show more',
+                    'click to show more',
                     function () {
                         this.parentNode.appendChild(miniTable.node);
                     }

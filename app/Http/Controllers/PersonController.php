@@ -64,6 +64,9 @@ class PersonController extends Controller
         $value = self::twGet('account');
         self::jsPut('tw_account', $value);
 
+        $value = self::twGet('me');
+        self::jsPut('tw_me', $value);
+
         //$value = self::twGetAll('project');
         //self::jsPut('tw_project_all', $value);
     }

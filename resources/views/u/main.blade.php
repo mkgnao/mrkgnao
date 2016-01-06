@@ -25,7 +25,8 @@
         }
         try {
             twAdd(window.tw_account);
-            twAdd(window.tw_project_all);
+            twAdd(window.tw_me);
+            //twAdd(window.tw_project_all);
         } catch (e) {
             console.log(e);
             if (window.tw_errors) {

@@ -14,6 +14,7 @@
     <link href="https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
     <link href="/css/dr.css" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
+    <script src="/js/main.js"></script>
     <script src="/js/prettyprint.js"></script>
 
     <script class="js-allow-before-footer">
@@ -116,8 +117,6 @@
         </div>
     </div>
 </footer>
-
-<script src="/js/main.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
 <script>

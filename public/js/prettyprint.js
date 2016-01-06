@@ -37,7 +37,9 @@
 
  */
 
-var prettyPrint = (function(){
+mkgnaoNs = mkgnaoNs || {};
+
+mkgnaoNs.prettyPrint = (function(){
 
     /* These "util" functions are not part of the core
      functionality but are  all necessary - mostly DOM helpers */

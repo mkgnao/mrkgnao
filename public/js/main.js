@@ -1,10 +1,8 @@
 mkgnaoNs = mkgnaoNs || {};
 
 mkgnaoNs.twAddJson = function(what, where) {
-    //console.log(what);
     var j = JSON.parse(what);
-    var n = prettyPrint(j);
-    //console.log(n);
+    var n = mkgnaoNs.prettyPrint(j);
     var e = document.getElementById(where);
     e.appendChild(n);
 };

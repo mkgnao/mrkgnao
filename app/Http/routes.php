@@ -47,5 +47,6 @@ Route::group(['middleware' => 'web'], function () {
 
     //Route::get('/home', 'HomeController@index');
     //Route::get('/u/main', 'PersonController@index');
-    Route::get('/u/' . Auth::id() . '/main', array('as' => '/u/main', 'uses' => 'PersonController@index'));
+
+    Route::get('/u/' . '{id}' . '/main', array('as' => '/u/main', 'uses' => 'PersonController@index'));
 });

@@ -64,8 +64,8 @@ class PersonController extends Controller
         $value = self::twGet('account');
         self::jsPut('tw_account', $value);
 
-        $value = self::twGetAll('project');
-        self::jsPut('tw_project_all', $value);
+        //$value = self::twGetAll('project');
+        //self::jsPut('tw_project_all', $value);
     }
 
     /**
@@ -78,7 +78,7 @@ class PersonController extends Controller
         try {
             self::putTwJsValues();
         } catch (Exception $e) {
-            self::jsPut('tw_errors', Array($e));
+            self::jsPut('tw_errors', $e);
         }
 
         return view('/u/main');

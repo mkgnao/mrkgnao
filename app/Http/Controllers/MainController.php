@@ -68,7 +68,7 @@ class MainController extends Controller
 
         $tw_coupling = DB::table('tw_coupling');
 
-        $tw_coupling_user = $tw_coupling->find($user_id);
+        $tw_coupling_user = $tw_coupling->find($user_id)->get();
 
         if ($tw_coupling_user->tw_id < 0) {
             $tw_coupling_user->update('tw_id', Array($this->tw_me->id));

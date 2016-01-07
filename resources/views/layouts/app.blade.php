@@ -92,7 +92,7 @@
                     @endif
                 </div>
             </div>
-            @if (!Auth::guest())
+            @if (false)
                 @include("partials.topnav")
             @endif
         </div>

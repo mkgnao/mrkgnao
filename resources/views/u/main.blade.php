@@ -15,13 +15,15 @@
 
     <script>
         try {
-            console.log(mkgnaoNs);
+            //console.log(mkgnaoNs);
 
             if (mkgnaoNs.tw_me) {
                 mkgnaoNs.twAddJson(mkgnaoNs.tw_me, "twcontent");
             } else {
                 var e = document.getElementById("twcontent");
-                var n = document.createElement("<div id=\"notfound\">not on teamwork</div>");
+                var n = document.createElement("div");
+                n.id = "twnotfound";
+                n.innerHTML = "not on teamwork";
                 e.appendChild(n);
             }
         } catch (e) {

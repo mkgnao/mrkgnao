@@ -17,6 +17,12 @@ class TwController extends Controller
     public $auth = false;
     public $tw_api_key;
     public $tw_me;
+    public $bs;
+
+    public function __construct(BladeService $bs)
+    {
+        $this->bs = $bs;
+    }
 
     public function twAuth()
     {
@@ -85,8 +91,6 @@ class TwController extends Controller
 
     public function init()
     {
-        $this->app->make('bs')->id = \Auth::id();
-
         self::setTwApiKey();
         self::twAuth();
         self::setTwIdIfNull();

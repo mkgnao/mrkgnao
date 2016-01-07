@@ -33,8 +33,10 @@ class PeopleController extends TwController
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
+        parent::index($id);
+
         $this->user_id = \Auth::id();
 
         try {

@@ -28,9 +28,7 @@ class MainController extends TwController
      */
     public function index($id)
     {
-        if (Util::idStrip($id) != \Auth::id()) {
-            abort(403, 'unauthorized action');
-        }
+        parent::index($id);
 
         $this->user_id = \Auth::id();
 

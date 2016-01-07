@@ -94,4 +94,12 @@ class TwController extends Controller
         self::twAuth();
         self::setTwIdIfNull();
     }
+
+    public function index($id)
+    {
+        // protect urls
+        if (Util::idStrip($id) != \Auth::id()) {
+            abort(403, 'unauthorized action');
+        }
+    }
 }

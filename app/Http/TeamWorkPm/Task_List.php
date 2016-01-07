@@ -4,8 +4,8 @@ class Task_List extends Model
 {
     /**
      * Retrieve Single todo list
-     * GET /todo_lists/#{id}.xml
-     * GET /todo_lists/#{id}.xml?showTasks=no
+     * GET /tasklists/#{id}.xml
+     * GET /tasklists/#{id}.xml?showTasks=no
      *
      * Retrieves the todo list corresponding to the submitted integer ID.
      * if you pass showTasks=no, no tasks will be returned (showTasks defaults to "yes").
@@ -26,12 +26,12 @@ class Task_List extends Model
     /**
      * Get all task lists for a project
      *
-     * GET /projects/#{project_id}/todo_lists.xml
-     * GET /projects/#{project_id}/todo_lists.xml?showTasks=no
-     * GET /projects/#{project_id}/todo_lists.xml?responsible-party-id=#{id}
-     * GET /projects/#{project_id}/todo_lists.xml?getOverdueCount=yes
-     * GET /projects/#{project_id}/todo_lists.xml?responsible-party-id=#{id}&getOverdueCount=yes
-     * GET /projects/#{project_id}/todo_lists.xml?status=completed&getCompletedCount=yes
+     * GET /projects/#{project_id}/tasklists.xml
+     * GET /projects/#{project_id}/tasklists.xml?showTasks=no
+     * GET /projects/#{project_id}/tasklists.xml?responsible-party-id=#{id}
+     * GET /projects/#{project_id}/tasklists.xml?getOverdueCount=yes
+     * GET /projects/#{project_id}/tasklists.xml?responsible-party-id=#{id}&getOverdueCount=yes
+     * GET /projects/#{project_id}/tasklists.xml?status=completed&getCompletedCount=yes
      * Retrieves all project task lists
      * Options:
      * You can pass 'showMilestones=yes' if you would like to get information on Milestones associated with each task list
@@ -71,7 +71,7 @@ class Task_List extends Model
     /**
      * Reorder lists
      *
-     * POST /projects/#{project_id}/todo_lists/reorders
+     * POST /projects/#{project_id}/tasklists/reorders
      * Reorders the lists in the project according to the ordering given.
      * Any lists that are not explicitly specified will be positioned after the lists that are specified.
      *
@@ -130,7 +130,7 @@ class Task_List extends Model
             ],
             'todo_list_template_id' => false
         ];
-        $this->parent = 'todo-list';
-        $this->action = 'todo_lists';
+        $this->parent = 'task-list';
+        $this->action = 'tasklists';
     }
 }

@@ -98,9 +98,5 @@ class TwController extends Controller
 
     public function index($id)
     {
-        // protect urls
-        if (Util::idStrip($id) != \Auth::id()) {
-            abort(403, 'unauthorized action');
-        }
     }
 }

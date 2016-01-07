@@ -768,11 +768,11 @@ mkgnaoNs.prettyPrint = (function () {
                 },
                 td: {
                     padding: '1px',
-                    fontSize: '16px',
+                    fontSize: '18px',
                     border: '1px solid #B0B0B0',
                     verticalAlign: 'top',
-                    whiteSpace: 'nowrap',
-                    opacity: 0.78
+                    whiteSpace: 'nowrap'
+                    //opacity: 0.78
                 },
                 td_hover: {
                     /* Styles defined here will apply to all tr:hover > td,

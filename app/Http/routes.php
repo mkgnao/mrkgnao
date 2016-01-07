@@ -65,4 +65,6 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/u/' . '{id}' . '/company', array('as' => '/u/company', 'uses' => 'CompanyController@index'));
 
     Route::get('/u/' . '{id}' . '/people', array('as' => '/u/people', 'uses' => 'PeopleController@index'));
+
+    Route::get('/u/' . '{id}' . '/projects', array('as' => '/u/projects', 'uses' => 'ProjectsController@index'));
 });

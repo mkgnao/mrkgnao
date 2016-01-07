@@ -111,7 +111,7 @@
         @include('partials.scriptsend')
         @if ($view_name == "welcome")
             mkgnao
-        @elseif
+        @else
             @yield('content')
         @endif
     </article>

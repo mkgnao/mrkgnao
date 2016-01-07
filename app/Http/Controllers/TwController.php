@@ -8,6 +8,7 @@ use App\TwCoupling as TwCoupling;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
+use App\Http\BladeService as BladeService;
 
 class TwController extends Controller
 {
@@ -16,6 +17,12 @@ class TwController extends Controller
     public $auth = false;
     public $tw_api_key;
     public $tw_me;
+    public $bs;
+
+    public function __construct(BladeService $bs)
+    {
+        $this->bs = $bs;
+    }
 
     public function twAuth()
     {
@@ -84,6 +91,10 @@ class TwController extends Controller
 
     public function init()
     {
+        $this->bs->c->set('id', \Auth::id());
+        //$this->bs->c->set('id_pad', str_pad(\Auth::id(), 4, '0', STR_PAD_LEFT));
+        //$this->bs->c->set('tw_me', null);
+
         self::setTwApiKey();
         self::twAuth();
         self::setTwIdIfNull();

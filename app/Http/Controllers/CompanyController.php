@@ -45,6 +45,6 @@ class CompanyController extends TwController
             parent::jsPut('tw_errors', $e);
         }
 
-        return view('/u/company');
+        return view('/u/company', array('c' => $this));
     }
 }

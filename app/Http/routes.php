@@ -21,7 +21,7 @@ Route::get('partials.topnav', function () {
     return View::make('partials/topnav');
 });
 
-View::composer('*', function($view){
+View::composer('*', function ($view) {
 
     View::share('view_name', $view->getName());
 

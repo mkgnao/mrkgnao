@@ -7,7 +7,7 @@ mkgnaoNs.twAddJson = function (what, where) {
     e.appendChild(n);
 };
 
-mkgnaoNs.strPad = function(input, pad_length, pad_string, pad_type) {
+mkgnaoNs.strPad = function (input, pad_length, pad_string, pad_type) {
     //  discuss at: http://phpjs.org/functions/str_pad/
     // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
     // improved by: Michael White (http://getsprink.com)
@@ -21,7 +21,7 @@ mkgnaoNs.strPad = function(input, pad_length, pad_string, pad_type) {
     var half = '',
         pad_to_go;
 
-    var str_pad_repeater = function(s, len) {
+    var str_pad_repeater = function (s, len) {
         var collect = '',
             i;
 

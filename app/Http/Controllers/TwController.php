@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\BladeService as BladeService;
 use App\Http\Requests;
 use App\Http\TeamWorkPm;
 use App\TwCoupling as TwCoupling;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
-use App\Http\BladeService as BladeService;
 
 class TwController extends Controller
 {

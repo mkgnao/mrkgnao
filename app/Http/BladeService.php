@@ -2,7 +2,6 @@
 
 namespace App\Jobs;
 
-use App\User;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Support\ServiceProvider;
 

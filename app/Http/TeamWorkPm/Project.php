@@ -20,6 +20,17 @@ class Project extends Model
 
     /**
      *
+     * @param type $date
+     * @param type $time
+     * @return App\Http\TeamWorkPm\Response\Model
+     */
+    public function getActive(array $params = [])
+    {
+        return $this->getByStatus('active', $params);
+    }
+
+    /**
+     *
      * @param type $status
      * @param type $date
      * @param type $time
@@ -30,17 +41,6 @@ class Project extends Model
         $params = (array)$params;
         $params['status'] = strtoupper($status);
         return $this->rest->get("$this->action", $params);
-    }
-
-    /**
-     *
-     * @param type $date
-     * @param type $time
-     * @return App\Http\TeamWorkPm\Response\Model
-     */
-    public function getActive(array $params = [])
-    {
-        return $this->getByStatus('active', $params);
     }
 
     /**

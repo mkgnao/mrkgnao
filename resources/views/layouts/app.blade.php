@@ -74,9 +74,9 @@
                 <div class="Grid-cell">
                     @if (Auth::guest())
                         @if ($view_name != "auth.login")
-                        <div class="loginout">
-                            <a class="loginout" href="{{ url('/login') }}">login</a>
-                        </div>
+                            <div class="loginout">
+                                <a class="loginout" href="{{ url('/login') }}">login</a>
+                            </div>
                         @endif
                         @if(false)
                             <div class="loginout">

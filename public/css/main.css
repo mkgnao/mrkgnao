@@ -1185,7 +1185,8 @@ strong {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    margin-bottom: 1.5em
+    margin-bottom: 1.5em;
+    font-size: 1.2em;
 }
 
 .InputAddOn-field {

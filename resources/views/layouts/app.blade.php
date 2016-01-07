@@ -66,7 +66,6 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <div class="Header-title">
-                mkgnao
                 @if (false && !Auth::guest())
                     {{ strtolower(Auth::user()->name) }}
                 @endif
@@ -109,10 +108,12 @@
 </header>
 <main class="HolyGrail-body">
     <article class="HolyGrail-content">
-
         @include('partials.scriptsend')
-
-        @yield('content')
+        @if ($view_name == "welcome")
+            mkgnao
+        @elseif
+            @yield('content')
+        @endif
     </article>
     <nav class="HolyGrail-nav u-textCenter">
     </nav>

@@ -42,6 +42,14 @@ class TwController extends Controller
         return $value;
     }
 
+    public function twGetAll($what)
+    {
+        $model = TeamWorkPm\Factory::build($what);
+        $value = $model->getAll();
+
+        return $value;
+    }
+
     public function jsPut($var, $value)
     {
         $value = trim(preg_replace('/\s+/', ' ', $value));

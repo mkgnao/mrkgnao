@@ -20,7 +20,7 @@ class Task_List extends Model
         if (!$show_tasks) {
             $params['showTasks'] = 'no';
         }
-        return $this->rest->get("$this->action/$id", $params);
+        return $this->rest->get("projects/$id/$this->action", $params);
     }
 
     /**

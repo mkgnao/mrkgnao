@@ -11,6 +11,6 @@ class Util
 
     public static function idStrip($id)
     {
-        return \ltrim(strval($id), '0');
+        return trim(strval($id), '0');
     }
 }

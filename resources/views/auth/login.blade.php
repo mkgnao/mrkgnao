@@ -26,17 +26,18 @@
                             {{ $errors->first('password') }}
                         @endif
                     </div>
-                    <!--div class="InputAddOn">
+                    <div class="InputAddOn">
+                        remember?
                         <input type="checkbox" class="InputAddOn-item" name="remember">
-                    </div-->
+                    </div>
                     <div class="InputAddOn">
                         <button class="InputAddOn-button" type="submit">
                             login
                         </button>
                     </div>
-                    <!--div class="InputAddOn">
+                    <div class="InputAddOn">
                         <a class="InputAddOn-item" href="{{ url('/password/reset') }}">reset</a>
-                    </div-->
+                    </div>
                 </div>
             </div>
         </div>

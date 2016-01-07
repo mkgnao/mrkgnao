@@ -92,18 +92,16 @@
                         <div class="InputAddOn">
                             <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
                             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/settings') }}'">
-                                home
+                                <img src="{{ url('/img/settings.png') }}"/>
+                            </button>
+                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
+                                logout
                             </button>
                         </div>
                         <!--div class="loginout">
                             <a class="loginout"
                                href="/u/{{ App\Util::idPad(Auth::id()) }}/p/main">{} </a>
                         </div-->
-                        <div class="InputAddOn">
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
-                                logout
-                            </button>
-                        </div>
                         <!--div class="loginout">
                             <a class="loginout" href="{{ url('/logout') }}">logout</a>
                         </div-->

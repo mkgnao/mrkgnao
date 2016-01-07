@@ -44,6 +44,6 @@ class CompanyController extends TwController
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/company');
+        return \View::make('/u/p/company');
     }
 }

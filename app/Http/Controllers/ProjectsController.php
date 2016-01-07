@@ -44,6 +44,6 @@ class ProjectsController extends TwController
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/projects');
+        return \View::make('/u/p/projects');
     }
 }

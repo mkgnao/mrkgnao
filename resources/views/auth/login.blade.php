@@ -36,9 +36,9 @@
                             login
                         </button>
                     </div>
-                    <div class="InputAddOn">
+                    <!--div class="InputAddOn">
                         <a class="InputAddOn-item-link" href="{{ url('/password/reset') }}">reset</a>
-                    </div>
+                    </div-->
                 </div>
             </div>
         </div>

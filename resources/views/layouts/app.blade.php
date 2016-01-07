@@ -125,18 +125,26 @@
                     <!--img src="{{ url('/img/settings.png') }}"/-->
                     profile
                 </button>
+            </div>
+            <div class="InputAddOn">
                 <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
                     <!--img src="{{ url('/img/settings.png') }}"/-->
                     projects
                 </button>
+            </div>
+            <div class="InputAddOn">
                 <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
                     <!--img src="{{ url('/img/settings.png') }}"/-->
                     people
                 </button>
+            </div>
+            <div class="InputAddOn">
                 <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
                     <!--img src="{{ url('/img/settings.png') }}"/-->
                     organizations
                 </button>
+            </div>
+            <div class="InputAddOn">
                 <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/tasklist') }}'">
                     <!--img src="{{ url('/img/settings.png') }}"/-->
                     tasks

@@ -31,10 +31,10 @@ class MainController extends TwController
 
         try {
             parent::init();
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             parent::jsPut('tw_errors', $e);
         }
 
-        return View::make('/u/main', array('c' => $this));
+        return \View::make('/u/main', array('c' => $this));
     }
 }

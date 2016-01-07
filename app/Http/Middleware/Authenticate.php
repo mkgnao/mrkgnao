@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 use App\Util;
+use App\Models\TwCoupling as TwCoupling;
 
 class Authenticate
 {
@@ -41,7 +42,16 @@ class Authenticate
             if ($urlComp[0] == "u") {
                 $id = Util::idStrip($urlComp[1]);
                 if ($id != \Auth::id()) {
-                    abort(403, 'unauthorized action');
+                    if (count($urlComp) > 3 && $urlComp[3] == "public") {
+                        $tw_coupling = TwCoupling::find($id);
+                        if (!$tw_coupling) {
+                            abort(400, 'could not find '.$id);
+                        } else {
+                            return redirect()->intended('/');
+                        }
+                    } else {
+                        return response('unauthorized.', 401);
+                    }
                 }
             }
         }

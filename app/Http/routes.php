@@ -66,7 +66,7 @@ Route::group(['middleware' => 'web'], function () {
         return view('welcome');
     });
 
-    Route::when('/*/{id}/p/*', array('uses' => 'CheckIdController@index'));
+    Route::when('/*/{id}/p/*', 'CheckIdController@check');
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

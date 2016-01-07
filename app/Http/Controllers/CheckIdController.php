@@ -21,12 +21,7 @@ class CheckIdController
         $this->middleware('auth');
     }
 
-    /**
-     * Show the user main page.
-     *
-     * @return Response
-     */
-    public function index($id)
+    public function check($id)
     {
         // protect urls
         if (Util::idStrip($id) != \Auth::id()) {

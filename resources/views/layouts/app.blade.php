@@ -64,9 +64,10 @@
 <body class="HolyGrail">
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
+        xxx
         <div class="Header-titles">
             <h1 class="Header-title">
-                <div class="joyce"></div>
+                test
             </h1>
             <h2 class="Header-subTitle"></h2>
         </div>

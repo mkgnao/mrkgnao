@@ -772,7 +772,7 @@ mkgnaoNs.prettyPrint = (function () {
                     border: '1px solid silver',
                     verticalAlign: 'top',
                     whiteSpace: 'nowrap',
-                    opacity: 0.65
+                    opacity: 0.72
                 },
                 td_hover: {
                     /* Styles defined here will apply to all tr:hover > td,

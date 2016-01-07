@@ -10,10 +10,12 @@ class Project extends Model
      * with a time using the variables updatedAfterDate and updatedAfterTime.
      * @return App\Http\TeamWorkPm\Response\Model
      */
-    public function getAll(array $params = [])
+    //public function getAll(array $params = [])
+    public function getAll()
     {
-        return $this->getByStatus('all', $params);
+        //return $this->getByStatus('all', $params);
 
+        return $this->rest->get($this->action);
     }
 
     /**
@@ -127,6 +129,9 @@ class Project extends Model
 
     protected function init()
     {
+        $this->action = "projects";
+        $this->parent = "project";
+
         $this->fields = [
             // New Project Name
             'name' => true,

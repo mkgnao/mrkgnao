@@ -9,9 +9,9 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 
-class TaskListController extends TwController
+class ProjectsController extends TwController
 {
-    private $tw_task_list;
+    private $tw_projects;
 
     /**
      * Create a new controller instance.
@@ -23,10 +23,10 @@ class TaskListController extends TwController
         $this->middleware('auth');
     }
 
-    private function setTwTaskList()
+    private function setTwProjects()
     {
-        $this->tw_task_list = parent::twGetById('task_List', $this->tw_me->id);
-        parent::jsPut('tw_task_list', $this->tw_task_list);
+        $this->tw_projects = parent::twGetAll('project');
+        parent::jsPut('tw_projects', $this->tw_projects);
     }
 
     /**
@@ -40,11 +40,11 @@ class TaskListController extends TwController
 
         try {
             parent::init();
-            self::setTwTaskList();
+            self::setTwProjects();
         } catch (\Exception $e) {
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/tasklist', array('c' => $this));
+        return \View::make('/u/projects', array('c' => $this));
     }
 }

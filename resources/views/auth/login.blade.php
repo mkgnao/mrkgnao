@@ -9,18 +9,18 @@
 
                 <div class="Grid-cell">
                     <div class="InputAddOn">
-                        <span class="InputAddOn-item">email</span>
+                        <!--span class="InputAddOn-item">email</span-->
 
                         <input type="email" class="InputAddOn-field" name="email"
-                               value="{{ old('email') }}">
+                               value="{{ old('email') }}" placeholder="email">
 
                         @if ($errors->has('email'))
                             {{ $errors->first('email') }}
                         @endif
                     </div>
                     <div class="InputAddOn">
-                        <span class="InputAddOn-item">password</span>
-                        <input type="password" class="InputAddOn-field" name="password">
+                        <!--span class="InputAddOn-item">password</span-->
+                        <input type="password" class="InputAddOn-field" name="password" placeholder="password">
 
                         @if ($errors->has('password'))
                             {{ $errors->first('password') }}

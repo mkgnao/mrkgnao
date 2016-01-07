@@ -1229,6 +1229,10 @@ strong {
     padding: .5em .75em;
 }
 
+.InputAddOn-item:placeholder-shown {
+    opacity: 0.4;
+}
+
 .InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button:first-child{
     border-radius: 2px 0 0 2px
 }

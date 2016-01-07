@@ -63,11 +63,6 @@
 
 <body class="HolyGrail">
 <header class="HolyGrail-header">
-    <div class="topnav">
-        @if (!Auth::guest())
-          @include("partials.topnav")
-        @endif
-    </div>
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">
@@ -87,17 +82,22 @@
                             </div>
                         @endif
                     @else
-                            <div class="loginout">
-                                <a class="loginout"
-                                   href="/u/{{ $c->user_id_pad }}/main">{{ strtolower(Auth::user()->name) }} </a>
-                            </div>
-                            <div class="loginout">
-                                <a class="loginout" href="{{ url('/logout') }}">logout</a>
-                            </div>
+                        <div class="loginout">
+                            <a class="loginout"
+                               href="/u/{{ $c->user_id_pad }}/main">{{ strtolower(Auth::user()->name) }} </a>
+                        </div>
+                        <div class="loginout">
+                            <a class="loginout" href="{{ url('/logout') }}">logout</a>
+                        </div>
                     @endif
+                </div>
             </div>
         </div>
-    </div>
+        <div class="topnav">
+            @if (!Auth::guest())
+                @include("partials.topnav")
+            @endif
+        </div>
     </div>
 </header>
 <main class="HolyGrail-body">

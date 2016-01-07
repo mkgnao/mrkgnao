@@ -92,12 +92,10 @@
                     @endif
                 </div>
             </div>
+                @if (!Auth::guest())
+                    @include("partials.topnav")
+                @endif
         </div>
-    </div>
-    <div class="topnav">
-        @if (!Auth::guest())
-            @include("partials.topnav")
-        @endif
     </div>
 </header>
 <main class="HolyGrail-body">

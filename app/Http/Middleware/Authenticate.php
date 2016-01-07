@@ -34,7 +34,7 @@ class Authenticate
     {
         $url = $request->path();
 
-        $urlComp = expolode("/", parse_url($url, PHP_URL_PATH));
+        $urlComp = \expolode("/", parse_url($url, PHP_URL_PATH));
 
         if (count($urlComp) > 2) {
             if ($urlComp[0] == "u") {

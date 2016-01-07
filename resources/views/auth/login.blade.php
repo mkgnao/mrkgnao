@@ -27,7 +27,7 @@
                         @endif
                     </div>
                     <div class="InputAddOn">
-                        <span class="InputAddOn-item">remember</span>
+                        <span class="InputAddOn-item-checkbox">remember</span>
                         <div class="InputAddOn-item-checkbox">
                             <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                         </div>

@@ -65,13 +65,15 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title">
-            </h1>
-            <h2 class="Header-subTitle">
+            <div class="Header-title">
                 @if (!Auth::guest())
                     {{ strtolower(Auth::user()->name) }}
                 @endif
-            </h2>
+            </div>
+            <!--h1 class="Header-title">
+            </h1>
+            <h2 class="Header-subTitle">
+            </h2-->
         </div>
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">

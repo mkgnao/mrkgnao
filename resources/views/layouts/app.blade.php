@@ -64,11 +64,11 @@
 <body class="HolyGrail">
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
+        @if (!Auth::guest())
         <div class="InputAddOn">
-            @if (!Auth::guest())
             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
                 <!--img src="{{ url('/img/settings.png') }}"/-->
-                main
+                profile
             </button>
             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
                 <!--img src="{{ url('/img/settings.png') }}"/-->
@@ -86,8 +86,8 @@
                 <!--img src="{{ url('/img/settings.png') }}"/-->
                 tasks
             </button>
-            @endif
         </div>
+        @endif
         <div class="Header-titles">
             <h1 class="Header-title">
             </h1>
@@ -115,9 +115,6 @@
                     @else
                         <div class="InputAddOn">
                             <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
-                        </div>
-
-                        <div class="InputAddOn">
                             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
                                 logout
                             </button>

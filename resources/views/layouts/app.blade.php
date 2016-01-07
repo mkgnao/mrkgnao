@@ -66,13 +66,15 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">
-                @if (!Auth::guest())
-                <div class="InputAddOn">
-                    <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
-                </div>
-                @endif
+                mkgnao
             </h1>
-            <h2 class="Header-subTitle"></h2>
+            <h2 class="Header-subTitle">
+                @if (!Auth::guest())
+                    <div class="InputAddOn">
+                        <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
+                    </div>
+                @endif
+            </h2>
         </div>
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">

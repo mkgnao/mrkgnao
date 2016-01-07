@@ -26,13 +26,17 @@
                             {{ $errors->first('password') }}
                         @endif
                     </div>
+                    <!--div class="InputAddOn">
+                        <span class="InputAddOn-item-checkbox">remember</span>
+                        <div class="InputAddOn-item-checkbox">
+                            <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
+                        </div>
+                    </div-->
                     <div class="InputAddOn">
                         <span class="InputAddOn-item-checkbox">remember</span>
                         <div class="InputAddOn-item-checkbox">
                             <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                         </div>
-                    </div>
-                    <div class="InputAddOn">
                         <button class="InputAddOn-button-login" type="submit">
                             login
                         </button>

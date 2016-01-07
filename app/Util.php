@@ -1,14 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
-
-use App\Http\Requests;
-use App\Http\TeamWorkPm;
-use Auth;
-use DB;
-use Illuminate\Http\Request;
+namespace App;
 
 class Util
 {
-
+    public static function idPad($id)
+    {
+        return str_pad(Auth::id(), 4, '0', STR_PAD_LEFT);
+    }
 }

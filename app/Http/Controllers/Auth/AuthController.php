@@ -7,6 +7,7 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Validator;
+use App\Util;
 
 class AuthController extends Controller
 {
@@ -38,7 +39,7 @@ class AuthController extends Controller
      */
     public function redirectPath()
     {
-        return '/u/' . str_pad(\Auth::id(), 4, '0', STR_PAD_LEFT) . '/main';
+        return '/u/' . Util::idPad(\Auth::id()) . '/main';
     }
 
     /**

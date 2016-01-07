@@ -8,7 +8,7 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 
-class ControllerUtil
+class Util
 {
 
 }

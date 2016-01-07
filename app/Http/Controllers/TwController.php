@@ -14,11 +14,10 @@ class TwController extends Controller
 {
     const TW_API_COMPANY = 'mkgnao';
 
-    public $auth = false;
-    public $user_id;
-    public $tw_api_key;
-    public $tw_me;
-    public $bs;
+    protected $auth = false;
+    protected $user_id;
+    protected $tw_api_key;
+    protected $tw_me;
 
     public function twAuth()
     {
@@ -57,16 +56,20 @@ class TwController extends Controller
     {
         $value = trim(preg_replace('/\s+/', ' ', $value));
 
-        \JavaScript::put([
-            $var => $value
-        ]);
+        \JavaScript::put([$var => $value]);
     }
 
     public function setTwApiKey()
     {
         $tw_coupling = TwCoupling::find($this->user_id);
 
+        if (!$tw_coupling) {
+            return false;
+        }
+
         $this->tw_api_key = $tw_coupling->tw_api_key;
+
+        return true;
     }
 
     public function setTwIdIfNull()

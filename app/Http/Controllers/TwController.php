@@ -91,10 +91,12 @@ class TwController extends Controller
 
     public function init()
     {
-        \Log::info($this->bs);
+        \Log::info('bs: '.$this->bs);
 
         self::setTwApiKey();
         self::twAuth();
         self::setTwIdIfNull();
+
+        \Log::info('user_id: '.$this->user_id);
     }
 }

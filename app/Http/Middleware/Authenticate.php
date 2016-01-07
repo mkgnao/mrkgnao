@@ -37,6 +37,8 @@ class Authenticate
     {
         $urlComp = explode("/", parse_url($request->path(), PHP_URL_PATH));
 
+        \Log::info($urlComp);
+
         if (count($urlComp) < 2)
             return true;
 

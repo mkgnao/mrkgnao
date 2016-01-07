@@ -21,41 +21,38 @@ class Authenticate
     {
         if (Auth::guard($guard)->guest()) {
             if ($request->ajax()) {
-                return response('unauthorized.', 401);
+                return response('unauthorized', 401);
             } else {
                 return redirect()->guest('login');
             }
         }
 
-        self::abortIfIdNotMatched($request);
+        if (!checkId($request))
+            return response('unauthorized', 401);
 
         return $next($request);
     }
 
-    private function abortIfIdNotMatched($request)
+    private function checkId($request)
     {
-        $url = $request->path();
+        $urlComp = explode("/", parse_url($request->path(), PHP_URL_PATH));
 
-        $urlComp = explode("/", parse_url($url, PHP_URL_PATH));
+        if (count($urlComp) < 2)
+            return true;
 
-        \Log::info($urlComp);
+        if ($urlComp[0] != "u")
+            return true;
 
-        if (count($urlComp) > 2) {
-            if ($urlComp[0] == "u") {
-                $id = Util::idStrip($urlComp[1]);
-                if ($id != \Auth::id()) {
-                    if (count($urlComp) > 3 && $urlComp[3] == "public") {
-                        $tw_coupling = TwCoupling::find($id);
-                        if (!$tw_coupling) {
-                            abort(400, 'could not find '.$id);
-                        } else {
-                            return redirect()->intended('/');
-                        }
-                    } else {
-                        return response('unauthorized.', 401);
-                    }
-                }
-            }
-        }
+        $id = Util::idStrip($urlComp[1]);
+        if ($id == \Auth::id())
+            return true;
+
+        /*if (count($urlComp) > 3 && $urlComp[3] == "public") {
+            $tw_coupling = TwCoupling::find($id);
+            if ($tw_coupling)
+                return true;
+        }*/
+
+        return false;
     }
 }

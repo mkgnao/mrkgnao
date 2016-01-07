@@ -1214,8 +1214,8 @@ strong {
 .InputAddOn-field, .InputAddOn-item {
     /*border: 1px solid #93806c;
     border: 1px solid hsla(31, 15%, 50%, .25);*/
-    border: 1px;
-    border-color: #B0B0B0;
+    border: 2px;
+    border-color: red;
     padding: .5em .75em;
 }
 

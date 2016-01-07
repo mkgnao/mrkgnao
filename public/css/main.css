@@ -934,10 +934,12 @@ strong {
 
 .Header-title {
     margin: 0 0 .15em;
-    font-size: 1.8em;
+    font-size: 1.6em;
     /*font-weight: 600;*/
     line-height: 1;
     /*word-spacing: .08em*/
+    text-align: center;
+
 }
 
 .Header-title i {

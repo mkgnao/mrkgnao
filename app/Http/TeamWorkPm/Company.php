@@ -37,6 +37,9 @@ class Company extends Model
 
     protected function init()
     {
+        $this->parent = "company";
+        $this->action = "companies";
+
         $this->fields = [
             'name' => true,
             'address_one' => false,

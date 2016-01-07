@@ -156,9 +156,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-	Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider',
 
-        'Laracasts\Utilities\JavaScript\JavaScriptServiceProvider'
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class
     ],
 
     /*

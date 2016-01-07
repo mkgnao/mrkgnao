@@ -73,7 +73,7 @@
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
-                    @if (Auth::guest() && !Request::is('*/login'))
+                    @if (Auth::guest() && !Request::is('*login'))
                         <div class="loginout">
                             <a class="loginout" href="{{ url('/login') }}">login</a>
                         </div>

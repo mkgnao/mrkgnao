@@ -92,9 +92,9 @@
                     @endif
                 </div>
             </div>
-                @if (!Auth::guest())
-                    @include("partials.topnav")
-                @endif
+            @if (!Auth::guest())
+                @include("partials.topnav")
+            @endif
         </div>
     </div>
 </header>

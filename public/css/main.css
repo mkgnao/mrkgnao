@@ -1221,7 +1221,7 @@ strong {
     /*font-weight: 400*/
 }
 
-.InputAddOn-field, .InputAddOn-item {
+.InputAddOn-field, .InputAddOn-item, .InputAddOn-button {
     /*border: 1px solid #93806c;
     border: 1px solid hsla(31, 15%, 50%, .25);*/
     border: 1px;
@@ -1229,11 +1229,11 @@ strong {
     padding: .5em .75em;
 }
 
-.InputAddOn-field:first-child, .InputAddOn-item:first-child {
+.InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button:first-child{
     border-radius: 2px 0 0 2px
 }
 
-.InputAddOn-field:last-child, .InputAddOn-item:last-child {
+.InputAddOn-field:last-child, .InputAddOn-item:last-child. .InputAddOn-button:first-child {
     border-radius: 0 2px 2px 0
 }
 

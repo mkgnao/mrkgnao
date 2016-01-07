@@ -1206,31 +1206,31 @@ strong {
 
 .InputAddOn-item {
     font: inherit;
-    background-color: #B8B8B8;
+    background-color: #ffe1e1;
     /*opacity: 0.8;*/
 }
 
 .InputAddOn-button-login {
     font: inherit;
-    background-color: #B0B0B0;
+    background-color: #ffe1e1;
     /*opacity: 0.8;*/
 }
 
 .InputAddOn-item-checkbox {
     font: inherit;
-    background-color: #C0C0C0;
+    background-color: #ffe1e1;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-item-link {
     font: inherit;
-    background-color: #B0B0B0;
+    background-color: #ffe1e1;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
     border: 1px;
-    border-color: #B0B0B0;
+    border-color: #ffe1e1;
     padding: .5em .75em;
 }
 

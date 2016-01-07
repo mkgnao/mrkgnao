@@ -1208,6 +1208,15 @@ strong {
     background-color: hsla(31, 15%, 50%, .1);
     color: #666;*/
     font: inherit;
+    background-color: #B8B8B8;
+    /*font-weight: 400*/
+}
+
+.InputAddOn-button {
+    /*background-color: #93806c;
+    background-color: hsla(31, 15%, 50%, .1);
+    color: #666;*/
+    font: inherit;
     background-color: #B0B0B0;
     /*font-weight: 400*/
 }

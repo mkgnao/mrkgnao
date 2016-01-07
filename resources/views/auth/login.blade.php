@@ -30,7 +30,7 @@
                         <input type="checkbox" class="InputAddOn-item" name="remember">
                     </div-->
                     <div class="InputAddOn">
-                        <button class="InputAddOn-item" type="submit">
+                        <button class="InputAddOn-button" type="submit">
                             login
                         </button>
                     </div>

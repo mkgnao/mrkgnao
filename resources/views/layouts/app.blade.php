@@ -66,12 +66,11 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">
-                mkgnao
-                @if (!Auth::guest())
-                    / {{ strtolower(Auth::user()->name) }}
-                @endif
             </h1>
             <h2 class="Header-subTitle">
+                @if (!Auth::guest())
+                    {{ strtolower(Auth::user()->name) }}
+                @endif
             </h2>
         </div>
         <div class="Header-actions">

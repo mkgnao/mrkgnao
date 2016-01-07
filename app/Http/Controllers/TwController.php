@@ -91,7 +91,7 @@ class TwController extends Controller
 
     public function init()
     {
-        Log::info($this->bs);
+        \Log::info($this->bs);
 
         self::setTwApiKey();
         self::twAuth();

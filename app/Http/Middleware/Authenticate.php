@@ -27,7 +27,7 @@ class Authenticate
             }
         }
 
-        if (!checkId($request))
+        if (!self::checkId($request))
             return response('unauthorized', 401);
 
         return $next($request);

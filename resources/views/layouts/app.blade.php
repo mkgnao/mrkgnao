@@ -137,7 +137,7 @@
             </div>
             <div class="InputAddOn">
                 <button class="InputAddOn-button-login"
-                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
+                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}'">
                     organizations
                 </button>
             </div>

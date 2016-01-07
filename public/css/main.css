@@ -1193,7 +1193,7 @@ strong {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #fafaff;
+    background-color: #fffafd;
 }
 
 .InputAddOn-field:not(:first-child) {

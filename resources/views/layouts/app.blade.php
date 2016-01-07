@@ -80,11 +80,12 @@
                 <div class="Grid-cell">
                     @if (Auth::guest())
                         @if ($view_name != "auth.login")
-                            <div class="InputAddOn">
+                            <a class="loginout" href="{{ url('/login') }}">login</a>
+                            <!--div class="InputAddOn">
                                 <button class="InputAddOn-button-login" onclick="location.href='{{ url('/login') }}'">
                                     login
                                 </button>
-                            </div>
+                            </div-->
                         @endif
                         @if(false)
                             <div class="loginout">

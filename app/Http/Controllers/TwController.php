@@ -15,6 +15,7 @@ class TwController extends Controller
     const TW_API_COMPANY = 'mkgnao';
 
     public $auth = false;
+    public $user_id;
     public $tw_api_key;
     public $tw_me;
     public $bs;

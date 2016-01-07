@@ -33,7 +33,7 @@
                     </div>
                     <div class="InputAddOn">
                         <span class="InputAddOn-item">remember</span>
-                        <div>
+                        <div class="InputAddOn-item-checkbox">
                             <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                         </div>
                     </div>

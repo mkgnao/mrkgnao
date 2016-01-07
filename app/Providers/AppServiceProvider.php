@@ -14,10 +14,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Config::set('id', -1);
-        Config::set('tw_id', -1);
-        Config::set('id_pad', null);
-        Config::set('tw_me', null);
     }
 
     /**
@@ -27,5 +23,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->singleton('bs', function($app)
+        {
+            return new BladeService();
+        });
     }
 }

@@ -8,6 +8,8 @@ use Illuminate\Support\ServiceProvider;
 
 class BladeService implements SelfHandling
 {
+    public $id = -1;
+
     public function __construct()
     {
     }

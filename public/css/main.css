@@ -1193,7 +1193,7 @@ strong {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #fffdfd;
+    background-color: #EFEAEA;
 }
 
 .InputAddOn-field:not(:first-child) {
@@ -1206,31 +1206,31 @@ strong {
 
 .InputAddOn-item {
     font: inherit;
-    background-color: #fffdfd;
+    background-color: #EFEAEA;
     /*opacity: 0.8;*/
 }
 
 .InputAddOn-button-login {
     font: inherit;
-    background-color: #fffdfd;
+    background-color: #EFEAEA;
     /*opacity: 0.8;*/
 }
 
 .InputAddOn-item-checkbox {
     font: inherit;
-    background-color: #fffdfd;
+    background-color: #EFEAEA;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-item-link {
     font: inherit;
-    background-color: #fffdfd;
+    background-color: #EFEAEA;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
     border: 1px;
-    border-color: #fffdfd;
+    border-color: #EFEAEA;
     padding: .5em .75em;
 }
 

@@ -1221,7 +1221,7 @@ strong {
 }
 
 
-.InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login .InputAddOn-item-checkbox {
+.InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
     border: 1px;
     border-color: #B0B0B0;
     padding: .5em .75em;
@@ -1231,11 +1231,11 @@ strong {
     opacity: 0.5;
 }
 
-.InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child {
+.InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child, .InputAddOn-item-link:first-child {
     border-radius: 2px 0 0 2px
 }
 
-.InputAddOn-field:last-child, .InputAddOn-item:last-child. .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child {
+.InputAddOn-field:last-child, .InputAddOn-item:last-child. .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child, .InputAddOn-item-link:first-child {
     border-radius: 0 2px 2px 0
 }
 

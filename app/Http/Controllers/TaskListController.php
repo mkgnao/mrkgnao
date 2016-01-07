@@ -25,8 +25,8 @@ class TaskListController extends TwController
 
     private function setTwTaskList()
     {
-        $this->tw_task_list = twGetById('task_List', $this->tw_me->id);
-        jsPut('tw_task_list', $this->tw_task_list);
+        $this->tw_task_list = parent::twGetById('task_List', $this->tw_me->id);
+        parent::jsPut('tw_task_list', $this->tw_task_list);
     }
 
     /**

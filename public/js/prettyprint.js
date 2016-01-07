@@ -769,12 +769,10 @@ mkgnaoNs.prettyPrint = (function () {
                 td: {
                     padding: '1px',
                     fontSize: '14px',
-                    //backgroundColor: '#FFF',
-                    //color: '#222',
                     border: '1px solid silver',
                     verticalAlign: 'top',
-                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
-                    whiteSpace: 'nowrap'
+                    whiteSpace: 'nowrap',
+                    opacity: 0.8
                 },
                 td_hover: {
                     /* Styles defined here will apply to all tr:hover > td,
@@ -783,14 +781,8 @@ mkgnaoNs.prettyPrint = (function () {
                 th: {
                     padding: '1px',
                     fontSize: '12px',
-                    //backgroundColor: '#222',
-                    //color: '#EEE',
                     textAlign: 'left',
-                    //border: '1px solid #000',
                     verticalAlign: 'top'
-                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
-                    //backgroundImage: util.headerGradient,
-                    //backgroundRepeat: 'repeat-x'
                 }
             }
         }

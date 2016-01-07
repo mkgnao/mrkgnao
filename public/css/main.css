@@ -1,6 +1,6 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-    background-color: #D0D0D0;
+    background-color: #C0C0C0;
     font-family: 'didotregularx';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -1192,7 +1192,7 @@ strong {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #D8D8D8;
+    background-color: #C8C8C8;
 }
 
 .InputAddOn-field:not(:first-child) {

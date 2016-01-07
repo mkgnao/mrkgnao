@@ -19,11 +19,6 @@ class TwController extends Controller
     public $tw_me;
     public $bs;
 
-    public function __construct(BladeService $bs)
-    {
-        $this->bs = $bs;
-    }
-
     public function twAuth()
     {
         if (!$this->auth) {

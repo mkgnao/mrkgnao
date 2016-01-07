@@ -85,7 +85,7 @@
                     @else
                             <div class="loginout">
                                 <a class="loginout"
-                                   href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
+                                   href="/u/{{ $c->id }}/main">{{ strtolower(Auth::user()->name) }} </a>
                             </div>
                             <div class="loginout">
                                 <a class="loginout" href="{{ url('/logout') }}">logout</a>

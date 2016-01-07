@@ -30,9 +30,9 @@ class MainController extends TwController
         $this->user_id = \Auth::id();
 
         try {
-            init();
+            parent::init();
         } catch (Exception $e) {
-            jsPut('tw_errors', $e);
+            parent::jsPut('tw_errors', $e);
         }
 
         return view('/u/main');

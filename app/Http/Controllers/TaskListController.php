@@ -39,10 +39,10 @@ class TaskListController extends TwController
         $this->user_id = \Auth::id();
 
         try {
-            init();
+            parent::init();
             self::setTwTaskList();
         } catch (Exception $e) {
-            jsPut('tw_errors', $e);
+            parent::jsPut('tw_errors', $e);
         }
 
         return view('/u/tasklist');

@@ -25,6 +25,24 @@ class Authenticate
             }
         }
 
+        self::abortIfIdNotMatched($request);
+
         return $next($request);
+    }
+
+    private function abortIfIdNotMatched($request)
+    {
+        $url = $request->path();
+
+        $urlComp = expolode("/", parse_url($url, PHP_URL_PATH));
+
+        if (count($urlComp) > 2) {
+            if ($urlComp[0] == "u") {
+                $id = Util::idStrip($urlComp[1]);
+                if ($id != \Auth::id()) {
+                    abort(403, 'unauthorized action');
+                }
+            }
+        }
     }
 }

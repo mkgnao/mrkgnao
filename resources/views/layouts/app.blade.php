@@ -72,20 +72,17 @@
         </div>
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-                <div-- class="Grid-cell">
-                    @if (Auth::guest())
+                <div class="Grid-cell">
+                    @if (Auth::guest() && !Request::is('*/login'))
                         <div class="loginout">
                             <a class="loginout" href="{{ url('/login') }}">login</a>
                         </div>
-                        @if(url('') == 'https://mrkgnao.co')
+                        @if(false)
                             <div class="loginout">
                                 <a class="loginout" href="{{ url('/register') }}">register</a>
                             </div>
-                            @endif
-                            @else
-                                    <!--div class="loginout">
-                            <a class="loginout" href="/">/</a><a class="loginout" href="/u/{{ Auth::id() }}"> u / {{ Auth::id() }} / </a><a-- class="loginout" href="/u/{{ Auth::id() }}/main">main</a>
-                        </div-->
+                        @endif
+                    @else
                             <div class="loginout">
                                 <a class="loginout"
                                    href="/u/{{ Auth::id() }}/main">{{ strtolower(Auth::user()->name) }} </a>
@@ -93,7 +90,7 @@
                             <div class="loginout">
                                 <a class="loginout" href="{{ url('/logout') }}">logout</a>
                             </div>
-                @endif
+                    @endif
             </div>
         </div>
     </div>

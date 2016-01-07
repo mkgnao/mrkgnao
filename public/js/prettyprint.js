@@ -769,9 +769,7 @@ mkgnaoNs.prettyPrint = (function () {
                 td: {
                     padding: '1px',
                     fontSize: '16px',
-                    //border: '1px solid silver',
-                    border: '1px',
-                    borderColor: 'B0B0B0',
+                    border: '1px solid #B0B0B0',
                     verticalAlign: 'top',
                     whiteSpace: 'nowrap',
                     opacity: 0.78

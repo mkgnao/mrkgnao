@@ -22,9 +22,7 @@ Route::get('partials.topnav', function () {
 });
 
 View::composer('*', function ($view) {
-
     View::share('view_name', $view->getName());
-
 });
 
 Route::group(['middleware' != 'web'], function () {
@@ -68,13 +66,13 @@ Route::group(['middleware' => 'web'], function () {
         return view('welcome');
     });
 
-    Route::get('/u/' . '{id}' . '/main', array('as' => '/u/main', 'uses' => 'MainController@index'));
+    Route::get('/u/' . '{id}' . '/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 
-    Route::get('/u/' . '{id}' . '/tasklist', array('as' => '/u/tasklist', 'uses' => 'TaskListController@index'));
+    Route::get('/u/' . '{id}' . '/p/tasklist', array('as' => '/u/p/tasklist', 'uses' => 'TaskListController@index'));
 
-    Route::get('/u/' . '{id}' . '/company', array('as' => '/u/company', 'uses' => 'CompanyController@index'));
+    Route::get('/u/' . '{id}' . '/p/company', array('as' => '/u/p/company', 'uses' => 'CompanyController@index'));
 
-    Route::get('/u/' . '{id}' . '/people', array('as' => '/u/people', 'uses' => 'PeopleController@index'));
+    Route::get('/u/' . '{id}' . '/p/people', array('as' => '/u/p/people', 'uses' => 'PeopleController@index'));
 
-    Route::get('/u/' . '{id}' . '/projects', array('as' => '/u/projects', 'uses' => 'ProjectsController@index'));
+    Route::get('/u/' . '{id}' . '/p/projects', array('as' => '/u/p/projects', 'uses' => 'ProjectsController@index'));
 });

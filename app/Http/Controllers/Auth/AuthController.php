@@ -25,21 +25,13 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
-     * Where to redirect users after login / registration.
-     *
-     * @var string
-     */
-    //protected $redirectTo = '/home';
-
-
-    /**
      * Get the post register / login redirect path.
      *
      * @return string
      */
     public function redirectPath()
     {
-        return '/u/' . Util::idPad(\Auth::id()) . '/main';
+        return '/u/' . Util::idPad(\Auth::id()) . '/p/main';
     }
 
     /**

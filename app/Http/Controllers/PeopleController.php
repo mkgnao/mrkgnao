@@ -44,6 +44,6 @@ class PeopleController extends TwController
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/people', array('c' => $this));
+        return \View::make('/u/people');
     }
 }

@@ -38,7 +38,7 @@ class AuthController extends Controller
      */
     public function redirectPath()
     {
-        return '/u/' . str_pad(\Auth::id(), 5, '0', STR_PAD_LEFT) . '/main';
+        return '/u/' . str_pad(\Auth::id(), 4, '0', STR_PAD_LEFT) . '/main';
     }
 
     /**

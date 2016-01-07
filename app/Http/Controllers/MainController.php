@@ -35,6 +35,6 @@ class MainController extends TwController
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/main', array('c' => $this));
+        return \View::make('/u/main');
     }
 }

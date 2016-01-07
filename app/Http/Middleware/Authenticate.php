@@ -38,6 +38,8 @@ class Authenticate
 
         $urlComp = explode("/", parse_url($url, PHP_URL_PATH));
 
+        \Log::info($urlComp);
+
         if (count($urlComp) > 2) {
             if ($urlComp[0] == "u") {
                 $id = Util::idStrip($urlComp[1]);

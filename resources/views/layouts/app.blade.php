@@ -91,8 +91,9 @@
                     @else
                         <div class="InputAddOn">
                             <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/settings') }}'">
-                                <img src="{{ url('/img/settings.png') }}"/>
+                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
+                                <!--img src="{{ url('/img/settings.png') }}"/-->
+                                main
                             </button>
                             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
                                 logout

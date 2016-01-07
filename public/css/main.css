@@ -1,6 +1,7 @@
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-    background-color: #C0C0C0;
+    /*background-color: #C0C0C0;*/
+    background-color: snow;
     font-family: 'didotregularx';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
@@ -1206,25 +1207,25 @@ strong {
 .InputAddOn-item {
     font: inherit;
     background-color: #B8B8B8;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 
 .InputAddOn-button-login {
     font: inherit;
     background-color: #B0B0B0;
-    opacity: 0.8;
+    /*opacity: 0.8;*/
 }
 
 .InputAddOn-item-checkbox {
     font: inherit;
     background-color: #C0C0C0;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
 }
 
 .InputAddOn-item-link {
     font: inherit;
     background-color: #B0B0B0;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
 }
 
 .InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
@@ -1804,20 +1805,20 @@ pre {
 .loginout {
     color: black;
     font-size: 1.1em;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
 }
 
 .topnav {
     text-align: center !important;
     color: black;
     font-size: 1.3em;
-    opacity: 0.7;
+    /*opacity: 0.7;*/
 }
 
 .bla {
     color: black;
     font-size: 1.2em;
-    opacity: 0.5;
+    /*opacity: 0.5;*/
     text-align: center !important;
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */

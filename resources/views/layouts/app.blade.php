@@ -111,6 +111,9 @@
     <article class="HolyGrail-content">
         @include('partials.scriptsend')
         @if ($view_name == "welcome")
+            <div class="center-title">
+                mkgnao
+            </div>
         @else
             @yield('content')
         @endif

@@ -66,7 +66,9 @@ Route::group(['middleware' => 'web'], function () {
         return view('welcome');
     });
 
-    Route::when('/*/{id}/p/*', 'CheckIdController@check');
+    Route::filter('/u/{id}/*', function($id) {
+        App\Http\Controllers\Auth\CheckId::check($id);
+    });
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

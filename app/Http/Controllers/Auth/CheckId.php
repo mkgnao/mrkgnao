@@ -9,19 +9,9 @@ use DB;
 use Illuminate\Http\Request;
 use App\Util;
 
-class CheckIdController
+class CheckId
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    public function check($id)
+    public static function check($id)
     {
         // protect urls
         if (Util::idStrip($id) != \Auth::id()) {

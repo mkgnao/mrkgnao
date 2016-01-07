@@ -64,6 +64,30 @@
 <body class="HolyGrail">
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
+        <div class="InputAddOn">
+            @if (!Auth::guest())
+            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
+                <!--img src="{{ url('/img/settings.png') }}"/-->
+                main
+            </button>
+            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
+                <!--img src="{{ url('/img/settings.png') }}"/-->
+                projects
+            </button>
+            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
+                <!--img src="{{ url('/img/settings.png') }}"/-->
+                people
+            </button>
+            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
+                <!--img src="{{ url('/img/settings.png') }}"/-->
+                organizations
+            </button>
+            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/tasklist') }}'">
+                <!--img src="{{ url('/img/settings.png') }}"/-->
+                tasks
+            </button>
+            @endif
+        </div>
         <div class="Header-titles">
             <h1 class="Header-title">
             </h1>
@@ -92,28 +116,7 @@
                         <div class="InputAddOn">
                             <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
                         </div>
-                        <div class="InputAddOn">
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
-                                <!--img src="{{ url('/img/settings.png') }}"/-->
-                                main
-                            </button>
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
-                                <!--img src="{{ url('/img/settings.png') }}"/-->
-                                projects
-                            </button>
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
-                                <!--img src="{{ url('/img/settings.png') }}"/-->
-                                people
-                            </button>
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
-                                <!--img src="{{ url('/img/settings.png') }}"/-->
-                                organizations
-                            </button>
-                            <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/tasklist') }}'">
-                                <!--img src="{{ url('/img/settings.png') }}"/-->
-                                tasks
-                            </button>
-                        </div>
+
                         <div class="InputAddOn">
                             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
                                 logout

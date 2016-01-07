@@ -66,6 +66,11 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">
+                @if (!Auth::guest())
+                <div class="InputAddOn">
+                    <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
+                </div>
+                @endif
             </h1>
             <h2 class="Header-subTitle"></h2>
         </div>
@@ -79,9 +84,6 @@
                                     login
                                 </button>
                             </div>
-                            <!--div class="loginout">
-                                <a class="loginout" href="{{ url('/login') }}">login</a>
-                            </div-->
                         @endif
                         @if(false)
                             <div class="loginout">
@@ -90,18 +92,10 @@
                         @endif
                     @else
                         <div class="InputAddOn">
-                            <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
                             <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
                                 logout
                             </button>
                         </div>
-                        <!--div class="loginout">
-                            <a class="loginout"
-                               href="/u/{{ App\Util::idPad(Auth::id()) }}/p/main">{} </a>
-                        </div-->
-                        <!--div class="loginout">
-                            <a class="loginout" href="{{ url('/logout') }}">logout</a>
-                        </div-->
                     @endif
                 </div>
             </div>
@@ -123,33 +117,35 @@
     <aside class="HolyGrail-ads u-textCenter">
         @if (!Auth::guest())
             <div class="InputAddOn">
-                <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
+                <button class="InputAddOn-button-login"
+                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
                     profile
                 </button>
             </div>
             <div class="InputAddOn">
-                <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
+                <button class="InputAddOn-button-login"
+                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
                     projects
                 </button>
             </div>
             <div class="InputAddOn">
-                <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
+                <button class="InputAddOn-button-login"
+                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
                     people
                 </button>
             </div>
             <div class="InputAddOn">
-                <button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
+                <button class="InputAddOn-button-login"
+                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/organizations') }}'">
                     organizations
                 </button>
             </div>
             <div class="InputAddOn">
-                <!--button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/tasklist') }}'"-->
                 <button class="InputAddOn-button-login">
                     tasks
                 </button>
             </div>
             <div class="InputAddOn">
-                <!--button class="InputAddOn-button-login" onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/tasklist') }}'"-->
                 <button class="InputAddOn-button-login">
                     billing
                 </button>

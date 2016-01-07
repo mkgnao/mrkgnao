@@ -1192,7 +1192,7 @@ strong {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #FAFAFA;
+    background-color: #D0D0D0;
 }
 
 .InputAddOn-field:not(:first-child) {
@@ -1208,14 +1208,14 @@ strong {
     background-color: hsla(31, 15%, 50%, .1);
     color: #666;*/
     font: inherit;
-    font-weight: 400
+    /*font-weight: 400*/
 }
 
 .InputAddOn-field, .InputAddOn-item {
     /*border: 1px solid #93806c;
     border: 1px solid hsla(31, 15%, 50%, .25);*/
     border: 1px;
-    border-color: #666666;
+    border-color: #B0B0B0;
     padding: .5em .75em;
 }
 

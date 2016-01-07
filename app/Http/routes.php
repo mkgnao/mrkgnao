@@ -17,6 +17,10 @@ Route::get('partials.scriptsend', function () {
     return View::make('partials/scriptsend');
 });
 
+Route::get('partials.topnav', function () {
+    return View::make('partials/topnav');
+});
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts

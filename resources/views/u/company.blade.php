@@ -2,6 +2,8 @@
 
 @section('content')
 
+    @yield('partials.topnav')
+
     <div class="Container">
 
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">

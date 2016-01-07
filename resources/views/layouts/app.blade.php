@@ -66,7 +66,8 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <div class="Header-title">
-                @if (!Auth::guest())
+                mkgnao
+                @if (false && !Auth::guest())
                     {{ strtolower(Auth::user()->name) }}
                 @endif
             </div>

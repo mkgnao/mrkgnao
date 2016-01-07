@@ -27,7 +27,6 @@
                         @endif
                     </div>
                     <div class="InputAddOn">
-                        remember?
                         <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                     </div>
                     <div class="InputAddOn">
@@ -36,7 +35,7 @@
                         </button>
                     </div>
                     <div class="InputAddOn">
-                        <a class="InputAddOn-link" href="{{ url('/password/reset') }}">reset</a>
+                        <a class="InputAddOn-item" href="{{ url('/password/reset') }}">reset</a>
                     </div>
                 </div>
             </div>

@@ -25,8 +25,10 @@ class MainController extends TwController
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
+        \Log::info($id);
+
         $this->user_id = \Auth::id();
 
         try {

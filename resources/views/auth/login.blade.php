@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/login') }}">
+    <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
         {!! csrf_field() !!}
 
         <div class="Container">

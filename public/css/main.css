@@ -1217,9 +1217,14 @@ strong {
 .InputAddOn-item-checkbox {
     font: inherit;
     background-color: #B0B0B0;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
+.InputAddOn-item-link {
+    font: inherit;
+    background-color: #B0B0B0;
+    opacity: 0.7;
+}
 
 .InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
     border: 1px;

@@ -21,6 +21,12 @@ Route::get('partials.topnav', function () {
     return View::make('partials/topnav');
 });
 
+View::composer('*', function($view){
+
+    View::share('view_name', $view->getName());
+
+});
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts

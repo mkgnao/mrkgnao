@@ -9,9 +9,9 @@ use Auth;
 use DB;
 use Illuminate\Http\Request;
 
-class CompanyController extends TwController
+class PeopleController extends TwController
 {
-    private $tw_company;
+    private $tw_people;
 
     /**
      * Create a new controller instance.
@@ -23,10 +23,10 @@ class CompanyController extends TwController
         $this->middleware('auth');
     }
 
-    private function setTwCompany()
+    private function setTwPeople()
     {
-        $this->company = parent::twGetAll('company');
-        parent::jsPut('tw_company', $this->company);
+        $this->people = parent::twGetAll('people');
+        parent::jsPut('tw_people', $this->people);
     }
 
     /**
@@ -40,11 +40,11 @@ class CompanyController extends TwController
 
         try {
             parent::init();
-            self::setTwCompany();
+            self::setTwPeople();
         } catch (\Exception $e) {
             parent::jsPut('tw_errors', $e);
         }
 
-        return \View::make('/u/company', array('c' => $this));
+        return \View::make('/u/people', array('c' => $this));
     }
 }

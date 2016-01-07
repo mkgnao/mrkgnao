@@ -7,6 +7,7 @@ use App\Http\TeamWorkPm;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
+use App\Util;
 
 class MainController extends TwController
 {
@@ -27,7 +28,9 @@ class MainController extends TwController
      */
     public function index($id)
     {
-        \Log::info('id: '.$id);
+        if (!(idStrip(Util::idStrip($id)) == \Auth::id())) {
+            abort(403, 'unauthorized action');
+        }
 
         $this->user_id = \Auth::id();
 

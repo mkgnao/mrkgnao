@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->singleton('bs', function($app)
         {
-            return new BladeService();
+            return new BladeService($app['wtf']);
         });
     }
 }

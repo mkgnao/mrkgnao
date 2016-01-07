@@ -85,7 +85,7 @@ class TwController extends Controller
 
     public function init()
     {
-        $this->app['bs']->id = \Auth::id();
+        $this->app->make('bs')->id = \Auth::id();
 
         self::setTwApiKey();
         self::twAuth();

@@ -66,8 +66,8 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <div class="Header-title">
-                @if (false && !Auth::guest())
-                    {{ strtolower(Auth::user()->name) }}
+                @if (!Auth::guest())
+                    <h1 class="Header-title">{{ strtolower(Auth::user()->name) }}</h1>
                 @endif
             </div>
             <!--h1 class="Header-title">

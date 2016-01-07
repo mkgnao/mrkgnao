@@ -72,8 +72,7 @@
         <div class="Header-actions">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
-                    {{ dd($view_name) }}
-                    @if (Auth::guest() && $view_name != "/u/login")
+                    @if (Auth::guest() && $view_name != "auth.login")
                         <div class="loginout">
                             <a class="loginout" href="{{ url('/login') }}">login</a>
                         </div>

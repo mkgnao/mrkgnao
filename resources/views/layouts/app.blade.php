@@ -67,13 +67,11 @@
         <div class="Header-titles">
             <h1 class="Header-title">
                 mkgnao
+                @if (!Auth::guest())
+                    / {{ strtolower(Auth::user()->name) }}
+                @endif
             </h1>
             <h2 class="Header-subTitle">
-                @if (!Auth::guest())
-                    <div class="InputAddOn">
-                        <span class="InputAddOn-item">{{ strtolower(Auth::user()->name) }}</span>
-                    </div>
-                @endif
             </h2>
         </div>
         <div class="Header-actions">

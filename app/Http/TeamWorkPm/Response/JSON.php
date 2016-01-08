@@ -8,7 +8,7 @@ class JSON extends Model
 
     public function parse($data, array $headers)
     {
-        $source = json_decode($data);
+        $source = json_decode($data, true);
         $errors = $this->getJsonErrors();
         $this->string = $data;
         if (!$errors) {
@@ -56,8 +56,8 @@ class JSON extends Model
                                 $headers['X-Action']
                             )
                         ) {
-                            //$source = current($source->messageReplies);
-                            $source = $source->messageReplies[count($source->messageReplies) - 1];
+                            $source = current($source->messageReplies);
+                            //$source = $source->messageReplies[count($source->messageReplies) - 1];
                         } elseif (
                             !empty($source->people) &&
                             preg_match(
@@ -65,8 +65,8 @@ class JSON extends Model
                                 $headers['X-Action']
                             )
                         ) {
-                            $source = $source->people[count($source->people) - 1];
-                            //$source = current($source->people);
+                            //$source = $source->people[count($source->people) - 1];
+                            $source = current($source->people);
                         } elseif (
                             !empty($source->project) &&
                             preg_match(
@@ -76,8 +76,8 @@ class JSON extends Model
                         ) {
                             $source = [];
                         } else {
-                            //$source = current($source);
-                            $source = $source[count($source) - 1];
+                            $source = current($source);
+                            //$source = $source[count($source) - 1];
                         }
                         if ($headers['X-Action'] === 'links' ||
                             $headers['X-Action'] === 'notebooks'

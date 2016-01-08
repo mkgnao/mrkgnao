@@ -66,22 +66,24 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <div class="Header-title">
-                <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-                    <div class="Grid-cell">
-                        <div class="center-title">
-                            mkgnao
-                        </div>
-                        @if (!Auth::guest())
-                            <h1 class="Header-title">{{ strtolower(Auth::user()->name) }}</h1>
-                        @endif
+                @if ($view_name == "welcome" && Auth::guest())
+                    <div class="center-title">
+                        mkgnao
                     </div>
-                </div>
+                @endif
+                @if (!Auth::guest())
+                    <div class="center-title">
+                        {{ strtolower(Auth::user()->name) }}
+                    </div>
+                @endif
             </div>
         </div>
-        <!--h1 class="Header-title">
-        </h1>
-        <h2 class="Header-subTitle">
-        </h2-->
+    </div>
+    </div>
+    <!--h1 class="Header-title">
+    </h1>
+    <h2 class="Header-subTitle">
+    </h2-->
     </div>
     <div class="Header-actions">
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">

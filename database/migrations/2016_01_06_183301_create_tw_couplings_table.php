@@ -14,9 +14,9 @@ class CreateTwCouplingsTable extends Migration
     {
         Schema::create('tw_couplings', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->integer('tw_id');
             $table->string('tw_api_key');
+            $table->timestamps();
         });
     }
 

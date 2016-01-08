@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class TwCoupling extends Model
 {
-    protected $table = 'tw_coupling';
+    protected $table = 'tw_couplings';
 }

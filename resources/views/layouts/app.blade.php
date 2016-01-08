@@ -71,6 +71,9 @@
             </h1>
             <!--h2 class="Header-subTitle"></h2-->
         </div>
+        <!-- -->
+
+        <!-- -->
         <div class="Header-actions">
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
@@ -80,35 +83,28 @@
                     </a>
                 @endif
             @else
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
-                    profile
-                </a>
-
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">
-                    people
-                </a>
-
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapnies') }}">
-                    organizations
-                </a>
-
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
-                    tasks
-                </a>
-
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
-                    billing
-                </a>
-
-                <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/logout') }}">
-                    logout
-                </a>
+                <dd>
+                    <nav role="navigation">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        &#9814
+                                    </div>
+                                </a>
+                                <div>
+                                    <ul>
+                                        <li><a href="#">settings</a></li>
+                                        <li><a href="#">projects</a></li>
+                                        <li><a href="#">tasks</a></li>
+                                        <li><a href="#">billing</a></li>
+                                        <li><a href="#">organization</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </dd>
             @endif
         </div>
     </div>

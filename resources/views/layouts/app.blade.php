@@ -108,13 +108,28 @@
     </div>
 </header>
 <main class="HolyGrail-body">
+    @include('partials.scriptsend')
+
     <article class="HolyGrail-content">
-        @include('partials.scriptsend')
         @if ($view_name == "welcome")
         @else
             @yield('content')
         @endif
     </article>
+
+    <article class="HolyGrail-content">
+        @if ($e != null)
+            exception:
+
+            {{ $e  }}
+
+            @if ($req != null)
+                {{ $req }}
+            @endif
+
+        @endif
+    </article>
+
     <nav class="HolyGrail-nav u-textCenter">
     </nav>
     <aside class="HolyGrail-ads u-textCenter">

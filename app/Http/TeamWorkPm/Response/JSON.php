@@ -8,7 +8,12 @@ class JSON extends Model
 
     public function parse($data, array $headers)
     {
+        \Log::info('data: '.$data);
+
         $source = json_decode($data, true);
+
+        \Log::info('source: '.$source);
+
         $errors = $this->getJsonErrors();
         $this->string = $data;
         if (!$errors) {
@@ -99,9 +104,9 @@ class JSON extends Model
                         // HACK: DDYOK BECAUSE OF HHVM
                         $source_obj = json_decode(json_encode($source));
 
-                        \Log::info($this->string);
-                        \Log::info($source);
-                        \Log::info($source_obj);
+                        \Log::info('this string:'.$this->string);
+                        \Log::info('post source:'.$source);
+                        \Log::info('source obj:'.$source_obj);
 
                         $this->data = self::camelizeObject($source_obj);
 

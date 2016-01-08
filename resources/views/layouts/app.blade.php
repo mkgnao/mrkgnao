@@ -118,16 +118,6 @@
     </article>
 
     <article class="HolyGrail-content">
-        @if ($e != null)
-            exception:
-
-            {{ $e  }}
-
-            @if ($req != null)
-                {{ $req }}
-            @endif
-
-        @endif
     </article>
 
     <nav class="HolyGrail-nav u-textCenter">

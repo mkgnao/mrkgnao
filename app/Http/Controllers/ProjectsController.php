@@ -35,8 +35,6 @@ class ProjectsController extends TwController
      */
     public function index($id)
     {
-        parent::index($id);
-
         $this->user_id = \Auth::id();
 
         try {

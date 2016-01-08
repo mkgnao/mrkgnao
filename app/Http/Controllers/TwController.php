@@ -96,7 +96,7 @@ class TwController extends Controller
         self::setTwIdIfNull();
     }
 
-    public function index($id)
+    public function index()
     {
     }
 }

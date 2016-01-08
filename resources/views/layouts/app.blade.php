@@ -75,6 +75,12 @@
                         login
                     </a>
                 @endif
+                    <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/bla') }}">
+                        bla
+                    </a>
+                    <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/bla') }}">
+                        bla and bla
+                    </a>
             @else
                 <a class="Header-button Button Button--action Button--wide" href="{{ url('/logout') }}">
                     logout

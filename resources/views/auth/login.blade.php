@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
+    <form id="login-form" role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
         {!! csrf_field() !!}
 
         <div class="Container">
@@ -32,7 +32,7 @@
                             <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                         </div>
                     </div-->
-                    <a class="Header-button Button Button--action Button--wide" onclick="form.submit();">
+                    <a id="form-submit" class="Header-button Button Button--action Button--wide">
                         <span class="Header-button-a">login</span>
                     </a>
                     <!--div class="InputAddOn">
@@ -42,4 +42,10 @@
             </div>
         </div>
     </form>
+    <script>
+        var form = document.getElementById("login-form");
+        document.getElementById("form-submit").addEventListener("click", function () {
+            form.submit();
+        });
+    </script>
 @endsection

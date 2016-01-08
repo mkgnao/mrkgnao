@@ -23,7 +23,7 @@
                 var e = document.getElementById("twcontent");
                 var n = document.createElement("div");
                 n.id = "error";
-                if (window.tw_errors) {
+                if (mkgnaoNs.tw_errors) {
                     n.innerHTML = console.log(mkgnaoNs.tw_errors);
                 } else {
                     n.innerHTML = "oops";

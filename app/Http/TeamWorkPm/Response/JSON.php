@@ -99,6 +99,9 @@ class JSON extends Model
                         $this->headers = $headers;
                         $this->string = json_encode($source);
 
+                        // HACK: DDYOK BECAUSE OF HHVM
+                        $source = json_decode($this->string);
+
                         $this->data = self::camelizeObject($source);
 
                         if (!empty($this->data->id)) {

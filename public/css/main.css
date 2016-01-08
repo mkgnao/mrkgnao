@@ -939,8 +939,7 @@ strong {
     /*font-weight: 600;*/
     /*line-height: 1;*/
     /*word-spacing: .08em*/
-    text-align: center;
-
+    text-align: center !important;
 }
 
 .Header-title i {

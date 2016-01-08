@@ -12,10 +12,9 @@ class JSON extends Model
 
         $source = json_decode($data, true);
 
-        \Log::info('source: '.$source);
-
         $errors = $this->getJsonErrors();
         $this->string = $data;
+
         if (!$errors) {
             if (!(
                 $headers['Status'] === 201 ||
@@ -105,7 +104,7 @@ class JSON extends Model
                         $source_obj = json_decode(json_encode($source));
 
                         \Log::info('this string:'.$this->string);
-                        \Log::info('post source:'.$source);
+                        //\Log::info('post source:'.$source);
                         \Log::info('source obj:'.$source_obj);
 
                         $this->data = self::camelizeObject($source_obj);

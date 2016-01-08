@@ -62,10 +62,13 @@
 </head>
 
 <body class="HolyGrail">
+
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <h1 class="Header-title"><a href="{{ url('/') }}">schreibstube</a></h1>
+            <h1 class="Header-title">
+                <a href="{{ url('/') }}">schreibstube</a>
+            </h1>
             <!--h2 class="Header-subTitle"></h2-->
         </div>
         <div class="Header-actions">
@@ -110,6 +113,7 @@
         </div>
     </div>
 </header>
+
 <main class="HolyGrail-body">
     @include('partials.scriptsend')
 
@@ -125,45 +129,9 @@
     <nav class="HolyGrail-nav u-textCenter">
     </nav>
     <aside class="HolyGrail-ads u-textCenter">
-        @if (!Auth::guest())
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login"
-                        }}
-                '">
-                profile
-                </button>
-            </div>
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login"
-                        onclick="location.href='{{  }}'">
-                    projects
-                </button>
-            </div>
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login"
-                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}'">
-                    people
-                </button>
-            </div>
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login"
-                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}'">
-                    organizations
-                </button>
-            </div>
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login">
-                    tasks
-                </button>
-            </div>
-            <div class="InputAddOn">
-                <button class="InputAddOn-button-login">
-                    billing
-                </button>
-            </div>
-        @endif
     </aside>
 </main>
+
 <footer class="HolyGrail-footer">
     <div class="Footer">
         <div class="Footer-credits">

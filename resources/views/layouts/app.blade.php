@@ -65,54 +65,22 @@
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
-            <div class="Header-title">
-                @if ($view_name == "welcome" && Auth::guest())
-                    <div class="center-title">
-                        mkgnao
-                    </div>
-                @endif
-                @if (!Auth::guest())
-                    <div class="center-title">
-                        {{ strtolower(Auth::user()->name) }}
-                    </div>
-                @endif
-            </div>
+            <h1 class="Header-title"><a href="{{ url('/') }}">schreibstube</a></h1>
+            <h2 class="Header-subTitle">impeccable writing</h2>
         </div>
-    </div>
-    <!--h1 class="Header-title">
-    </h1>
-    <h2 class="Header-subTitle">
-    </h2-->
-    <div class="Header-actions">
-        <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-            <div class="Grid-cell">
-                @if (Auth::guest())
-                    @if ($view_name != "auth.login")
-                        <a class="loginout" href="{{ url('/login') }}">login</a>
-                        <!--div class="InputAddOn">
-                                <button class="InputAddOn-button-login" onclick="location.href='{{ url('/login') }}'">
-                                    login
-                                </button>
-                            </div-->
-                    @endif
-                    @if(false)
-                        <div class="loginout">
-                            <a class="loginout" href="{{ url('/register') }}">register</a>
-                        </div>
-                    @endif
-                @else
-                    <div class="InputAddOn">
-                        <button class="InputAddOn-button-login" onclick="location.href='{{ url('/logout') }}'">
-                            logout
-                        </button>
-                    </div>
+        <div class="Header-actions">
+            @if (Auth::guest())
+                @if ($view_name != "auth.login")
+                    <a class="Header-button Button Button--action Button--wide" href="{{ url('/login') }}">
+                        login
+                    </a>
                 @endif
-            </div>
+            @else
+                <a class="Header-button Button Button--action Button--wide" href="{{ url('/login') }}">
+                    login
+                </a>
+            @endif
         </div>
-        @if (false)
-            @include("partials.topnav")
-        @endif
-    </div>
     </div>
 </header>
 <main class="HolyGrail-body">

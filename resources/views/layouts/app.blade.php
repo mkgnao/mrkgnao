@@ -139,7 +139,7 @@
 <footer class="HolyGrail-footer">
     <div class="Footer">
         <div class="Footer-credits">
-            <span class="Footer-credit">copyright © 2016 mkgnao | contact@mkgnao.co</span>
+            <span class="Footer-credit">copyright © 2016 | contact@mkgnao.co</span>
         </div>
     </div>
 </footer>

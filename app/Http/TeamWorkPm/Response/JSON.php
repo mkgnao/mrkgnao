@@ -13,7 +13,6 @@ class JSON extends Model
         $source = json_decode($data, true);
 
         \Log::info('STATUS: '.$source['STATUS']);
-        \Log::info('->STATUS: '.$source->STATUS);
 
         $errors = $this->getJsonErrors();
         $this->string = $data;
@@ -32,14 +31,15 @@ class JSON extends Model
             if ($headers['Status'] === 201 || $headers['Status'] === 200) {
                 switch ($headers['Method']) {
                     case 'UPLOAD':
-                        return empty($source->pendingFile->ref) ? null :
-                            (string)$source->pendingFile->ref;
+                        if (!empty($source['pendingFile']) && !empty($source['pendingFile']['ref'])) {
+                            return (string)$source['pendingFile']['ref'];
+                        }
                     case 'POST':
                         // print_r($headers);
                         if (!empty($headers['id'])) {
                             return (int)$headers['id'];
-                        } elseif (!empty($source->fileId)) {
-                            return (int)$source->fileId;
+                        } elseif (!empty($source['fileId'])) {
+                            return (int)$source['fileId'];
                         }
                     // no break
                     case 'PUT':
@@ -47,33 +47,33 @@ class JSON extends Model
                         return true;
 
                     default:
-                        if (!empty($source->STATUS)) {
-                            unset($source->STATUS);
+                        if (!empty($source['STATUS'])) {
+                            unset($source['STATUS']);
                         }
-                        if (!empty($source->project->files)) {
-                            $source = $source->project->files;
-                        } elseif (!empty($source->project->notebooks)) {
-                            $source = $source->project->notebooks;
-                        } elseif (!empty($source->project->links)) {
-                            $source = $source->project->links;
+                        if (!empty($source['project']) && !empty($source['project']['files'])) {
+                            $source = $source['project']['files'];
+                        } elseif (!empty($source['project']) && !empty($source['project']['notebooks'])) {
+                            $source = $source['project']['notebooks'];
+                        } elseif (!empty($source['project']) && !empty($source['project']['links'])) {
+                            $source = $source['project']['links'];
                         } elseif (
-                            !empty($source->messageReplies) &&
+                            !empty($source['messageReplies']) &&
                             preg_match(
                                 '!messageReplies/(\d+)!',
                                 $headers['X-Action']
                             )
                         ) {
-                            $source = current($source->messageReplies);
+                            $source = current($source['messageReplies']);
                         } elseif (
-                            !empty($source->people) &&
+                            !empty($source['people']) &&
                             preg_match(
                                 '!projects/(\d+)/people/(\d+)!',
                                 $headers['X-Action']
                             )
                         ) {
-                            $source = current($source->people);
+                            $source = current($source['people']);
                         } elseif (
-                            !empty($source->project) &&
+                            !empty($source['project']) &&
                             preg_match(
                                 '!projects/(\d+)/notebooks!',
                                 $headers['X-Action']
@@ -118,8 +118,8 @@ class JSON extends Model
 
                         return $this;
                 }
-            } elseif (!empty($source->MESSAGE)) {
-                $errors = $source->MESSAGE;
+            } elseif (!empty($source['MESSAGE'])) {
+                $errors = $source['MESSAGE'];
             } else {
                 $errors = null;
             }

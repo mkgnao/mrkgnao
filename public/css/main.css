@@ -1018,8 +1018,7 @@ strong {
 }
 
 .Header-button-a {
-    line-height: 10px;
-
+    line-height: 1px;
 }
 
 .Header-button:first-child {
@@ -1224,6 +1223,9 @@ strong {
     background-color: #FAFAFA;
     /*opacity: 0.8;*/
 }
+.InputAddOn-button-login:hover {
+    background: whitesmoke;
+}
 
 .InputAddOn-item-checkbox {
     font: inherit;
@@ -1245,6 +1247,10 @@ strong {
 
 .InputAddOn-item:placeholder-shown {
     opacity: 0.45;
+}
+
+.InputAddOn-item:focus:placeholder-shown {
+    opacity: 0;
 }
 
 .InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child, .InputAddOn-item-link:first-child {

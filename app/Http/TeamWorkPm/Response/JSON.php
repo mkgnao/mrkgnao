@@ -74,7 +74,8 @@ class JSON extends Model
                         ) {
                             $source = [];
                         } else {
-                            $source = current($source);
+                            $source = [current($source)];
+                            //$source = current($source);
                         }
                         if ($headers['X-Action'] === 'links' ||
                             $headers['X-Action'] === 'notebooks'

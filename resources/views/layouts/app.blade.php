@@ -91,8 +91,8 @@
                 </a>
 
                 <a class="Header-button Button Button--action Button--wide Header-button-top"
-                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapny') }}">
-                    organization
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapnies') }}">
+                    organizations
                 </a>
 
                 <a class="Header-button Button Button--action Button--wide Header-button-top"

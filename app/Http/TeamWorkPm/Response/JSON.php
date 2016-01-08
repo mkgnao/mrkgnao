@@ -57,7 +57,6 @@ class JSON extends Model
                             )
                         ) {
                             $source = current($source->messageReplies);
-                            //$source = $source->messageReplies[count($source->messageReplies) - 1];
                         } elseif (
                             !empty($source->people) &&
                             preg_match(
@@ -65,7 +64,6 @@ class JSON extends Model
                                 $headers['X-Action']
                             )
                         ) {
-                            //$source = $source->people[count($source->people) - 1];
                             $source = current($source->people);
                         } elseif (
                             !empty($source->project) &&
@@ -77,7 +75,6 @@ class JSON extends Model
                             $source = [];
                         } else {
                             $source = current($source);
-                            //$source = $source[count($source) - 1];
                         }
                         if ($headers['X-Action'] === 'links' ||
                             $headers['X-Action'] === 'notebooks'
@@ -100,9 +97,9 @@ class JSON extends Model
                         $this->string = json_encode($source);
 
                         // HACK: DDYOK BECAUSE OF HHVM
-                        $source = json_decode($this->string);
+                        $source_obj = json_decode($this->string);
 
-                        $this->data = self::camelizeObject($source);
+                        $this->data = self::camelizeObject($source_obj);
 
                         if (!empty($this->data->id)) {
                             $this->data->id = (int)$this->data->id;
@@ -160,6 +157,9 @@ class JSON extends Model
 
     protected static function camelizeObject($source)
     {
+
+        \Log::info($source);
+
         $destination = new ArrayObject([], ArrayObject::ARRAY_AS_PROPS);
         foreach ($source as $key => $value) {
             if (ctype_upper($key)) {

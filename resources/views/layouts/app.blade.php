@@ -110,7 +110,7 @@
 <main class="HolyGrail-body">
     @include('partials.scriptsend')
 
-    <article class="HolyGrail-content">
+    <article class="HolyGrail-content" class="u-textCenter">
         @if ($view_name == "welcome")
             <div class="center-title">mkgnao</div>
         @else

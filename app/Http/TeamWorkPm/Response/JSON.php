@@ -108,7 +108,6 @@ class JSON extends Model
 
                         \Log::info('this string:'.$this->string);
                         //\Log::info('post source:'.$source);
-                        \Log::info('source obj:'.$source_obj);
 
                         $this->data = self::camelizeObject($source_obj);
 

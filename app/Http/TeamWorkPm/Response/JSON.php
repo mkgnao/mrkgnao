@@ -167,9 +167,6 @@ class JSON extends Model
 
     protected static function camelizeObject($source)
     {
-
-        \Log::info($source);
-
         $destination = new ArrayObject([], ArrayObject::ARRAY_AS_PROPS);
         foreach ($source as $key => $value) {
             if (ctype_upper($key)) {

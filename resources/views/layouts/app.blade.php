@@ -66,37 +66,44 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title"><a href="{{ url('/') }}">schreibstube</a></h1>
-            <!--h2 class="Header-subTitle">impeccable writing</h2-->
+            <!--h2 class="Header-subTitle"></h2-->
         </div>
         <div class="Header-actions">
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
-                    <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/login') }}">
+                    <a class="Header-button Button Button--action Button--wide Header-button-top"
+                       href="{{ url('/login') }}">
                         login
                     </a>
                 @endif
             @else
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
                     profile
                 </a>
 
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">
                     people
                 </a>
 
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapny') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapny') }}">
                     organization
                 </a>
 
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
                     tasks
                 </a>
 
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
                     billing
                 </a>
 
-                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/logout') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top"
+                   href="{{ url('/logout') }}">
                     logout
                 </a>
             @endif
@@ -121,8 +128,9 @@
         @if (!Auth::guest())
             <div class="InputAddOn">
                 <button class="InputAddOn-button-login"
-                         }}'">
-                    profile
+                        }}
+                '">
+                profile
                 </button>
             </div>
             <div class="InputAddOn">

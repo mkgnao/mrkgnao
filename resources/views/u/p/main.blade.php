@@ -24,7 +24,8 @@
                 var n = document.createElement("div");
                 n.id = "error";
                 if (mkgnaoNs.tw_errors) {
-                    n.innerHTML = console.log(mkgnaoNs.tw_errors);
+                    console.log(mkgnaoNs.tw_errors);
+                    n.innerHTML = mkgnaoNs.tw_errors;
                 } else {
                     n.innerHTML = "oops";
                 }

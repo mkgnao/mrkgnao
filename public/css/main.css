@@ -467,7 +467,7 @@ strong {
 }
 
 .Button--action:active, .Button--action:focus, .Button--action:hover {
-    background-color: grey;
+    background-color: whitesmoke;
 }
 
 .Button--wide {

@@ -79,12 +79,10 @@
             </div>
         </div>
     </div>
-    </div>
     <!--h1 class="Header-title">
     </h1>
     <h2 class="Header-subTitle">
     </h2-->
-    </div>
     <div class="Header-actions">
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
             <div class="Grid-cell">

@@ -112,6 +112,7 @@
 
     <article class="HolyGrail-content">
         @if ($view_name == "welcome")
+            <div class="center-title">mkgnao</div>
         @else
             @yield('content')
         @endif

@@ -1821,9 +1821,7 @@ pre {
 
 .center-title {
     color: black;
-    font-size: 3.2em;
-    opacity: 0.8;
-    text-align: center !important;
+    font-size: 7.2em;
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+ */
@@ -1832,6 +1830,7 @@ pre {
     -o-user-select: none;
     user-select: none;
     cursor: default;
+    text-align: center !important;
 }
 
 .bla {

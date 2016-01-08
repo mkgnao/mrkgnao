@@ -1018,7 +1018,8 @@ strong {
 }
 
 .Header-button-top {
-    vertical-align: text-top;
+    line-height: 0.4em;
+
 }
 
 .Header-button:first-child {

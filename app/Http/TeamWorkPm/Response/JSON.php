@@ -97,7 +97,11 @@ class JSON extends Model
                         $this->string = json_encode($source);
 
                         // HACK: DDYOK BECAUSE OF HHVM
-                        $source_obj = json_decode($this->string);
+                        $source_obj = json_decode(json_encode($source));
+
+                        \Log::info($this->string);
+                        \Log::info($source);
+                        \Log::info($source_obj);
 
                         $this->data = self::camelizeObject($source_obj);
 

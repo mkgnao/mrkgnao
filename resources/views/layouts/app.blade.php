@@ -72,12 +72,12 @@
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
                     <a class="Header-button Button Button--action Button--wide" href="{{ url('/login') }}">
-                        login
+                        <span class=".Header-button-a">login</span>
                     </a>
                 @endif
             @else
                 <a class="Header-button Button Button--action Button--wide" href="{{ url('/logout') }}">
-                    login
+                    logout
                 </a>
             @endif
         </div>

@@ -579,7 +579,7 @@ strong {
 .Footer-social a, .Footer-social iframe {
     display: inline-block;
     margin: 0 0 1em;
-    vertical-align: top
+    vertical-align: top;
 }
 
 @media (min-width: 576px) {
@@ -1017,7 +1017,7 @@ strong {
     }
 }
 
-.Header-button-a {
+.Header-button-top {
     vertical-align: text-top;
 }
 

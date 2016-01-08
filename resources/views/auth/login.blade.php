@@ -33,7 +33,7 @@
                         </div>
                     </div-->
                     <a class="Header-button Button Button--action Button--wide" onclick="form.submit();">
-                        <span class=".Header-button-a">login</span>
+                        <span class="Header-button-a">login</span>
                     </a>
                     <!--div class="InputAddOn">
                         <a class="InputAddOn-item-link" href="{{ url('/password/reset') }}">reset</a>

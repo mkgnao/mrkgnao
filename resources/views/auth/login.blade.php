@@ -7,7 +7,7 @@
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-                <div class="Grid-cell">
+                <div-- class="Grid-cell">
                     <div class="InputAddOn">
                         <!--span class="InputAddOn-item">email</span-->
 
@@ -32,14 +32,9 @@
                             <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
                         </div>
                     </div-->
-                    <div class="InputAddOn">
-                        <button class="InputAddOn-button-login" type="submit">
-                            login
-                        </button>
-                        <!--div class="InputAddOn-item-checkbox">
-                            <input type="checkbox" class="InputAddOn-item-checkbox" name="remember">
-                        </div-->
-                    </div>
+                    <a class="Header-button Button Button--action Button--wide" onclick="form.submit();">
+                        <span class=".Header-button-a">login</span>
+                    </a>
                     <!--div class="InputAddOn">
                         <a class="InputAddOn-item-link" href="{{ url('/password/reset') }}">reset</a>
                     </div-->

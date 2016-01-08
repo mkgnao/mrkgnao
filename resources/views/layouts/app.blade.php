@@ -75,14 +75,28 @@
                         login
                     </a>
                 @endif
-                    <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/bla') }}">
-                        bla
-                    </a>
-                    <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/bla') }}">
-                        bla and bla
-                    </a>
             @else
-                <a class="Header-button Button Button--action Button--wide" href="{{ url('/logout') }}">
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                    profile
+                </a>
+
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">
+                    people
+                </a>
+
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/comapny') }}">
+                    organization
+                </a>
+
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                    tasks
+                </a>
+
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">
+                    billing
+                </a>
+
+                <a class="Header-button Button Button--action Button--wide Header-button-top" href="{{ url('/logout') }}">
                     logout
                 </a>
             @endif
@@ -107,13 +121,13 @@
         @if (!Auth::guest())
             <div class="InputAddOn">
                 <button class="InputAddOn-button-login"
-                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}'">
+                         }}'">
                     profile
                 </button>
             </div>
             <div class="InputAddOn">
                 <button class="InputAddOn-button-login"
-                        onclick="location.href='{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}'">
+                        onclick="location.href='{{  }}'">
                     projects
                 </button>
             </div>

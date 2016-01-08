@@ -1018,7 +1018,7 @@ strong {
 }
 
 .Header-button-a {
-    margin-top: 0em;
+    vertical-align: text-top;
 }
 
 .Header-button:first-child {

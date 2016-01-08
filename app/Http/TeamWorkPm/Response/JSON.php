@@ -11,6 +11,9 @@ class JSON extends Model
         \Log::info('data: '.$data);
 
         $source = json_decode($data, true);
+        $source2 = json_decode($data);
+
+        \Log::info($source2);
 
         $errors = $this->getJsonErrors();
         $this->string = $data;

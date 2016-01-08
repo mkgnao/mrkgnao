@@ -1249,9 +1249,36 @@ strong {
     opacity: 0.45;
 }
 
-.InputAddOn-item:focus:placeholder-shown {
-    opacity: 0;
+.InputAddOn-item::-webkit-input-placeholder {
+    color: #999;
 }
+.InputAddOn-item:focus::-webkit-input-placeholder {
+    color: red;
+}
+/* Firefox < 19 */
+.InputAddOn-item:-moz-placeholder {
+    color: #999;
+}
+.InputAddOn-item:focus:-moz-placeholder {
+    color: red;
+}
+/* Firefox > 19 */
+.InputAddOn-item::-moz-placeholder {
+    color: #999;
+}
+.InputAddOn-item:focus::-moz-placeholder {
+    color: red;
+}
+
+/* Internet Explorer 10 */
+.InputAddOn-item:-ms-input-placeholder {
+    color: #999;
+}
+.InputAddOn-item:focus:-ms-input-placeholder {
+    color: red;
+}
+
+
 
 .InputAddOn-field:first-child, .InputAddOn-item:first-child, .InputAddOn-button-login:first-child, .InputAddOn-item-checkbox:first-child, .InputAddOn-item-link:first-child {
     border-radius: 2px 0 0 2px

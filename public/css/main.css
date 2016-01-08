@@ -452,22 +452,22 @@ strong {
 }
 
 .Button:focus {
-    outline: thin dotted #666;
+    /*outline: thin dotted #666;*/
     text-decoration: none
 }
 
 .Button:active, .Button:focus, .Button:hover {
     border: 0;
-    background: hsla(31, 15%, 50%, .25);
+    background: grey;
     text-decoration: none
 }
 
 .Button--action {
-    color: #fff
+    color: inherit;
 }
 
 .Button--action:active, .Button--action:focus, .Button--action:hover {
-    background-color: #389466
+    background-color: grey;
 }
 
 .Button--wide {

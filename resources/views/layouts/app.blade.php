@@ -66,7 +66,7 @@
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title"><a href="{{ url('/') }}">schreibstube</a></h1>
-            <h2 class="Header-subTitle">impeccable writing</h2>
+            <!--h2 class="Header-subTitle">impeccable writing</h2-->
         </div>
         <div class="Header-actions">
             @if (Auth::guest())
@@ -76,7 +76,7 @@
                     </a>
                 @endif
             @else
-                <a class="Header-button Button Button--action Button--wide" href="{{ url('/login') }}">
+                <a class="Header-button Button Button--action Button--wide" href="{{ url('/logout') }}">
                     login
                 </a>
             @endif

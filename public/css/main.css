@@ -458,7 +458,7 @@ strong {
 
 .Button:active, .Button:focus, .Button:hover {
     border: 0;
-    background: grey;
+    background: whitesmoke;
     text-decoration: none
 }
 
@@ -935,7 +935,8 @@ strong {
 
 .Header-title {
     margin: 0 0 .15em;
-    font-size: 1.6em;
+    font-size: 2.4em;
+    letter-spacing: 2px;
     /*font-weight: 600;*/
     line-height: 1;
     /*word-spacing: .08em*/

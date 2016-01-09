@@ -1851,3 +1851,7 @@ pre {
     cursor: default;
     text-align: center !important;
 }
+
+.smallTriangle {
+    font-size: 0.6em;
+}

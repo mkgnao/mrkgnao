@@ -213,9 +213,7 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    <div>
-                                        {{ strtolower(Auth::user()->name) }}
-                                    </div>
+                                    {{ strtolower(Auth::user()->name) }} <span class="smallTriangle">&#9660;</span>
                                 </a>
                                 <div>
                                     <ul>

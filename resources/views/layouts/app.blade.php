@@ -20,6 +20,7 @@
     <link href="/css/twtable.css" rel="stylesheet" type="text/css">
 
     <script src="/js/main.js"></script>
+    <script src="/js/classie.js"></script>
 
     <script>
         function addLoadEvent(func) {

@@ -18,10 +18,6 @@ html {
     height: 100%;
 }
 
-.HolyGrail-body div {
-    overflow: scroll;
-}
-
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
 }
@@ -1117,6 +1113,7 @@ strong {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 1.5em;
+    overflow-y: scroll;
 }
 
 .HolyGrail-content {

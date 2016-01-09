@@ -63,6 +63,7 @@ dd > nav > ul > li a + div > ul > li > a {
 
 dd > nav > ul > li a + div > ul > li:hover > a {
     background-color: whitesmoke;
+    opacity: 1;
 }
 
 dd > nav > ul > li > a {

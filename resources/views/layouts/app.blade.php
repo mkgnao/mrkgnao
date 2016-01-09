@@ -220,7 +220,7 @@
                                             <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
                                         </li>
                                         <li>
-                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">group</a>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">groups</a>
                                         </li>
                                         <li>
                                             <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
@@ -240,6 +240,7 @@
     </div>
 </header>
 
+<div class="scrollable">
 
     <main class="HolyGrail-body">
         @include('partials.scriptsend')
@@ -259,7 +260,9 @@
         </aside>
     </main>
 
-<footer class="HolyGrail-footer">
+</div>
+
+<footer class="Site-footer">
     <div class="Footer">
         <div class="Footer-credits">
             <span class="Footer-credit">copyright © 2016 | contact@mkgnao.co</span>

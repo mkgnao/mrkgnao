@@ -13,6 +13,10 @@ body {
     margin: 0;
 }
 
+.scrollable {
+    overflow-y: scroll;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
 }
@@ -1083,14 +1087,14 @@ strong {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .HolyGrail-footer, .HolyGrail-header {
     -webkit-box-flex: 0;
     -webkit-flex: none;
     -ms-flex: none;
-    flex: none
+    flex: none;
 }
 
 .HolyGrail-body {

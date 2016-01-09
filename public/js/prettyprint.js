@@ -91,7 +91,7 @@ mkgnaoNs.prettyPrint = (function () {
 
                 tdValue = util.el("td");
                 tdValue.className = "twTableTdValue";
-                if (cells[0].nodeType) {
+                if (cells[1].nodeType) {
                     /* IsDomElement */
                     tdValue.appendChild(cells[1]);
                 } else {

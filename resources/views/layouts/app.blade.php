@@ -22,9 +22,12 @@
     <script src="/js/prettyprint.js"></script>
 
     <script>
-        function toggleModalLogout() {
-            console.log("toggleModalLogout");
+        function hideModalLogout() {
+            var e = document.getElementById("flex-container");
+            e.className = "flex-container-hidden";
+        }
 
+        function toggleModalLogout() {
             var e = document.getElementById("flex-container");
 
             if (e.className == "flex-container-hidden")
@@ -34,9 +37,13 @@
         }
 
         window.onload = function() {
-            logoutLink = document.getElementById("logout_click");
+            logoutLink = document.getElementById("logoutClick");
             if (logoutLink)
                 logoutLink.addEventListener('click' , toggleModalLogout);
+
+            logoutModalStay = document.getElementById("logoutModalStay");
+            if (logoutModalStay)
+                logoutModalStay.addEventListener('click' , hideModalLogout);
         }
     </script>
 
@@ -88,8 +95,8 @@
 
 <div id="flex-container" class="flex-container-hidden">
     <div class="flex-item">
-        <button class="Button Button--action Button--wide" onclick="location.href='{{ url('/logout') }}'">logout</button>
-        <button class="Button Button--action Button--wide" onclick="toggleModalLogout()">stay</button>
+        <a href="{{ url('/logout') }}" class="Button Button--action Button--wide">logout</a>
+        <a id="logoutModalStay" href="#" class="Button Button--action Button--wide">stay</a>
     </div>
 </div>
 
@@ -107,7 +114,7 @@
         <div class="Header-actions">
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
-                    <a class="Header-button Button Button--action Button--wide Header-button-a"
+                    <a class="Header-button Button Button--action Button--wide"
                        href="{{ url('/login') }}">
                         login
                     </a>
@@ -135,7 +142,7 @@
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
                                         </li>
-                                        <li><a id="logout_click" href="#">logout</a></li>
+                                        <li><a id="logoutClick" href="#">logout</a></li>
                                     </ul>
                                 </div>
                             </li>

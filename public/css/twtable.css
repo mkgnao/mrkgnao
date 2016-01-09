@@ -1,0 +1,33 @@
+.twTable {
+    border-collapse: collapse;
+    width: 60%;
+    text-transform: lowercase;
+}
+
+.twTableHead {
+
+}
+
+.twTableTr {
+}
+
+.twTableTh {
+    padding: 1px;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: top;
+    text-transform: lowercase;
+}
+
+.twTableTd {
+    padding: 1px;
+    font-size: 18px;
+    border: 1px solid rgb(176, 176, 176);
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.twTableTd:hover {
+
+}
+

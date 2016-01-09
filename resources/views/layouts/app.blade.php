@@ -95,12 +95,12 @@
                                 </a>
                                 <div>
                                     <ul>
-                                        <li ><a  href="#">settings</a></li>
-                                        <li ><a  href="#">tasks</a></li>
-                                        <li ><a  href="#">projects</a></li>
-                                        <li ><a  href="#">organizations</a></li>
-                                        <li ><a  href="#">billing</a></li>
-                                        <li ><a  href="#">logout</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a></li>
+                                        <li ><a  hhref="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">projects</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">organizations</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">logout</a></li>
                                     </ul>
                                 </div>
                             </li>

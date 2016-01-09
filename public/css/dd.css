@@ -3,8 +3,8 @@ dd {
     position: fixed;
     width: 100%;*/
     z-index: 1000;
-    opacity: 0.80;
-    font-size: 1.4em;
+    opacity: 0.86;
+    font-size: 1.5em;
 }
 
 dd > nav > ul {

@@ -34,7 +34,9 @@
         }
 
         window.onload = function() {
-            document.getElementById("logout_click").addEventListener('click' , toggleModalLogout);
+            logoutLink = document.getElementById("logout_click");
+            if (logoutLink)
+                logoutLink.addEventListener('click' , toggleModalLogout);
         }
     </script>
 
@@ -86,9 +88,8 @@
 
 <div id="flex-container" class="flex-container-hidden">
     <div class="flex-item">
-        logout? </br>
-        <button class="Button Button--action Button--wide" onclick="location.href='{{ url('/logout') }}'">yes</button>
-        <button class="Button Button--action Button--wide" onclick="toggleModalLogout()">no</button>
+        <button class="Button Button--action Button--wide" onclick="location.href='{{ url('/logout') }}'">logout</button>
+        <button class="Button Button--action Button--wide" onclick="toggleModalLogout()">stay</button>
     </div>
 </div>
 

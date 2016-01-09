@@ -3,10 +3,11 @@ var mkgnaoNs = mkgnaoNs || {};
 mkgnaoNs.twAddJson = function (what, where) {
     var j = JSON.parse(what);
     var n = mkgnaoNs.prettyPrint(j);
+
+    console.log(n.innerHTML);
+
     var e = document.getElementById(where);
     e.appendChild(n);
-
-    console.log(e);
 };
 
 mkgnaoNs.strPad = function (input, pad_length, pad_string, pad_type) {

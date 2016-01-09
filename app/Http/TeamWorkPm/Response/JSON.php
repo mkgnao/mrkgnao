@@ -99,7 +99,7 @@ class JSON extends Model
                         $this->headers = $headers;
                         $this->string = json_encode($source);
 
-                        \Log::info('this->string: ' + $this->string);
+                        \Log::info('this->string: '.$this->string);
 
                         // HACK: DDYOK BECAUSE OF HHVM
                         $source_obj = json_decode(json_encode($source));

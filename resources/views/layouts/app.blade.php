@@ -134,10 +134,12 @@
                             header = document.getElementById("HolyGrail-header");
                     if (distanceY > shrinkOn) {
                         header.className += "HolyGrail-header-sm";
+                        console.log("+: " + header);
                     } else {
                         header.className =
                                 header.className.replace
                                 ( /(?:^|\s)HolyGrail-header-sm(?!\S)/g , '' );
+                        console.log("-: " + header);
                     }
                 });
             }

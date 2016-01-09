@@ -53,7 +53,7 @@
     line-height: normal;
     text-decoration: none;
     white-space: nowrap;
-    background: whitesmoke;
+    background: green;
 }
 
 .Modal-Button:focus {
@@ -62,7 +62,7 @@
 
 .Modal-Button:active, .Button:focus, .Button:hover {
     border: 0;
-    background: #FCFCFC;
+    background: red;
     text-decoration: none
 }
 
@@ -71,7 +71,7 @@
 }
 
 .Modal-Button--action:active, .Button--action:focus, .Button--action:hover {
-    background-color: #FCFCFC;
+    background-color: yellow;
 }
 
 .Modal-Button--wide {

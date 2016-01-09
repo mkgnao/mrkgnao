@@ -23,7 +23,7 @@ dd > nav > ul > li {
 }
 
 dd > nav > ul > li:hover {
-    background: whitesmoke;
+    background: #FCFCFC;
 }
 
 dd > nav > ul > li a + div {
@@ -59,7 +59,7 @@ dd > nav > ul > li a + div > ul > li > a {
 }
 
 dd > nav > ul > li a + div > ul > li:hover > a {
-    background-color: #FCFCFC;
+    background-color: whitesmoke;
 }
 
 dd > nav > ul > li > a {

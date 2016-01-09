@@ -124,6 +124,25 @@
             }
 
             addLoadEvent(loadMain);
+
+
+            function scrollSmallHeader() {
+                window.addEventListener('scroll', function(e){
+                    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+                            shrinkOn = 300,
+                            header = document.querySelector("HolyGrail-header");
+                    if (distanceY > shrinkOn) {
+                        classie.add(header,"HolyGrail-header-sm");
+                    } else {
+                        if (classie.has(header, "HolyGrail-header-sm")) {
+                            classie.remove(header ,"HolyGrail-header-sm");
+                        }
+                    }
+                });
+            }
+
+            addLoadEvent(scrollSmallHeader);
+
         </script>
     @else
 

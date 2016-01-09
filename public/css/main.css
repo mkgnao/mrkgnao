@@ -9,32 +9,10 @@ html {
     opacity: 0.87;
 }
 
+html,
 body {
     margin: 0;
-}
-
-body,
-html,
-.container {
     height: 100%;
-}
-
-.container,
-.content {
-    display: flex;
-}
-
-.container {
-    flex-direction: column;
-}
-
-.content,
-.content div {
-    flex: 1;
-}
-
-.content div {
-    overflow: scroll;
 }
 
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
@@ -1107,7 +1085,7 @@ strong {
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
-    flex-direction: column
+    flex-direction: column;
 }
 
 .HolyGrail-footer, .HolyGrail-header {
@@ -1132,6 +1110,7 @@ strong {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 1.5em;
+    overflow: scroll;
 }
 
 .HolyGrail-content {

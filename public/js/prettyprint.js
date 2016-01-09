@@ -68,7 +68,7 @@ mkgnaoNs.prettyPrint = (function () {
             var colSpan = util.count(cells, null) + 1;
 
             tr = document.createElement("div");
-            tr.className = "row";
+            tr.className = "grid__row grid__row--sm";
 
             util.forEach(cells, function (cell) {
 
@@ -80,9 +80,9 @@ mkgnaoNs.prettyPrint = (function () {
 
                 /* Default cell type is <td> */
                 if (cellType == "td")
-                    tx.className = "cell";
+                    tx.className = "grid__item";
                 else if (cellType == "th")
-                    tx.className = "row";
+                    tx.className = "grid__row grid__row--lg";
                 else
                     console.log('unknown cellType: ' + cellType);
 
@@ -115,7 +115,7 @@ mkgnaoNs.prettyPrint = (function () {
             tbl.className = "grid";
 
             thead = util.el('div');
-            thead.className = "row";
+            thead.className = "grid__row grid__row--sm";
 
             if (headings.length) {
                 tbl.appendChild(thead);

@@ -205,11 +205,15 @@
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
                                         </li>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">people</a>
+                                        </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
                                         </li>
-                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/companies') }}">organizations</a>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">organizations</a>
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
+                                        </li>
+                                        <li>
                                         </li>
                                         <li><a id="logoutClick" href="#">logout</a></li>
                                     </ul>

@@ -71,7 +71,7 @@ mkgnaoNs.prettyPrint = (function () {
 
 
             if (cells != null &&
-                cells.length == 0 &&
+                cells.length == 2 &&
                 cells[0] != null &&
                 cells[0].length > 0 &&
                 util.shorten(cells[0].toString()) != "tags" &&

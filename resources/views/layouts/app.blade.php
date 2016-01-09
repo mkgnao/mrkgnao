@@ -214,7 +214,7 @@
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
                                         </li>
                                         <li>
-                                            <a href="#">&nbsp;</a>
+                                            &nbsp;
                                         </li>
                                         <li><a id="logoutClick" href="#">logout</a></li>
                                     </ul>

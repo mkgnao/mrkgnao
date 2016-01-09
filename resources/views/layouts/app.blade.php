@@ -84,40 +84,24 @@
                     </a>
                 @endif
             @else
-                <dd role="dd">
+                <dd>
                     <nav role="navigation">
                         <ul>
                             <li>
-                                <a href="/">
+                                <a href="#">
                                     <div>
-                                        Home
-                                        <span>there's no place like it</span>
+                                        {{ strtolower(Auth::user()->name) }}
                                     </div>
                                 </a>
-                            </li>
-                            <li>
-                                <a href="/blog">
-                                    <div>
-                                        Blog
-                                        <span>my thoughts rock</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/contact">
-                                    <div>
-                                        Contact
-                                        <span>drop me a line</span>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/forum">
-                                    <div>
-                                        Forum
-                                        <span>chat with others</span>
-                                    </div>
-                                </a>
+                                <div>
+                                    <ul>
+                                        <li ><a  href="#">settings</a></li>
+                                        <li ><a  href="#">tasks</a></li>
+                                        <li ><a  href="#">projects</a></li>
+                                        <li ><a  href="#">organizations</a></li>
+                                        <li ><a  href="#">billing</a></li>
+                                    </ul>
+                                </div>
                             </li>
                         </ul>
                     </nav>

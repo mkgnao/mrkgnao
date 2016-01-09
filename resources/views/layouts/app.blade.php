@@ -258,15 +258,15 @@
         <aside class="HolyGrail-ads u-textCenter">
         </aside>
     </main>
-
-    <footer class="HolyGrail-footer">
-        <div class="Footer">
-            <div class="Footer-credits">
-                <span class="Footer-credit">copyright © 2016 | contact@mkgnao.co</span>
-            </div>
-        </div>
-    </footer>
 </div>
+
+<footer class="HolyGrail-footer">
+    <div class="Footer">
+        <div class="Footer-credits">
+            <span class="Footer-credit">copyright © 2016 | contact@mkgnao.co</span>
+        </div>
+    </div>
+</footer>
 
 <div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">
     <div id="Modal-row">

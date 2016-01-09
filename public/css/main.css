@@ -1112,6 +1112,8 @@ strong {
     -ms-flex-direction: column;
     flex-direction: column;
     padding: 1.5em;
+    height: 0;    /* Reduce the height as much as possible... */
+    flex-grow: 1; /* ...but make it fill all remaining space  */
 }
 
 .HolyGrail-content {

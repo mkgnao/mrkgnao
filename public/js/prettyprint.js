@@ -81,7 +81,7 @@ mkgnaoNs.prettyPrint = (function () {
 
                 tdKey = util.el("td");
                 tdKey.className = "twTableTdKey";
-                if (cell.nodeType) {
+                if (cells[0].nodeType) {
                     /* IsDomElement */
                     tdKey.appendChild(cells[0]);
                 } else {
@@ -91,7 +91,7 @@ mkgnaoNs.prettyPrint = (function () {
 
                 tdValue = util.el("td");
                 tdValue.className = "twTableTdValue";
-                if (cell.nodeType) {
+                if (cells[0].nodeType) {
                     /* IsDomElement */
                     tdValue.appendChild(cells[1]);
                 } else {

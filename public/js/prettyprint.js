@@ -69,60 +69,32 @@ mkgnaoNs.prettyPrint = (function () {
             tr = util.el('tr');
             tr.className = "twTableTr";
 
-            console.log(cells);
+            util.forEach(cells, function (cell) {
 
-            if (cells != null &&
-                cells.length == 2 &&
-                cellType == "td")   {
+                if (cell === null) {
+                    return;
+                }
+                /* Default cell type is <td> */
+                td = util.el(cellType);
 
-                tdKey = util.el("td");
-                tdKey.className = "twTableTdKey";
-                if (cells[0].nodeType) {
-                    /* IsDomElement */
-                    tdKey.appendChild(cells[0]);
-                } else {
-                    /* IsString */
-                    tdKey.innerHTML = util.shorten(cells[0].toString());
+                if (cellType == 'td') {
+                    td.className = "twTableTd";
+                } else if (cellType == 'th') {
+                    td.className = "twTableTh";
                 }
 
-                tdValue = util.el("td");
-                tdValue.className = "twTableTdValue";
-                if (cells[1].nodeType) {
+                if (cell.nodeType) {
                     /* IsDomElement */
-                    tdValue.appendChild(cells[1]);
+                    td.appendChild(cell);
                 } else {
                     /* IsString */
-                    tdValue.innerHTML = util.shorten(cells[1].toString());
+                    td.innerHTML = util.shorten(cell.toString());
+                    console.log('IsString: td.innerHtml: ' + td.innerHTML);
+
                 }
 
-                tr.appendChild(tdKey);
-                tr.appendChild(tdValue);
-            } else {
-                util.forEach(cells, function (cell) {
-
-                    if (cell === null) {
-                        return;
-                    }
-                    /* Default cell type is <td> */
-                    td = util.el(cellType);
-
-                    if (cellType == 'td') {
-                        td.className = "twTableTd";
-                    } else if (cellType == 'th') {
-                        td.className = "twTableTh";
-                    }
-
-                    if (cell.nodeType) {
-                        /* IsDomElement */
-                        td.appendChild(cell);
-                    } else {
-                        /* IsString */
-                        td.innerHTML = util.shorten(cell.toString());
-                    }
-
-                    tr.appendChild(td);
-                });
-            }
+                tr.appendChild(td);
+            });
 
             return tr;
         },

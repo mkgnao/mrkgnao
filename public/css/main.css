@@ -1093,10 +1093,6 @@ strong {
     flex: none
 }
 
-.HolyGrail-header-sm {
-    font-size: 1em;
-}
-
 .HolyGrail-body {
     display: -webkit-box;
     display: -webkit-flex;

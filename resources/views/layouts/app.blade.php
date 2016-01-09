@@ -240,7 +240,7 @@
     </div>
 </header>
 
-<div class="scrollable" id="scrollable">
+
     <main class="HolyGrail-body">
         @include('partials.scriptsend')
 
@@ -258,7 +258,6 @@
         <aside class="HolyGrail-ads u-textCenter">
         </aside>
     </main>
-</div>
 
 <footer class="HolyGrail-footer">
     <div class="Footer">

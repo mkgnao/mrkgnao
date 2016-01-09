@@ -131,7 +131,7 @@
                 window.addEventListener('scroll', function(e){
                     var distanceY = window.pageYOffset || document.documentElement.scrollTop,
                             shrinkOn = 300,
-                            header = document.querySelector("HolyGrail-header");
+                            header = document.getElementById("HolyGrail-header");
                     if (distanceY > shrinkOn) {
                         header.className += "HolyGrail-header-sm";
                     } else {
@@ -194,7 +194,7 @@
 </head>
 
 <body id="bodyTop" class="HolyGrail">
-<header class="HolyGrail-header">
+<header class="HolyGrail-header" id="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
             <h1 class="Header-title">

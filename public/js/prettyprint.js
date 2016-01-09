@@ -66,26 +66,35 @@ mkgnaoNs.prettyPrint = (function () {
 
             /* colSpan is calculated by length of null items in array */
             var colSpan = util.count(cells, null) + 1;
-            tr = util.el('tr');
+
+            tr = document.createElement("div");
+            tr.className = "row";
 
             util.forEach(cells, function (cell) {
 
                 if (cell === null) {
                     return;
                 }
-                /* Default cell type is <td> */
-                td = util.el(cellType);
 
+                tx = document.createElement("div");
+
+                /* Default cell type is <td> */
+                if (cellType == "td")
+                    tx.className = "cell";
+                else if (cellType == "th")
+                    tx.className = "row";
+                else
+                    console.log('unknown cellType: ' + cellType);
 
                 if (cell.nodeType) {
                     /* IsDomElement */
-                    td.appendChild(cell);
+                    tx.appendChild(cell);
                 } else {
                     /* IsString */
-                    td.innerHTML = util.shorten(cell.toString());
+                    tx.innerHTML = util.shorten(cell.toString());
                 }
 
-                tr.appendChild(td);
+                tr.appendChild(tx);
             });
 
             return tr;
@@ -102,25 +111,25 @@ mkgnaoNs.prettyPrint = (function () {
 
             /* Creates new table: */
 
-            tbl = util.el('table');
+            tbl = util.el('div');
+            tbl.className = "grid";
 
-            thead = util.el('thead');
-            tbody = util.el('tbody');
+            thead = util.el('div');
+            thead.className = "row";
 
             if (headings.length) {
                 tbl.appendChild(thead);
                 thead.appendChild(util.hRow(headings, type));
             }
-            tbl.appendChild(tbody);
+            tbl.appendChild(thead);
 
             return {
                 /* Facade for dealing with table/tbody
                  Actual table node is this.node: */
                 node: tbl,
-                tbody: tbody,
                 thead: thead,
                 appendChild: function (node) {
-                    this.tbody.appendChild(node);
+                    this.thead.appendChild(node);
                 },
                 addRow: function (cells, _type, cellType) {
                     this.appendChild(util.row.call(util, cells, (_type || type), cellType));
@@ -183,7 +192,7 @@ mkgnaoNs.prettyPrint = (function () {
         },
 
         thead: function (tbl) {
-            return tbl.getElementsByTagName('thead')[0];
+            return tbl.getElementsByTagName('row')[0];
         },
 
         forEach: function (arr, max, fn) {
@@ -277,13 +286,6 @@ mkgnaoNs.prettyPrint = (function () {
                     }
                 );
             }
-        },
-
-        getStyles: function (el, type) {
-            type = prettyPrintThis.settings.styles[type] || {};
-            return util.merge(
-                {}, prettyPrintThis.settings.styles['default'][el], type[el]
-            );
         },
 
         expander: function (text, title, clickFn) {

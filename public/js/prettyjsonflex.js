@@ -52,7 +52,6 @@ mkgnaoNs.prettyPrint = (function () {
             var el = document.createElement(type);
 
             return el;
-
         },
 
         txt: function (t) {
@@ -66,28 +65,8 @@ mkgnaoNs.prettyPrint = (function () {
             cellType = cellType || 'td';
 
             /* colSpan is calculated by length of null items in array */
-            var colSpan = util.count(cells, null) + 1,
-                tr = util.el('tr'), td,
-                attrs = {
-                    style: util.getStyles(cellType, type),
-                    colSpan: colSpan,
-                    onmouseover: function () {
-                        var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function (cell) {
-                            if (cell.nodeName.toLowerCase() !== 'td') {
-                                return;
-                            }
-                        });
-                    },
-                    onmouseout: function () {
-                        var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function (cell) {
-                            if (cell.nodeName.toLowerCase() !== 'td') {
-                                return;
-                            }
-                        });
-                    }
-                };
+            var colSpan = util.count(cells, null) + 1;
+            tr = util.el('tr');
 
             util.forEach(cells, function (cell) {
 
@@ -95,7 +74,8 @@ mkgnaoNs.prettyPrint = (function () {
                     return;
                 }
                 /* Default cell type is <td> */
-                td = util.el(cellType, attrs);
+                td = util.el(cellType);
+
 
                 if (cell.nodeType) {
                     /* IsDomElement */
@@ -120,7 +100,10 @@ mkgnaoNs.prettyPrint = (function () {
 
             headings = headings || [];
 
+            /* Creates new table: */
+
             tbl = util.el('table');
+
             thead = util.el('thead');
             tbody = util.el('tbody');
 
@@ -655,10 +638,6 @@ mkgnaoNs.prettyPrint = (function () {
 
     };
 
-    /* Configuration */
-
-    /* All items can be overwridden by passing an
-     "options" object when calling prettyPrint */
     prettyPrintThis.config = {
 
         /* Try setting this to false to save space */
@@ -666,66 +645,7 @@ mkgnaoNs.prettyPrint = (function () {
 
         forceObject: false,
         maxDepth: 6,
-        maxArray: -1,  // default is unlimited
-        styles: {
-            array: {
-                th: {
-                }
-            },
-            'function': {
-                th: {
-                }
-            },
-            regexp: {
-                th: {
-                }
-            },
-            object: {
-                th: {
-                }
-            },
-            jquery: {
-                th: {
-                }
-            },
-            error: {
-                th: {
-                }
-            },
-            domelement: {
-                th: {
-                }
-            },
-            date: {
-                th: {
-                }
-            },
-            colHeader: {
-                th: {
-                    textTransform: 'lowercase'
-                }
-            },
-            'default': {
-                table: {
-
-                },
-                td: {
-                    padding: '1px',
-                    border: '1px solid #B0B0B0',
-                    verticalAlign: 'top',
-                    whiteSpace: 'nowrap'
-                },
-                td_hover: {
-                    /* Styles defined here will apply to all tr:hover > td,
-                     - Be aware that "inheritable" properties (e.g. fontWeight) WILL BE INHERITED */
-                },
-                th: {
-                    padding: '1px',
-                    textAlign: 'left',
-                    verticalAlign: 'top'
-                }
-            }
-        }
+        maxArray: -1  // default is unlimited
     };
 
     return prettyPrintThis;

@@ -148,11 +148,11 @@
     function toggle_modal_logout() {
         console.log("toggle_modal_logout");
 
-        var e = document.getElementById("modal_logout");
-        if(e.style.display == 'block')
-            e.style.display = 'none';
+        var e = document.getElementById("flex-container");
+        if(e.class == "flex-container-hidden")
+            e.className = "flex-container-shown";
         else
-            e.style.display = 'block';
+            e.className = "flex-container-hidden";
     }
 </script>
 
@@ -181,9 +181,7 @@
 
     HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
 </script>
-
-<div id="modal_logout" class="modal_logout">
-    <div id="x" class="flex-container">
+    <div id="flex-container" class="flex-container-hidden">
         <div class="flex-item">
             logout? </br>
             <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>

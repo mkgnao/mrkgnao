@@ -1,8 +1,8 @@
-.modal_logout {
+.flex-container-hidden {
     display: none;
 }
 
-.flex-container {
+.flex-container-shown {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;

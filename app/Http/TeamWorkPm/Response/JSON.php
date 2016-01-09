@@ -9,6 +9,8 @@ class JSON extends Model
     public function parse($data, array $headers)
     {
         $source = json_decode($data, true);
+        
+        \Log::info(debug_backtrace());
 
         \Log::info('data: '.$data);
 

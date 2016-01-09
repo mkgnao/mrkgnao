@@ -3,6 +3,7 @@ table.twTable {
     border: 1px solid silver;
     font-size: 1.2em;
     width: 100%;
+    border-radius: 3px;
 }
 
 .twTable caption {
@@ -14,6 +15,7 @@ table.twTable {
     border: 1px solid #ccc;
     text-align: left;
     text-transform: lowercase;
+    border-radius: 3px;
 }
 
 .twTable th {

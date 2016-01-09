@@ -19,7 +19,7 @@ mkgnaoNs.traverse = function(o, func, lvl, n) {
         func.apply(this, [i, o[i], lvl, tr]);
 
         if (typeof(o[i]) == "object") {
-            traverse(o[i], func, lvl + 1, tr);
+            mkgnaoNs.traverse(o[i], func, lvl + 1, tr);
         }
 
         n.appendChild(tr);
@@ -32,7 +32,7 @@ mkgnaoNs.getTwTable = function () {
     var n = document.createElement('table');
     n.className = "twTable";
 
-    traverse(o, process, 0, n);
+    mkgnaoNs.traverse(o, mkgnaoNs.process, 0, n);
 
     return n;
 };

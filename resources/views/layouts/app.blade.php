@@ -23,17 +23,17 @@
 
     <script>
         function hideModalLogout() {
-            var e = document.getElementById("flex-container");
-            e.className = "flex-container-hidden";
+            var e = document.getElementById("Modal-flex-container");
+            e.className = "Modal-flex-container-hidden";
         }
 
         function toggleModalLogout() {
-            var e = document.getElementById("flex-container");
+            var e = document.getElementById("Modal-flex-container");
 
-            if (e.className == "flex-container-hidden")
-                e.className = "flex-container-shown";
+            if (e.className == "Modal-flex-container-hidden")
+                e.className = "Modal-flex-container-shown";
             else
-                e.className = "flex-container-hidden";
+                e.className = "Modal-flex-container-hidden";
         }
 
         window.onload = function() {
@@ -93,10 +93,14 @@
 
 <body class="HolyGrail">
 
-<div id="flex-container" class="flex-container-hidden">
-    <div class="flex-item">
-        <a href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
-        <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
+<div id="Modal-flex-container" class="Modal-flex-container-hidden">
+    <div id="Modal-row">
+        <div class="Modal-flex-item">
+            <a href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
+        </div>
+        <div class="Modal-flex-item">
+            <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
+        </div>
     </div>
 </div>
 

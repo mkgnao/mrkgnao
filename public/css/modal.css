@@ -1,8 +1,8 @@
-.flex-container-hidden {
+.Modal-flex-container-hidden {
     display: none;
 }
 
-.flex-container-shown {
+.Modal-flex-container-shown {
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -25,15 +25,20 @@
     left: 0;
 }
 
-.flex-item {
+.Modal-row {
+    width: auto;
+}
+
+.Modal-flex-item {
     margin: auto;
     height:100px;
     width:300px;
     background-color: rgba(245,245,245,0.92);
     opacity: 0.95;
+    text-align: center;
 }
 
-.Button {
+.Modal-Button {
     -webkit-transition: background-color .2s;
     transition: background-color .2s;
     display: inline-block;
@@ -57,7 +62,7 @@
 
 .Modal-Button:active, .Button:focus, .Button:hover {
     border: 0;
-    background: #e8e8e8;
+    background: #FCFCFC;
     text-decoration: none
 }
 
@@ -66,7 +71,7 @@
 }
 
 .Modal-Button--action:active, .Button--action:focus, .Button--action:hover {
-    background-color: whitesmoke;
+    background-color: #FCFCFC;
 }
 
 .Modal-Button--wide {

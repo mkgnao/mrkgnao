@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,55 +22,169 @@
     <script src="/js/prettyprint.js"></script>
 
     @if (!Auth::guest())
-    <script>
-        function hideModalLogout() {
-            var e = document.getElementById("Modal-flex-container");
-            if (!e)
-                return;
+        <script>
+            function hideModalLogout() {
+                var e = document.getElementById("Modal-flex-container-logout");
+                if (!e)
+                    return;
 
-            e.className = "Modal-flex-container-hidden";
-        }
-
-        function toggleModalLogout() {
-            var e = document.getElementById("Modal-flex-container");
-
-            if (!e)
-                return;
-
-            if (e.className == "Modal-flex-container-hidden")
-                e.className = "Modal-flex-container-shown";
-            else
                 e.className = "Modal-flex-container-hidden";
-        }
-
-        function hideModalBodyClick(e) {
-            if(e.target != document.getElementById("logoutModalLogout") &&
-                    e.target != document.getElementById("logoutClick")) {
-                hideModalLogout();
             }
-        }
 
-        window.onload = function() {
-            logoutLink = document.getElementById("logoutClick");
-            if (logoutLink)
-                logoutLink.addEventListener('click' , toggleModalLogout);
+            function toggleModalLogout() {
+                var e = document.getElementById("Modal-flex-container-logout");
 
-            logoutModalStay = document.getElementById("logoutModalStay");
-            if (logoutModalStay)
-                logoutModalStay.addEventListener('click' , hideModalLogout);
+                if (!e)
+                    return;
 
-            document.onkeydown = function(evt) {
-                evt = evt || window.event;
-                if (evt.keyCode == 27) {
+                if (e.className == "Modal-flex-container-hidden")
+                    e.className = "Modal-flex-container-shown";
+                else
+                    e.className = "Modal-flex-container-hidden";
+            }
+
+            function hideModalLogoutBodyClick(e) {
+                if (e.target != document.getElementById("logoutModalLogout") &&
+                        e.target != document.getElementById("logoutClick")) {
                     hideModalLogout();
                 }
-            };
+            }
 
-            bodyTop = document.getElementById("bodyTop");
-            if (bodyTop)
-                bodyTop.addEventListener('click' , hideModalBodyClick);
-        }
-    </script>
+            function hideModalLogout() {
+                var e = document.getElementById("Modal-flex-container-logout");
+                if (!e)
+                    return;
+
+                e.className = "Modal-flex-container-hidden";
+            }
+
+            function toggleModalLogout() {
+                var e = document.getElementById("Modal-flex-container-logout");
+
+                if (!e)
+                    return;
+
+                if (e.className == "Modal-flex-container-hidden")
+                    e.className = "Modal-flex-container-shown";
+                else
+                    e.className = "Modal-flex-container-hidden";
+            }
+
+            function hideModalLogoutBodyClick(e) {
+                if (e.target != document.getElementById("logoutModalLogout") &&
+                        e.target != document.getElementById("logoutClick")) {
+                    hideModalLogout();
+                }
+            }
+
+
+            window.onload = function () {
+                logoutLink = document.getElementById("logoutClick");
+                if (logoutLink)
+                    logoutLink.addEventListener('click', toggleModalLogout);
+
+                logoutModalStay = document.getElementById("logoutModalStay");
+                if (logoutModalStay)
+                    logoutModalStay.addEventListener('click', hideModalLogout);
+
+                loginLink = document.getElementById("loginClick");
+                if (loginLink)
+                    loginLink.addEventListener('click', toggleModalLogin);
+
+                loginModalStay = document.getElementById("loginModalStay");
+                if (loginModalStay)
+                    logoutModalStay.addEventListener('click', hideModalLogin);
+
+                document.onkeydown = function (evt) {
+                    evt = evt || window.event;
+                    if (evt.keyCode == 27) {
+                        hideModalLogout();
+                    }
+                };
+
+                bodyTop = document.getElementById("bodyTop");
+                if (bodyTop)
+                    bodyTop.addEventListener('click', hideModalLogoutBodyClick);
+            }
+        </script>
+    @else
+        <script>
+            function hideModalLogin() {
+                var e = document.getElementById("Modal-flex-container-login");
+                if (!e)
+                    return;
+
+                e.className = "Modal-flex-container-hidden";
+            }
+
+            function toggleModalLogin() {
+                var e = document.getElementById("Modal-flex-container-login");
+
+                if (!e)
+                    return;
+
+                if (e.className == "Modal-flex-container-hidden")
+                    e.className = "Modal-flex-container-shown";
+                else
+                    e.className = "Modal-flex-container-hidden";
+            }
+
+            function hideModalLoginBodyClick(e) {
+                if (e.target != document.getElementById("logoutModalLogin") &&
+                        e.target != document.getElementById("loginClick")) {
+                    hideModalLogin();
+                }
+            }
+
+            function hideModalLogin() {
+                var e = document.getElementById("Modal-flex-container-login");
+                if (!e)
+                    return;
+
+                e.className = "Modal-flex-container-hidden";
+            }
+
+            function toggleModalLogin() {
+                var e = document.getElementById("Modal-flex-container-login");
+
+                if (!e)
+                    return;
+
+                if (e.className == "Modal-flex-container-hidden")
+                    e.className = "Modal-flex-container-shown";
+                else
+                    e.className = "Modal-flex-container-hidden";
+            }
+
+            function hideModalLoginBodyClick(e) {
+                if (e.target != document.getElementById("logoutModalLogin") &&
+                        e.target != document.getElementById("loginClick")) {
+                    hideModalLogout();
+                }
+            }
+
+            window.onload = function () {
+                loginLink = document.getElementById("loginClick");
+                if (loginLink)
+                    loginLink.addEventListener('click', toggleModalLogin);
+
+                loginModalStay = document.getElementById("loginModalStay");
+                if (loginModalStay)
+                    loginModalStay.addEventListener('click', hideModalLogin);
+
+                document.onkeydown = function (evt) {
+                    evt = evt || window.event;
+                    if (evt.keyCode == 27) {
+                        hideModalLogin();
+                    }
+                };
+
+                bodyTop = document.getElementById("bodyTop");
+                if (bodyTop)
+                    bodyTop.addEventListener('click', hideModalLoginBodyClick);
+            }
+
+        </script>
     @endif
 
     <script class="js-allow-before-footer">
@@ -119,15 +233,59 @@
 
 <body id="bodyTop" class="HolyGrail">
 
-<div id="Modal-flex-container" class="Modal-flex-container-hidden">
+<div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">
     <div id="Modal-row">
         <div class="Modal-flex-item">
-            <a id="logoutModalLogout" href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
+            <a id="logoutModalLogout" href="{{ url('/logout') }}"
+               class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
         </div>
         <div class="Modal-flex-item">
             <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
         </div>
     </div>
+</div>
+
+<div id="Modal-flex-container-login" class="Modal-flex-container-hidden">
+    <div id="Modal-row">
+        <div class="Modal-flex-item">
+            <a id="logoutModalLogout" href="{{ url('/logout') }}"
+               class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
+        </div>
+        <div class="Modal-flex-item">
+            <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
+        </div>
+    </div>
+    <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
+        {!! csrf_field() !!}
+
+        <div id="Modal-row">
+            <div class="Modal-flex-item">
+                <div class="InputAddOn">
+                    <input type="email" class="InputAddOn-field" name="email"
+                           value="{{ old('email') }}" placeholder="email">
+
+                    @if ($errors->has('email'))
+                        {{ $errors->first('email') }}
+                    @endif
+                </div>
+            </div>
+            <div class="Modal-flex-item">
+                <div class="InputAddOn">
+                    <input type="password" class="InputAddOn-field" name="password" placeholder="password">
+
+                    @if ($errors->has('password'))
+                        {{ $errors->first('password') }}
+                    @endif
+                </div>
+
+                <div class="InputAddOn">
+                    <button class="InputAddOn-button-login" type="submit">
+                        login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
 <header class="HolyGrail-header">
@@ -144,8 +302,8 @@
         <div class="Header-actions">
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
-                    <a class="Header-button Button Button--action Button--wide"
-                       href="{{ url('/login') }}">
+                    <a id="loginClick" class="Header-button Button Button--action Button--wide"
+                       href="#">
                         login
                     </a>
                 @endif

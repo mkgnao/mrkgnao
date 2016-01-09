@@ -69,6 +69,8 @@ mkgnaoNs.prettyPrint = (function () {
             tr = util.el('tr');
             tr.className = "twTableTr";
 
+            console.log(cells);
+
             util.forEach(cells, function (cell) {
 
                 if (cell === null) {

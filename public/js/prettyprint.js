@@ -109,24 +109,14 @@ mkgnaoNs.prettyPrint = (function () {
             /* Creates new table: */
 
             tbl = util.el('div');
-            tbl.className = "grid";
-
-            thead = util.el('div');
-            thead.className = "grid__row grid__row--sm";
-
-            if (headings.length) {
-                tbl.appendChild(thead);
-                thead.appendChild(util.hRow(headings, type));
-            }
-            tbl.appendChild(thead);
+            tbl.className = "Grid Grid--gutters Grid--flexCells u-textCenter";
 
             return {
                 /* Facade for dealing with table/tbody
                  Actual table node is this.node: */
                 node: tbl,
-                thead: thead,
                 appendChild: function (node) {
-                    this.thead.appendChild(node);
+                    this.appendChild(node);
                 },
                 addRow: function (cells, _type, cellType) {
                     this.appendChild(util.row.call(util, cells, (_type || type), cellType));

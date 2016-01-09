@@ -44,8 +44,10 @@
         }
 
         function hideModalBodyClick(e) {
-            if(e.target != document.getElementById("logoutModalLogout"))
+            if(e.target != document.getElementById("logoutModalLogout") &&
+                    e.target != document.getElementById("logoutClick")) {
                 hideModalLogout();
+            }
         }
 
         window.onload = function() {

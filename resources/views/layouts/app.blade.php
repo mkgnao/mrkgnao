@@ -260,7 +260,6 @@
         </aside>
     </main>
 
-</div>
 
 <footer class="Site-footer">
     <div class="Footer">
@@ -269,6 +268,9 @@
         </div>
     </div>
 </footer>
+
+</div>
+
 
 <div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">
     <div id="Modal-row">

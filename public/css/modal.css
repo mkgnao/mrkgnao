@@ -26,15 +26,19 @@
 }
 
 .Modal-row {
-    height:80px;
-    width:400px;
+    width: auto;
 }
 
 .Modal-flex-item {
-    margin: auto;
+    width: 50%;
     background-color: rgba(245,245,245,0.92);
     opacity: 0.95;
     text-align: center;
+    padding: 20px;
+}
+
+.Modal-flex-item:first-child {
+    margin-right: 40px;
 }
 
 .Modal-Button {

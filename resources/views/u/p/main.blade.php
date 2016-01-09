@@ -13,27 +13,29 @@
     </div>
 
     <script>
-        try {
-            //console.log(mkgnaoNs);
+        window.onload = function () {
+            try {
+                //console.log(mkgnaoNs);
 
-            if (mkgnaoNs.tw_me) {
-                mkgnaoNs.twAddJson(mkgnaoNs.tw_me, "twcontent");
-            } else {
-                var e = document.getElementById("twcontent");
-                var n = document.createElement("div");
-                n.id = "error";
-                if (mkgnaoNs.tw_errors) {
-                    console.log(mkgnaoNs.tw_errors);
-                    n.innerHTML = mkgnaoNs.tw_errors;
+                if (mkgnaoNs.tw_me) {
+                    mkgnaoNs.twAddJson(mkgnaoNs.tw_me, "twcontent");
                 } else {
-                    n.innerHTML = "oops";
+                    var e = document.getElementById("twcontent");
+                    var n = document.createElement("div");
+                    n.id = "error";
+                    if (mkgnaoNs.tw_errors) {
+                        console.log(mkgnaoNs.tw_errors);
+                        n.innerHTML = mkgnaoNs.tw_errors;
+                    } else {
+                        n.innerHTML = "oops";
+                    }
+                    e.appendChild(n);
                 }
-                e.appendChild(n);
-            }
-        } catch (e) {
-            console.log(e);
+            } catch (e) {
+                console.log(e);
 
-        }
+            }
+        };
     </script>
 
 @endsection

@@ -77,8 +77,6 @@ mkgnaoNs.prettyPrint = (function () {
                 /* Default cell type is <td> */
                 td = util.el(cellType);
 
-                console.log('got "' + cellType + '"');
-
                 if (cellType == 'td') {
                     td.className = "twTableTd";
                 } else if (cellType == 'th') {

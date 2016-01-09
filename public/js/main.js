@@ -5,6 +5,7 @@ mkgnaoNs.twAddJson = function (what, where) {
     var n = mkgnaoNs.prettyPrint(j);
     var e = document.getElementById(where);
     e.appendChild(n);
+    console.log(n);
 };
 
 mkgnaoNs.strPad = function (input, pad_length, pad_string, pad_type) {

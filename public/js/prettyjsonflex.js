@@ -39,48 +39,20 @@
 
 var mkgnaoNs = mkgnaoNs || {};
 
-mkgnaoNs.prettyJsonFlex = (function () {
+mkgnaoNs.prettyPrint = (function () {
 
     /* These "util" functions are not part of the core
      functionality but are  all necessary - mostly DOM helpers */
 
     var util = {
 
-        el: function (type, attrs) {
+        el: function (type) {
 
             /* Create new element */
-            var el = document.createElement(type), attr;
-
-            /*Copy to single object */
-            attrs = util.merge({}, attrs);
-
-            /* Add attributes to el */
-            if (attrs && attrs.style) {
-                var styles = attrs.style;
-                util.applyCSS(el, attrs.style);
-                delete attrs.style;
-            }
-            for (attr in attrs) {
-                if (attrs.hasOwnProperty(attr)) {
-                    el[attr] = attrs[attr];
-                }
-            }
+            var el = document.createElement(type);
 
             return el;
 
-        },
-
-        applyCSS: function (el, styles) {
-            /* Applies CSS to a single element */
-            for (var prop in styles) {
-                if (styles.hasOwnProperty(prop)) {
-                    try {
-                        /* Yes, IE6 SUCKS! */
-                        el.style[prop] = styles[prop];
-                    } catch (e) {
-                    }
-                }
-            }
         },
 
         txt: function (t) {
@@ -105,7 +77,6 @@ mkgnaoNs.prettyJsonFlex = (function () {
                             if (cell.nodeName.toLowerCase() !== 'td') {
                                 return;
                             }
-                            util.applyCSS(cell, util.getStyles('td_hover', type));
                         });
                     },
                     onmouseout: function () {
@@ -114,7 +85,6 @@ mkgnaoNs.prettyJsonFlex = (function () {
                             if (cell.nodeName.toLowerCase() !== 'td') {
                                 return;
                             }
-                            util.applyCSS(cell, util.getStyles('td', type));
                         });
                     }
                 };
@@ -150,21 +120,9 @@ mkgnaoNs.prettyJsonFlex = (function () {
 
             headings = headings || [];
 
-            /* Creates new table: */
-            var attrs = {
-                    thead: {
-                        style: util.getStyles('thead', type)
-                    },
-                    tbody: {
-                        style: util.getStyles('tbody', type)
-                    },
-                    table: {
-                        style: util.getStyles('table', type)
-                    }
-                },
-                tbl = util.el('table', attrs.table),
-                thead = util.el('thead', attrs.thead),
-                tbody = util.el('tbody', attrs.tbody);
+            tbl = util.el('table');
+            thead = util.el('thead');
+            tbody = util.el('tbody');
 
             if (headings.length) {
                 tbl.appendChild(thead);
@@ -315,7 +273,7 @@ mkgnaoNs.prettyJsonFlex = (function () {
             circRef: function (obj, key, settings) {
                 return util.expander(
                     '[POINTS BACK TO <strong>' + (key) + '</strong>]',
-                    'Click to show this item anyway',
+                    'click to show this item anyway',
                     function () {
                         this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
                     }
@@ -324,7 +282,7 @@ mkgnaoNs.prettyJsonFlex = (function () {
             depthReached: function (obj, settings) {
                 return util.expander(
                     '[DEPTH REACHED]',
-                    'Click to show this item anyway',
+                    'click to show this item anyway',
                     function () {
                         try {
                             this.parentNode.appendChild(prettyPrintThis(obj, {maxDepth: 1}));
@@ -396,7 +354,8 @@ mkgnaoNs.prettyJsonFlex = (function () {
                 return '/' + obj.source + '/';
             }
             if (type === 'string') {
-                return '"' + obj.replace(/"/g, '\\"') + '"';
+                //return '"' + obj.replace(/"/g, '\\"') + '"';
+                return obj;
             }
             return obj.toString();
         },
@@ -449,7 +408,8 @@ mkgnaoNs.prettyJsonFlex = (function () {
 
         var typeDealer = {
             string: function (item) {
-                return util.txt('"' + util.shorten(item.replace(/"/g, '\\"')) + '"');
+                //return util.txt('"' + util.shorten(item.replace(/"/g, '\\"')) + '"');
+                return util.txt(util.shorten(item));
             },
             number: function (item) {
                 return util.txt(item);
@@ -460,7 +420,7 @@ mkgnaoNs.prettyJsonFlex = (function () {
                 var flags = util.table();
                 var span = util.expander(
                     '/' + item.source + '/',
-                    'Click to show more',
+                    'click to show more',
                     function () {
                         this.parentNode.appendChild(miniTable.node);
                     }
@@ -710,68 +670,49 @@ mkgnaoNs.prettyJsonFlex = (function () {
         styles: {
             array: {
                 th: {
-                    //backgroundColor: '#6DBD2A',
-                    //color: 'white'
                 }
             },
             'function': {
                 th: {
-                    //backgroundColor: '#D82525'
                 }
             },
             regexp: {
                 th: {
-                    //backgroundColor: '#E2F3FB',
-                    //color: '#000'
                 }
             },
             object: {
                 th: {
-                    //backgroundColor: '#1F96CF'
                 }
             },
             jquery: {
                 th: {
-                    //backgroundColor: '#FBF315'
                 }
             },
             error: {
                 th: {
-                    //backgroundColor: 'red',
-                    //color: 'yellow'
                 }
             },
             domelement: {
                 th: {
-                    //backgroundColor: '#F3801E'
                 }
             },
             date: {
                 th: {
-                    //backgroundColor: '#A725D8'
                 }
             },
             colHeader: {
                 th: {
-                    //backgroundColor: '#EEE',
-                    //color: '#000',
                     textTransform: 'lowercase'
                 }
             },
             'default': {
                 table: {
-                    borderCollapse: 'collapse',
-                    width: '60%',
-                    textTransform: 'lowercase'
+
                 },
                 td: {
                     padding: '1px',
-                    fontSize: '14px',
-                    //backgroundColor: '#FFF',
-                    //color: '#222',
-                    border: '1px solid silver',
+                    border: '1px solid #B0B0B0',
                     verticalAlign: 'top',
-                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
                     whiteSpace: 'nowrap'
                 },
                 td_hover: {
@@ -780,15 +721,8 @@ mkgnaoNs.prettyJsonFlex = (function () {
                 },
                 th: {
                     padding: '1px',
-                    fontSize: '12px',
-                    //backgroundColor: '#222',
-                    //color: '#EEE',
                     textAlign: 'left',
-                    //border: '1px solid #000',
                     verticalAlign: 'top'
-                    /*fontFamily: '"Consolas","Lucida Console",Courier,mono',*/
-                    //backgroundImage: util.headerGradient,
-                    //backgroundRepeat: 'repeat-x'
                 }
             }
         }

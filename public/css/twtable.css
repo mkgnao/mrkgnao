@@ -13,6 +13,7 @@ table.twTable {
     padding: 6px;
     border: 1px solid #ccc;
     text-align: left;
+    text-transform: lowercase;
 }
 
 .twTable th {

@@ -1,43 +1,47 @@
 var mkgnaoNs = mkgnaoNs || {};
 
-mkgnaoNs.traverse = function (o, lvl, n) {
-    for (var i in o) {
-        if (o[i] == null)
-            return;
+const MAX_DEPTH = 6;
 
-        var tdk = document.createElement('td');
-        var tdv = document.createElement('td');
+mkgnaoNs.traverse = function (obj, parentNode, depth) {
+    if (depth === undefined)
+        depth = 0;
+    else if (depth >= MAX_DEPTH)
+        return;
+
+    for (var key in obj) {
+        var value = obj[key];
+        var tdKey = document.createElement('td');
+        var tdValue = document.createElement('td');
         var tr = document.createElement('tr');
 
-        tdk.innerHTML = i.toString().toLowerCase();
+        tdKey.innerHTML = key.toString();
+        tr.appendChild(tdKey);
 
-        tr.appendChild(tdk);
+        if (typeof(value) == "object") {
+            var table = document.createElement('table');
+            var trChild = document.createElement('tr');
 
-        if (typeof(o[i]) == "object") {
-            var tb = document.createElement('table');
-            var trc = document.createElement('tr');
+            table.appendChild(trChild);
+            tdValue.appendChild(table);
+            tr.appendChild(tdValue);
 
-            tb.appendChild(trc);
-            tdv.appendChild(tb);
-            tr.appendChild(tdv);
-
-            mkgnaoNs.traverse(o[i], lvl + 1, trc);
+            mkgnaoNs.traverse(value, trChild, depth + 1);
         } else {
-            tdv.innerHTML = o[i].toString().toLowerCase();
-            tr.appendChild(tdv);
+            tdValue.innerHTML = value.toString();
+            tr.appendChild(tdValue);
         }
 
-        n.appendChild(tr);
+        parentNode.appendChild(tr);
     }
 };
 
-mkgnaoNs.jsonToTable = function(jsonObj) {
-    var tb = document.createElement('table');
-    tb.className = "twTable";
+mkgnaoNs.jsonToTable = function (jsonObj) {
+    var table = document.createElement('table');
+    table.className = "twTable";
 
-    mkgnaoNs.traverse(jsonObj, 0, tb);
+    mkgnaoNs.traverse(jsonObj, table);
 
-    return tb;
+    return table;
 };
 
 mkgnaoNs.twAddJson = function (jsonStr, containerId) {

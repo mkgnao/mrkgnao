@@ -1854,5 +1854,6 @@ pre {
 
 .smallTriangle {
     font-size: 0.2em;
-    vertical-align: bottom;
+    position:relative;
+    top:-2px;
 }

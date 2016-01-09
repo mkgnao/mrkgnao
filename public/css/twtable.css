@@ -16,13 +16,15 @@ div.twcontent * {
     margin: 0;
     padding: 0;
     width:auto;
+    font-size: 1.2em;
 }
 
 .twTableHead {
-
+    font-size: 1.2em;
 }
 
 .twTableTr {
+    font-size: 1.2em;
 }
 
 .twTableTh {
@@ -30,6 +32,7 @@ div.twcontent * {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
+    font-size: 1.2em;
 }
 
 .twTableTd {
@@ -38,6 +41,7 @@ div.twcontent * {
     -ms-flex: 1;
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
+    font-size: 1.2em;
 }
 
 .twTableTdKey {
@@ -47,6 +51,7 @@ div.twcontent * {
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
     opacity: 0.86;
+    font-size: 1.2em;
 }
 
 .twTableTdValue {
@@ -56,6 +61,7 @@ div.twcontent * {
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
     opacity: 0.94;
+    font-size: 1.2em;
 }
 
 .twTableTdValue:hover {

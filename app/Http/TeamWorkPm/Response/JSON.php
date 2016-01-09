@@ -10,6 +10,8 @@ class JSON extends Model
     {
         $source = json_decode($data, true);
 
+        \Log::info('data: '.$data);
+
         $errors = $this->getJsonErrors();
         $this->string = $data;
 

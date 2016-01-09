@@ -21,19 +21,31 @@
     <script src="/js/main.js"></script>
     <script src="/js/prettyprint.js"></script>
 
+    @if (!Auth::guest())
     <script>
         function hideModalLogout() {
             var e = document.getElementById("Modal-flex-container");
+            if (!e)
+                return;
+
             e.className = "Modal-flex-container-hidden";
         }
 
         function toggleModalLogout() {
             var e = document.getElementById("Modal-flex-container");
 
+            if (!e)
+                return;
+
             if (e.className == "Modal-flex-container-hidden")
                 e.className = "Modal-flex-container-shown";
             else
                 e.className = "Modal-flex-container-hidden";
+        }
+
+        function hideModalBodyClick(e) {
+            if(e.target != document.getElementById("logoutModalLogout"))
+                hideModalLogout();
         }
 
         window.onload = function() {
@@ -44,8 +56,20 @@
             logoutModalStay = document.getElementById("logoutModalStay");
             if (logoutModalStay)
                 logoutModalStay.addEventListener('click' , hideModalLogout);
+
+            document.onkeydown = function(evt) {
+                evt = evt || window.event;
+                if (evt.keyCode == 27) {
+                    hideModalLogout();
+                }
+            };
+
+            bodyTop = document.getElementById("bodyTop");
+            if (bodyTop)
+                bodyTop.addEventListener('click' , hideModalBodyClick);
         }
     </script>
+    @endif
 
     <script class="js-allow-before-footer">
 
@@ -91,12 +115,12 @@
 
 </head>
 
-<body class="HolyGrail">
+<body id="bodyTop" class="HolyGrail">
 
 <div id="Modal-flex-container" class="Modal-flex-container-hidden">
     <div id="Modal-row">
         <div class="Modal-flex-item">
-            <a href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
+            <a id="logoutModalLogout" href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
         </div>
         <div class="Modal-flex-item">
             <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>

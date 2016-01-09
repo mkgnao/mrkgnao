@@ -173,94 +173,89 @@
 
 </head>
 
-<body id="bodyTop">
-<div class="HolyGrail">
+<body id="bodyTop" class="HolyGrail">
+<header class="HolyGrail-header">
+    <div class="Header Header--cozy" role="banner">
+        <div class="Header-titles">
+            <h1 class="Header-title">
+                <a href="{{ url('/') }}">schreibstube</a>
+            </h1>
+            <!--h2 class="Header-subTitle"></h2-->
+        </div>
+        <!-- -->
 
-    <header class="HolyGrail-header">
-        <div class="Header Header--cozy" role="banner">
-            <div class="Header-titles">
-                <h1 class="Header-title">
-                    <a href="{{ url('/') }}">schreibstube</a>
-                </h1>
-                <!--h2 class="Header-subTitle"></h2-->
-            </div>
-            <!-- -->
-
-            <!-- -->
-            <div class="Header-actions">
-                @if (Auth::guest())
-                    @if ($view_name != "auth.login")
-                        <a id="loginClick" class="Header-button Button Button--action Button--wide"
-                           href="{{ url('/login') }}">
-                            login
-                        </a>
-                    @endif
-                @else
-                    <dd>
-                        <nav role="navigation">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        {{ strtolower(Auth::user()->name) }} <!--span class="smallTriangle">&#9660;</span-->
-                                    </a>
-                                    <div>
-                                        <ul>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
-                                            </li>
-                                            <li>
-                                                &nbsp;
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">people</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">group</a>
-                                            </li>
-                                            <li>
-                                                <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
-                                            </li>
-                                            <li>
-                                                &nbsp;
-                                            </li>
-                                            <li><a id="logoutClick" href="#">logout</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </dd>
+        <!-- -->
+        <div class="Header-actions">
+            @if (Auth::guest())
+                @if ($view_name != "auth.login")
+                    <a id="loginClick" class="Header-button Button Button--action Button--wide"
+                       href="{{ url('/login') }}">
+                        login
+                    </a>
                 @endif
-            </div>
+            @else
+                <dd>
+                    <nav role="navigation">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    {{ strtolower(Auth::user()->name) }} <!--span class="smallTriangle">&#9660;</span-->
+                                </a>
+                                <div>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
+                                        </li>
+                                        <li>
+                                            &nbsp;
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">people</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">group</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
+                                        </li>
+                                        <li>
+                                            &nbsp;
+                                        </li>
+                                        <li><a id="logoutClick" href="#">logout</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </dd>
+            @endif
         </div>
-    </header>
+    </div>
+</header>
 
+<div class="scrollable">
     <main class="HolyGrail-body">
-        <div>
+        @include('partials.scriptsend')
 
-            @include('partials.scriptsend')
+        <article class="HolyGrail-content" class="u-textCenter">
 
-            <article class="HolyGrail-content" class="u-textCenter">
+            @yield('content')
 
-                @yield('content')
+        </article>
 
-            </article>
+        <article class="HolyGrail-content">
+        </article>
 
-            <article class="HolyGrail-content">
-            </article>
-
-            <nav class="HolyGrail-nav u-textCenter">
-            </nav>
-            <aside class="HolyGrail-ads u-textCenter">
-            </aside>
-        </div>
-
+        <nav class="HolyGrail-nav u-textCenter">
+        </nav>
+        <aside class="HolyGrail-ads u-textCenter">
+        </aside>
     </main>
 
     <footer class="HolyGrail-footer">
@@ -270,7 +265,6 @@
             </div>
         </div>
     </footer>
-
 </div>
 
 <div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">

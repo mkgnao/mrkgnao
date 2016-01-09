@@ -97,10 +97,10 @@
                                     <ul>
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a></li>
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a></li>
-                                        <li ><a  hhref="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">projects</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">organizations</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a></li>
+                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/companies') }}">organizations</a></li>
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">logout</a></li>
+                                        <li ><a  href="{{ url('/logout') }}">logout</a></li>
                                     </ul>
                                 </div>
                             </li>

@@ -31,10 +31,10 @@ mkgnaoNs.traverse = function (o, lvl, n) {
     }
 };
 
-mkgnao.jsonToTable = function(jsonObj) {
+mkgnaoNs.jsonToTable = function(jsonObj) {
     var tb = document.createElement('table');
 
-    traverse(jsonObj, 0, tb);
+    mkgnaoNs.traverse(jsonObj, 0, tb);
 
     return tb;
 };

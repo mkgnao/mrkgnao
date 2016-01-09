@@ -159,7 +159,7 @@
             function hideModalLoginBodyClick(e) {
                 if (e.target != document.getElementById("logoutModalLogin") &&
                         e.target != document.getElementById("loginClick")) {
-                    hideModalLogout();
+                    hideModalLogin();
                 }
             }
 
@@ -246,18 +246,8 @@
 </div>
 
 <div id="Modal-flex-container-login" class="Modal-flex-container-hidden">
-    <div id="Modal-row">
-        <div class="Modal-flex-item">
-            <a id="logoutModalLogout" href="{{ url('/logout') }}"
-               class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
-        </div>
-        <div class="Modal-flex-item">
-            <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
-        </div>
-    </div>
     <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
         {!! csrf_field() !!}
-
         <div id="Modal-row">
             <div class="Modal-flex-item">
                 <div class="InputAddOn">

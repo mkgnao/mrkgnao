@@ -94,7 +94,7 @@ class TwController extends Controller
 
     public function setTwMe()
     {
-        $this->tw_me = self::twGetRaw('me');
+        $this->tw_me = self::twGet('me');
 
         self::jsPut('tw_me', $this->tw_me);
     }

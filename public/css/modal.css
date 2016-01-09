@@ -23,12 +23,11 @@
     right: 0;
     bottom: 0;
     left: 0;
-    height:80px;
-    width:400px;
 }
 
 .Modal-row {
-    width: auto;
+    height:80px;
+    width:400px;
 }
 
 .Modal-flex-item {

@@ -87,7 +87,7 @@ class TwController extends Controller
     {
         $this->tw_me = self::twGet('me');
 
-        \Log::info(json_encode($this->tw_me, JSON_PRETTY_PRINT);
+        \Log::info(json_encode($this->tw_me, JSON_PRETTY_PRINT));
 
         self::jsPut('tw_me', $this->tw_me);
     }

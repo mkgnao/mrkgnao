@@ -224,11 +224,11 @@
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
                                         </li>
-                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">people</a>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">people</a>
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
                                         </li>
-                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">organizations</a>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">group</a>
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
                                         </li>
@@ -283,7 +283,6 @@
             /^icon/,
             /^wf-/,
             /^hljs-/,
-            /^twitter-/
         ]);
         return config;
     });

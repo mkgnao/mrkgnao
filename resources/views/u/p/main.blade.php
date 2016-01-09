@@ -13,7 +13,7 @@
     </div>
 
     <script>
-        window.onload = function () {
+        function loadTw() {
             try {
                 //console.log(mkgnaoNs);
 
@@ -36,6 +36,8 @@
 
             }
         };
+
+        addLoadEvent(loadTw);
     </script>
 
 @endsection

@@ -22,6 +22,23 @@
     <script src="/js/main.js"></script>
     <script src="/js/prettyprint.js"></script>
 
+
+    <script>
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+    </script>
+
     @if (!Auth::guest())
         <script>
             function hideModalLogout() {
@@ -79,7 +96,7 @@
             }
 
 
-            window.onload = function () {
+            function loadMain() {
                 logoutLink = document.getElementById("logoutClick");
                 if (logoutLink)
                     logoutLink.addEventListener('click', toggleModalLogout);
@@ -107,6 +124,8 @@
                 if (bodyTop)
                     bodyTop.addEventListener('click', hideModalLogoutBodyClick);
             }
+
+            addLoadEvent(loadMain);
         </script>
     @else
 

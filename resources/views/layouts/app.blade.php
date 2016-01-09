@@ -184,7 +184,7 @@
             @if (Auth::guest())
                 @if ($view_name != "auth.login")
                     <a id="loginClick" class="Header-button Button Button--action Button--wide"
-                       href="#">
+                       href="{{ url('/login') }}">
                         login
                     </a>
                 @endif

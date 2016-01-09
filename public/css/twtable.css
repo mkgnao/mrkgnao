@@ -12,7 +12,7 @@
     margin: 0;
     padding: 0;
     font-size: 1.2em;
-    text-transform: lowercase;
+    width:auto;
 }
 
 .twTableHead {
@@ -33,10 +33,11 @@
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
-    flex: 1
+    flex: 1;
+    border: 1px solid rgb(176, 176, 176);
 }
 
 .twTableTd:hover {
-
+    background-color: whitesmoke;
 }
 

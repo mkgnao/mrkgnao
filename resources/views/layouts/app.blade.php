@@ -192,11 +192,9 @@
                 <dd>
                     <nav role="navigation">
                         <ul>
-                            <li>
+                            <li>{{ strtolower(Auth::user()->name) }}
                                 <a href="#">
-                                    <div>
-                                        {{ strtolower(Auth::user()->name) }}
-                                    </div>
+                                        &#9660;
                                 </a>
                                 <div>
                                     <ul>

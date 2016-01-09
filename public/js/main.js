@@ -21,7 +21,7 @@ mkgnaoNs.traverse = function (o, lvl, n) {
             tdv.appendChild(tb);
             tr.appendChild(tdv);
 
-            traverse(o[i], lvl + 1, trc);
+            mkgnaoNs.traverse(o[i], lvl + 1, trc);
         } else {
             tdv.innerHTML = o[i].toString().toLowerCase();
             tr.appendChild(tdv);

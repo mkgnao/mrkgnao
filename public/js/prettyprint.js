@@ -67,7 +67,6 @@ mkgnaoNs.prettyPrint = (function () {
             /* colSpan is calculated by length of null items in array */
             var colSpan = util.count(cells, null) + 1;
             tr = util.el('tr');
-            tr.className = "twTableTr";
 
             util.forEach(cells, function (cell) {
 
@@ -77,11 +76,6 @@ mkgnaoNs.prettyPrint = (function () {
                 /* Default cell type is <td> */
                 td = util.el(cellType);
 
-                if (cellType == 'td') {
-                    td.className = "twTableTd";
-                } else if (cellType == 'th') {
-                    td.className = "twTableTh";
-                }
 
                 if (cell.nodeType) {
                     /* IsDomElement */
@@ -89,8 +83,6 @@ mkgnaoNs.prettyPrint = (function () {
                 } else {
                     /* IsString */
                     td.innerHTML = util.shorten(cell.toString());
-                    console.log('IsString: td.innerHtml: ' + td.innerHTML);
-
                 }
 
                 tr.appendChild(td);
@@ -111,7 +103,6 @@ mkgnaoNs.prettyPrint = (function () {
             /* Creates new table: */
 
             tbl = util.el('table');
-            tbl.className = "twTable";
 
             thead = util.el('thead');
             tbody = util.el('tbody');

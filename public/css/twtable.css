@@ -1,8 +1,4 @@
-div.twcontent * {
-    font-size: 1.2em;
-}
-
-.twTable {
+table, th, td {
     border-collapse: collapse;
     text-transform: lowercase;
     display: -webkit-box;
@@ -18,23 +14,7 @@ div.twcontent * {
     font-size: 1.2em;
 }
 
-.twTableHead {
-    font-size: 1.2em;
-}
-
-.twTableTr {
-    font-size: 1.2em;
-}
-
-.twTableTh {
-    -webkit-box-flex: 1;
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    font-size: 1.2em;
-}
-
-.twTableTd {
+td {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -43,7 +23,7 @@ div.twcontent * {
     font-size: 1.2em;
 }
 
-.twTableTd:hover {
+td:hover {
     background-color: whitesmoke;
 }
 

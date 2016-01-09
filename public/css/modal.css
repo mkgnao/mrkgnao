@@ -60,7 +60,7 @@
     text-decoration: none
 }
 
-.Modal-Button:active, .Button:focus, .Button:hover {
+.Modal-Button:active, .Modal-Button:focus, .Modal-Button:hover {
     border: 0;
     background: red;
     text-decoration: none
@@ -70,7 +70,7 @@
     color: inherit;
 }
 
-.Modal-Button--action:active, .Button--action:focus, .Button--action:hover {
+.Modal-Button--action:active, .Modal-Button--action:focus, .Modal-Button--action:hover {
     background-color: yellow;
 }
 

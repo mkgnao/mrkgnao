@@ -2,9 +2,9 @@ var mkgnaoNs = mkgnaoNs || {};
 
 mkgnaoNs.process = function(key, value, lvl, n) {
     var tdk = document.createElement('td');
-    tdk.innerHTML = key.toString();
+    tdk.innerHTML = key.toString().toLowerCase();
     var tdv = document.createElement('td');
-    tdv.innerHTML = value.toString();
+    tdv.innerHTML = value.toString().toLowerCase();
 
     n.appendChild(tdk);
     n.appendChild(tdv);

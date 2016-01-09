@@ -39,7 +39,27 @@
     font-size: 1.2em;
 }
 
-.twTableTd:hover {
+.twTableTdKey {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid rgb(176, 176, 176);
+    font-size: 1.2em;
+    opacity: 0.86;
+}
+
+.twTableTdValue {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    border: 1px solid rgb(176, 176, 176);
+    font-size: 1.2em;
+    opacity: 0.94;
+}
+
+.twTableTdValue:hover {
     background-color: whitesmoke;
 }
 

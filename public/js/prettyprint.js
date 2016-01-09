@@ -83,20 +83,20 @@ mkgnaoNs.prettyPrint = (function () {
                 tdKey.className = "twTableTdKey";
                 if (cell.nodeType) {
                     /* IsDomElement */
-                    tdKey.appendChild(cell[0]);
+                    tdKey.appendChild(cells[0]);
                 } else {
                     /* IsString */
-                    tdKey.innerHTML = util.shorten(cell[0].toString());
+                    tdKey.innerHTML = util.shorten(cells[0].toString());
                 }
 
                 tdValue = util.el("td");
                 tdValue.className = "twTableTdValue";
                 if (cell.nodeType) {
                     /* IsDomElement */
-                    tdValue.appendChild(cell[1]);
+                    tdValue.appendChild(cells[1]);
                 } else {
                     /* IsString */
-                    tdValue.innerHTML = util.shorten(cell[1].toString());
+                    tdValue.innerHTML = util.shorten(cells[1].toString());
                 }
 
                 tr.appendChild(tdKey);

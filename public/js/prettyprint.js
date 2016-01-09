@@ -62,13 +62,13 @@ mkgnaoNs.prettyPrint = (function () {
         row: function (cells, type, cellType) {
 
             /* Creates new <tr> */
-            cellType = cellType || 'td';
+            //cellType = cellType || 'td';
 
             /* colSpan is calculated by length of null items in array */
             var colSpan = util.count(cells, null) + 1;
 
             tr = document.createElement("div");
-            tr.className = "grid__row grid__row--sm";
+            tr.className = "Grid Grid--gutters Grid--flexCells u-textCenter";
 
             util.forEach(cells, function (cell) {
 
@@ -77,23 +77,20 @@ mkgnaoNs.prettyPrint = (function () {
                 }
 
                 tx = document.createElement("div");
+                tx.className = "Grid-cell";
 
-                /* Default cell type is <td> */
-                if (cellType == "td")
-                    tx.className = "grid__item";
-                else if (cellType == "th")
-                    tx.className = "grid__row grid__row--lg";
-                else
-                    console.log('unknown cellType: ' + cellType);
+                ed = document.createElement("div");
+                ed.className = "Demo";
 
                 if (cell.nodeType) {
                     /* IsDomElement */
-                    tx.appendChild(cell);
+                    ed.appendChild(cell);
                 } else {
                     /* IsString */
-                    tx.innerHTML = util.shorten(cell.toString());
+                    ed.innerHTML = util.shorten(cell.toString());
                 }
 
+                tx.appendChild(ed);
                 tr.appendChild(tx);
             });
 

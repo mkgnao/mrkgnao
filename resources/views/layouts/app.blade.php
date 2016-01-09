@@ -108,83 +108,7 @@
             }
         </script>
     @else
-        <script>
-            function hideModalLogin() {
-                var e = document.getElementById("Modal-flex-container-login");
-                if (!e)
-                    return;
 
-                e.className = "Modal-flex-container-hidden";
-            }
-
-            function toggleModalLogin() {
-                var e = document.getElementById("Modal-flex-container-login");
-
-                if (!e)
-                    return;
-
-                if (e.className == "Modal-flex-container-hidden")
-                    e.className = "Modal-flex-container-shown";
-                else
-                    e.className = "Modal-flex-container-hidden";
-            }
-
-            function hideModalLoginBodyClick(e) {
-                if (e.target != document.getElementById("logoutModalLogin") &&
-                        e.target != document.getElementById("loginClick")) {
-                    hideModalLogin();
-                }
-            }
-
-            function hideModalLogin() {
-                var e = document.getElementById("Modal-flex-container-login");
-                if (!e)
-                    return;
-
-                e.className = "Modal-flex-container-hidden";
-            }
-
-            function toggleModalLogin() {
-                var e = document.getElementById("Modal-flex-container-login");
-
-                if (!e)
-                    return;
-
-                if (e.className == "Modal-flex-container-hidden")
-                    e.className = "Modal-flex-container-shown";
-                else
-                    e.className = "Modal-flex-container-hidden";
-            }
-
-            function hideModalLoginBodyClick(e) {
-                if (e.target != document.getElementById("logoutModalLogin") &&
-                        e.target != document.getElementById("loginClick")) {
-                    hideModalLogin();
-                }
-            }
-
-            window.onload = function () {
-                loginLink = document.getElementById("loginClick");
-                if (loginLink)
-                    loginLink.addEventListener('click', toggleModalLogin);
-
-                loginModalStay = document.getElementById("loginModalStay");
-                if (loginModalStay)
-                    loginModalStay.addEventListener('click', hideModalLogin);
-
-                document.onkeydown = function (evt) {
-                    evt = evt || window.event;
-                    if (evt.keyCode == 27) {
-                        hideModalLogin();
-                    }
-                };
-
-                bodyTop = document.getElementById("bodyTop");
-                if (bodyTop)
-                    bodyTop.addEventListener('click', hideModalLoginBodyClick);
-            }
-
-        </script>
     @endif
 
     <script class="js-allow-before-footer">
@@ -243,39 +167,6 @@
             <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
         </div>
     </div>
-</div>
-
-<div id="Modal-flex-container-login" class="Modal-flex-container-hidden">
-    <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
-        {!! csrf_field() !!}
-        <div id="Modal-row">
-            <div class="Modal-flex-item">
-                <div class="InputAddOn">
-                    <input type="email" class="InputAddOn-field" name="email"
-                           value="{{ old('email') }}" placeholder="email">
-
-                    @if ($errors->has('email'))
-                        {{ $errors->first('email') }}
-                    @endif
-                </div>
-            </div>
-            <div class="Modal-flex-item">
-                <div class="InputAddOn">
-                    <input type="password" class="InputAddOn-field" name="password" placeholder="password">
-
-                    @if ($errors->has('password'))
-                        {{ $errors->first('password') }}
-                    @endif
-                </div>
-
-                <div class="InputAddOn">
-                    <button class="InputAddOn-button-login" type="submit">
-                        login
-                    </button>
-                </div>
-            </div>
-        </div>
-    </form>
 </div>
 
 <header class="HolyGrail-header">

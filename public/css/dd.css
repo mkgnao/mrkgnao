@@ -3,7 +3,8 @@ dd {
     position: fixed;
     width: 100%;*/
     z-index: 1000;
-    font-size: 1.8em;
+    opacity: 0.80;
+    font-size: 1.4em;
 }
 
 dd > nav > ul {
@@ -60,7 +61,8 @@ dd > nav > ul > li a + div > ul > li > a {
 }
 
 dd > nav > ul > li a + div > ul > li:hover > a {
-    background-color: whitesmoke;
+    /*background-color: whitesmoke;*/
+    opacity: 0.95;
 }
 
 dd > nav > ul > li > a {

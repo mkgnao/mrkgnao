@@ -95,8 +95,8 @@
 
 <div id="flex-container" class="flex-container-hidden">
     <div class="flex-item">
-        <a href="{{ url('/logout') }}" class="Button Button--action Button--wide">logout</a>
-        <a id="logoutModalStay" href="#" class="Button Button--action Button--wide">stay</a>
+        <a href="{{ url('/logout') }}" class="Modal-Button Modal-Button--action Modal-Button--wide">logout</a>
+        <a id="logoutModalStay" href="#" class="Modal-Button Modal-Button--action Modal-Button--wide">stay</a>
     </div>
 </div>
 

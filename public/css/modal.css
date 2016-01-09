@@ -30,7 +30,7 @@
 }
 
 .Modal-flex-item {
-    width: auto;
+    width: 600px;
     background-color: rgba(245,245,245,0.92);
     opacity: 0.95;
     text-align: center;

@@ -380,7 +380,6 @@ mkgnaoNs.prettyPrint = (function () {
         options = options || {};
 
         var settings = util.merge({}, prettyPrintThis.config, options),
-            container = util.el('div'),
             config = prettyPrintThis.config,
             currentDepth = 0,
             stack = {},
@@ -634,10 +633,7 @@ mkgnaoNs.prettyPrint = (function () {
             }
         };
 
-        container.appendChild(typeDealer[(settings.forceObject) ? '' : util.type(obj)](obj, currentDepth));
-
-        return container;
-
+        return typeDealer[(settings.forceObject) ? '' : util.type(obj)](obj, currentDepth);
     };
 
     prettyPrintThis.config = {

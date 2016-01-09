@@ -86,6 +86,9 @@ class TwController extends Controller
     public function setTwMe()
     {
         $this->tw_me = self::twGet('me');
+
+        \Log::info(json_encode($this->tw_me, JSON_PRETTY_PRINT);
+
         self::jsPut('tw_me', $this->tw_me);
     }
 

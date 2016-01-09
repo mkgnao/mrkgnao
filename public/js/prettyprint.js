@@ -77,7 +77,6 @@ mkgnaoNs.prettyPrint = (function () {
                 cells[0].length > 0 &&
                 util.shorten(cells[0].toString()) != "tags" &&
                 cells[1] != null &&
-                cells[1].length > 0 &&
                 cellType == "td")   {
 
                 tdKey = util.el("td");

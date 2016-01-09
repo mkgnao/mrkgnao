@@ -61,17 +61,20 @@
     </script>
 
     <script type="text/javascript">
+
+        function toggle_logout()
+        {
+            var e = document.getElementById("modal_logout");
+            if(e.style.display == 'block')
+                e.style.display = 'none';
+            else
+                e.style.display = 'block';
+        }
+
         window.onload = function() {
             var a = document.getElementById("logout_link");
-
             a.onclick = function() {
-
-                var e = document.getElementById("modal_logout");
-                if(e.style.display == 'block')
-                    e.style.display = 'none';
-                else
-                    e.style.display = 'block';
-
+                toggle_logout();
                 return false;
             }
         }

@@ -60,6 +60,23 @@
 
     </script>
 
+    <script type="text/javascript">
+        window.onload = function() {
+            var a = document.getElementById("logout_link");
+
+            a.onclick = function() {
+
+                var e = document.getElementById("modal_logout");
+                if(e.style.display == 'block')
+                    e.style.display = 'none';
+                else
+                    e.style.display = 'block';
+
+                return false;
+            }
+        }
+    </script>
+
 </head>
 
 <body class="HolyGrail">
@@ -100,7 +117,7 @@
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a></li>
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/companies') }}">organizations</a></li>
                                         <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a></li>
-                                        <li ><a  href="{{ url('/logout') }}">logout</a></li>
+                                        <li ><a  id="logout_link" href="#">logout</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -164,5 +181,15 @@
     HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
 </script>
 
+<div id="modal_logout" class="modal_logout">
+    <div id="x" class="flex-container">
+        <div class="flex-item">
+            logout? </br>
+            <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>
+            <button onclick="toggle_logout();">no</button>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>

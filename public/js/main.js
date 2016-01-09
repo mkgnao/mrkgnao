@@ -33,6 +33,7 @@ mkgnaoNs.traverse = function (o, lvl, n) {
 
 mkgnaoNs.jsonToTable = function(jsonObj) {
     var tb = document.createElement('table');
+    tb.className = "twTable";
 
     mkgnaoNs.traverse(jsonObj, 0, tb);
 

@@ -1,3 +1,49 @@
-table, th, td {
-    border: 1px solid black;
+table.twTable {
+    border-collapse: collapse;
+    border: 1px solid silver;
+    font-size: 2em;
+}
+
+.twTable caption {
+    padding: 1em 4px;
+}
+
+.twTable td, th {
+    padding: 3px 3px .75em 3px;
+    line-height: 1.3em;
+}
+
+.twTable th {
+    text-align: left;
+    padding-right: .5em;
+    vertical-align: top;
+}
+
+.twTable thead th {
+    text-align: center;
+}
+
+.twTable .odd td {
+}
+
+.twTable .odd th {
+}
+
+.twTable td a, td a:link {
+}
+
+.twTable td a:visited {
+}
+
+.twTable td a:hover, td a:focus {
+}
+
+.twTable th a, td a:active {
+}
+
+.twTable tfoot th, tfoot td {
+}
+
+.twTable th + td {
+    padding-left: .5em;
 }

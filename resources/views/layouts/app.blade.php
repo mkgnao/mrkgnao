@@ -133,11 +133,11 @@
                             shrinkOn = 300,
                             header = document.querySelector("HolyGrail-header");
                     if (distanceY > shrinkOn) {
-                        classie.add(header,"HolyGrail-header-sm");
+                        header.className += "HolyGrail-header-sm";
                     } else {
-                        if (classie.has(header, "HolyGrail-header-sm")) {
-                            classie.remove(header ,"HolyGrail-header-sm");
-                        }
+                        header.className =
+                                header.className.replace
+                                ( /(?:^|\s)HolyGrail-header-sm(?!\S)/g , '' );
                     }
                 });
             }

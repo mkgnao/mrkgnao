@@ -20,7 +20,6 @@
     <link href="/css/twtable.css" rel="stylesheet" type="text/css">
 
     <script src="/js/main.js"></script>
-    <script src="/js/classie.js"></script>
 
     <script>
         function addLoadEvent(func) {
@@ -130,8 +129,11 @@
             function scrollSmallHeader() {
                 window.addEventListener('scroll', function(e){
                     var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                            shrinkOn = 300,
+                            shrinkOn = 100,
                             header = document.getElementById("HolyGrail-header");
+
+                    console.log("distanceY > shrinkOn: " + distanceY + " + " + shrinkOn);
+
                     if (distanceY > shrinkOn) {
                         header.className += "HolyGrail-header-sm";
                         console.log("+: " + header);

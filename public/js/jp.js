@@ -28,11 +28,11 @@ mkgnaoNs.traverse = function(o, func, lvl, n) {
     return lvl;
 };
 
-mkgnaoNs.getTwTable = function () {
+mkgnaoNs.getTwTable = function (j) {
     var n = document.createElement('table');
     n.className = "twTable";
 
-    mkgnaoNs.traverse(o, mkgnaoNs.process, 0, n);
+    mkgnaoNs.traverse(j, mkgnaoNs.process, 0, n);
 
     return n;
 };

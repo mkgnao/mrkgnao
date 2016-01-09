@@ -128,9 +128,11 @@
 
             function scrollSmallHeader() {
                 window.addEventListener('scroll', function(e){
-                    var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                            shrinkOn = 100,
-                            header = document.getElementById("HolyGrail-header");
+                    var distanceY = document.getElementById("scrollable").scrollTop;
+
+                    shrinkOn = 100;
+
+                    header = document.getElementById("HolyGrail-header");
 
                     console.log("distanceY > shrinkOn: " + distanceY + " + " + shrinkOn);
 
@@ -263,7 +265,7 @@
     </div>
 </header>
 
-<div class="scrollable">
+<div class="scrollable" id="scrollable">
     <main class="HolyGrail-body">
         @include('partials.scriptsend')
 

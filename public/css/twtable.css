@@ -1,3 +1,3 @@
-.twTable * {
-    border: 1px;
+table, th, td {
+    border: 1px solid black;
 }

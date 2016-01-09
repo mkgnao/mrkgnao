@@ -26,7 +26,8 @@
             console.log("toggleModalLogout");
 
             var e = document.getElementById("flex-container");
-            if (e.class == "flex-container-hidden")
+
+            if (e.className == "flex-container-hidden")
                 e.className = "flex-container-shown";
             else
                 e.className = "flex-container-hidden";
@@ -82,6 +83,14 @@
 </head>
 
 <body class="HolyGrail">
+
+<div id="flex-container" class="flex-container-hidden">
+    <div class="flex-item">
+        logout? </br>
+        <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>
+        <button onclick="toggle_modal_logout()">no</button>
+    </div>
+</div>
 
 <header class="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
@@ -188,14 +197,6 @@
 
     HTMLInspector.inspect({excludeElements: ['svg', 'iframe']});
 </script>
-
-<div id="flex-container" class="flex-container-hidden">
-    <div class="flex-item">
-        logout? </br>
-        <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>
-        <button onclick="toggle_modal_logout()">no</button>
-    </div>
-</div>
 
 </body>
 </html>

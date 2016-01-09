@@ -60,26 +60,6 @@
 
     </script>
 
-    <script type="text/javascript">
-
-        function toggle_logout()
-        {
-            var e = document.getElementById("modal_logout");
-            if(e.style.display == 'block')
-                e.style.display = 'none';
-            else
-                e.style.display = 'block';
-        }
-
-        window.onload = function() {
-            var a = document.getElementById("logout_link");
-            a.onclick = function() {
-                toggle_logout();
-                return false;
-            }
-        }
-    </script>
-
 </head>
 
 <body class="HolyGrail">
@@ -115,12 +95,18 @@
                                 </a>
                                 <div>
                                     <ul>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/companies') }}">organizations</a></li>
-                                        <li ><a  href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a></li>
-                                        <li ><a  id="logout_link" href="#">logout</a></li>
+                                        <li>
+                                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
+                                        </li>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
+                                        </li>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
+                                        </li>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/companies') }}">organizations</a>
+                                        </li>
+                                        <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
+                                        </li>
+                                        <li><a onclick="toggle_modal_logout()" href="#">logout</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -158,6 +144,18 @@
     </div>
 </footer>
 
+<script>
+    function toggle_modal_logout() {
+        console.log("toggle_modal_logout");
+
+        var e = document.getElementById("modal_logout");
+        if(e.style.display == 'block')
+            e.style.display = 'none';
+        else
+            e.style.display = 'block';
+    }
+</script>
+
 <script src="/js/flexbox.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
@@ -189,10 +187,9 @@
         <div class="flex-item">
             logout? </br>
             <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>
-            <button onclick="toggle_logout();">no</button>
+            <button onclick="toggle_modal_logout()">no</button>
         </div>
     </div>
-
 </div>
 </body>
 </html>

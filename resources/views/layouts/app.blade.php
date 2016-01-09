@@ -17,6 +17,7 @@
     <link href="/css/dd.css" rel="stylesheet" type="text/css">
     <link href="/css/main.css" rel="stylesheet" type="text/css">
     <link href="/css/modal.css" rel="stylesheet" type="text/css">
+    <link href="/css/twtable.css" rel="stylesheet" type="text/css">
 
     <script src="/js/main.js"></script>
     <script src="/js/prettyprint.js"></script>

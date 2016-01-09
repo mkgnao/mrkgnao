@@ -46,41 +46,12 @@ mkgnaoNs.prettyPrint = (function () {
 
     var util = {
 
-        el: function (type, attrs) {
+        el: function (type) {
 
             /* Create new element */
-            var el = document.createElement(type), attr;
-
-            /*Copy to single object */
-            attrs = util.merge({}, attrs);
-
-            /* Add attributes to el */
-            if (attrs && attrs.style) {
-                var styles = attrs.style;
-                util.applyCSS(el, attrs.style);
-                delete attrs.style;
-            }
-            for (attr in attrs) {
-                if (attrs.hasOwnProperty(attr)) {
-                    el[attr] = attrs[attr];
-                }
-            }
+            var el = document.createElement(type);
 
             return el;
-
-        },
-
-        applyCSS: function (el, styles) {
-            /* Applies CSS to a single element */
-            for (var prop in styles) {
-                if (styles.hasOwnProperty(prop)) {
-                    try {
-                        /* Yes, IE6 SUCKS! */
-                        el.style[prop] = styles[prop];
-                    } catch (e) {
-                    }
-                }
-            }
         },
 
         txt: function (t) {
@@ -94,30 +65,9 @@ mkgnaoNs.prettyPrint = (function () {
             cellType = cellType || 'td';
 
             /* colSpan is calculated by length of null items in array */
-            var colSpan = util.count(cells, null) + 1,
-                tr = util.el('tr'), td,
-                attrs = {
-                    style: util.getStyles(cellType, type),
-                    colSpan: colSpan,
-                    onmouseover: function () {
-                        var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function (cell) {
-                            if (cell.nodeName.toLowerCase() !== 'td') {
-                                return;
-                            }
-                            util.applyCSS(cell, util.getStyles('td_hover', type));
-                        });
-                    },
-                    onmouseout: function () {
-                        var tds = this.parentNode.childNodes;
-                        util.forEach(tds, function (cell) {
-                            if (cell.nodeName.toLowerCase() !== 'td') {
-                                return;
-                            }
-                            util.applyCSS(cell, util.getStyles('td', type));
-                        });
-                    }
-                };
+            var colSpan = util.count(cells, null) + 1;
+            tr = util.el('tr');
+            tr.className = "twTableTr";
 
             util.forEach(cells, function (cell) {
 
@@ -125,7 +75,15 @@ mkgnaoNs.prettyPrint = (function () {
                     return;
                 }
                 /* Default cell type is <td> */
-                td = util.el(cellType, attrs);
+                td = util.el(cellType);
+
+                console.log('got "' + cellType + '"');
+
+                if (cellType == 'td') {
+                    td.className = "twTableTd";
+                } else if (cellType == 'th') {
+                    td.className = "twTableTh";
+                }
 
                 if (cell.nodeType) {
                     /* IsDomElement */
@@ -151,20 +109,12 @@ mkgnaoNs.prettyPrint = (function () {
             headings = headings || [];
 
             /* Creates new table: */
-            var attrs = {
-                    thead: {
-                        style: util.getStyles('thead', type)
-                    },
-                    tbody: {
-                        style: util.getStyles('tbody', type)
-                    },
-                    table: {
-                        style: util.getStyles('table', type)
-                    }
-                },
-                tbl = util.el('table', attrs.table),
-                thead = util.el('thead', attrs.thead),
-                tbody = util.el('tbody', attrs.tbody);
+
+            tbl = util.el('table');
+            tbl.className = "twTable";
+
+            thead = util.el('thead');
+            tbody = util.el('tbody');
 
             if (headings.length) {
                 tbl.appendChild(thead);
@@ -697,10 +647,6 @@ mkgnaoNs.prettyPrint = (function () {
 
     };
 
-    /* Configuration */
-
-    /* All items can be overwridden by passing an
-     "options" object when calling prettyPrint */
     prettyPrintThis.config = {
 
         /* Try setting this to false to save space */
@@ -708,84 +654,7 @@ mkgnaoNs.prettyPrint = (function () {
 
         forceObject: false,
         maxDepth: 6,
-        maxArray: -1,  // default is unlimited
-        styles: {
-            array: {
-                th: {
-                    //backgroundColor: '#6DBD2A',
-                    //color: 'white'
-                }
-            },
-            'function': {
-                th: {
-                    //backgroundColor: '#D82525'
-                }
-            },
-            regexp: {
-                th: {
-                    //backgroundColor: '#E2F3FB',
-                    //color: '#000'
-                }
-            },
-            object: {
-                th: {
-                    //backgroundColor: '#1F96CF'
-                }
-            },
-            jquery: {
-                th: {
-                    //backgroundColor: '#FBF315'
-                }
-            },
-            error: {
-                th: {
-                    //backgroundColor: 'red',
-                    //color: 'yellow'
-                }
-            },
-            domelement: {
-                th: {
-                    //backgroundColor: '#F3801E'
-                }
-            },
-            date: {
-                th: {
-                    //backgroundColor: '#A725D8'
-                }
-            },
-            colHeader: {
-                th: {
-                    //backgroundColor: '#EEE',
-                    //color: '#000',
-                    textTransform: 'lowercase'
-                }
-            },
-            'default': {
-                table: {
-                    borderCollapse: 'collapse',
-                    width: '60%',
-                    textTransform: 'lowercase'
-                },
-                td: {
-                    padding: '1px',
-                    fontSize: '18px',
-                    border: '1px solid #B0B0B0',
-                    verticalAlign: 'top',
-                    whiteSpace: 'nowrap'
-                    //opacity: 0.78
-                },
-                td_hover: {
-                    /* Styles defined here will apply to all tr:hover > td,
-                     - Be aware that "inheritable" properties (e.g. fontWeight) WILL BE INHERITED */
-                },
-                th: {
-                    padding: '1px',
-                    fontSize: '12px',
-                    textAlign: 'left',
-                    verticalAlign: 'top'
-                }
-            }
-        }
+        maxArray: -1  // default is unlimited
     };
 
     return prettyPrintThis;

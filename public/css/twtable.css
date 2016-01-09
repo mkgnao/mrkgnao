@@ -1,3 +1,7 @@
+div.twcontent * {
+    font-size: 1.2em;
+}
+
 .twTable {
     border-collapse: collapse;
     text-transform: lowercase;
@@ -11,7 +15,6 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    font-size: 1.2em;
     width:auto;
 }
 
@@ -27,7 +30,6 @@
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    font-size: 1.2em;
 }
 
 .twTableTd {
@@ -36,7 +38,6 @@
     -ms-flex: 1;
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
-    font-size: 1.2em;
 }
 
 .twTableTdKey {
@@ -45,7 +46,6 @@
     -ms-flex: 1;
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
-    font-size: 1.2em;
     opacity: 0.86;
 }
 
@@ -55,7 +55,6 @@
     -ms-flex: 1;
     flex: 1;
     border: 1px solid rgb(176, 176, 176);
-    font-size: 1.2em;
     opacity: 0.94;
 }
 

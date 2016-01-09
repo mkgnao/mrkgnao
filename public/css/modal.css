@@ -30,7 +30,7 @@
 }
 
 .Modal-flex-item {
-    width: 50%;
+    width: auto;
     background-color: rgba(245,245,245,0.92);
     opacity: 0.95;
     text-align: center;
@@ -56,7 +56,7 @@
     line-height: normal;
     text-decoration: none;
     white-space: nowrap;
-    background: green;
+    background: #dbdbdb;
 }
 
 .Modal-Button:focus {
@@ -65,7 +65,6 @@
 
 .Modal-Button:active, .Modal-Button:focus, .Modal-Button:hover {
     border: 0;
-    background: red;
     text-decoration: none
 }
 
@@ -74,7 +73,7 @@
 }
 
 .Modal-Button--action:active, .Modal-Button--action:focus, .Modal-Button--action:hover {
-    background-color: yellow;
+    background-color: #cecece;
 }
 
 .Modal-Button--wide {

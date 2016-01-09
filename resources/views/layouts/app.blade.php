@@ -261,6 +261,8 @@
     </main>
 
 
+</div>
+
 <footer class="Site-footer">
     <div class="Footer">
         <div class="Footer-credits">
@@ -269,7 +271,6 @@
     </div>
 </footer>
 
-</div>
 
 
 <div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">

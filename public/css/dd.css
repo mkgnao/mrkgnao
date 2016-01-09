@@ -31,7 +31,8 @@ dd > nav > ul > li:hover {
 dd > nav > ul > li a + div {
     background: #FCFCFC;
     /*border-radius: 0 0 2px 2px;*/
-    display: none;
+    /*display: none;*/
+    opacity: 0.2;
     position: absolute;
     width: 195px;
 }

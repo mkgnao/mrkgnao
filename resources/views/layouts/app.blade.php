@@ -21,6 +21,22 @@
     <script src="/js/main.js"></script>
     <script src="/js/prettyprint.js"></script>
 
+    <script>
+        function toggleModalLogout() {
+            console.log("toggleModalLogout");
+
+            var e = document.getElementById("flex-container");
+            if (e.class == "flex-container-hidden")
+                e.className = "flex-container-shown";
+            else
+                e.className = "flex-container-hidden";
+        }
+
+        window.onload = function() {
+            document.getElementById("logout_click").addEventListener('click' , toggleModalLogout);
+        }
+    </script>
+
     <script class="js-allow-before-footer">
 
         var mediaQueryOpts = {
@@ -109,7 +125,7 @@
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
                                         </li>
-                                        <li><a onclick="toggle_modal_logout()" href="#">logout</a></li>
+                                        <li><a id="logout_click" href="#">logout</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -146,18 +162,6 @@
         </div>
     </div>
 </footer>
-
-<script>
-    function toggle_modal_logout() {
-        console.log("toggle_modal_logout");
-
-        var e = document.getElementById("flex-container");
-        if(e.class == "flex-container-hidden")
-            e.className = "flex-container-shown";
-        else
-            e.className = "flex-container-hidden";
-    }
-</script>
 
 <script src="/js/flexbox.js"></script>
 

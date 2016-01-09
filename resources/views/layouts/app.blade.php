@@ -203,6 +203,9 @@
                                         <li>
                                             <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
                                         </li>
+                                        <li>
+                                            &nbsp;
+                                        </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
                                         </li>
                                         <li><a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">people</a>

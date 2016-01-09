@@ -1,12 +1,49 @@
 var mkgnaoNs = mkgnaoNs || {};
 
-mkgnaoNs.twAddJson = function (what, where) {
-    var j = JSON.parse(what);
-    var n = mkgnaoNs.getTwTable(j);
-    var e = document.getElementById(where);
-    e.appendChild(n);
+mkgnaoNs.traverse = function (o, lvl, n) {
+    for (var i in o) {
+        if (o[i] == null)
+            return;
 
-    console.log(e.innerHTML);
+        var tdk = document.createElement('td');
+        var tdv = document.createElement('td');
+        var tr = document.createElement('tr');
+
+        tdk.innerHTML = i.toString().toLowerCase();
+
+        tr.appendChild(tdk);
+
+        if (typeof(o[i]) == "object") {
+            var tb = document.createElement('table');
+            var trc = document.createElement('tr');
+
+            tb.appendChild(trc);
+            tdv.appendChild(tb);
+            tr.appendChild(tdv);
+
+            traverse(o[i], lvl + 1, trc);
+        } else {
+            tdv.innerHTML = o[i].toString().toLowerCase();
+            tr.appendChild(tdv);
+        }
+
+        n.appendChild(tr);
+    }
+};
+
+mkgnao.jsonToTable = function(jsonObj) {
+    var tb = document.createElement('table');
+
+    traverse(jsonObj, 0, tb);
+
+    return tb;
+};
+
+mkgnaoNs.twAddJson = function (jsonStr, containerId) {
+    var jsonObj = JSON.parse(jsonStr);
+    var tb = mkgnaoNs.jsonToTable(jsonObj);
+    var container = document.getElementById(containerId);
+    container.appendChild(tb);
 };
 
 mkgnaoNs.strPad = function (input, pad_length, pad_string, pad_type) {

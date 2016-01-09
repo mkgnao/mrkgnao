@@ -70,6 +70,78 @@ final class Rest
     }
 
     /**
+     * Shortcut call get method to api
+     *
+     * @param string $action
+     * @param mixed $request
+     * @return App\Http\TeamWorkPm\Response\Model
+     */
+    public function getRaw($action, $request = null)
+    {
+        \Log::info('in get: '.$action);
+
+        return $this->executeRaw('GET', $action, $request);
+    }
+
+    /**
+     * Call to api
+     *
+     * @param string $method
+     * @param string $action
+     * @param mixed $request
+     * @return mixed
+     * @throws \App\Http\TeamWorkPm\Exception
+     */
+    private function executeRaw($method, $action, $request = null)
+    {
+        $url = "{$this->url}$action." . self::$FORMAT;
+        $headers = ['Authorization: BASIC ' . base64_encode(
+                $this->key . ':xxx'
+            )];
+        $request = $this->request
+            ->setAction($action)
+            ->getParameters($method, $request);
+        $ch = static::initCurl($method, $url, $request, $headers);
+        $i = 0;
+        while ($i < 5) {
+            $data = curl_exec($ch);
+            $status = (int)curl_getinfo($ch, CURLINFO_HTTP_CODE);
+            $header_size = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
+            $headers = $this->parseHeaders(substr($data, 0, $header_size));
+            if ($status === 400 &&
+                (int)$headers['X-RateLimit-Remaining'] === 0
+            ) {
+                $i++;
+                sleep(10);
+            } else {
+                break;
+            }
+        }
+        // echo $data, PHP_EOL, PHP_EOL;
+        $body = substr($data, $header_size);
+        $errorInfo = curl_error($ch);
+        $error = curl_errno($ch);
+        curl_close($ch);
+        if ($error) {
+            throw new Exception($errorInfo);
+        }
+
+        $headers['Status'] = $status;
+        $headers['Method'] = $method;
+        $headers['X-Url'] = $url;
+        $headers['X-Request'] = $request;
+        $headers['X-Action'] = $action;
+        // for chrome use
+        $headers['X-Authorization'] = 'BASIC ' . base64_encode($this->key . ':xxx');
+        $response = 'App\Http\TeamWorkPm\Response\\' . strtoupper(self::$FORMAT);
+        $response = new $response;
+
+        $response['raw'] = $body;
+
+        return $response->parseRaw($body, $headers);
+    }
+
+    /**
      * Call to api
      *
      * @param string $method

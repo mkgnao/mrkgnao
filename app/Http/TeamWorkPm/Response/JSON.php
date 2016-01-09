@@ -6,6 +6,33 @@ use ArrayObject;
 class JSON extends Model
 {
 
+    public function parseRaw($data, array $headers)
+    {
+        $errors = $this->getJsonErrors();
+        $this->string = $data;
+
+        if (!$errors) {
+            if (!(
+                $headers['Status'] === 201 ||
+                $headers['Status'] === 200 ||
+                $headers['Status'] === 409 ||
+                $headers['Status'] === 422
+            )
+            ) {
+                print_r($headers);
+                exit;
+            }
+
+            return $this;
+        }
+
+        throw new \App\Http\TeamWorkPm\Exception([
+            'Message' => $errors,
+            'Response' => $data,
+            'Headers' => $headers
+        ]);
+    }
+
     public function parse($data, array $headers)
     {
         $source = json_decode($data, true);

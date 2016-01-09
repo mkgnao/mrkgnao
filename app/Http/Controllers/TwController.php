@@ -37,6 +37,15 @@ class TwController extends Controller
         return $value;
     }
 
+    public function twGetRaw($what)
+    {
+        $model = TeamWorkPm\Factory::build($what);
+        $value = $model->getRaw();
+
+        return $value;
+    }
+
+
     public function twGet($what)
     {
         $model = TeamWorkPm\Factory::build($what);
@@ -56,8 +65,6 @@ class TwController extends Controller
     public function jsPut($var, $value)
     {
         $value = trim(preg_replace('/\s+/', ' ', $value));
-
-        \Log::info('putting :'.$value);
 
         \JavaScript::put([$var => $value]);
     }
@@ -87,7 +94,7 @@ class TwController extends Controller
 
     public function setTwMe()
     {
-        $this->tw_me = self::twGet('me');
+        $this->tw_me = self::twGetRaw('me');
 
         self::jsPut('tw_me', $this->tw_me);
     }

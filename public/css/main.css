@@ -958,7 +958,7 @@ strong {
 
 @media (min-width: 768px) {
     .Header-title {
-        font-size: 1.4em;
+        /*font-size: 1.4em;*/
     }
 }
 

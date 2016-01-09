@@ -13,6 +13,30 @@ body {
     margin: 0;
 }
 
+body,
+html,
+.container {
+    height: 100%;
+}
+
+.container,
+.content {
+    display: flex;
+}
+
+.container {
+    flex-direction: column;
+}
+
+.content,
+.content div {
+    flex: 1;
+}
+
+.content div {
+    overflow: scroll;
+}
+
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
     display: block
 }
@@ -937,7 +961,6 @@ strong {
 
 .Header-title {
     margin: 0 0 .15em;
-    letter-spacing: 1px;
     /*font-size: 2.8em;*/
     /*font-weight: 600;*/
     /*line-height: 1;*/
@@ -1108,7 +1131,7 @@ strong {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 1.5em
+    padding: 1.5em;
 }
 
 .HolyGrail-content {
@@ -1220,6 +1243,7 @@ strong {
     background-color: #FAFAFA;
     /*opacity: 0.8;*/
 }
+
 .InputAddOn-button-login:hover {
     background: whitesmoke;
 }
@@ -1855,6 +1879,6 @@ pre {
 
 .smallTriangle {
     font-size: 0.2em;
-    position:relative;
-    top:0.5em;
+    position: relative;
+    top: 0.5em;
 }

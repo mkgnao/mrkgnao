@@ -2,7 +2,7 @@ var mkgnaoNs = mkgnaoNs || {};
 
 mkgnaoNs.twAddJson = function (what, where) {
     var j = JSON.parse(what);
-    var n = mkgnaoNs.prettyPrint(j);
+    var n = mkgnaoNs.getTwTable(j);
 
     console.log(n.innerHTML);
 

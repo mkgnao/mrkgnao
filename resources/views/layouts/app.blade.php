@@ -87,8 +87,8 @@
 <div id="flex-container" class="flex-container-hidden">
     <div class="flex-item">
         logout? </br>
-        <button Button Button--action Button--wide onclick="location.href='{{ url('/logout') }}'">yes</button>
-        <button onclick="toggle_modal_logout()">no</button>
+        <button class="Button Button--action Button--wide" onclick="location.href='{{ url('/logout') }}'">yes</button>
+        <button class="Button Button--action Button--wide" onclick="toggleModalLogout()">no</button>
     </div>
 </div>
 

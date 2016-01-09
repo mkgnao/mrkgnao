@@ -9,10 +9,6 @@ class JSON extends Model
     public function parse($data, array $headers)
     {
         $source = json_decode($data, true);
-        
-        \Log::info(debug_backtrace());
-
-        \Log::info('data: '.$data);
 
         $errors = $this->getJsonErrors();
         $this->string = $data;
@@ -102,8 +98,6 @@ class JSON extends Model
                         }
                         $this->headers = $headers;
                         $this->string = json_encode($source);
-
-                        \Log::info('this->string: '.$this->string);
 
                         // HACK: DDYOK BECAUSE OF HHVM
                         $source_obj = json_decode(json_encode($source));

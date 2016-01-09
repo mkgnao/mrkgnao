@@ -69,6 +69,7 @@ mkgnaoNs.prettyPrint = (function () {
             tr = util.el('tr');
             tr.className = "twTableTr";
 
+            console.log(cells);
 
             if (cells != null &&
                 cells.length == 2 &&

@@ -100,6 +100,7 @@
                                         <li ><a  href="#">projects</a></li>
                                         <li ><a  href="#">organizations</a></li>
                                         <li ><a  href="#">billing</a></li>
+                                        <li ><a  href="#">logout</a></li>
                                     </ul>
                                 </div>
                             </li>

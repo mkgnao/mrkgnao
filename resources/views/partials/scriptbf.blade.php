@@ -1,3 +1,4 @@
+<!-- BEGIN LAYOUTS/PARTIALS/SCRIPTBF -->
 <script class="js-allow-before-footer">
 
     var mediaQueryOpts = {
@@ -39,3 +40,4 @@
     };
 
 </script>
+<!-- END LAYOUTS/PARTIALS/SCRIPTBF -->

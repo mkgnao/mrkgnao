@@ -3,7 +3,7 @@
 <!-- TOP -->
 @include('partials.headall')
 
-@yield('partials.mainbody')
+@include('partials.mainbody')
 
 <!-- TOP -->
 </html>

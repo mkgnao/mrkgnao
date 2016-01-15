@@ -4,14 +4,14 @@
 
     <title>mkgnao</title>
 
-    @yield('partials.metaall')
+    @include('partials.metaall')
 
-    @yield('partials.cssall')
+    @include('partials.cssall')
 
-    @yield('partials.jsall')
+    @include('partials.jsall')
 
-    @yield('partials.notguesttop')
+    @include('partials.notguesttop')
 
-    @yield('partials.scriptbf')
+    @include('partials.scriptbf')
 
 </head>

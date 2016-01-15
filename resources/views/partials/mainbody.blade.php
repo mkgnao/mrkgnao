@@ -1,17 +1,17 @@
 <body id="bodyTop" class="HolyGrail">
 
-@yield('headermain')
+@yield('partials.headermain')
 
 <div class="scrollable">
 
-@yield('maincontent)
+@yield('partials.maincontent)
 
 </div>
 
-@yield('footer')
+@yield('partials.footer')
 
-@yield('logouthiddenmodal')
+@yield('partials.logouthiddenmodal')
 
-@yield('scriptsendmain)
+@yield('partials.scriptsendmain)
 
 </body>

@@ -1,7 +1,7 @@
 <!-- BEGIN LAYOUTS/PARTIALS/MAINBODY -->
 <body id="bodyTop" class="HolyGrail">
 
-@yield('partials.headermain')
+@include('partials.headermain')
 
 <div class="scrollable">
 

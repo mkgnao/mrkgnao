@@ -5,8 +5,7 @@
 
 @include('partials.headall')
 
-@include('partials.mainbody')
-
+@yield('partials.mainbody')
 
 
 </html><!-- END LAYOUTS/APP -->

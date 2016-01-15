@@ -7,9 +7,6 @@
 
     </article>
 
-    <article class="HolyGrail-content">
-    </article>
-
     <nav class="HolyGrail-nav u-textCenter">
     </nav>
     <aside class="HolyGrail-ads u-textCenter">

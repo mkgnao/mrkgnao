@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Http\BladeService;
+use App\Service\WritersService;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('bs', function ($app) {
-            return new BladeService($app['wtf']);
+        $this->app->singleton('App\Service\WritersService', function ($app) {
+            return new WritersService();
         });
     }
 }

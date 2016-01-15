@@ -1,10 +1,40 @@
-<div class="Container">
-    <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-        <div class="Grid-cell">
-            <a href="/u/{{ $c->user_id_pad }}/main" class="topnav">main</a>
-            <a href="/u/{{ $c->user_id_pad }}/company" class="topnav">organizations</a>
-            <a href="/u/{{ $c->user_id_pad }}/people" class="topnav">people</a>
-            <a href="/u/{{ $c->user_id_pad }}/projects" class="topnav">projects</a>
-        </div>
-    </div>
-</div>
+<dd>
+    <nav role="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    {{ strtolower(Auth::user()->name) }} <!--span class="smallTriangle">&#9660;</span-->
+                </a>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
+                        </li>
+                        <li>
+                            &nbsp;
+                        </li>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">people</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">groups</a>
+                        </li>
+                        <li>
+                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
+                        </li>
+                        <li>
+                            &nbsp;
+                        </li>
+                        <li><a id="logoutClick" href="#">logout</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</dd>

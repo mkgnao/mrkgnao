@@ -1,14 +1,18 @@
-<main class="HolyGrail-body">
-    @include('partials.scriptsend')
+<!-- BEGIN LAYOUTS/PARTIALS/MAINCONTENT -->
+<div class="scrollable">
+    <main class="HolyGrail-body">
+        @include('partials.scriptsend')
 
-    <article class="HolyGrail-content" class="u-textCenter">
+        <article class="HolyGrail-content" class="u-textCenter">
 
-        @yield('content')
+            @yield('content')
 
-    </article>
+        </article>
 
-    <nav class="HolyGrail-nav u-textCenter">
-    </nav>
-    <aside class="HolyGrail-ads u-textCenter">
-    </aside>
-</main>
+        <nav class="HolyGrail-nav u-textCenter">
+        </nav>
+        <aside class="HolyGrail-ads u-textCenter">
+        </aside>
+    </main>
+</div>
+<!-- END LAYOUTS/PARTIALS/MAINCONTENT -->

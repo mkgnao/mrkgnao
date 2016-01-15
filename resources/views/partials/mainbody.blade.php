@@ -1,3 +1,4 @@
+<!-- BEGIN LAYOUTS/PARTIALS/MAINBODY -->
 <body id="bodyTop" class="HolyGrail">
 
 @yield('partials.headermain')
@@ -15,3 +16,4 @@
 @yield('partials.scriptsendmain)
 
 </body>
+<!-- END LAYOUTS/PARTIALS/MAINBODY -->

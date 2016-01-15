@@ -12,7 +12,8 @@
     "laravel/framework": "5.2.*",
     "laracasts/utilities": "~2.0",
     "rap2hpoutre/laravel-log-viewer": "^0.5.2",
-    "graham-campbell/markdown": "^5.3"
+    "graham-campbell/markdown": "^5.3",
+    "league/commonmark": "^0.12"
   },
   "require-dev": {
     "fzaninotto/faker": "~1.4",

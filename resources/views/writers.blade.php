@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@inject('writersService', 'App\Services\WritersServices')
-
 @section('content')
+
+@inject('writersService', 'App\Services\WritersServices')
 
 {{ $writersService->getWriters() }}
 

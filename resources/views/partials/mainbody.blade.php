@@ -4,7 +4,7 @@
 
 <div class="scrollable">
 
-@yield('content)
+@yield('maincontent)
 
 </div>
 

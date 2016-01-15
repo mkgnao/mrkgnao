@@ -207,7 +207,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
-        'Markdown' => 'GrahamCampbell\Markdown\Facades\Markdown'
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class
 
     ],
 

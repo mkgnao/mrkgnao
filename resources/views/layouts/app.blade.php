@@ -1,12 +1,12 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!-- BEGIN LAYOUTS/APP -->
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 
-<!-- BEGIN LAYOUTS/APP -->
+
 
 @include('partials.headall')
 
-@yield('partials.mainbody')
+@include('partials.mainbody')
 
-<!-- END LAYOUTS/APP -->
 
-</html>
+
+</html><!-- END LAYOUTS/APP -->

@@ -91,6 +91,15 @@ Route::group(['middleware' => 'web'], function () {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
+
+    Route::post('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/store', 'uses' => 'MdController@store'));
+
+    Route::get('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/get', 'uses' => 'MdController@get'));
+
+    Route::resource('md', 'MdController');
+
+    Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/get', 'uses' => 'MdController@edit'));
+
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 
     Route::get('/u/{id}/p/tasklist', array('as' => '/u/p/tasklist', 'uses' => 'TaskListController@index'));

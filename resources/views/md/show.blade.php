@@ -7,10 +7,12 @@
 {!! Form::open() !!}
 
         <div class="form-group">
-
             {!! Form::label('md_content', 'Content:') !!}
             {!! Form::text('md_content', null, ['class' => 'form-control']) !!}
+        </div>
 
+        <div class="form-group">
+            {!! Form::submit('submit', ['class' => 'form-control']) !!}
         </div>
 
 {!! Form::close() !!}

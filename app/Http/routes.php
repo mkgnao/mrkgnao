@@ -83,7 +83,7 @@ Route::group(['middleware' != 'web'], function () {
 |
 */
 
-Route::group(['middleware' => 'web'], function () {
+Route::group(['middleware' => 'web'], function ($view) {
     Route::auth();
 
     Route::get('/', function () {
@@ -92,14 +92,15 @@ Route::group(['middleware' => 'web'], function () {
     });
 
 
+    \Log.info('in view: '.$view->getName());
+
     Route::post('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/store', 'uses' => 'MdController@store'));
 
     Route::get('/u/{id}/p/md/{mdName}/get', array('as' => '/u/p/md/get', 'uses' => 'MdController@get'));
 
     Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/edit', 'uses' => 'MdController@edit'));
 
-
-    Route::resource('md', 'MdController');
+    Route::resource('/u/p/md', 'MdController');
 
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));

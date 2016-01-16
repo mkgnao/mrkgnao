@@ -64,8 +64,6 @@ final class Rest
      */
     public function get($action, $request = null)
     {
-        \Log::info('in get: ' . $action);
-
         return $this->execute('GET', $action, $request);
     }
 
@@ -121,8 +119,6 @@ final class Rest
         $headers['X-Authorization'] = 'BASIC ' . base64_encode($this->key . ':xxx');
         $response = 'App\Http\TeamWorkPm\Response\\' . strtoupper(self::$FORMAT);
         $response = new $response;
-
-        \Log::info('in execute: ' . $body);
 
         return $response->parse($body, $headers);
     }
@@ -210,8 +206,6 @@ final class Rest
      */
     public function getRaw($action, $request = null)
     {
-        \Log::info('in get: ' . $action);
-
         return $this->executeRaw('GET', $action, $request);
     }
 

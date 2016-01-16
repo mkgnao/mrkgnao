@@ -4,7 +4,11 @@
 @if (!Auth::guest())
     <script>
         mkgnaoNs.addLoadEvent(mkgnaoNs.loadMain);
-        @include('partials.appscriptvars')
+    </script>
+
+    @include('partials.appscriptvars')
+
+    <script>
         mkgnaoNs.addLoadEvent(mkgnaoNs.loadTw);
     </script>
 @endif

@@ -90,11 +90,14 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
-    Route::get('/editsite', function () {
-        return view('editsite', array('md_name' => 'writers'));
-    });
 
-    Route::put('md.update', 'MdController@update');
+    Route::get('md/edit/{$id}', array('as' => 'md.edit', function($id)
+    {
+        return View::make('siteedit')->with('mdContent', \App\Models\MdContent::find($id));
+    }));
+
+    Route::post('md/edit', function() {
+    });
 
     Route::resource('md', 'MdController');
 

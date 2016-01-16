@@ -98,3 +98,18 @@ BA political theory. Campaign organizer.
 
 Writer, poet, playwright, actor, painter, performer, filmmaker, artist, teacher, father, and friend. Beauty incarnate.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

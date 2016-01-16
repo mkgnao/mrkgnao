@@ -1130,7 +1130,7 @@ strong {
     content: "";
     background: linear-gradient(to top,
     rgba(255,255,255, 1) 2%,
-    rgba(255,255,255, 0) 80%
+    rgba(255,255,255, 0) 94%
     );
     pointer-events: none; /* so the text is still selectable */
 }

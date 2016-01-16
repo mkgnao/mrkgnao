@@ -1,6 +1,8 @@
 <?php
 
-use App\Models\MdContent as MdContent;
+namespace App\Http;
+
+use Illuminate\Support\Facades\Log as Log;
 
 /*
 |--------------------------------------------------------------------------

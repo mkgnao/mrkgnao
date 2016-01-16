@@ -6,7 +6,7 @@
     <div class="Container">
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-            {!! Form::model($mdContent, array('route' => array('md.update', $mdContent->id))) !!}
+            {!! Form::model($mdContent, array('route' => array('md', $mdContent->id))) !!}
             {!! Form::token() !!}
 
             <div class="Grid-cell">

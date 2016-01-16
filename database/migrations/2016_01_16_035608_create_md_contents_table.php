@@ -12,8 +12,11 @@ class CreateMdContentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('md_contents', function (Blueprint $table) {
-            //
+        Schema::create('md_contents', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('md_name');
+            $table->integer('md_content');
+            $table->timestamps();
         });
     }
 
@@ -24,8 +27,6 @@ class CreateMdContentsTable extends Migration
      */
     public function down()
     {
-        Schema::table('md_contents', function (Blueprint $table) {
-            //
-        });
+        Schema::drop('md_contents');
     }
 }

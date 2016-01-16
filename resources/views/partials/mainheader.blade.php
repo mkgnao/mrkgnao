@@ -12,7 +12,7 @@
 
         </div>
     </div>
-    @if ($view_name == 'mdcontent')
+    @if ($view_name == 'welcome' || $view_name == 'mdcontent')
         <div class="Container">
             <div class="Grid Grid--1of5">
                 <div class="Grid-cell">

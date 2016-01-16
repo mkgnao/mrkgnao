@@ -23,8 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('App\Service\WritersService', function ($app) {
-            return new WritersService();
+        $this->app->singleton('App\Service\MarkdownService', function ($app) {
+            return new MarkdownService();
         });
     }
 }

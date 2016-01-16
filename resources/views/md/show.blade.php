@@ -4,7 +4,7 @@
 
 @section('content')
 
-{{ dd($mdContent) }}
+{{ dd($mdContent->name) }}
 
     {{--
     {!! Form::model($mdContent, array('route' => array('/md/update', $mdContent->name)) !!}

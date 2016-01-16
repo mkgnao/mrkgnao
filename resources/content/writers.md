@@ -96,8 +96,21 @@ BA political theory. Campaign organizer.
 
 ## Maxwell Flaum
 
-Writer, poet, playwright, actor, painter, performer, filmmaker, artist, teacher, father, and friend. Beauty incarnate.  
-
-
-
-
+Writer, poet, playwright, actor, painter, performer, filmmaker, artist, teacher, father, and friend. Beauty incarnate.
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

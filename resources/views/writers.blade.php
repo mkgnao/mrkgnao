@@ -4,7 +4,7 @@
 
 @inject('writersService', 'App\Services\WritersService')
 
-<div class="ellipsis">
+<div class="writersList">
     {!! $writersService->getWriters() !!}
 </div>
 

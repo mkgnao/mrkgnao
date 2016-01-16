@@ -18,8 +18,9 @@ class MdController extends Controller
      */
     public function show($id)
     {
+        \Log::info('show');
         $mdContent = MdContent::findOrFail($id);
-
+        \Log::info('show find or fail');
         return \View::make('md.show', compact('mdContent'));
     }
 

@@ -4,7 +4,7 @@
 
 @section('content')
 
-    @if (!empty($data['$mdName']))
+    @if (!empty($data['mdName']))
 
 <form id="mdForm" mdName="{{ $mdName }}" role="form" method="POST" action="{{ url('/a/'.App\Util::idPad(Auth::id()).'/p/'.$mdName.')') }}" value="{!! csrf_field() !!}">
     {!! csrf_field() !!}

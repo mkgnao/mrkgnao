@@ -1,4 +1,4 @@
-<!-- BEGIN LAYOUTS/PARTIALS/HEADERMAIN -->
+<!-- BEGIN LAYOUTS/PARTIALS/MAINHEADER -->
 <header class="HolyGrail-header" id="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
@@ -9,29 +9,28 @@
         </div>
 
         <div class="Header-actions">
-
+            @if ($view_name == 'mdcontent')
+                <div class="Container">
+                    <div class="Grid Grid--1of5">
+                        <div class="Grid-cell">
+                            <a href="{{ url('/about') }}">about</a>
+                        </div>
+                        <div class="Grid-cell">
+                            <a href="{{ url('/writers') }}">writers</a>
+                        </div>
+                        <div class="Grid-cell">
+                            <a href="{{ url('/partners') }}">partners</a>
+                        </div>
+                        <div class="Grid-cell">
+                            <a href="{{ url('/projects') }}">projects</a>
+                        </div>
+                        <div class="Grid-cell">
+                            <a href="{{ url('/internships') }}">internships</a>
+                        </div>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
-    @if ($view_name == 'mdcontent')
-        <div class="Container">
-            <div class="Grid Grid--1of5">
-                <div class="Grid-cell">
-                    <a href="{{ url('/about') }}">about</a>
-                </div>
-                <div class="Grid-cell">
-                    <a href="{{ url('/writers') }}">writers</a>
-                </div>
-                <div class="Grid-cell">
-                    <a href="{{ url('/partners') }}">partners</a>
-                </div>
-                <div class="Grid-cell">
-                    <a href="{{ url('/projects') }}">projects</a>
-                </div>
-                <div class="Grid-cell">
-                    <a href="{{ url('/internships') }}">internships</a>
-                </div>
-            </div>
-        </div>
-    @endif
 </header>
-<!-- END LAYOUTS/PARTIALS/HEADERMAIN -->
+<!-- END LAYOUTS/PARTIALS/MAINHEADER -->

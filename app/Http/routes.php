@@ -88,7 +88,8 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('name' => 'welcome'));
     });
 
-    Route::get('md.update', 'MdController@update');
+    Route::post('md.update', array('before' => 'csrf', 'uses' => 'MdController@update'));
+
     Route::get('md/{id}', 'MdController@show');
 
     Route::resource('md', 'MdController');

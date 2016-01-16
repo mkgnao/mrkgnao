@@ -4,7 +4,10 @@
 
 @section('content')
 
-    {!! Form::model($mdContent, array('route' => array('/md/update', $mdContent->id)) !!}
+{{ dd($view_name) }}
+
+    {{--
+    {!! Form::model($mdContent, array('route' => array('/md/update', $mdContent->name)) !!}
 
             <div class="form-group">
                 {!! Form::label('content', 'Content:') !!}
@@ -16,5 +19,6 @@
             </div>
 
     {!! Form::close() !!}
+    --}}
 @stop
 <!-- END MD/SHOW -->

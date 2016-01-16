@@ -92,7 +92,7 @@ Route::group(['middleware' => 'web'], function ($view) {
 
     Route::patch('md/update/{id}', 'MdController@update');
 
-    Route::get('md/{id}', 'MdController@edit');
+    Route::get('md/{id}/edit', 'MdController@edit');
 
     Route::resource('md', 'MdController');
 

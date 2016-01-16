@@ -1267,7 +1267,7 @@ strong {
 
 .InputAddOn-button-fronttopnav:hover {
     font: inherit;
-    background: #595959;
+    /*background: #595959;*/
     color: #b7b7b7;
     /*opacity: 0.8;*/
 }

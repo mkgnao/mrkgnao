@@ -6,6 +6,9 @@ use App\User;
 use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Contracts\Bus\SelfHandling;
 use App\Util;
+use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Support\Facades\App;
+use League\CommonMark\Converter;
 
 class WritersService implements SelfHandling
 {

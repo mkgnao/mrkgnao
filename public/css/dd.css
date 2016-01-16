@@ -4,7 +4,7 @@ dd {
     position: fixed;
     width: 100%;*/
     z-index: 1000;
-    opacity: 0.84;
+    opacity: 0.80;
     font-size: 1.8em;
 }
 
@@ -26,11 +26,11 @@ dd > nav > ul > li {
 }
 
 dd > nav > ul > li:hover {
-    background: #FCFCFC;
+    background: #5c5c5c;
 }
 
 dd > nav > ul > li a + div {
-    background: #FCFCFC;
+    background: #595959;
     /*border-radius: 0 0 2px 2px;*/
     display: none;
     position: absolute;

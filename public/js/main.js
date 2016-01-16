@@ -167,6 +167,7 @@ mkgnaoNs.loadMain = function () {
         evt = evt || window.event;
         if (evt.keyCode == 27) {
             mkgnaoNs.hideModalLogout();
+            mkgnaoNs.hideTopMenu();
         }
     };
 

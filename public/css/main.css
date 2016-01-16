@@ -1,13 +1,12 @@
 /* BEGIN public/css/main.css */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-    /*background-color: #C0C0C0;*/
-    background-color: #FCFCFC;
+    background-color: #474747;
     font-family: 'didotregularx';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    color: black;
-    opacity: 0.87;
+    color: silver;
+    opacity: 0.94;
 }
 
 body {

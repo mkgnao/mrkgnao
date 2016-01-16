@@ -99,8 +99,6 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::post('/md/edit', function() {
     });
 
-    Route::resource('md', 'MdController');
-
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

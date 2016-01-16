@@ -50,27 +50,27 @@ Route::group(['middleware' != 'web'], function () {
     });
 
     Route::get('/', function () {
-        return view('mdcontent', array('md_name' => 'welcome'));
+        return view('mdcontent', array('name' => 'welcome'));
     });
 
     Route::get('/about', function () {
-        return view('mdcontent', array('md_name' => 'about'));
+        return view('mdcontent', array('name' => 'about'));
     });
 
     Route::get('/writers', function () {
-        return view('mdcontent', array('md_name' => 'writers'));
+        return view('mdcontent', array('name' => 'writers'));
     });
 
     Route::get('/projects', function () {
-        return view('mdcontent', array('md_name' => 'projects'));
+        return view('mdcontent', array('name' => 'projects'));
     });
 
     Route::get('/partners', function () {
-        return view('mdcontent', array('md_name' => 'partners'));
+        return view('mdcontent', array('name' => 'partners'));
     });
 
     Route::get('/internships', function () {
-        return view('mdcontent', array('md_name' => 'internships'));
+        return view('mdcontent', array('name' => 'internships'));
     });
 });
 
@@ -89,7 +89,7 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::auth();
 
     Route::get('/', function () {
-        return view('mdcontent', array('md_name' => 'welcome'));
+        return view('mdcontent', array('name' => 'welcome'));
     });
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));

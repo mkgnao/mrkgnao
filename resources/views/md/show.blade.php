@@ -4,11 +4,11 @@
 
 @section('content')
 
-{!! Form::model($mdContent, array('route' => array('md.update', $mdContent->md_name)) !!}
+{!! Form::model($mdContent, array('route' => array('md.update', $mdContent->name)) !!}
 
         <div class="form-group">
-            {!! Form::label('md_content', 'Content:') !!}
-            {!! Form::text('md_content', null, ['class' => 'form-control']) !!}
+            {!! Form::label('content', 'Content:') !!}
+            {!! Form::text('content', null, ['class' => 'form-control']) !!}
         </div>
 
         <div class="form-group">

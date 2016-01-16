@@ -48,7 +48,7 @@ class MdController extends Controller
     {
         $mdContent = MdContent::findOrFail($id);
 
-        $mdContent->md_content = $request->data['md_content'];
+        $mdContent->content = $request->data['content'];
 
         $mdContent->save();
 

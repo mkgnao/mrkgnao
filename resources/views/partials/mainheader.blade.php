@@ -11,8 +11,8 @@
         <div class="Header-actions">
 
         </div>
-
-        @if ($view_name == "welcome")
+    </div>
+    @if ($view_name == "welcome")
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
@@ -32,7 +32,6 @@
                 </div>
             </div>
         </div>
-        @endif
-    </div>
+    @endif
 </header>
 <!-- END LAYOUTS/PARTIALS/HEADERMAIN -->

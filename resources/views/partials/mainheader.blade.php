@@ -20,6 +20,25 @@
                 @include('partials.maintopnav')
             @endif
         </div>
+        <div class="Container">
+            <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
+                <div class="Grid-cell">
+                    about
+                </div>
+                <div class="Grid-cell">
+                    writers
+                </div>
+                <div class="Grid-cell">
+                    partners
+                </div>
+                <div class="Grid-cell">
+                    projects
+                </div>
+                <div class="Grid-cell">
+                    internships
+                </div>
+            </div>
+        </div>
     </div>
 </header>
 <!-- END LAYOUTS/PARTIALS/HEADERMAIN -->

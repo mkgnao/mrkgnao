@@ -38,9 +38,10 @@ class MdController extends Controller
      */
     public function edit($id)
     {
-        $mdContent = MdContent::find($id);
-
-        return \View::make('/md/edit');
+        \Log::info('show: '.$id);
+        $mdContent = MdContent::findOrFail($id);
+        \Log::info('show find or fail');
+        return view('/md/edit', ['mdContent' => MdContent::findOrFail($id)]);
     }
 
     /**

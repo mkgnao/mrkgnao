@@ -28,7 +28,8 @@ View::composer('*', function ($view) {
 });
 
 
-Route::get('md/{id}', 'MdController@show');
+Route::get('/md.update', 'MdController@update');
+Route::get('/md/{id}', 'MdController@show');
 
 
 Route::group(['middleware' != 'web'], function () {

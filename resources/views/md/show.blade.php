@@ -4,7 +4,7 @@
 
 @section('content')
 
-{!! Form::model($mdContent, array('route' => array('md', $mdContent->md_name), 'method' => 'get')) !!}
+{!! Form::model($mdContent, array('route' => array('md.update', $mdContent->md_name)) !!}
 
         <div class="form-group">
             {!! Form::label('md_content', 'Content:') !!}

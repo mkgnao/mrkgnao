@@ -45,10 +45,14 @@ class MdController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $mdContent = MdContent::find($id);
-        if (!$mdContent) {
-            return null;
-        }
-        return \View::make('md.update');
+        $mdContent = MdContent::findOrFail($id);
+
+        $mdContent->md_content = $request->data['md_content'];
+
+        $mdContent->save();
+
+        Session::flash('message', 'saved');
+
+        return \View::make('md.show', compact('mdContent'));
     }
 }

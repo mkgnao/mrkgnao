@@ -3,7 +3,7 @@
     <div class="Footer">
         <div class="Footer-right">
             @if (Auth::guest())
-                <a class="InputAddOn-button-login" href="{{ url('/login') }}">&#2711</a>
+                <a class="InputAddOn-button-login" href="{{ url('/login') }}">&#10001;</a>
             @endif
         </div>
         <div class="Footer-credits">

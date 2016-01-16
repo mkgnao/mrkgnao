@@ -1,14 +1,13 @@
 /* BEGIN public/js/cl.js */
 const BOARD_DIMENSIONS = 3;
 
-function getBoard()
-{
+function getBoard() {
     var table = document.createElement('table');
 
-    for (var i=0; i<BOARD_DIMENSIONS; i++) {
+    for (var i = 0; i < BOARD_DIMENSIONS; i++) {
         var tr = document.createElement('tr');
 
-        for (var j=0; j<BOARD_DIMENSIONS; j++) {
+        for (var j = 0; j < BOARD_DIMENSIONS; j++) {
 
             var td = document.createElement('td');
 
@@ -21,10 +20,9 @@ function getBoard()
     }
 }
 
-function checkBoard(pass, attempt)
-{
-    for (var i=0; i<BOARD_DIMENSIONS; i++) {
-        for (var j=0; j<BOARD_DIMENSIONS; j++) {
+function checkBoard(pass, attempt) {
+    for (var i = 0; i < BOARD_DIMENSIONS; i++) {
+        for (var j = 0; j < BOARD_DIMENSIONS; j++) {
 
         }
     }
@@ -34,7 +32,6 @@ function checkBoard(pass, attempt)
 function f() {
     var pass = getBoard();
     var attempt = getBoard();
-
 
 
 }

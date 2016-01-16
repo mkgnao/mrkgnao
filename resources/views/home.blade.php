@@ -6,4 +6,4 @@
 
 @endsection
 
-<!-- END HOME -->
+        <!-- END HOME -->

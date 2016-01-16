@@ -71,7 +71,7 @@ mkgnaoNs.twAddJson = function (jsonStr, containerId) {
     container.appendChild(tb);
 };
 
-mkgnaoNs.loadTw = function() {
+mkgnaoNs.loadTw = function () {
     try {
         //console.log(mkgnaoNs);
 

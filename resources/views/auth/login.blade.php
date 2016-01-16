@@ -48,5 +48,5 @@
             </div>
         </div>
     </form>
-@endsection
-<!-- END AUTH/LOGIN -->
+    @endsection
+            <!-- END AUTH/LOGIN -->

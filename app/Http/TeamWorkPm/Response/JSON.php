@@ -33,6 +33,40 @@ class JSON extends Model
         ]);
     }
 
+    /**
+     * @codeCoverageIgnore
+     */
+    private function getJsonErrors()
+    {
+        $errorCode = json_last_error();
+        if (!$errorCode) {
+            return null;
+        }
+
+        if (function_exists('json_last_error_msg')) {
+            return json_last_error_msg();
+        }
+
+        switch ($errorCode) {
+            case JSON_ERROR_DEPTH:
+                return 'Maximum stack depth exceeded';
+                break;
+            case JSON_ERROR_STATE_MISMATCH:
+                return 'Underflow or the modes mismatch';
+                break;
+            case JSON_ERROR_CTRL_CHAR:
+                return 'Unexpected control character found';
+                break;
+            case JSON_ERROR_SYNTAX:
+                return 'Syntax error, malformed JSON';
+                break;
+            case JSON_ERROR_UTF8:
+                return 'Malformed UTF-8 characters, possibly incorrectly encoded';
+                break;
+        }
+        return null;
+    }
+
     public function parse($data, array $headers)
     {
         $source = json_decode($data, true);
@@ -149,40 +183,6 @@ class JSON extends Model
             'Response' => $data,
             'Headers' => $headers
         ]);
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    private function getJsonErrors()
-    {
-        $errorCode = json_last_error();
-        if (!$errorCode) {
-            return null;
-        }
-
-        if (function_exists('json_last_error_msg')) {
-            return json_last_error_msg();
-        }
-
-        switch ($errorCode) {
-            case JSON_ERROR_DEPTH:
-                return 'Maximum stack depth exceeded';
-                break;
-            case JSON_ERROR_STATE_MISMATCH:
-                return 'Underflow or the modes mismatch';
-                break;
-            case JSON_ERROR_CTRL_CHAR:
-                return 'Unexpected control character found';
-                break;
-            case JSON_ERROR_SYNTAX:
-                return 'Syntax error, malformed JSON';
-                break;
-            case JSON_ERROR_UTF8:
-                return 'Malformed UTF-8 characters, possibly incorrectly encoded';
-                break;
-        }
-        return null;
     }
 
     protected static function camelizeObject($source)

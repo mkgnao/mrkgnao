@@ -17,7 +17,7 @@ body {
 
 .scrollable {
     overflow-y: scroll;
-    height: 0;    /* Reduce the height as much as possible... */
+    height: 0; /* Reduce the height as much as possible... */
     flex-grow: 1; /* ...but make it fill all remaining space  */
 }
 
@@ -1249,6 +1249,7 @@ strong {
     background-color: #FAFAFA;
     /*opacity: 0.8;*/
 }
+
 .InputAddOn-button-login:hover {
     background: whitesmoke;
 }
@@ -1884,7 +1885,8 @@ pre {
 
 .smallTriangle {
     font-size: 0.2em;
-    position:relative;
-    top:0.5em;
+    position: relative;
+    top: 0.5em;
 }
+
 /* END public/css/main.css */

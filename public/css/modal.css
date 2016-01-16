@@ -33,7 +33,7 @@
 
 .Modal-flex-item {
     width: 300px;
-    background-color: rgba(245,245,245,0.92);
+    background-color: rgba(245, 245, 245, 0.92);
     opacity: 0.95;
     text-align: center;
     padding: 20px;
@@ -82,4 +82,5 @@
     padding-right: 1.5em;
     padding-left: 1.5em
 }
+
 /* END public/css/modal.css */

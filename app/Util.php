@@ -14,7 +14,8 @@ class Util
         return $id += 0;
     }
 
-    public static function joinPaths() {
+    public static function joinPaths()
+    {
         $args = func_get_args();
         $paths = array();
         foreach ($args as $arg) {

@@ -19,5 +19,5 @@
         mkgnaoNs.addLoadEvent(mkgnaoNs.loadTw);
     </script>
 
-@endsection
-<!-- END U/P/MAIN -->
+    @endsection
+            <!-- END U/P/MAIN -->

@@ -14,7 +14,7 @@ dd > nav > ul {
     justify-content: flex-start;
     list-style: none;
     margin: 0;
-    padding-left:0;
+    padding-left: 0;
 }
 
 dd > nav > ul > li {
@@ -43,7 +43,7 @@ dd > nav > ul > li:hover a + div {
 
 dd > nav > ul > li a + div > ul {
     list-style-type: none;
-    padding:0;
+    padding: 0;
     flex-direction: column-reverse;
 }
 
@@ -92,11 +92,11 @@ dd > nav > ul > li > a > div > span {
     }
 }
 
-@media
-only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px)  {
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
     dd {
         font-size: 1em;
     }
 }
+
 /* END public/css/dd.css */

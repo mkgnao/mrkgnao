@@ -2,14 +2,12 @@
 
 namespace App\Services;
 
-use App\User;
-use Illuminate\Contracts\Mail\Mailer;
-use Illuminate\Contracts\Bus\SelfHandling;
-use App\Util;
+use App\Models\MdContent as MdContent;
 use GrahamCampbell\Markdown\Facades\Markdown;
+use Illuminate\Contracts\Bus\SelfHandling;
+use Illuminate\Contracts\Mail\Mailer;
 use Illuminate\Support\Facades\App;
 use League\CommonMark\Converter;
-use App\Models\MdContent as MdContent;
 
 
 class MarkdownService implements SelfHandling

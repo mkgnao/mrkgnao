@@ -2,10 +2,9 @@
 
 namespace App\Http\Middleware;
 
+use App\Util;
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\Util;
-use App\Models\TwCoupling as TwCoupling;
 
 class Authenticate
 {

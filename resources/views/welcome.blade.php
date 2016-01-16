@@ -6,4 +6,4 @@
 
 @endsection
 
-<!-- END WELCOME -->
+        <!-- END WELCOME -->

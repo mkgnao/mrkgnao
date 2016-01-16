@@ -35,5 +35,5 @@
         }
     </script>
 
-@endsection
-<!-- END U/P/PROJECTS -->
+    @endsection
+            <!-- END U/P/PROJECTS -->

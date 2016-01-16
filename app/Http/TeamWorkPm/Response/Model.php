@@ -18,6 +18,7 @@ abstract class Model implements IteratorAggregate, Countable, ArrayAccess
     }
 
     abstract public function parse($data, array $headers);
+
     abstract public function parseRaw($data, array $headers);
 
     public function save($filename)

@@ -37,5 +37,5 @@
         }
     </script>
 
-@endsection
-<!-- END U/P/PEOPLE -->
+    @endsection
+            <!-- END U/P/PEOPLE -->

@@ -27,14 +27,6 @@ View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
 
-Route::get('xxx/edit/{id}', function ($id) {
-    return view('editsite', array('mdContent' => \App\Models\MdContent::find($id)));
-});
-
-Route::post('xxx/edit', function() {
-    // process our form
-});
-
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts
@@ -77,6 +69,10 @@ Route::group(['middleware' != 'web'], function () {
         return view('mdcontent', array('md_name' => 'internships'));
     });
 
+
+    Route::get('/editsite', function () {
+        return view('editsite', array('md_name' => 'writers'));
+    });
 });
 
 /*
@@ -96,6 +92,7 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::get('/', function () {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
+
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

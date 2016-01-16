@@ -1,27 +1,30 @@
-<!-- BEGIN A/P/EDITSITE -->
+<!-- EDITSITE -->
 
 @extends('layouts.app')
 
 @section('content')
 
-    {{ Form::model($mdContent, array('route' => 'xxx', 2)) }}
+    @inject('markdownService', 'App\Services\MarkdownService')
 
-    {{ Form::label('md_content', 'Content') }}
-    {{ Form::text('md_content') }}
-
-    {{ Form::submit('submit') }}
-
-    {{ Form::close() }}
 
     <script>
-
-        function fillMdContent() {
-            document.getElementById("mdContent").value = mkgnaoNs.mdContent;
-        }
-
-        mkgnaoNs.addLoadEvent(fillMdContent);
-
+        var mdContent = '{!! $markdownService->get($md_name) !!}';
     </script>
 
-@endsection
-!-- END A/P/EDITSITE -->
+    <textarea id="mdContentTextArea">
+
+    </textarea>
+
+    <script>
+        function fillMdContentTextArea() {
+            var mdContentTextArea = document.getElementById('mdContentTextArea');
+
+            mdContentTextArea.value = mdContent;
+        }
+
+        mkgnaoNs.addLoadEvent(fillMdContentTextArea);
+    </script>
+
+    @endsection
+
+!-- EDITSITE -->

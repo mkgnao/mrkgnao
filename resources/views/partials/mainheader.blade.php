@@ -9,17 +9,11 @@
         </div>
 
         <div class="Header-actions">
-            @if (Auth::guest())
-                @if ($view_name != "auth.login")
-                    <a id="loginClick" class="Header-button Button Button--action Button--wide"
-                       href="{{ url('/login') }}">
-                        login
-                    </a>
-                @endif
-            @else
-                @include('partials.maintopnav')
-            @endif
+
         </div>
+
+        {{ dd($view_name) }}
+
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">

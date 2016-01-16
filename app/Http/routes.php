@@ -70,9 +70,9 @@ Route::group(['middleware' != 'web'], function () {
     });
 
 
-    Route::get('/md/edit/{$id}', array('as' => 'md.edit', function($id) {
+    Route::get('/md/edit/{$id}', function($id) {
         return View::make('editsite')->with('mdContent', \App\Models\MdContent::find($id));
-    }));
+    });
 
     Route::post('/md/edit', function() {
     });

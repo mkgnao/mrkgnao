@@ -22,7 +22,7 @@ class WritersService implements SelfHandling
 
         try
         {
-            $writersFilePath = Util::joinPaths(base_path(), 'resources/content/writers.md');
+            $writersFilePath = Util::joinPaths('/', base_path(), 'resources/content/writers.md');
 
             $this->mdContent = \File::get($writersFilePath);
         }

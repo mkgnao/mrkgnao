@@ -98,7 +98,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::resource('md', 'MdController');
 
-    Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/get', 'uses' => 'MdController@edit'));
+    Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/edit', 'uses' => 'MdController@edit'));
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

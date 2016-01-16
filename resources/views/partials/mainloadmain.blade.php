@@ -4,4 +4,4 @@
         mkgnaoNs.addLoadEvent(mkgnaoNs.loadMain);
     </script>
     @endif
-            <!-- END LAYOUTS/PARTIALS/MAINLOADMAIN -->
+<!-- END LAYOUTS/PARTIALS/MAINLOADMAIN -->

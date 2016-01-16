@@ -9,4 +9,4 @@
 
 @include('partials.appscriptsend')
 
-        <!-- END LAYOUTS/PARTIALS/MAINBODY -->
+<!-- END LAYOUTS/PARTIALS/MAINBODY -->

@@ -31,6 +31,8 @@ View::composer('*', function ($view) {
 Route::get('md.update', 'MdController@update');
 Route::get('md/{id}', 'MdController@show');
 
+Route::resource('md', 'MdController');
+
 
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {

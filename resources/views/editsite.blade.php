@@ -4,13 +4,14 @@
 
 @section('content')
 
-    {!! Form::model($mdContent, array('route' => array('md.update', 2), array('class' => 'MdContent'))) !!}
+    {{ Form::model($mdContent, array('route' => 'md.edit', 2)) }}
 
-    {!! Form::text('md_content') !!}
+    {{ Form::label('md_content', 'Content') }}
+    {{ Form::text('md_content') }}
 
-    {!! Form::submit('submit') !!}
+    {{ Form::submit('submit') }}
 
-    {!! Form::close() !!}
+    {{ Form::close() }}
 
     <script>
 

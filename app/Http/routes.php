@@ -91,12 +91,12 @@ Route::group(['middleware' => 'web'], function ($view) {
     });
 
 
-    Route::get('md/edit/{$id}', array('as' => 'md.edit', function($id)
+    Route::get('/md/edit/{$id}', array('as' => 'md.edit', function($id)
     {
         return View::make('editsite')->with('mdContent', \App\Models\MdContent::find($id));
     }));
 
-    Route::post('md/edit', function() {
+    Route::post('/md/edit', function() {
     });
 
     Route::resource('md', 'MdController');

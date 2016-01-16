@@ -31,6 +31,18 @@ class MarkdownService implements SelfHandling
         return $this->converter->convertToHtml($mdContent->md_content);
     }
 
+    public function getRaw($mdContentName)
+    {
+
+        $mdContent = MdContent::where('md_name', $mdContentName)->first();
+
+        if (!$mdContent)
+            return 'could not find: ' . $mdContentName;
+
+
+        return $mdContent->md_content;
+    }
+
     public function handle()
     {
     }

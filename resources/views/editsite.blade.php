@@ -7,7 +7,7 @@
 
 
     <script>
-        var mdContent = '{{ $markdownService->get($md_name) }}';
+        var mdContent = '{{ $markdownService->getRaw($md_name) }}';
     </script>
 
     <textarea id="mdContentTextArea">

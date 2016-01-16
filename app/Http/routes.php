@@ -86,7 +86,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::get('/', function () {
         //return Redirect::to('/u/' . \Auth::id() . '/main');
-        return view('welcome');
+        return view('mdcontent', array('md_name' => 'welcome'));
     });
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));

@@ -1122,7 +1122,7 @@ strong {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 1.5em;
+    padding: 2em;
 }
 
 .HolyGrail-content {
@@ -1160,7 +1160,7 @@ strong {
 }
 
 .HolyGrail-ads, .HolyGrail-nav {
-    padding: 1em;
+    padding: 0.5em;
     border-radius: 3px;
     /*background: #93806c;
     background: hsla(31, 15%, 50%, .1)*/

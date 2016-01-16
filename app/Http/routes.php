@@ -88,9 +88,15 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('name' => 'welcome'));
     });
 
-    Route::post('/md/update', array('uses' => 'MdController@update'));
+    Route::patch('md/edit', array(
+        'as' => 'md.edit',
+        'uses' => 'MdController@update'
+    ));
 
-    Route::get('/md/{id}', 'MdController@edit');
+    Route::get('md/{id}', array(
+        'as' => 'md.edit',
+        'uses' => 'MdController@edit'
+    ));
 
     Route::resource('md', 'MdController');
 

@@ -12,7 +12,7 @@
 
         </div>
     </div>
-    @if ($view_name == "welcome" || $view_name == "writers")
+    @if ($view_name == 'mdcontent')
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">

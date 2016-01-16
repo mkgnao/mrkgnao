@@ -10,7 +10,7 @@
 
         <div class="Header-actions">
             @if ($view_name == 'mdcontent')
-                <div class="Container">
+
                     <div class="Grid Grid--1of5">
                         <div class="Grid-cell">
                             <a href="{{ url('/about') }}">about</a>
@@ -28,7 +28,7 @@
                             <a href="{{ url('/internships') }}">internships</a>
                         </div>
                     </div>
-                </div>
+
             @endif
         </div>
     </div>

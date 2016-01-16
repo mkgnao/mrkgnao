@@ -1123,6 +1123,9 @@ strong {
 }
 
 .writersList:after {
+    position: absolute;
+    height: 100%;
+    width: 100%;
     content: "";
     background: linear-gradient(to top,
     rgba(255,255,255, 1) 12%,

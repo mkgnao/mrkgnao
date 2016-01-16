@@ -2,7 +2,7 @@
 
 @section('content')
 
-@inject('writersService', 'App\Services\WritersServices')
+@inject('writersService', 'App\Services\WritersService')
 
 {{ $writersService->getWriters() }}
 

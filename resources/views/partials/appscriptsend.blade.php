@@ -1,5 +1,17 @@
 <!-- BEGIN LAYOUTS/PARTIALS/APPSCRIPTSEND -->
+<script src="/js/main.js"></script>
+
+@if (!Auth::guest())
+    <script>
+        mkgnaoNs.addLoadEvent(mkgnaoNs.loadMain);
+        @include('partials.appscriptvars')
+        mkgnaoNs.addLoadEvent(mkgnaoNs.loadTw);
+    </script>
+@endif
+
+
 <script src="/js/flexbox.js"></script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js"></script>
 

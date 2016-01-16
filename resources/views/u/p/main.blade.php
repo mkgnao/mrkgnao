@@ -13,11 +13,5 @@
         </div>
     </div>
 
-    @include('partials.appscriptvars')
-
-    <script>
-        mkgnaoNs.addLoadEvent(mkgnaoNs.loadTw);
-    </script>
-
     @endsection
             <!-- END U/P/MAIN -->

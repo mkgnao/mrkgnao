@@ -88,7 +88,7 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('name' => 'welcome'));
     });
 
-    Route::put('/md/update', array('as' => '/md/show', 'uses' => 'MdController@update'));
+    Route::post('/md/update', array('uses' => 'MdController@update'));
 
     Route::get('/md/{id}', 'MdController@show');
 

@@ -5,7 +5,7 @@
 <!-- IN MD {{ $md_name }} -->
 @endif
 
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 
 @include('partials.apphead')
 

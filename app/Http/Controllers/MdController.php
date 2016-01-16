@@ -10,8 +10,18 @@ class MdController extends TwController
 {
     public function edit()
     {
+        \Log.info('in edit');
+
         $mdName = Input::get('mdName', array('mdName'));
-        return \View::make('/u/p/edit', array('mdName', $mdName));
+
+        \Log.info('in edit mdName = '.$mdName);
+
+        $viewName = '/u/'.Util::idPad(\Auth::id()).'p/edit';
+
+
+        \Log.info('in edit viewName = '.$viewName);
+
+        return \View::make($viewName, array('mdName', $mdName));
     }
 
     public function store()
@@ -37,5 +47,15 @@ class MdController extends TwController
         $mdName = Input::get('id');
         $mdContent = MdContent::where('md_name', $mdName)->first();
         self::jsPut('mdContent', $mdContent);
+    }
+
+    public function init()
+    {
+
+    }
+
+    public function index()
+    {
+
     }
 }

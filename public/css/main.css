@@ -1122,15 +1122,22 @@ strong {
     margin-top: 1.5em
 }
 
-.writersList:after {
-    content: "";
-    background: linear-gradient(to top,
-    rgba(255,255,255, 1) 12%,
-    rgba(255,255,255, 0) 30%
-    );
-    pointer-events: none; /* so the text is still selectable */
+.writersList {
+    position: relative;
+    white-space: nowrap;
+    overflow-x: hidden;
 }
 
+.writersList:after {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    background: linear-gradient(left center, rgba(255, 255, 255, 0), #FFFFFF);
+    content: "";
+}
 
 .HolyGrail-form {
     font-size: 3em;

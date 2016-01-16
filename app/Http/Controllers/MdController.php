@@ -9,39 +9,20 @@ use Illuminate\Http\Request;
 
 class MdController extends TwController
 {
-    public function index($aId, $pId)
+
+    public function update($id)
     {
-        \Log::info('in index');
+        \Log::info('in update');
 
-        \Log::info('in index id = ' . $aId);
+        \Log::info('in update id = ' . $id);
 
-        \Log::info('in index $pId = ' . $pId);
-
-        $mdContent = MdContent::where('md_name', $pId)->first();
+        $mdContent = MdContent::find($id)->first();
 
         self::jsPut('mdContent', $mdContent);
 
-        $this->user_id = \Auth::id();
-
-        return \View::make('/a/p/editsite', array('md_name', $pId));
+        return \View::make('editsite');
     }
 
-    public function show($aId, $pId)
-    {
-        \Log::info('in index');
-
-        \Log::info('in index id = ' . $aId);
-
-        \Log::info('in index $pId = ' . $pId);
-
-        $mdContent = MdContent::where('md_name', $pId)->first();
-
-        self::jsPut('mdContent', $mdContent);
-
-        $this->user_id = \Auth::id();
-
-        return \View::make('/a/p/editsite', array('md_name', $pId));
-    }
 
     /*
     public function create($id, $mdName)
@@ -82,17 +63,6 @@ class MdController extends TwController
         $mdContent = MdContent::where('md_name', $mdName)->first();
 
         self::jsPut('mdContent', $mdContent);
-
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
-    }
-
-    public function update($id, $mdName)
-    {
-        \Log::info('in update');
-
-        \Log::info('in update id = ' . $id);
-
-        \Log::info('in update mdName = ' . $mdName);
 
         return \View::make('/a/p/editsite', array('md_name', $mdName));
     }

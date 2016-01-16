@@ -59,8 +59,8 @@ Route::group(['middleware' != 'web'], function () {
         return view('mdcontent', array('mdname' => 'projects'));
     });
 
-    Route::get('/partnerships', function () {
-        return view('mdcontent', array('mdname' => 'partnerships'));
+    Route::get('/partners', function () {
+        return view('mdcontent', array('mdname' => 'partners'));
     });
 
     Route::get('/internships', function () {

@@ -90,6 +90,9 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
+    Route::get('/editsite', function () {
+        return view('editsite', array('md_name' => 'writers'));
+    });
 
     Route::put('md.update', 'MdController@update');
 

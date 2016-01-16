@@ -90,9 +90,15 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('name' => 'welcome'));
     });
 
-    Route::patch('md/update', 'MdController@update');
+    Route::post('/md/update/{id}', array('as' => 'md.post', 'uses' => 'MdController@update'));
 
-    Route::get('md/{id}/edit', 'MdController@edit');
+    Route::put('/md/put/{id}', array('as' => 'md.update', 'uses' => 'MdController@update'));
+
+    Route::patch('/md/patch/{id}', array('as' => 'md.update', 'uses' => 'MdController@update'));
+
+    Route::get('md/{id}/edit', array('as' => 'md.edit', 'uses' => 'MdController@edit'));
+
+    Route::get('md/{id}', array('as' => 'md.show', 'uses' => 'MdController@show'));
 
     Route::resource('md', 'MdController');
 

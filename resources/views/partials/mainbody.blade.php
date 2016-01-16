@@ -5,4 +5,6 @@
 
 @include('partials.appfooter')
 
+@include('partials.mainlogoutmodal')
+
 <!-- END LAYOUTS/PARTIALS/MAINBODY -->

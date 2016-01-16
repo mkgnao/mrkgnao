@@ -1,5 +1,4 @@
-<!-- EDITSITE -->
-
+<!-- BEGIN EDITSITE -->
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +7,7 @@
 
 
     <script>
-        var mdContent = '{!! $markdownService->get($md_name) !!}';
+        var mdContent = '{{ $markdownService->get($md_name) }}';
     </script>
 
     <textarea id="mdContentTextArea">
@@ -27,4 +26,4 @@
 
     @endsection
 
-!-- EDITSITE -->
+!-- ENDEDITSITE -->

@@ -1,5 +1,4 @@
 <!-- BEGIN LAYOUTS/PARTIALS/APPSCRIPTSEND -->
-<script src="/js/main.js"></script>
 
 @if (!Auth::guest())
     <script>

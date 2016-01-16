@@ -3,19 +3,25 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="Container">
+        <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-    {!! Form::model($mdContent, array('route' => array('md.update', $mdContent->id))) !!}
-
-            <div class="form-group">
-                {!! Form::label('content', 'Content:') !!}
-                {!! Form::text('content', null, ['class' => 'form-control']) !!}
+            {!! Form::model($mdContent, array('route' => array('md.update', $mdContent->id))) !!}
+            <div class="Grid-cell">
+                <div class="InputAddOn">
+                    {!! Form::text('content', null, ['class' => 'InputAddOn-field']) !!}
+                </div>
             </div>
 
-            <div class="form-group">
-                {!! Form::submit('submit', ['class' => 'form-control']) !!}
+            <div class="Grid-cell">
+                <div class="InputAddOn">
+                    {!! Form::submit('submit', ['class' => 'InputAddOn-button-login']) !!}
+                </div>
             </div>
 
-    {!! Form::close() !!}
+            {!! Form::close() !!}
 
-@stop
-<!-- END MD/SHOW -->
+        </div>
+    </div>
+    @stop
+            <!-- END MD/SHOW -->

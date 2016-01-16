@@ -1240,6 +1240,7 @@ strong {
     opacity: 0.9;
 }
 
+
 .InputAddOn-field:not(:first-child) {
     border-left: 0
 }

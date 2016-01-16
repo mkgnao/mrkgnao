@@ -1,4 +1,4 @@
-<!-- BEGIN LAYOUTS/PARTIALS/METAALL -->
+<!-- BEGIN LAYOUTS/PARTIALS/APPMETA -->
 <meta name="HandheldFriendly" content="True">
 <meta name="MobileOptimized" content="320">
 <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
@@ -21,4 +21,4 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/img/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
-<!-- BEGIN LAYOUTS/PARTIALS/METAALL -->
+<!-- BEGIN LAYOUTS/PARTIALS/APPMETA -->

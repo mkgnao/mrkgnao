@@ -17,7 +17,7 @@
                     </a>
                 @endif
             @else
-                @include('partials.topnav')
+                @include('partials.maintopnav')
             @endif
         </div>
     </div>

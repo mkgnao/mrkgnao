@@ -1,3 +1,4 @@
+<!-- BEGIN LAYOUTS/PARTIALS/MAINTOPNAV -->
 <dd>
     <nav role="navigation">
         <ul>
@@ -38,3 +39,4 @@
         </ul>
     </nav>
 </dd>
+<!-- END LAYOUTS/PARTIALS/MAINTOPNAV -->

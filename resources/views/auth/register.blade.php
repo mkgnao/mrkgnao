@@ -1,3 +1,4 @@
+<!-- BEGIN AUTH/REGISTER -->
 @extends('layouts.app')
 
 @section('content')
@@ -59,3 +60,4 @@
         </form>
     </div>
 @endsection
+<!-- END AUTH/REGISTER -->

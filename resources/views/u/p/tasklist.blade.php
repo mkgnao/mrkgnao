@@ -1,3 +1,4 @@
+<!-- BEGIN U/P/TASKLIST -->
 @extends('layouts.app')
 
 @section('content')
@@ -30,3 +31,4 @@
     </script>
 
 @endsection
+<!-- END U/P/TASKLIST -->

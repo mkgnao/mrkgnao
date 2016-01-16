@@ -1,3 +1,5 @@
+<!-- BEGIN U/P/COMPANY -->
+
 @extends('layouts.app')
 
 @section('content')
@@ -35,3 +37,4 @@
     </script>
 
 @endsection
+!-- END U/P/COMPANY -->

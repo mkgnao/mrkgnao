@@ -1,3 +1,4 @@
+<!-- BEGIN U/P/PEOPLE -->
 @extends('layouts.app')
 
 @section('content')
@@ -37,3 +38,4 @@
     </script>
 
 @endsection
+<!-- END U/P/PEOPLE -->

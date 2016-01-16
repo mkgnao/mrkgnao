@@ -1,3 +1,4 @@
+<!-- BEGIN AUTH/LOGIN -->
 @extends('layouts.app')
 
 @section('content')
@@ -48,3 +49,4 @@
         </div>
     </form>
 @endsection
+<!-- END AUTH/LOGIN -->

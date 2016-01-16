@@ -10,14 +10,9 @@
 
         <div class="Header-actions">
             @if ($view_name == 'mdcontent')
-
-
-                            <a class="InputAddOn-button-login" href="{{ url('/about') }}">about</a>
-                            <a class="InputAddOn-button-login" href="{{ url('/writers') }}">writers</a>
-                            <a class="InputAddOn-button-login" href="{{ url('/partners') }}">partners</a>
-                            <a class="InputAddOn-button-login" href="{{ url('/projects') }}">projects</a>
-                            <a class="InputAddOn-button-login" href="{{ url('/internships') }}">internships</a>
-
+                @include('partials.appfronttopnav')
+            @elseif($view_name == '.u.p.main')
+                @include('partials.maintopnav')
             @endif
         </div>
     </div>

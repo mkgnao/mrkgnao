@@ -2,6 +2,7 @@
 <div class="scrollable">
     <main class="HolyGrail-body">
         <article class="HolyGrail-content" class="u-textCenter">
+            @yield('content')
         </article>
         <nav class="HolyGrail-nav u-textCenter">
         </nav>

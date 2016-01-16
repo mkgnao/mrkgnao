@@ -1122,11 +1122,11 @@ strong {
     -webkit-flex-direction: column;
     -ms-flex-direction: column;
     flex-direction: column;
-    padding: 2em;
+    padding: 0.5em;
 }
 
 .HolyGrail-content {
-    margin-top: 1.5em
+    margin-top: 0.5em
 }
 
 /*

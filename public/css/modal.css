@@ -1,3 +1,4 @@
+/* BEGIN public/css/modal.css */
 .Modal-flex-container-hidden {
     display: none;
 }
@@ -81,3 +82,4 @@
     padding-right: 1.5em;
     padding-left: 1.5em
 }
+/* END public/css/modal.css */

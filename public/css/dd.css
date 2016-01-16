@@ -1,3 +1,4 @@
+/* BEGIN public/css/dd.css */
 dd {
     /*display: block;
     position: fixed;
@@ -98,3 +99,4 @@ only screen and (max-width: 760px),
         font-size: 1em;
     }
 }
+/* END public/css/dd.css */

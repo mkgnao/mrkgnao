@@ -1,4 +1,4 @@
-
+/* BEGIN public/js/cl.js */
 const BOARD_DIMENSIONS = 3;
 
 function getBoard()
@@ -38,3 +38,4 @@ function f() {
 
 
 }
+/* END public/js/cl.js */

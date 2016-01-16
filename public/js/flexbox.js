@@ -1,3 +1,4 @@
+/* BEGIN public/js/flexbox.js */
 (function e(t, n, r) {
     function s(o, u) {
         if (!n[o]) {
@@ -763,4 +764,4 @@
 
     }, {"closest": 11}]
 }, {}, [1]);
-
+/* END public/js/flexbox.js */

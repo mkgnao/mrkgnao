@@ -1,3 +1,5 @@
+/* BEGIN public/js/main.js */
+
 var mkgnaoNs = mkgnaoNs || {};
 
 const MAX_DEPTH = 6;
@@ -149,77 +151,23 @@ mkgnaoNs.hideModalLogoutBodyClick = function (e) {
 
 
 mkgnaoNs.loadMain = function () {
-    logoutLink = document.getElementById("logoutClick");
+    var logoutLink = document.getElementById("logoutClick");
     if (logoutLink)
-        logoutLink.addEventListener('click', toggleModalLogout);
+        logoutLink.addEventListener('click', mkgnaoNs.toggleModalLogout);
 
-    logoutModalStay = document.getElementById("logoutModalStay");
+    var logoutModalStay = document.getElementById("logoutModalStay");
     if (logoutModalStay)
-        logoutModalStay.addEventListener('click', hideModalLogout);
-
-    loginLink = document.getElementById("loginClick");
-    if (loginLink)
-        loginLink.addEventListener('click', toggleModalLogin);
-
-    loginModalStay = document.getElementById("loginModalStay");
-    if (loginModalStay)
-        logoutModalStay.addEventListener('click', hideModalLogin);
+        logoutModalStay.addEventListener('click', mkgnaoNs.hideModalLogout);
 
     document.onkeydown = function (evt) {
         evt = evt || window.event;
         if (evt.keyCode == 27) {
-            hideModalLogout();
+            mkgnaoNs.hideModalLogout();
         }
     };
 
-    bodyTop = document.getElementById("bodyTop");
+    var bodyTop = document.getElementById("bodyTop");
     if (bodyTop)
-        bodyTop.addEventListener('click', hideModalLogoutBodyClick);
+        bodyTop.addEventListener('click', mkgnaoNs.hideModalLogoutBodyClick);
 };
-
-mkgnaoNs.strPad = function (input, pad_length, pad_string, pad_type) {
-    //  discuss at: http://phpjs.org/functions/str_pad/
-    // original by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
-    // improved by: Michael White (http://getsprink.com)
-    //    input by: Marco van Oort
-    // bugfixed by: Brett Zamir (http://brett-zamir.me)
-    //   example 1: str_pad('Kevin van Zonneveld', 30, '-=', 'STR_PAD_LEFT');
-    //   returns 1: '-=-=-=-=-=-Kevin van Zonneveld'
-    //   example 2: str_pad('Kevin van Zonneveld', 30, '-', 'STR_PAD_BOTH');
-    //   returns 2: '------Kevin van Zonneveld-----'
-
-    var half = '',
-        pad_to_go;
-
-    var str_pad_repeater = function (s, len) {
-        var collect = '',
-            i;
-
-        while (collect.length < len) {
-            collect += s;
-        }
-        collect = collect.substr(0, len);
-
-        return collect;
-    };
-
-    input += '';
-    pad_string = pad_string !== undefined ? pad_string : ' ';
-
-    if (pad_type !== 'STR_PAD_LEFT' && pad_type !== 'STR_PAD_RIGHT' && pad_type !== 'STR_PAD_BOTH') {
-        pad_type = 'STR_PAD_RIGHT';
-    }
-    if ((pad_to_go = pad_length - input.length) > 0) {
-        if (pad_type === 'STR_PAD_LEFT') {
-            input = str_pad_repeater(pad_string, pad_to_go) + input;
-        } else if (pad_type === 'STR_PAD_RIGHT') {
-            input = input + str_pad_repeater(pad_string, pad_to_go);
-        } else if (pad_type === 'STR_PAD_BOTH') {
-            half = str_pad_repeater(pad_string, Math.ceil(pad_to_go / 2));
-            input = half + input + half;
-            input = input.substr(0, pad_length);
-        }
-    }
-
-    return input;
-};
+/* END public/js/main.js */

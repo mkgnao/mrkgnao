@@ -1,3 +1,4 @@
+/* BEGIN public/css/twtable.css */
 table.twTable {
     border-collapse: collapse;
     border: 1px solid silver;
@@ -95,3 +96,4 @@ only screen and (max-width: 760px),
         white-space: nowrap;
     }
 }
+/* END public/css/twtable.css */

@@ -2,7 +2,9 @@
 
 namespace App\Http;
 
-use Illuminate\Support\Facades\Log as Log;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Routing\Route;
+use Illuminate\View\View;
 
 /*
 |--------------------------------------------------------------------------

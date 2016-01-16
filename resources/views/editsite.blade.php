@@ -5,14 +5,25 @@
 
     @inject('markdownService', 'App\Services\MarkdownService')
 
+    <form role="form" method="POST" action="{{ url('/updatewriters') }}" value="updatewriters">
 
+    </form>
     <script>
         var mdContent = '{{ $markdownService->getRaw($md_name) }}';
     </script>
 
-    <textarea id="mdContentTextArea">
+    <div class="InputAddOn">
+        <button class="InputAddOn-button-login" type="submit">
+            login
+        </button>
+    </div>
+
+    <textarea id="mdContentTextArea" class="mdContentTextArea" name="mdContent">
 
     </textarea>
+
+
+    </form>
 
     <script>
         function fillMdContentTextArea() {

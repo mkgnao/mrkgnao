@@ -73,6 +73,8 @@ Route::group(['middleware' != 'web'], function () {
     Route::get('/editsite', function () {
         return view('editsite', array('md_name' => 'writers'));
     });
+
+    Route::post('/updatewriters', 'MdController@updateWriters');
 });
 
 /*

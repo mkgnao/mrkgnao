@@ -121,6 +121,10 @@ button, input, optgroup, select, textarea {
     margin: 0
 }
 
+.mdContentTextArea {
+    color: black;
+}
+
 button {
     overflow: visible
 }

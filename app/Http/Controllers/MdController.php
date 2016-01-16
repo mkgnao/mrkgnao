@@ -10,101 +10,23 @@ use Illuminate\Http\Request;
 class MdController extends TwController
 {
 
-    public function update($id)
+    public function updateWriters(Request $request)
     {
-        \Log::info('in update');
-
-        \Log::info('in update id = ' . $id);
-
-        $mdContent = MdContent::find($id)->first();
-
-        self::jsPut('mdContent', $mdContent);
-
-        return \View::make('editsite');
-    }
-
-
-    /*
-    public function create($id, $mdName)
-    {
-        \Log::info('in create');
-
-        \Log::info('in create id = ' . $id);
-
-        \Log::info('in create mdName = ' . $mdName);
-
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
-    }
-
-    public function show($id, $mdName)
-    {
-        \Log::info('in create');
-
-        \Log::info('in create id = ' . $id);
-
-        \Log::info('in create mdName = ' . $mdName);
-
-        $mdContent = MdContent::where('md_name', $mdName)->first();
-
-        self::jsPut('mdContent', $mdContent);
-
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
-    }
-
-
-    public function edit($id, $mdName)
-    {
-        \Log::info('in edit');
-
-        \Log::info('in edit id = ' . $id);
-
-        \Log::info('in edit mdName = ' . $mdName);
-
-        $mdContent = MdContent::where('md_name', $mdName)->first();
-
-        self::jsPut('mdContent', $mdContent);
-
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
-    }
-
-    public function destroy($id, $mdName)
-    {
-        \Log::info('in destroy');
-
-        \Log::info('in destroy id = ' . $id);
-
-        \Log::info('in destroy mdName = ' . $mdName);
-
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
-    }
-
-    public function store(Request $request)
-    {
-        $id = $request->input('id');
-        $mdName = $request->input('md_name');
         $mdInputContent = $request->input('mdContent');
 
-        \Log::info('in store');
-
-        \Log::info('in store id = ' . $id);
-
-        \Log::info('in store mdName = ' . $mdName);
-
-        $mdContent = MdContent::where('md_name', $mdName)->first();
+        $mdContent = MdContent::where('md_name', 'writers')->first();
 
         if ($mdInputContent == $mdContent) {
-            Session::flash('message', 'nothing new in '. $mdName);
-            return \View::make('/a/p/editsite', array('md_name', $mdName));
+            Session::flash('message', 'nothing new');
+            return \View::make('editsite');
         }
 
         $mdContent->md_content = $mdInputContent;
 
         $mdContent->save();
 
-        Session::flash('message', 'updated ' . $mdName);
+        Session::flash('message', 'updated');
 
-        return \View::make('/a/p/editsite', array('md_name', $mdName));
+        return \View::make('editsite');
     }
-
-    */
 }

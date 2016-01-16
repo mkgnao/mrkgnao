@@ -4,7 +4,7 @@
 @include('partials.headall')
 
 <body id="bodyTop" class="HolyGrail">
-@yield('partials.mainbody')
+@include('partials.mainbody')
 </body>
 
 </html><!-- END LAYOUTS/APP -->

@@ -42,11 +42,6 @@ Route::group(['middleware' != 'web'], function () {
         //img
     });
 
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-
     Route::get('/about', function () {
         return view('mdcontent', array('mdname' => 'about'));
     });

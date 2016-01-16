@@ -1,4 +1,8 @@
-<!DOCTYPE html><!-- BEGIN LAYOUTS/APP -->
+<!DOCTYPE html>
+<!-- BEGIN LAYOUTS/APP -->
+<!-- IN {{ $view_name }} -->
+
+
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 
 @include('partials.apphead')
@@ -7,4 +11,6 @@
 @include('partials.mainbody')
 </body>
 
-</html><!-- END LAYOUTS/APP -->
+
+<!-- END LAYOUTS/APP -->
+</html>

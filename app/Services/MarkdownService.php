@@ -13,7 +13,6 @@ use League\CommonMark\Converter;
 class MarkdownService implements SelfHandling
 {
     protected $converter;
-    protected $mdContent;
 
     public function __construct(Converter $converter)
     {

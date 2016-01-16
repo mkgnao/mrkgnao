@@ -1,4 +1,4 @@
-<!-- BEGIN WRITERS -->
+<!-- BEGIN MDCONTENT -->
 @extends('layouts.app')
 
 @section('content')
@@ -16,4 +16,4 @@
     </div>
 
     @endsection
-            <!-- END WRITERS -->
+<!-- END MDCONTENT -->

@@ -70,8 +70,8 @@ Route::group(['middleware' != 'web'], function () {
     });
 
 
-    Route::get('/md/edit/{$id}', function($id) {
-        return View::make('editsite')->with('mdContent', \App\Models\MdContent::find($id));
+    Route::get('/xxx', function() {
+        return View::make('editsite')->with('mdContent', \App\Models\MdContent::find(2));
     });
 
     Route::post('/md/edit', function() {

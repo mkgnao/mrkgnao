@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class MdController extends TwController
 {
-    public function index($aId, $pId)
+    public function getIndex($aId, $pId)
     {
         \Log::info('in index');
 

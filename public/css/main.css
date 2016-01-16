@@ -1122,6 +1122,15 @@ strong {
     margin-top: 1.5em
 }
 
+.HolyGrail-content:after {
+    background: linear-gradient(to top,
+    rgba(255,255,255, 1) 20%,
+    rgba(255,255,255, 0) 80%
+    );
+    pointer-events: none; /* so the text is still selectable */
+}
+
+
 .HolyGrail-form {
     font-size: 3em;
 }

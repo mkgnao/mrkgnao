@@ -4,7 +4,7 @@
 
 @section('content')
 
-{!! Form::open() !!}
+{!! Form::model($mdContent, array('route' => array('md.show', $mdContent->md_name), 'method' => 'get')) !!}
 
         <div class="form-group">
             {!! Form::label('md_content', 'Content:') !!}

@@ -41,7 +41,10 @@ class Authenticate
         if (count($urlComp) < 2)
             return true;
 
-        if ($urlComp[0] == "u" || $urlComp[0] == "a") {
+        if ($urlComp[0] == "md")
+            return true;
+
+        if ($urlComp[0] == "u") {
             $id = Util::idStrip($urlComp[1]);
             if ($id == \Auth::id())
                 return true;

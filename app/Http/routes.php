@@ -27,6 +27,10 @@ View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
 
+
+Route::get('md/{id}', 'MdController@show');
+
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts
@@ -67,8 +71,6 @@ Route::group(['middleware' != 'web'], function () {
     Route::get('/internships', function () {
         return view('mdcontent', array('md_name' => 'internships'));
     });
-
-    Route::get('md/{id}', 'MdController@show');
 });
 
 /*

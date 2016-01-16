@@ -1235,7 +1235,9 @@ strong {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    background-color: #b7b7b7;
+    background-color: #595959;
+    color: black;
+    opacity: 0.9;
 }
 
 .InputAddOn-field:not(:first-child) {
@@ -1248,7 +1250,7 @@ strong {
 
 .InputAddOn-item {
     font: inherit;
-    background-color: #b7b7b7;
+    background-color: #595959;
     /*opacity: 0.8;*/
 }
 

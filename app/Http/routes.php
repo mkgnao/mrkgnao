@@ -92,7 +92,7 @@ Route::group(['middleware' => 'web'], function ($view) {
     });
 
 
-    \Log.info('in view: '.$view->getName());
+    Log.info('in view: '.$view->getName());
 
     Route::post('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/store', 'uses' => 'MdController@store'));
 

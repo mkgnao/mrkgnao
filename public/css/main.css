@@ -1122,8 +1122,6 @@ strong {
     margin-top: 1.5em
 }
 
-
-
 .writersList:after {
     position: absolute;
     bottom: 0;
@@ -1131,7 +1129,7 @@ strong {
     width: 100%;
     content: "";
     background: linear-gradient(to top,
-    rgba(255,255,255, 1) 20%,
+    rgba(255,255,255, 1) 2%,
     rgba(255,255,255, 0) 80%
     );
     pointer-events: none; /* so the text is still selectable */

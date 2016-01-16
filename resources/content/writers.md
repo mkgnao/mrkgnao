@@ -10,14 +10,6 @@ Artist. Founder, and director of the geh8 art space, Dresden.
 
 Philosopher and religious studies scholar. PhD from New York University. Assistant professor at Humboldt University, Berlin.
 
-## Felix Laubscher
-
-PhD candidate at the UdK Berlin. Theorist, curator, high-speed-camera operator.
-
-## Paul Elsner
-
-Artist. Founder, and director of the geh8 art space, Dresden.
-
 ## Emma Rosa Simon
 
 Camera operator and director. Winner of the 2012 Bavarian Documentary Film Award.

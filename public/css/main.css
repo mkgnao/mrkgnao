@@ -950,12 +950,12 @@ strong {
 }
 
 .Header-title {
-    margin: 0 0 .15em;
+    /*margin: 0 0 .15em;*/
     /*font-size: 2.8em;*/
     /*font-weight: 600;*/
     /*line-height: 1;*/
     /*word-spacing: .08em;*/
-    letter-spacing: 1px;
+    letter-spacing: 0.2em;
 }
 
 .Header-title i {

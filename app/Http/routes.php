@@ -94,7 +94,7 @@ Route::group(['middleware' => 'web'], function () {
 
     Route::post('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/store', 'uses' => 'MdController@store'));
 
-    Route::get('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/get', 'uses' => 'MdController@get'));
+    Route::get('/u/{id}/p/md/{mdName}/get', array('as' => '/u/p/md/get', 'uses' => 'MdController@get'));
 
     Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/edit', 'uses' => 'MdController@edit'));
 

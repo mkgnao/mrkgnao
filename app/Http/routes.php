@@ -93,7 +93,6 @@ Route::group(['middleware' => 'web'], function ($view) {
 
     Route::resource('a.p', 'MdController');
 
-
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 
     Route::get('/u/{id}/p/tasklist', array('as' => '/u/p/tasklist', 'uses' => 'TaskListController@index'));

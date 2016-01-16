@@ -23,7 +23,7 @@ class MdController extends TwController
 
         $this->user_id = \Auth::id();
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
     public function create($id, $mdName)
@@ -34,7 +34,7 @@ class MdController extends TwController
 
         \Log::info('in create mdName = ' . $mdName);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
     public function show($id, $mdName)
@@ -49,7 +49,7 @@ class MdController extends TwController
 
         self::jsPut('mdContent', $mdContent);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
 
@@ -65,7 +65,7 @@ class MdController extends TwController
 
         self::jsPut('mdContent', $mdContent);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
     public function update($id, $mdName)
@@ -76,7 +76,7 @@ class MdController extends TwController
 
         \Log::info('in update mdName = ' . $mdName);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
     public function destroy($id, $mdName)
@@ -87,13 +87,13 @@ class MdController extends TwController
 
         \Log::info('in destroy mdName = ' . $mdName);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 
     public function store(Request $request)
     {
         $id = $request->input('id');
-        $mdName = $request->input('mdName');
+        $mdName = $request->input('md_name');
         $mdInputContent = $request->input('mdContent');
 
         \Log::info('in store');
@@ -106,7 +106,7 @@ class MdController extends TwController
 
         if ($mdInputContent == $mdContent) {
             Session::flash('message', 'nothing new in '. $mdName);
-            return \View::make('/a/p/editsite', array('mdName', $mdName));
+            return \View::make('/a/p/editsite', array('md_name', $mdName));
         }
 
         $mdContent->md_content = $mdInputContent;
@@ -115,6 +115,6 @@ class MdController extends TwController
 
         Session::flash('message', 'updated ' . $mdName);
 
-        return \View::make('/a/p/editsite', array('mdName', $mdName));
+        return \View::make('/a/p/editsite', array('md_name', $mdName));
     }
 }

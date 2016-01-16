@@ -4,14 +4,14 @@
 
 @section('content')
 
-    @if (!empty($data['mdName']))
+    @if (!empty($data['md_name']))
 
-<form id="mdForm" mdName="{{ $mdName }}" role="form" method="POST" action="{{ url('/a/'.App\Util::idPad(Auth::id()).'/p/'.$mdName.')') }}" value="{!! csrf_field() !!}">
+<form id="mdForm" md_name="{{ $md_name }}" role="form" method="POST" action="{{ url('/a/'.App\Util::idPad(Auth::id()).'/p/'.$md_name.')') }}" value="{!! csrf_field() !!}">
     {!! csrf_field() !!}
 
 <div class="InputAddOn">
     <button class="InputAddOn-button-login" type="submit">
-        update {{ $mdName }}
+        update {{ $md_name }}
     </button>
 </div>
 
@@ -32,7 +32,7 @@
 </form>
     @else
 
-        {{ dd('$mdName is empty') }}
+        {{ dd('md_name is empty') }}
 
     @endif
 

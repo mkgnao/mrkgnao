@@ -7,7 +7,6 @@
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
             {!! Form::model($mdContent, array('action' => array('MdController@update', $mdContent->id))) !!}
-            {!! Form::token() !!}
 
             <div class="Grid-cell">
                 <div class="InputAddOn">

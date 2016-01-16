@@ -28,12 +28,6 @@ View::composer('*', function ($view) {
 });
 
 
-Route::get('md.update', 'MdController@update');
-Route::get('md/{id}', 'MdController@show');
-
-Route::resource('md', 'MdController');
-
-
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts
@@ -93,6 +87,11 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::get('/', function () {
         return view('mdcontent', array('name' => 'welcome'));
     });
+
+    Route::get('md.update', 'MdController@update');
+    Route::get('md/{id}', 'MdController@show');
+
+    Route::resource('md', 'MdController');
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

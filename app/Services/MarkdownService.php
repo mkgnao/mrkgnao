@@ -24,8 +24,7 @@ class MarkdownService implements SelfHandling
     {
         try
         {
-
-            $contentFileNameFull = '/' . base_path() . '/resources/content/'. $contentFileName;
+            $contentFileNameFull = base_path() . '/resources/content/'. $contentFileName . '.md';
 
             $this->mdContent = \File::get($contentFileNameFull);
         }

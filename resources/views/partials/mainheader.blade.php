@@ -14,7 +14,7 @@
     </div>
     @if ($view_name == 'mdcontent')
         <div class="Container">
-            <div class="Grid--top">
+            <div class="Grid--center">
                 <div class="Grid-cell">
                     <a href="{{ url('/about') }}">about</a>
                 </div>

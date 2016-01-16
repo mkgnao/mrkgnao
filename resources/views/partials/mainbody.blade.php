@@ -7,5 +7,6 @@
 
 @include('partials.mainlogoutmodal')
 
+@include('partials.appscriptsend')
 
 <!-- END LAYOUTS/PARTIALS/MAINBODY -->

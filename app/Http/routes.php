@@ -70,6 +70,14 @@ Route::group(['middleware' != 'web'], function () {
     });
 
 
+    Route::get('/md/edit/{$id}', array('as' => 'md.edit', function($id) {
+        return View::make('editsite')->with('mdContent', \App\Models\MdContent::find($id));
+    }));
+
+    Route::post('/md/edit', function() {
+    });
+
+
 });
 
 /*
@@ -89,16 +97,6 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::get('/', function () {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
-
-
-    Route::get('/md/edit/{$id}', array('as' => 'md.edit', function($id)
-    {
-        return View::make('editsite')->with('mdContent', \App\Models\MdContent::find($id));
-    }));
-
-    Route::post('/md/edit', function() {
-    });
-
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

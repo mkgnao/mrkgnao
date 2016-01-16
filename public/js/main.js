@@ -118,7 +118,7 @@ mkgnaoNs.toggleModalLogout = function () {
 mkgnaoNs.hideModalLogoutBodyClick = function (e) {
     if (e.target != document.getElementById("logoutModalLogout") &&
         e.target != document.getElementById("logoutClick")) {
-        hideModalLogout();
+        mkgnaoNs.hideModalLogout();
     }
 };
 
@@ -145,7 +145,7 @@ mkgnaoNs.toggleModalLogout = function () {
 mkgnaoNs.hideModalLogoutBodyClick = function (e) {
     if (e.target != document.getElementById("logoutModalLogout") &&
         e.target != document.getElementById("logoutClick")) {
-        hideModalLogout();
+        mkgnaoNs.hideModalLogout();
     }
 };
 

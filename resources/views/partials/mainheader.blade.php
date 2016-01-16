@@ -11,23 +11,12 @@
         <div class="Header-actions">
             @if ($view_name == 'mdcontent')
 
-                    <div class="Grid Grid--1of5">
-                        <div class="Grid-cell">
-                            <a href="{{ url('/about') }}">about</a>
-                        </div>
-                        <div class="Grid-cell">
-                            <a href="{{ url('/writers') }}">writers</a>
-                        </div>
-                        <div class="Grid-cell">
-                            <a href="{{ url('/partners') }}">partners</a>
-                        </div>
-                        <div class="Grid-cell">
-                            <a href="{{ url('/projects') }}">projects</a>
-                        </div>
-                        <div class="Grid-cell">
-                            <a href="{{ url('/internships') }}">internships</a>
-                        </div>
-                    </div>
+
+                            <a class="InputAddOn-button-login" href="{{ url('/about') }}">about</a>
+                            <a class="InputAddOn-button-login" href="{{ url('/writers') }}">writers</a>
+                            <a class="InputAddOn-button-login" href="{{ url('/partners') }}">partners</a>
+                            <a class="InputAddOn-button-login" href="{{ url('/projects') }}">projects</a>
+                            <a class="InputAddOn-button-login" href="{{ url('/internships') }}">internships</a>
 
             @endif
         </div>

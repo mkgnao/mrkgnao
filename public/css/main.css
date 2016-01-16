@@ -1247,7 +1247,7 @@ strong {
 
 .InputAddOn-button-login {
     font: inherit;
-    background-color: #FAFAFA;
+    /*background-color: #FAFAFA;*/
     /*opacity: 0.8;*/
 }
 

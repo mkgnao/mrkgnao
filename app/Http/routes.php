@@ -89,7 +89,7 @@ Route::group(['middleware' => 'web'], function ($view) {
     });
 
     Route::patch('md/edit', array(
-        'as' => 'md.edit',
+        'as' => 'md.update',
         'uses' => 'MdController@update'
     ));
 

@@ -6,7 +6,8 @@
     <div class="Container">
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
 
-            {!!Form::model($mdContent,array('method' =>' Patch', 'route' => array('md/update/'.$mdContent->id))) !!}
+            {!!Form::model($mdContent,array('method' => 'Patch', 'route' => array('md/update/'.$mdContent->id))) !!}
+            <input type="hidden" name="_method" value="PATCH">
 
             <div class="Grid-cell">
                 <div class="InputAddOn">

@@ -5,8 +5,6 @@
 
         <article class="HolyGrail-content" class="u-textCenter">
 
-            @yield('content')
-
         </article>
 
         <nav class="HolyGrail-nav u-textCenter">

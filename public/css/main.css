@@ -1290,7 +1290,7 @@ strong {
     /*opacity: 0.6;*/
 }
 
-.InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link .InputAddOn-button-fronttopnav {
+.InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link, .InputAddOn-button-fronttopnav {
     border: 1px;
     border-color: #595959;
     padding: .5em .75em;

@@ -1254,30 +1254,30 @@ strong {
 
 .InputAddOn-button-login {
     font: inherit;
-    background-color: #b7b7b7;
+    background-color: #595959;
     /*opacity: 0.8;*/
 }
 
 .InputAddOn-button-login:hover {
-    background: #545454;
+    background: #595959;
     color: #b7b7b7;
 }
 
 .InputAddOn-item-checkbox {
     font: inherit;
-    background-color: #b7b7b7;
+    background-color: #595959;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-item-link {
     font: inherit;
-    background-color: #b7b7b7;
+    background-color: #595959;
     /*opacity: 0.6;*/
 }
 
 .InputAddOn-field, .InputAddOn-item, .InputAddOn-button-login, .InputAddOn-item-checkbox, .InputAddOn-item-link {
     border: 1px;
-    border-color: #FAFAFA;
+    border-color: #595959;
     padding: .5em .75em;
 }
 

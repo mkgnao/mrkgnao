@@ -23,9 +23,9 @@ class MdController extends Controller
      */
     public function show($id)
     {
-        $mdContent = MdContent::find($id);
+        $mdContent = MdContent::findOrFail($id);
 
-        return \View::make('/md.show');
+        return \View::make('md.show', compact('mdContent'));
     }
 
     /**
@@ -38,7 +38,7 @@ class MdController extends Controller
     {
         $mdContent = MdContent::find($id);
 
-        return \View::make('/md.edit');
+        return \View::make('md.edit');
     }
 
     /**
@@ -54,6 +54,6 @@ class MdController extends Controller
         if (!$mdContent) {
             return null;
         }
-        return \View::make('/md.update');
+        return \View::make('md.update');
     }
 }

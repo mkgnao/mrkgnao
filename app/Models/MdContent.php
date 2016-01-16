@@ -7,16 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class MdContent extends Model
 {
     protected $table = 'md_contents';
-    protected $primaryKey = 'name';
 
     public function getName($value)
     {
-        return $value;
+        MdContent::findOrFail($value)->name;
     }
 
     public function formName($value)
     {
-        return $value;
+        MdContent::findOrFail($value)->name;
     }
 
     public function getContent($value)
@@ -28,5 +27,4 @@ class MdContent extends Model
     {
         return MdContent::findOrFail($value)->content;
     }
-
 }

@@ -3,10 +3,8 @@
 @extends('layouts.app')
 
 @section('content')
-        {{ dd($mdContent->name) }}
 
-    {{--
-    {!! Form::model($mdContent, array('route' => array('md.update', $mdContent->name)) !!}
+    {!! Form::model($mdContent, array('route' => array('md.update', $mdContent->id)) !!}
 
             <div class="form-group">
                 {!! Form::label('content', 'Content:') !!}
@@ -18,7 +16,5 @@
             </div>
 
     {!! Form::close() !!}
-    --}}
-
-    @endsection
-            <!-- END MD/SHOW -->
+@stop
+<!-- END MD/SHOW -->

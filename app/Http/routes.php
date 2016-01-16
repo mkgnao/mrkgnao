@@ -90,7 +90,7 @@ Route::group(['middleware' => 'web'], function ($view) {
 
     Route::post('/md/update', array('uses' => 'MdController@update'));
 
-    Route::get('/md/{id}', 'MdController@show');
+    Route::get('/md/{id}', 'MdController@edit');
 
     Route::resource('md', 'MdController');
 

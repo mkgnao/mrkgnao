@@ -46,9 +46,28 @@ Route::group(['middleware' != 'web'], function () {
         return view('welcome');
     });
 
-    Route::get('/writers', function () {
-        return view('writers');
+
+    Route::get('/about', function () {
+        return view('mdcontent', array('mdname' => 'about'));
     });
+
+    Route::get('/writers', function () {
+        return view('mdcontent', array('mdname' => 'writers'));
+    });
+
+    Route::get('/projects', function () {
+        return view('mdcontent', array('mdname' => 'projects'));
+    });
+
+    Route::get('/partnerships', function () {
+        return view('mdcontent', array('mdname' => 'partnerships'));
+    });
+
+    Route::get('/internships', function () {
+        return view('mdcontent', array('mdname' => 'internships'));
+    });
+
+
 });
 
 /*

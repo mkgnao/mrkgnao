@@ -13,8 +13,8 @@
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
-Route::get('partials.scriptsend', function () {
-    return View::make('partials/scriptsend');
+Route::get('partials.appscriptvars', function () {
+    return View::make('partials/appscriptvars');
 });
 
 Route::get('partials.topnav', function () {

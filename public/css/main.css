@@ -1126,7 +1126,8 @@ strong {
 }
 
 .HolyGrail-content {
-    margin-top: 0.5em
+    margin-top: 0.5em;
+    flex-grow: 4;
 }
 
 /*

@@ -87,6 +87,10 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
+    Route::resource('md', 'MdController', ['only' => [
+        'show', 'edit', 'update'
+    ]]);
+
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 
     Route::get('/u/{id}/p/tasklist', array('as' => '/u/p/tasklist', 'uses' => 'TaskListController@index'));

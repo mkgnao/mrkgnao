@@ -5,6 +5,8 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreateMdContentsTable extends Migration
 {
+    protected $primaryKey = 'md_name';
+
     /**
      * Run the migrations.
      *
@@ -13,9 +15,8 @@ class CreateMdContentsTable extends Migration
     public function up()
     {
         Schema::create('md_contents', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('md_name');
-            $table->integer('md_content');
+            $table->string('md_name');
+            $table->string('md_content');
             $table->timestamps();
         });
     }

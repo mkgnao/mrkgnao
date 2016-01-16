@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class MdContent extends Model
 {
     protected $table = 'md_contents';
+    protected $primaryKey = 'md_name';
 }

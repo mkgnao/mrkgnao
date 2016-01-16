@@ -30,7 +30,7 @@ Artist. Site-specific performances, installations, and video art. Winner of the 
 
 Publisher, artist, and musician. Co-founder of Primary Information NYC.
 
-# Prof. Dr. Markus Wacker
+## Prof. Dr. Markus Wacker
 
 Professor at the Hochschule für Technik und Wirtschaft Dresden Faculty of Informatics. Specialist for animations, visualizations, and installations for museums.
 

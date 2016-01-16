@@ -16,12 +16,11 @@ class MdController extends TwController
 
         \Log.info('in edit mdName = '.$mdName);
 
-        $viewName = '/u/'.Util::idPad(\Auth::id()).'p/edit';
-
+        $viewName = '/u/'.Util::idPad(\Auth::id()).'p/md/'.$mdName.'/edit';
 
         \Log.info('in edit viewName = '.$viewName);
 
-        return \View::make($viewName, array('mdName', $mdName));
+        return \View::make('/u/p/edit', array('mdName', $mdName));
     }
 
     public function store()

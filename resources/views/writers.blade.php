@@ -4,6 +4,8 @@
 
 @inject('writersService', 'App\Services\WritersService')
 
-{!! $writersService->getWriters() !!}
+<div class="writersList">
+    {!! $writersService->getWriters() !!}
+</div>
 
 @endsection

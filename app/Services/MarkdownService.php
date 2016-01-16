@@ -9,6 +9,8 @@ use App\Util;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Support\Facades\App;
 use League\CommonMark\Converter;
+use App\Models\MdContent as MdContent;
+
 
 class MarkdownService implements SelfHandling
 {
@@ -20,20 +22,16 @@ class MarkdownService implements SelfHandling
         $this->converter = $converter;
     }
 
-    public function get($contentFileName)
+    public function get($mdContentName)
     {
-        try
-        {
-            $contentFileNameFull = base_path() . '/resources/content/'. $contentFileName . '.md';
 
-            $this->mdContent = \File::get($contentFileNameFull);
-        }
-        catch (Illuminate\Filesystem\FileNotFoundException $exception)
-        {
-            die("The file doesn't exist");
-        }
+        $mdContent = MdContent::where('md_name', $mdContentName)->first();
 
-        return $this->htmlContent = $this->converter->convertToHtml($this->mdContent);
+        if (!$mdContent)
+            return 'could not find: ' . $mdContentName;
+
+
+        return $this->converter->convertToHtml($mdContent->md_content);
     }
 
     public function handle()

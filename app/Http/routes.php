@@ -91,7 +91,7 @@ Route::group(['middleware' => 'web'], function ($view) {
     });
 
 
-    Route::resource('a.p', 'MdController', ['only' => ['index']]);
+    Route::resource('a.p', 'MdController', ['only' => ['index', 'show']]);
 
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));

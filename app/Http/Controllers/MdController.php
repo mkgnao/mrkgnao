@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class MdController extends TwController
 {
-    public function getIndex($aId, $pId)
+    public function index($aId, $pId)
     {
         \Log::info('in index');
 
@@ -26,6 +26,22 @@ class MdController extends TwController
         return \View::make('/a/p/editsite', array('md_name', $pId));
     }
 
+    public function show($aId, $pId)
+    {
+        \Log::info('in index');
+
+        \Log::info('in index id = ' . $aId);
+
+        \Log::info('in index $pId = ' . $pId);
+
+        $mdContent = MdContent::where('md_name', $pId)->first();
+
+        self::jsPut('mdContent', $mdContent);
+
+        $this->user_id = \Auth::id();
+
+        return \View::make('/a/p/editsite', array('md_name', $pId));
+    }
 
     /*
     public function create($id, $mdName)

@@ -33,7 +33,7 @@ class TaskListController extends TwController
      *
      * @return Response
      */
-    public function index($id)
+    public function index()
     {
         $this->user_id = \Auth::id();
 

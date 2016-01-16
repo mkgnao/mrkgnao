@@ -160,7 +160,9 @@ return [
 
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
 
-        'GrahamCampbell\Markdown\MarkdownServiceProvider'
+        'GrahamCampbell\Markdown\MarkdownServiceProvider',
+
+	Collective\Html\HtmlServiceProvider::class
     ],
 
     /*
@@ -207,8 +209,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
-        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class
-
+        'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
+	'Form' => Collective\Html\FormFacade::class,
+	'Html' => Collective\Html\HtmlFacade::class
     ],
 
 ];

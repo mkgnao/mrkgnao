@@ -1260,6 +1260,19 @@ strong {
     /*opacity: 0.8;*/
 }
 
+.InputAddOn-button-fronttopnav {
+    font: inherit;
+    /*opacity: 0.8;*/
+}
+
+.InputAddOn-button-fronttopnav:hover {
+    font: inherit;
+    background: #595959;
+    color: #b7b7b7;
+    /*opacity: 0.8;*/
+}
+
+
 .InputAddOn-button-login:hover {
     background: #595959;
     color: #b7b7b7;

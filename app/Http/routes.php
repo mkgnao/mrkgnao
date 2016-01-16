@@ -27,8 +27,8 @@ View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
 
-Route::get('xxx', function() {
-    return View::make('editsite')->with('mdContent', \App\Models\MdContent::find(2));
+Route::get('xxx', function () {
+    return view('editsite', array('mdContent' => \App\Models\MdContent::find(2)));
 });
 
 

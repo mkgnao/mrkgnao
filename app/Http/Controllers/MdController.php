@@ -33,6 +33,8 @@ class MdController extends TwController
         \Log::info('in create id = ' . $id);
 
         \Log::info('in create mdName = ' . $mdName);
+
+        return \View::make('/a/p/editsite', array('mdName', $mdName));
     }
 
     public function show($id, $mdName)
@@ -73,6 +75,8 @@ class MdController extends TwController
         \Log::info('in update id = ' . $id);
 
         \Log::info('in update mdName = ' . $mdName);
+
+        return \View::make('/a/p/editsite', array('mdName', $mdName));
     }
 
     public function destroy($id, $mdName)
@@ -82,6 +86,8 @@ class MdController extends TwController
         \Log::info('in destroy id = ' . $id);
 
         \Log::info('in destroy mdName = ' . $mdName);
+
+        return \View::make('/a/p/editsite', array('mdName', $mdName));
     }
 
     public function store(Request $request)

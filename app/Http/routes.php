@@ -48,7 +48,6 @@ Route::group(['middleware' != 'web'], function () {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
-
     Route::get('/about', function () {
         return view('mdcontent', array('md_name' => 'about'));
     });
@@ -68,13 +67,6 @@ Route::group(['middleware' != 'web'], function () {
     Route::get('/internships', function () {
         return view('mdcontent', array('md_name' => 'internships'));
     });
-
-
-    Route::get('/editsite', function () {
-        return view('editsite', array('md_name' => 'writers'));
-    });
-
-    Route::post('/updatewriters', 'MdController@updateWriters');
 });
 
 /*
@@ -94,7 +86,6 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::get('/', function () {
         return view('mdcontent', array('md_name' => 'welcome'));
     });
-
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

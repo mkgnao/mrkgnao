@@ -95,32 +95,36 @@ mkgnaoNs.loadTw = function () {
     }
 };
 
-mkgnaoNs.hideModalLogout = function () {
-    var e = document.getElementById("Modal-flex-container-logout");
+mkgnaoNs.hideTopMenu = function () {
+    var e = document.getElementById("maintopnavDiv");
     if (!e)
         return;
 
-    e.className = "Modal-flex-container-hidden";
+    e.className = "maintopnavDiv-hidden";
 };
 
-mkgnaoNs.toggleModalLogout = function () {
-    var e = document.getElementById("Modal-flex-container-logout");
+mkgnaoNs.toggleTopMenu = function () {
+    var e = document.getElementById("maintopnavDiv");
 
     if (!e)
         return;
 
-    if (e.className == "Modal-flex-container-hidden")
-        e.className = "Modal-flex-container-shown";
+    if (e.className == "maintopnavDiv-hidden")
+        e.className = "maintopnavDiv-shown";
     else
-        e.className = "Modal-flex-container-hidden";
+        e.className = "maintopnavDiv-hidden";
 };
 
-mkgnaoNs.hideModalLogoutBodyClick = function (e) {
-    if (e.target != document.getElementById("logoutModalLogout") &&
-        e.target != document.getElementById("logoutClick")) {
-        mkgnaoNs.hideModalLogout();
-    }
+mkgnaoNs.hideTopMenuLogoutBodyClick = function (e) {
+        mkgnaoNs.hideTopMenu();
 };
+
+
+/*
+
+
+
+ */
 
 mkgnaoNs.hideModalLogout = function () {
     var e = document.getElementById("Modal-flex-container-logout");
@@ -169,5 +173,9 @@ mkgnaoNs.loadMain = function () {
     var bodyTop = document.getElementById("bodyTop");
     if (bodyTop)
         bodyTop.addEventListener('click', mkgnaoNs.hideModalLogoutBodyClick);
+
+    var topMenu = document.getElementById("topMenu");
+    if (topMenu)
+        topMenu.addEventListener('click', mkgnaoNs.toggleTopMenu);
 };
 /* END public/js/main.js */

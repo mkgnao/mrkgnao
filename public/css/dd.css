@@ -37,9 +37,16 @@ dd > nav > ul > li a + div {
     width: 195px;
 }
 
+/*
 dd > nav > ul > li:hover a + div {
     display: block;
 }
+*/
+
+.ddShow {
+    display: block;
+}
+
 
 dd > nav > ul > li a + div > ul {
     list-style-type: none;

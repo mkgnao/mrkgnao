@@ -1,12 +1,13 @@
 <!-- BEGIN LAYOUTS/PARTIALS/MAINTOPNAV -->
+
 <dd>
     <nav role="navigation">
         <ul>
             <li>
-                <a href="#">
+                <a href="#" id="topMenu">
                     {{ strtolower(Auth::user()->name) }} <!--span class="smallTriangle">&#9660;</span-->
                 </a>
-                <div>
+                <div id="maintopnavDiv">
                     <ul>
                         <li>
                             <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>

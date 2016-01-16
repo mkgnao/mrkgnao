@@ -1122,6 +1122,7 @@ strong {
     margin-top: 1.5em
 }
 
+/*
 .writersList:after {
     position: absolute;
     bottom: 0;
@@ -1132,9 +1133,9 @@ strong {
     rgba(252,252,252, 1) 12%,
     rgba(252,252,252, 0) 30%
     );
-    pointer-events: none; /* so the text is still selectable */
+    pointer-events: none;
 }
-
+*/
 
 .HolyGrail-form {
     font-size: 3em;

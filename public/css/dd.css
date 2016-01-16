@@ -43,7 +43,12 @@ dd > nav > ul > li:hover a + div {
 }
 */
 
-.ddShow {
+.maintopnavDiv-hidden {
+    display: none;
+}
+
+
+.maintopnavDiv-shown {
     display: block;
 }
 

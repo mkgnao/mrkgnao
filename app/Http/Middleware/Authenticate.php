@@ -41,12 +41,11 @@ class Authenticate
         if (count($urlComp) < 2)
             return true;
 
-        if ($urlComp[0] != "u")
-            return true;
-
-        $id = Util::idStrip($urlComp[1]);
-        if ($id == \Auth::id())
-            return true;
+        if ($urlComp[0] == "u" || $urlComp[0] == "a") {
+            $id = Util::idStrip($urlComp[1]);
+            if ($id == \Auth::id())
+                return true;
+        }
 
         /*if (count($urlComp) > 3 && $urlComp[3] == "public") {
             $tw_coupling = TwCoupling::find($id);

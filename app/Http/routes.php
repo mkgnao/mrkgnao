@@ -87,20 +87,11 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::auth();
 
     Route::get('/', function () {
-        //return Redirect::to('/u/' . \Auth::id() . '/main');
         return view('mdcontent', array('md_name' => 'welcome'));
     });
 
 
-    Log.info('in view: '.$view->getName());
-
-    Route::post('/u/{id}/p/md/{mdName}/store', array('as' => '/u/p/md/store', 'uses' => 'MdController@store'));
-
-    Route::get('/u/{id}/p/md/{mdName}/get', array('as' => '/u/p/md/get', 'uses' => 'MdController@get'));
-
-    Route::get('/u/{id}/p/md/{mdName}/edit', array('as' => '/u/p/md/edit', 'uses' => 'MdController@edit'));
-
-    Route::resource('/u/p/md', 'MdController');
+    Route::resource('a.p', 'MdController');
 
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));

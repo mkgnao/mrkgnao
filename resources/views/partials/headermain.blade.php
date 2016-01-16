@@ -1,3 +1,4 @@
+<!-- BEGIN LAYOUTS/PARTIALS/HEADERMAIN -->
 <header class="HolyGrail-header" id="HolyGrail-header">
     <div class="Header Header--cozy" role="banner">
         <div class="Header-titles">
@@ -21,3 +22,4 @@
         </div>
     </div>
 </header>
+<!-- END LAYOUTS/PARTIALS/HEADERMAIN -->

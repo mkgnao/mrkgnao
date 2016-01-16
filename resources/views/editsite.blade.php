@@ -4,7 +4,7 @@
 
 @section('content')
 
-    {{ Form::model($mdContent, array('route' => '/xxx', 2)) }}
+    {{ Form::model($mdContent, array('route' => 'xxx', 2)) }}
 
     {{ Form::label('md_content', 'Content') }}
     {{ Form::text('md_content') }}

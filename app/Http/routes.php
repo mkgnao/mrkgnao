@@ -27,6 +27,12 @@ View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
 
+Route::get('xxx', function() {
+    return View::make('editsite')->with('mdContent', \App\Models\MdContent::find(2));
+});
+
+
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts
@@ -68,15 +74,6 @@ Route::group(['middleware' != 'web'], function () {
     Route::get('/internships', function () {
         return view('mdcontent', array('md_name' => 'internships'));
     });
-
-
-    Route::get('/xxx', function() {
-        return View::make('editsite')->with('mdContent', \App\Models\MdContent::find(2));
-    });
-
-    Route::post('/md/edit', function() {
-    });
-
 
 });
 

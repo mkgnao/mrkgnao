@@ -43,23 +43,23 @@ Route::group(['middleware' != 'web'], function () {
     });
 
     Route::get('/about', function () {
-        return view('mdcontent', array('mdname' => 'about'));
+        return view('mdcontent', array('md_name' => 'about'));
     });
 
     Route::get('/writers', function () {
-        return view('mdcontent', array('mdname' => 'writers'));
+        return view('mdcontent', array('md_name' => 'writers'));
     });
 
     Route::get('/projects', function () {
-        return view('mdcontent', array('mdname' => 'projects'));
+        return view('mdcontent', array('md_name' => 'projects'));
     });
 
     Route::get('/partners', function () {
-        return view('mdcontent', array('mdname' => 'partners'));
+        return view('mdcontent', array('md_name' => 'partners'));
     });
 
     Route::get('/internships', function () {
-        return view('mdcontent', array('mdname' => 'internships'));
+        return view('mdcontent', array('md_name' => 'internships'));
     });
 
 

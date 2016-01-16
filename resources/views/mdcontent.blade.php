@@ -9,7 +9,7 @@
         <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
             <div class="Grid-cell">
                 <div class="writersList">
-                    {!! $markdownService->get($mdname) !!}
+                    {!! $markdownService->get($md_name) !!}
                 </div>
             </div>
         </div>

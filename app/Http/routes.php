@@ -81,6 +81,8 @@ Route::group(['middleware' != 'web'], function () {
 |
 */
 
+
+
 Route::group(['middleware' => 'web'], function ($view) {
     Route::auth();
 
@@ -88,17 +90,9 @@ Route::group(['middleware' => 'web'], function ($view) {
         return view('mdcontent', array('name' => 'welcome'));
     });
 
-    Route::patch('md.update', 'MdController@update');
+    Route::patch('md/update/{id}', 'MdController@update');
 
-    Route::patch('md/edit', array(
-        'as' => 'md.update',
-        'uses' => 'MdController@update'
-    ));
-
-    Route::get('md/{id}', array(
-        'as' => 'md.edit',
-        'uses' => 'MdController@edit'
-    ));
+    Route::get('md/{id}', 'MdController@edit');
 
     Route::resource('md', 'MdController');
 

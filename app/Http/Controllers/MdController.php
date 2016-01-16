@@ -25,7 +25,7 @@ class MdController extends Controller
     public function show($id)
     {
         $mdContent = MdContent::findOrFail($id);
-        return view('md.show', ['mdContent' => MdContent::findOrFail($id)]);
+        return view('md/show', ['mdContent' => MdContent::findOrFail($id)]);
     }
 
     /**
@@ -39,7 +39,7 @@ class MdController extends Controller
         \Log::info('show: '.$id);
         $mdContent = MdContent::findOrFail($id);
         \Log::info('show find or fail');
-        return view('md.edit', ['mdContent' => MdContent::findOrFail($id)]);
+        return view('md/edit', ['mdContent' => MdContent::findOrFail($id)]);
     }
 
     /**
@@ -59,6 +59,6 @@ class MdController extends Controller
 
         Session::flash('message', 'saved');
 
-        return Redirect::route('md.edit', ['mdContent' => MdContent::findOrFail($id)]);
+        return Redirect::route('/');
     }
 }

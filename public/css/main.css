@@ -1252,7 +1252,8 @@ strong {
 }
 
 .InputAddOn-button-login:hover {
-    background: whitesmoke;
+    background: #545454;
+    color: #b7b7b7;
 }
 
 .InputAddOn-item-checkbox {

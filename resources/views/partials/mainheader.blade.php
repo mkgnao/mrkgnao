@@ -12,27 +12,27 @@
 
         </div>
 
-        {{ dd($view_name) }}
-
+        @if ($view_name == "welcome")
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
-                    about
+                    <a href="{{ url('/about') }}">about</a>
                 </div>
                 <div class="Grid-cell">
-                    writers
+                    <a href="{{ url('/writers') }}">writers</a>
                 </div>
                 <div class="Grid-cell">
-                    partners
+                    <a href="{{ url('/partners') }}">partners</a>
                 </div>
                 <div class="Grid-cell">
-                    projects
+                    <a href="{{ url('/projects') }}">projects</a>
                 </div>
                 <div class="Grid-cell">
-                    internships
+                    <a href="{{ url('/internships') }}">internships</a>
                 </div>
             </div>
         </div>
+        @endif
     </div>
 </header>
 <!-- END LAYOUTS/PARTIALS/HEADERMAIN -->

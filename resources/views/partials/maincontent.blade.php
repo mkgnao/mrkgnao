@@ -11,10 +11,6 @@
                         <a class="center-link" href="{{ url('/partners') }}">partners</a>
                         <a class="center-link" href="{{ url('/contact') }}">contact</a>
                     </div>
-
-                    <div class="writersList">
-                        {!! $markdownService->get($name) !!}
-                    </div>
                 </div>
             </div>
 

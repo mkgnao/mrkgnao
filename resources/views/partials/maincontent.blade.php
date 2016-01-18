@@ -6,10 +6,10 @@
 
             <div class="center-links">
 
-                <p><a class="center-link" href="{{ url('/writers') }}">writers</a></p>
-                <p><a class="center-link" href="{{ url('/projects') }}">projects</a></p>
-                <p><a class="center-link" href="{{ url('/partners') }}">partners</a></p>
-                <p><a class="center-link" href="{{ url('/contact') }}">contact</a></p>
+                <a class="center-link" href="{{ url('/writers') }}">writers</a>
+                <a class="center-link" href="{{ url('/projects') }}">projects</a>
+                <a class="center-link" href="{{ url('/partners') }}">partners</a>
+                <a class="center-link" href="{{ url('/contact') }}">contact</a>
 
             </div>
 

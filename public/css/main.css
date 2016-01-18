@@ -1865,6 +1865,20 @@ pre {
     text-align: center !important;
 }
 
+.center-links {
+    font-size: 5.2em;
+    opacity: 0.82;
+    -webkit-user-select: none; /* Chrome/Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+    text-align: center !important;
+}
+
 .bla {
     font-size: 1.2em;
     /*opacity: 0.5;*/

@@ -10,9 +10,8 @@ use App\Models\MdContent;
 
 class UploadController extends Controller
 {
-    private static function save(Request $request, $id, $mdId)
+    private static function save(Request $request, $mdId)
     {
-        $user = User::findOrFail($id);
 
         if (!$request->has('name'))
             return Redirect::route('/');
@@ -32,7 +31,7 @@ class UploadController extends Controller
 
         $mdFileName = $mdName.'_'.time();
 
-        $path = 'u/'.$user->id.'/d/f/'.$mdFileName;
+        $path = 'u//d/f/'.$mdFileName;
 
         $file->move($path);
 
@@ -51,29 +50,29 @@ class UploadController extends Controller
         return Redirect::route('/');
     }
 
-    public function saveAbout(Request $request, $id)
+    public function saveAbout(Request $request)
     {
-        return self::save($request, $id, 1);
+        return self::save($request, 1);
     }
 
-    public function saveWriters(Request $request, $id)
+    public function saveWriters(Request $request)
     {
-        return self::save($request, $id, 2);
+        return self::save($request, 2);
     }
-    public function saveProjects(Request $request, $id)
+    public function saveProjects(Request $request)
     {
-        return self::save($request, $id, 3);
+        return self::save($request, 3);
     }
-    public function savePartners(Request $request, $id)
+    public function savePartners(Request $request)
     {
-        return self::save($request, $id, 4);
+        return self::save($request, 4);
     }
-    public function saveInternships(Request $request, $id)
+    public function saveInternships(Request $request)
     {
-        return self::save($request, $id, 5);
+        return self::save($request, 5);
     }
-    public function saveWelcome(Request $request, $id)
+    public function saveWelcome(Request $request)
     {
-        return self::save($request, $id, 6);
+        return self::save($request, 6);
     }
 }

@@ -4,10 +4,10 @@
         <article class="HolyGrail-content" class="u-textCenter">
             <div class="center-title">the category</div>
 
-            <div class="center-links"><a class="center-links" href="{{ url('/writers') }}">writers</a></div>
-            <div class="center-links"><a class="center-links" href="{{ url('/projects') }}">projects</a></div>
-            <div class="center-links"><a class="center-links" href="{{ url('/partners') }}">partners</a></div>
-            <div class="center-links"><a class="center-links" href="{{ url('/contact') }}">contact</a></div>
+            <div class="center-links"><a href="{{ url('/writers') }}">writers</a></div>
+            <div class="center-links"><a href="{{ url('/projects') }}">projects</a></div>
+            <div class="center-links"><a href="{{ url('/partners') }}">partners</a></div>
+            <div class="center-links"><a href="{{ url('/contact') }}">contact</a></div>
 
             @yield('content')
         </article>

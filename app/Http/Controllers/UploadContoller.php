@@ -13,21 +13,26 @@ class UploadController extends Controller
     private static function save(Request $request, $mdId)
     {
 
+        \Log::info('name: '.$request->all());
+
+        $urlComp = explode("/", parse_url($request->server('HTTP_REFERER'), PHP_URL_PATH));
+
+        if (count($urlComp) < 2)
+            return '< 2, what is '.$urlComp;
+
+        $uploadName = $urlComp[1];
+
+        /*
+        \Log::info('uploadName: '.$uploadName);
+
+        \Log::info('urlComp: '.$urlComp);
+
         \Log::info('id: '.$mdId);
 
         \Log::info('request: '.$request);
-
-        \Log::info('name: '.$request->name);
-
-        \Log::info('HTTP_REFERER: '.$request->server('HTTP_REFERER'));
-
-        if (!$request->has('name'))
-            return 'fail in name';
+        */
 
         $mdName = 'fileid_'.$mdId;
-
-        if ($request->name != $mdName)
-            return 'fail in name != mdName';
 
         if (!$request->hasFile($mdName))
             return 'fail in hasFile';

@@ -28,7 +28,11 @@ View::composer('*', function ($view) {
 });
 
 
-Route::post('/upload/writers', array('as' => 'upload', 'uses' => 'UploadContoller@saveWriters'));
+Route::get('/form/writers', function() {
+    return view('upload', array('name' => 'writers'));
+});
+
+Route::post('/upload/writers', 'UploadContoller@saveWriters');
 
 
 Route::group(['middleware' != 'web'], function () {

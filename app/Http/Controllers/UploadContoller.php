@@ -13,21 +13,25 @@ class UploadController extends Controller
     private static function save(Request $request, $mdId)
     {
 
+        \Log::info('id: '.$mdId);
+
+        \Log::info('request: '.$request);
+
         if (!$request->has('name'))
-            return Redirect::route('/');
+            return 'fail in name';
 
         $mdName = 'fileid_'.$mdId;
 
         if ( $request->name != $mdName)
-            return Redirect::route('/');
+            return 'fail in namae != mdName';
 
         if (!$request->hasFile($mdName))
-            return Redirect::route('/');
+            return 'fail in hasFile';
 
         $file = $request->file($mdName);
 
         if (!$file->isValid())
-            return Redirect::route('/');
+            return 'fail in isValid';
 
         $mdFileName = $mdName.'_'.time();
 
@@ -47,7 +51,7 @@ class UploadController extends Controller
 
         Storage::delete($mdFileName);
 
-        return Redirect::route('/');
+        return 'yay';
     }
 
     public function saveAbout(Request $request)

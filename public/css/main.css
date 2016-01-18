@@ -579,7 +579,6 @@ strong {
     float: right;
 }
 
-
 .Footer-social a, .Footer-social iframe {
     display: inline-block;
     margin: 0 0 1em;
@@ -1229,7 +1228,6 @@ strong {
     opacity: 0.9;
 }
 
-
 .InputAddOn-field:not(:first-child) {
     border-left: 0
 }
@@ -1263,7 +1261,6 @@ strong {
     /*background: #595959;*/
     /*opacity: 0.8;*/
 }
-
 
 .InputAddOn-button-login:hover {
     background: #595959;

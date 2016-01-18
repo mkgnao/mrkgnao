@@ -46,11 +46,9 @@ dd > nav > ul > li:hover a + div {
     display: none;
 }
 
-
 .maintopnavDiv-shown {
     display: block;
 }
-
 
 dd > nav > ul > li a + div > ul {
     list-style-type: none;

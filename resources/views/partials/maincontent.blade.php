@@ -6,18 +6,17 @@
             <div class="Container">
                 <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                     <div class="Grid-cell">
-                            <a class="center-link" href="{{ url('/writers') }}">writers</a>
-                            <a class="center-link" href="{{ url('/projects') }}">projects</a>
-                            <a class="center-link" href="{{ url('/partners') }}">partners</a>
-                            <a class="center-link" href="{{ url('/contact') }}">contact</a>
-                        </div>
+                        <a class="center-link" href="{{ url('/writers') }}">writers</a>
+                        <a class="center-link" href="{{ url('/projects') }}">projects</a>
+                        <a class="center-link" href="{{ url('/partners') }}">partners</a>
+                        <a class="center-link" href="{{ url('/contact') }}">contact</a>
+                    </div>
 
-                        <div class="writersList">
-                            {!! $markdownService->get($name) !!}
-                        </div>
+                    <div class="writersList">
+                        {!! $markdownService->get($name) !!}
                     </div>
                 </div>
-
+            </div>
 
 
             @yield('content')
@@ -27,5 +26,5 @@
         <aside class="HolyGrail-ads u-textCenter">
         </aside>
     </main>
-</div>
-<!-- END LAYOUTS/PARTIALS/MAINCONTENT -->
+    </div>
+    <!-- END LAYOUTS/PARTIALS/MAINCONTENT -->

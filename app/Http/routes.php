@@ -28,7 +28,7 @@ View::composer('*', function ($view) {
 });
 
 
-Route::get('/form/writers', function() {
+Route::get('/form/writers', function () {
     return view('upload', array('name' => 'writers'));
 });
 
@@ -87,7 +87,6 @@ Route::group(['middleware' != 'web'], function () {
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
 
 
 Route::group(['middleware' => 'web'], function ($view) {

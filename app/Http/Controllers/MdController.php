@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use App\Models\MdContent;
+use Illuminate\Http\Request;
 
 class MdController extends Controller
 {
@@ -19,7 +17,7 @@ class MdController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -31,12 +29,12 @@ class MdController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        \Log::info('show: '.$id);
+        \Log::info('show: ' . $id);
         $mdContent = MdContent::findOrFail($id);
         \Log::info('show find or fail');
         return view('md/edit', ['mdContent' => MdContent::findOrFail($id)]);
@@ -45,8 +43,8 @@ class MdController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \Illuminate\Http\Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)

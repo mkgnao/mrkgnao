@@ -116,7 +116,7 @@ mkgnaoNs.toggleTopMenu = function () {
 };
 
 mkgnaoNs.hideTopMenuLogoutBodyClick = function (e) {
-        mkgnaoNs.hideTopMenu();
+    mkgnaoNs.hideTopMenu();
 };
 
 

@@ -1869,6 +1869,12 @@ pre {
     text-align: center !important;
 }
 
+@media (min-width: 576px) {
+    .center-title {
+        font-size: 3.2em;
+    }
+}
+
 .center-links {
     -webkit-box-flex: 1;
     -webkit-flex: 1;
@@ -1878,6 +1884,7 @@ pre {
 }
 
 .center-link {
+    color: black;
     font-size: 3em;
     opacity: 0.82;
     text-decoration: none;

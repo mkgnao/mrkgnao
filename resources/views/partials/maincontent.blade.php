@@ -1,13 +1,17 @@
 <!-- BEGIN LAYOUTS/PARTIALS/MAINCONTENT -->
-<div class="scrollable">
+<p class="scrollable">
     <main class="HolyGrail-body">
         <article class="HolyGrail-content" class="u-textCenter">
             <div class="center-title">the category</div>
 
-            <div class="center-links"><a href="{{ url('/writers') }}">writers</a></div>
-            <div class="center-links"><a href="{{ url('/projects') }}">projects</a></div>
-            <div class="center-links"><a href="{{ url('/partners') }}">partners</a></div>
-            <div class="center-links"><a href="{{ url('/contact') }}">contact</a></div>
+            <div class="center-links">
+
+                <p><a class="center-link" href="{{ url('/writers') }}">writers</a></p>
+                <p><a class="center-link" href="{{ url('/projects') }}">projects</a></p>
+                <p><a class="center-link" href="{{ url('/partners') }}">partners</a></p>
+                <p><a class="center-link" href="{{ url('/contact') }}">contact</a></p>
+
+            </div>
 
             @yield('content')
         </article>

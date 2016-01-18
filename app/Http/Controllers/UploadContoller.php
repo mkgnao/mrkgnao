@@ -10,9 +10,9 @@ class UploadController extends Controller
 {
     private static function save(Request $request, $mdId)
     {
-        $all = $request->all();
+        $file = Input::file('writers');
 
-        \Log::info('writers: ' . $all['writers']);
+        \Log::info('file: ' . $file);
 
         $urlComp = explode("/", parse_url($request->server('HTTP_REFERER'), PHP_URL_PATH));
 

@@ -1865,7 +1865,7 @@ pre {
     text-align: center !important;
 }
 
-.center-links a {
+.center-links, .center-links a {
     font-size: 3em;
     opacity: 0.82;
     text-align: center !important;

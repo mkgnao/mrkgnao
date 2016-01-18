@@ -7,7 +7,7 @@ html {
     -webkit-text-size-adjust: 100%;
     color: black;
     opacity: 0.88;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
     height: 100%;
 }
 
@@ -22,7 +22,7 @@ body {
     flex-grow: 1; /* ...but make it fill all remaining space  */
 }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+article, aside, details, figcaption, figure, footer, header, main, menu, nav, section, summary {
     display: block
 }
 
@@ -256,7 +256,7 @@ td, th {
     text-rendering: optimizeLegibility;
     -webkit-font-feature-settings: "kern" 1, "kern";
     -moz-font-feature-settings: "kern" 1, "kern";
-    font-feature-settings: kern\ 1, kern;
+    /*font-feature-settings: kern, 1;*/
     -webkit-font-kerning: normal;
     -moz-font-kerning: normal;
     font-kerning: normal
@@ -411,7 +411,6 @@ strong {
     height: 4pc;
     width: 4pc;
     margin: 0 .5em .5em;
-    background: url(images/browser-logos.jpg) no-repeat 0 0;
     background-size: auto 100%
 }
 
@@ -1153,7 +1152,7 @@ strong {
     -webkit-box-ordinal-group: 0;
     -webkit-order: -1;
     -ms-flex-order: -1;
-    order: -1
+    order: -1;
 }
 
 .HolyGrail-ads, .HolyGrail-nav {

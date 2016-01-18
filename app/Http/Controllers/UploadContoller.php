@@ -23,7 +23,7 @@ class UploadController extends Controller
         $mdName = 'fileid_'.$mdId;
 
         if ( $request->name != $mdName)
-            return 'fail in namae != mdName';
+            return 'fail in name != mdName';
 
         if (!$request->hasFile($mdName))
             return 'fail in hasFile';

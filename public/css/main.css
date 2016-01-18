@@ -7,6 +7,8 @@ html {
     -webkit-text-size-adjust: 100%;
     color: black;
     opacity: 0.88;
+    text-rendering: optimizeLegibility
+    height: 100%;
 }
 
 body {
@@ -41,7 +43,6 @@ audio:not([controls]) {
 a {
     background-color: transparent;
     text-decoration: none;
-    color: whitesmoke;
 }
 
 a:active, a:hover {
@@ -67,7 +68,6 @@ h1 {
 
 mark {
     background: #ff0;
-    color: #000
 }
 
 small {
@@ -277,13 +277,6 @@ td, th {
     box-sizing: border-box
 }
 
-html {
-    height: 100%;
-    color: whitesmoke;
-    font: 400 1em/1.4 'didotregularx';
-    text-rendering: optimizeLegibility
-}
-
 @media (-webkit-min-device-pixel-ratio: 1.5),(min-resolution: 1.5dppx),(min-resolution: 144dpi) {
     html {
         font-weight: 300
@@ -331,12 +324,11 @@ code, pre {
 code {
     font-size: .9em;
     font-weight: 400;
-    color: #000
 }
 
 pre > code {
     font: inherit;
-    color: inherit
+    color: inherit;
 }
 
 a {
@@ -511,7 +503,6 @@ strong {
 .Error {
     padding: 1em 1.5em;
     background: #c00;
-    color: #fff;
     font-weight: 700;
     text-align: center
 }
@@ -532,7 +523,6 @@ strong {
 
 .Feature-title {
     margin: 0 0 .5em;
-    color: #404040;
     text-align: center;
     -webkit-transition: color .1s;
     transition: color .1s
@@ -553,7 +543,6 @@ strong {
     padding: 24px;
     padding: 1.5rem;
     /*background: #404040;*/
-    color: whitesmoke;
     font-size: .85em;
     /*text-align: center*/
 }
@@ -1236,7 +1225,6 @@ strong {
     -ms-flex: 1;
     flex: 1;
     background-color: #595959;
-    color: black;
     opacity: 0.9;
 }
 
@@ -1271,14 +1259,12 @@ strong {
     font: inherit;
     font-size: 1.3em;
     /*background: #595959;*/
-    color: #b7b7b7;
     /*opacity: 0.8;*/
 }
 
 
 .InputAddOn-button-login:hover {
     background: #595959;
-    color: #b7b7b7;
 }
 
 .InputAddOn-item-checkbox {
@@ -1359,7 +1345,6 @@ strong {
 
 .Notice {
     /*background-color: #edffdb;*/
-    color: rgba(0, 0, 0, .6);
     font-size: .9em;
     margin-bottom: 1.5em;
     padding: 1.2em 1.5em
@@ -1780,31 +1765,25 @@ strong {
     display: block;
     overflow-x: auto;
     padding: .5em;
-    color: #333;
     /*background: #f8f8f8;*/
     -webkit-text-size-adjust: none
 }
 
 .diff .hljs-header, .hljs-comment {
-    color: #998;
     font-style: italic
 }
 
 .css .rule .hljs-keyword, .hljs-keyword, .hljs-request, .hljs-status, .hljs-subst, .hljs-winutils, .nginx .hljs-title {
-    color: #333;
     font-weight: 700
 }
 
 .hljs-hexcolor, .hljs-number, .ruby .hljs-constant {
-    color: teal
 }
 
 .hljs-doctag, .hljs-string, .hljs-tag .hljs-value, .tex .hljs-formula {
-    color: #d14
 }
 
 .hljs-id, .hljs-title, .scss .hljs-preprocessor {
-    color: #900;
     font-weight: 700
 }
 
@@ -1813,33 +1792,26 @@ strong {
 }
 
 .hljs-class .hljs-title, .hljs-type, .tex .hljs-command, .vhdl .hljs-literal {
-    color: #458;
     font-weight: 700
 }
 
 .django .hljs-tag .hljs-keyword, .hljs-rule .hljs-property, .hljs-tag, .hljs-tag .hljs-title {
-    color: navy;
     font-weight: 400
 }
 
 .hljs-attribute, .hljs-name, .hljs-variable, .lisp .hljs-body {
-    color: teal
 }
 
 .hljs-regexp {
-    color: #009926
 }
 
 .clojure .hljs-keyword, .hljs-prompt, .hljs-symbol, .lisp .hljs-keyword, .ruby .hljs-symbol .hljs-string, .scheme .hljs-keyword, .tex .hljs-special {
-    color: #990073
 }
 
 .hljs-built_in {
-    color: #0086b3
 }
 
 .hljs-cdata, .hljs-doctype, .hljs-pi, .hljs-pragma, .hljs-preprocessor, .hljs-shebang {
-    color: #999;
     font-weight: 700
 }
 
@@ -1856,7 +1828,6 @@ strong {
 }
 
 .hljs-chunk {
-    color: #aaa
 }
 
 pre {
@@ -1868,20 +1839,17 @@ pre {
 }
 
 .loginout {
-    color: black;
     font-size: 1.1em;
     /*opacity: 0.6;*/
 }
 
 .topnav {
     text-align: center !important;
-    color: black;
     font-size: 1.3em;
     /*opacity: 0.7;*/
 }
 
 .center-title {
-    color: black;
     font-size: 4em;
     -webkit-user-select: none; /* Chrome/Safari */
     -moz-user-select: none; /* Firefox */
@@ -1895,7 +1863,6 @@ pre {
 }
 
 .bla {
-    color: black;
     font-size: 1.2em;
     /*opacity: 0.5;*/
     text-align: center !important;

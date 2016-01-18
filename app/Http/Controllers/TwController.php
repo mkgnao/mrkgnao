@@ -8,7 +8,6 @@ use App\Http\TeamWorkPm;
 use App\Models\TwCoupling as TwCoupling;
 use Auth;
 use DB;
-use Illuminate\Http\Request;
 
 class TwController extends Controller
 {

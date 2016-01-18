@@ -3,10 +3,7 @@
 namespace App\Services;
 
 use App\Models\MdContent as MdContent;
-use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Bus\SelfHandling;
-use Illuminate\Contracts\Mail\Mailer;
-use Illuminate\Support\Facades\App;
 use League\CommonMark\Converter;
 
 

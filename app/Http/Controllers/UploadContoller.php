@@ -8,13 +8,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\MdContent;
 
-class MdController extends Controller
+class UploadController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     private static function save(Request $request, $id, $mdId)
     {
         $user = User::findOrFail($id);

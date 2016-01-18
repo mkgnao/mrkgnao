@@ -7,7 +7,7 @@
             @endif
         </div>
         <div class="Footer-credits">
-            <span class="Footer-credit">copyright © 2016</span>
+            <span class="Footer-credit">copyright © 2016 the category | contact@thecategory.com | <a class="Footer-credit" href="{{ url('/about') }}">about</a></span>
         </div>
     </div>
 </footer>

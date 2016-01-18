@@ -1251,7 +1251,8 @@ strong {
 .InputAddOn-button-fronttopnav {
     font: inherit;
     font-size: 1.3em;
-    /*opacity: 0.8;*/
+    color: black;
+    opacity: 0.88;
 }
 
 .InputAddOn-button-fronttopnav:hover {

@@ -17,13 +17,7 @@ class UploadController extends Controller
 
         \Log::info('request: '.$request);
 
-        if (!$request->has('name'))
-            return 'fail in name';
-
         $mdName = 'fileid_'.$mdId;
-
-        if ( $request->name != $mdName)
-            return 'fail in name != mdName';
 
         if (!$request->hasFile($mdName))
             return 'fail in hasFile';

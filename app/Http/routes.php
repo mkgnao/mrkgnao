@@ -32,7 +32,7 @@ Route::get('/form/writers', function() {
     return view('upload', array('name' => 'writers'));
 });
 
-Route::post('/upload/writers', 'UploadContoller@saveWriters');
+Route::post('/upload/writers', 'UploadController@saveWriters');
 
 
 Route::group(['middleware' != 'web'], function () {

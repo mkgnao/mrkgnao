@@ -10,8 +10,10 @@ use App\Models\MdContent;
 
 class UploadController extends Controller
 {
-    private static function save(Request $request, $mdId)
+    private static function save(Request $request, $id, $mdId)
     {
+        $user = User::findOrFail($id);
+
         if (!$request->has('name'))
             return Redirect::route('/');
 
@@ -30,7 +32,7 @@ class UploadController extends Controller
 
         $mdFileName = $mdName.'_'.time();
 
-        $path = 'u//d/f/'.$mdFileName;
+        $path = 'u/'.$user->id.'/d/f/'.$mdFileName;
 
         $file->move($path);
 
@@ -54,9 +56,9 @@ class UploadController extends Controller
         return self::save($request, $id, 1);
     }
 
-    public function saveWriters(Request $request)
+    public function saveWriters(Request $request, $id)
     {
-        return self::save($request, 2);
+        return self::save($request, $id, 2);
     }
     public function saveProjects(Request $request, $id)
     {

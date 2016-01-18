@@ -13,7 +13,7 @@ class UploadController extends Controller
     private static function save(Request $request, $mdId)
     {
 
-        \Log::info('all: '.print_r($request->all()));
+        \Log::info('writers: '.print_r($request->all()->writers));
 
         $urlComp = explode("/", parse_url($request->server('HTTP_REFERER'), PHP_URL_PATH));
 

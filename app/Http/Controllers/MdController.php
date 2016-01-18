@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use App\Models\MdContent;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class MdController extends Controller
 {
@@ -37,6 +38,7 @@ class MdController extends Controller
         \Log::info('show: ' . $id);
         $mdContent = MdContent::findOrFail($id);
         \Log::info('show find or fail');
+
         return view('md/edit', ['mdContent' => MdContent::findOrFail($id)]);
     }
 

@@ -10,17 +10,6 @@ class UploadController extends Controller
 {
     private static function save(Request $request, $mdId)
     {
-        $file = Input::file('writers');
-
-        \Log::info('file: ' . $file);
-
-        $urlComp = explode("/", parse_url($request->server('HTTP_REFERER'), PHP_URL_PATH));
-
-        if (count($urlComp) < 2)
-            return '< 2, what is ' . $urlComp;
-
-        $uploadName = $urlComp[1];
-
         /*
         \Log::info('uploadName: '.$uploadName);
 

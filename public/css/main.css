@@ -1,7 +1,7 @@
 /* BEGIN public/css/main.css */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 html {
-    background-color: #FDFDFD;
+    background-color: #fcfcfc;
     font-family: 'didotregularx';
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
@@ -1883,6 +1883,13 @@ pre {
     text-decoration: none;
 }
 
+.center-link:link, .center-link:visited, .center-link:active {
+    text-decoration: none;
+}
+
+.center-link:hover {
+    opacity: 0.92;
+}
 
 .bla {
     font-size: 1.2em;

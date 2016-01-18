@@ -2,7 +2,7 @@
 <p class="scrollable">
     <main class="HolyGrail-body">
         <article class="HolyGrail-content" class="u-textCenter">
-            <div class="center-title">the category</div>
+
 
             <div class="center-links">
 

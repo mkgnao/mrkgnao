@@ -1869,7 +1869,7 @@ pre {
     text-align: center !important;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 300px) {
     .center-title {
         font-size: 3.2em;
     }

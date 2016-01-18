@@ -28,6 +28,9 @@ View::composer('*', function ($view) {
 });
 
 
+Route::post('/upload/writers', array('as' => 'upload', 'uses' => 'UploadContoller@saveWriters'));
+
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts

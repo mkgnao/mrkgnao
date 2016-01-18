@@ -2,33 +2,13 @@
 <div class="scrollable">
     <main class="HolyGrail-body">
         <article class="HolyGrail-content" class="u-textCenter">
-            <dd>
-                <nav role="navigation">
-                    <ul>
-                        <li>
-                            <a href="#" id="topMenu" class="maintopnavDiv-shown">
-                                the category
-                            </a>
-                            <div id="maintopnavDiv-shown">
-                                <ul>
-                                    <li>
-                                        <a class="InputAddOn-button-fronttopnav" href="{{ url('/writers') }}">writers</a>
-                                    </li>
-                                    <li>
-                                        <a class="InputAddOn-button-fronttopnav" href="{{ url('/projects') }}">projects</a>
-                                    </li>
-                                    <li>
-                                        <a class="InputAddOn-button-fronttopnav" href="{{ url('/partners') }}">partners</a>
-                                    </li>
-                                    <li>
-                                        <a class="InputAddOn-button-fronttopnav" href="{{ url('/contact') }}">contact</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </nav>
-            </dd>
+            <div class="center-title">the category</div>
+
+            <div><a class="center-title" href="{{ url('/writers') }}">writers</a></div>
+            <div><a class="center-title" href="{{ url('/projects') }}">projects</a></div>
+            <div><a class="center-title" href="{{ url('/partners') }}">partners</a></div>
+            <div><a class="center-title" href="{{ url('/contact') }}">contact</a></div>
+
             @yield('content')
         </article>
         <nav class="HolyGrail-nav u-textCenter">

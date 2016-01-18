@@ -6,10 +6,10 @@
                 <nav role="navigation">
                     <ul>
                         <li>
-                            <a href="#" id="topMenu">
+                            <a href="#" id="topMenu" class="maintopnavDiv-shown">
                                 the category
                             </a>
-                            <div id="maintopnavDiv">
+                            <div id="maintopnavDiv-shown">
                                 <ul>
                                     <li>
                                         <a class="InputAddOn-button-fronttopnav" href="{{ url('/writers') }}">writers</a>

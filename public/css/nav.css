@@ -26,11 +26,12 @@
     max-width: 140px;
     text-decoration: none;
     display: flex;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
     color: black;
     opacity: 90;
     border-bottom: 1px solid silver;
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    margin: 0.3em 0.3em 0.3em 0.3em; }
     .main-nav2 a:hover, .main-nav2 a:focus {
       color: black;
       opacity: 98; }
@@ -49,12 +50,19 @@
   .main-nav2.outlines * {
     outline: 1px solid silver; }
 
+/*
 @media (min-width: 1000px) {
-  .main-nav2 a {
-    max-width: 400px;
-    font-size: 1.2rem; }
-  .main-nav2 .icon {
-    width: 25px;
-    height: 25px; } }
+  .main-nav2 {
+    a {
+      max-width: 400px;
+      font-size: 1.2rem;
+    }
+    .icon {
+      width: 25px;
+      height: 25px;
+    }
+  }
+}
+*/
 
 /*# sourceMappingURL=nav.css.map */

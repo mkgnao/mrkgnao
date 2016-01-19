@@ -30,11 +30,12 @@
     max-width: 140px;
     text-decoration: none;
     display: flex;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
     color: black;
     opacity: 90;
     border-bottom: 1px solid silver;
     font-size: 1.2em;
+    margin: 0.3em 0.3em 0.3em 0.3em;
     &:hover, &:focus {
       color: black;
       opacity: 98;
@@ -61,7 +62,7 @@
     }
   }
 }
-
+/*
 @media (min-width: 1000px) {
   .main-nav2 {
     a {
@@ -74,3 +75,4 @@
     }
   }
 }
+*/

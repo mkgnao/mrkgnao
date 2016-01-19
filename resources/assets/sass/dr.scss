@@ -1,0 +1,19 @@
+/* BEGIN public/css/dr.css */
+
+/*noinspection CssUnknownTarget*/
+@font-face {
+    font-family: 'didotregularx';
+
+    /*noinspection CssInvalidPropertyValue,CssInvalidPropertyValue*/
+    src: url('/fonts/dr.eot');
+    /*noinspection CssInvalidPropertyValue*/
+    src: url('fonts/dr.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/dr.woff2') format('woff2'),
+    url('/fonts/dr.woff') format('woff'),
+    url('/fonts/dr.ttf') url('/fonts/dr.svg#DidotRegular'),
+    format('truetype') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* END public/css/dr.css */

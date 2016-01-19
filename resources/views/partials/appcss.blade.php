@@ -6,5 +6,6 @@
 {!! Html::style('css/main.css') !!}
 {!! Html::style('css/modal.css') !!}
 {!! Html::style('css/twtable.css') !!}
+{!! Html::style('css/nav.css') !!}
 
 <!-- END LAYOUTS/PARTIALS/APPCSS -->

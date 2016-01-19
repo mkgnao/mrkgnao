@@ -1,12 +1,32 @@
-<div class="Container">
-    <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
-        <div class="Grid-cell">
-            <div class="center-links">
-                <a class="center-link" href="{!! url('/writers') !!}">writers</a>
-                <a class="center-link" href="{!! url('/projects') !!}">projects</a>
-                <a class="center-link" href="{!! url('/partners') !!}">partners</a>
-                <a class="center-link" href="{!! url('/contact') !!}">contact</a>
-            </div>
-        </div>
-    </div>
-</div>
+<nav role='navigation' class="main-nav" id="main-nav">
+    <ul id="main-nav-list">
+        <li>
+            <a href="#">
+                <div>
+                    writers
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div>
+                    projects
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div>
+                    partners
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <div>
+                    contact
+                </div>
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -1,100 +1,66 @@
 /* BEGIN public/css/twtable.css */
 table.twTable {
-    border-collapse: collapse;
-    border: 1px solid silver;
-    font-size: 1.2em;
-    width: 100%;
-    border-radius: 5px;
-}
+  border-collapse: collapse;
+  border: 1px solid silver;
+  font-size: 1.2em;
+  width: 100%;
+  border-radius: 5px; }
 
 .twTable caption {
-    padding: 1em 4px;
-}
+  padding: 1em 4px; }
 
 .twTable td, th {
-    padding: 6px;
-    border: 1px solid silver;
-    text-align: left;
-    text-transform: lowercase;
-    border-radius: 5px;
-}
+  padding: 6px;
+  border: 1px solid silver;
+  text-align: left;
+  text-transform: lowercase;
+  border-radius: 5px; }
 
 .twTable th {
-    padding-right: .5em;
-    vertical-align: top;
-}
+  padding-right: .5em;
+  vertical-align: top; }
 
 .twTable thead th {
-    text-align: center;
-}
-
-.twTable .odd td {
-}
-
-.twTable .odd th {
-}
-
-.twTable td a, td a:link {
-}
-
-.twTable td a:visited {
-}
-
-.twTable td a:hover, td a:focus {
-}
-
-.twTable th a, td a:active {
-}
-
-.twTable tfoot th, tfoot td {
-}
+  text-align: center; }
 
 .twTable th + td {
-    padding-left: .5em;
-}
+  padding-left: .5em; }
 
 /*
 Max width before this PARTICULAR table gets nasty
 This query will take effect for any screen smaller than 760px
 and also iPads specifically.
 */
-@media only screen and (max-width: 760px),
-(min-device-width: 768px) and (max-device-width: 1024px) {
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block; }
 
-    /* Force table to not be like tables anymore */
-    table, thead, tbody, th, td, tr {
-        display: block;
-    }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
 
-    /* Hide table headers (but not display: none;, for accessibility) */
-    thead tr {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
+  tr {
+    border: 1px solid #ccc; }
 
-    tr {
-        border: 1px solid #ccc;
-    }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; }
 
-    td {
-        /* Behave  like a "row" */
-        border: none;
-        border-bottom: 1px solid #eee;
-        position: relative;
-        padding-left: 50%;
-    }
-
-    td:before {
-        /* Now like a table header */
-        position: absolute;
-        /* Top/left values mimic padding */
-        top: 6px;
-        left: 6px;
-        width: 45%;
-        padding-right: 10px;
-        white-space: nowrap;
-    }
-}
-
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap; } }
 /* END public/css/twtable.css */
+
+/*# sourceMappingURL=twtable.css.map */

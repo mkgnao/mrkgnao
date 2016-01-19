@@ -11,8 +11,6 @@
                 </div>
             </div>
 
-            The writing company.
-
             @yield('content')
         </article>
         <nav class="HolyGrail-nav u-textCenter">

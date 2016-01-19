@@ -1469,7 +1469,7 @@ pre {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  font-size: 3.8em;
+  font-size: 2.8em;
   opacity: 0.82;
   -webkit-user-select: none;
   /* Chrome/Safari */
@@ -1481,7 +1481,8 @@ pre {
   -o-user-select: none;
   user-select: none;
   cursor: default;
-  text-align: center !important; }
+  text-align: center !important;
+  margin-top: em; }
 
 .center-links {
   -webkit-box-flex: 1;
@@ -1495,7 +1496,7 @@ pre {
   font-size: 1.4em;
   opacity: 0.82;
   text-decoration: underline;
-  margin: 0.4em 0.4em 0.4em 0.4em; }
+  margin: 0.8em 0.8em 0.8em 0.8em; }
 
 .center-link:link, .center-link:visited, .center-link:active {
   text-decoration: underline; }

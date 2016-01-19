@@ -1,6 +1,6 @@
 <div class="topnav2">
     <nav role='navigation' class="main-nav2" id="main-nav2">
-        <ul id="main-nav-list">
+        <ul id="main-nav-list2">
             <li>
                 <a href="#">
                     <div>

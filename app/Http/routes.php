@@ -25,11 +25,6 @@ View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
 
-Route::get('/', function() {
-    \Log::info('yay yay');
-    return 'yay';
-});
-
 /*
 Route::get('/form/writers', function () {
     return view('upload', array('name' => 'writers'));

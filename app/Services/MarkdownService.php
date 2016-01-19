@@ -22,7 +22,7 @@ class MarkdownService implements SelfHandling
         $mdContent = MdContent::where('name', $mdContentName)->first();
 
         if (!$mdContent)
-            return 'could not find: ' . $mdContentName;
+            '';
 
 
         return $this->converter->convertToHtml($mdContent->content);

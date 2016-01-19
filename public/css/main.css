@@ -1497,10 +1497,10 @@ pre {
 
 .center-link {
   color: black;
-  font-size: 1.6em;
+  font-size: 1.5em;
   opacity: 0.96;
   text-decoration: underline;
-  margin: 1em 1em 1em 0.8em; }
+  margin: 1.2em 1.2em 1.2em 1.2em; }
 
 .center-link:link, .center-link:visited, .center-link:active {
   text-decoration: underline; }

@@ -11,13 +11,15 @@
   }
   a {
     padding: 1rem 0.5rem;
-    font-size: 1.6rem;
     max-width: 140px;
     text-decoration: none;
     display: flex;
     align-items: flex-start;
     color: black;
     opacity: 90;
+    border-bottom: 1px solid silver;
+    font-size: 1.2em;
+    margin: 2.6em 2.6em 2.6em 2.6em;
     &:hover, &:focus {
       color: black;
       opacity: 98;

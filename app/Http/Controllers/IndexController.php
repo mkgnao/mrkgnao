@@ -7,12 +7,10 @@ use App\Http\Requests;
 
 class IndexController extends Controller
 {
-    public function __construct()
-    {
-    }
-
     public function show()
     {
+        \Log::info('index show');
+
         return \View::make('index');
     }
 }

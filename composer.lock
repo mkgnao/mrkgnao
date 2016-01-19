@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b6304e3a9e0729eec33e820cc661343d",
-    "content-hash": "8d617078fbb88c5d33b3738b259d5a86",
+    "hash": "6367f7ef2a067e57d054e9e667521359",
+    "content-hash": "a0ebf123137435376c5a071e03db393d",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -284,52 +284,6 @@
                 "markdown"
             ],
             "time": "2015-11-14 11:57:14"
-        },
-        {
-            "name": "illuminate/html",
-            "version": "v5.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/illuminate/html.git",
-                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
-                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "~5.0",
-                "illuminate/session": "~5.0",
-                "illuminate/support": "~5.0",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminate\\Html\\": ""
-                },
-                "files": [
-                    "helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "time": "2015-01-01 16:31:18"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -650,16 +604,16 @@
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.2.1",
+            "version": "v5.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "add2c74b144d0a25ba27a1506b7ce84e6bcadd64"
+                "reference": "c88b2d59a56ed2290fc5082a1a6099e357c9fdbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/add2c74b144d0a25ba27a1506b7ce84e6bcadd64",
-                "reference": "add2c74b144d0a25ba27a1506b7ce84e6bcadd64",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/c88b2d59a56ed2290fc5082a1a6099e357c9fdbc",
+                "reference": "c88b2d59a56ed2290fc5082a1a6099e357c9fdbc",
                 "shasum": ""
             },
             "require": {
@@ -700,7 +654,7 @@
             ],
             "description": "HTML and Form Builders for the Laravel Framework",
             "homepage": "http://laravelcollective.com",
-            "time": "2016-01-15 21:59:03"
+            "time": "2016-01-16 16:54:49"
         },
         {
             "name": "league/commonmark",

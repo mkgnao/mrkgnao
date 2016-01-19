@@ -1,6 +1,8 @@
 .main-nav {
   box-sizing: border-box;
   text-align: center !important;
+  display: flex;
+  justify-content: center;
   ul {
     margin: 0;
     padding: 0;
@@ -19,7 +21,7 @@
     opacity: 90;
     border-bottom: 1px solid silver;
     font-size: 1.2em;
-    margin: 2.6em 2.6em 2.6em 2.6em;
+    margin: 2.4em 2.4em 2.4em 2.4em;
     &:hover, &:focus {
       color: black;
       opacity: 98;
@@ -50,8 +52,8 @@
 @media (min-width: 1000px) {
   .main-nav {
     a {
-      max-width: 500px;
-      font-size: 2rem;
+      max-width: 400px;
+      font-size: 0.8rem;
     }
     .icon {
       width: 25px;

@@ -1,6 +1,8 @@
 .main-nav {
   box-sizing: border-box;
-  text-align: center !important; }
+  text-align: center !important;
+  display: flex;
+  justify-content: center; }
   .main-nav ul {
     margin: 0;
     padding: 0;
@@ -18,7 +20,7 @@
     opacity: 90;
     border-bottom: 1px solid silver;
     font-size: 1.2em;
-    margin: 2.6em 2.6em 2.6em 2.6em; }
+    margin: 2.4em 2.4em 2.4em 2.4em; }
     .main-nav a:hover, .main-nav a:focus {
       color: black;
       opacity: 98; }
@@ -39,8 +41,8 @@
 
 @media (min-width: 1000px) {
   .main-nav a {
-    max-width: 500px;
-    font-size: 2rem; }
+    max-width: 400px;
+    font-size: 0.8rem; }
   .main-nav .icon {
     width: 25px;
     height: 25px; } }

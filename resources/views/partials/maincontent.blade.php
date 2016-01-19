@@ -1,5 +1,5 @@
 <!-- BEGIN LAYOUTS/PARTIALS/MAINCONTENT -->
-<p class="scrollable">
+<div class="scrollable">
     <main class="HolyGrail-body">
         <article class="HolyGrail-content" class="u-textCenter">
 
@@ -22,5 +22,5 @@
         <aside class="HolyGrail-ads u-textCenter">
         </aside>
     </main>
-    </div>
+</div>
     <!-- END LAYOUTS/PARTIALS/MAINCONTENT -->

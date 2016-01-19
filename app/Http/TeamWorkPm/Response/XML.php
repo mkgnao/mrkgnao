@@ -15,6 +15,12 @@ class XML extends Model
      * @return mixed [bool, int, App\Http\TeamWorkPm\Response\XML]
      * @throws \App\Http\TeamWorkPm\Exception
      */
+
+    public function parseRaw($data, array $headers)
+    {
+        return parent::parseRaw($data, $headers);
+    }
+
     public function parse($data, array $headers)
     {
         libxml_use_internal_errors(true);

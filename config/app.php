@@ -162,9 +162,9 @@ return [
 
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
 
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
-	Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-	Collective\Html\HtmlServiceProvider::class
+
     ],
 
     /*
@@ -213,8 +213,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'JavaScript' => Laracasts\Utilities\JavaScript\JavaScriptFacade::class,
         'Markdown' => GrahamCampbell\Markdown\Facades\Markdown::class,
-      'Form' => Collective\Html\FormFacade::class,
-      'Html' => Collective\Html\HtmlFacade::class
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class
     ],
 
 ];

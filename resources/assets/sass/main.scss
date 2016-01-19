@@ -1900,9 +1900,9 @@ pre {
 .center-link {
   color: black;
   font-size: 1.2em;
-  opacity: 0.98;
-  text-decoration: underline;
-  margin: 2.5em 2.5em 2.5em 2.5em;
+  /*opacity: 0.98;*/
+  border-bottom: 1px solid silver;
+  margin: 2.6em 2.6em 2.6em 2.6em;
 }
 
 .center-link:link, .center-link:visited, .center-link:active {

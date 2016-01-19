@@ -2,7 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form role="form" method="POST" action="{{ url('/login') }}" value="{{ csrf_token() }}">
+    <form role="form" method="POST" action="{!! url('/login') !!}" value="{!! csrf_token() !!}">
         {!! csrf_field() !!}
 
         <div class="Container">
@@ -13,10 +13,10 @@
                         <!--span class="InputAddOn-item">email</span-->
 
                         <input type="email" class="InputAddOn-field" name="email"
-                               value="{{ old('email') }}" placeholder="email">
+                               value="{!! old('email') !!}" placeholder="email">
 
                         @if ($errors->has('email'))
-                            {{ $errors->first('email') }}
+                            {!! $errors->first('email') !!}
                         @endif
                     </div>
                     <div class="InputAddOn">
@@ -24,7 +24,7 @@
                         <input type="password" class="InputAddOn-field" name="password" placeholder="password">
 
                         @if ($errors->has('password'))
-                            {{ $errors->first('password') }}
+                            {!! $errors->first('password') !!}
                         @endif
                     </div>
                     <!--div class="InputAddOn">
@@ -42,7 +42,7 @@
                         </div-->
                     </div>
                     <!--div class="InputAddOn">
-                        <a class="InputAddOn-item-link" href="{{ url('/password/reset') }}">reset</a>
+                        <a class="InputAddOn-item-link" href="{!! url('/password/reset') !!}">reset</a>
                     </div-->
                 </div>
             </div>

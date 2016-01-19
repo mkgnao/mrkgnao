@@ -5,30 +5,30 @@
         <ul>
             <li>
                 <a href="#" id="topMenu">
-                    {{ strtolower(Auth::user()->name) }} <!--span class="smallTriangle">&#9660;</span-->
+                    {!! strtolower(Auth::user()->name) !!} <!--span class="smallTriangle">&#9660;</span-->
                 </a>
                 <div id="maintopnavDiv">
                     <ul>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">settings</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/main') !!}">settings</a>
                         </li>
                         <li>
                             &nbsp;
                         </li>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">tasks</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/main') !!}">tasks</a>
                         </li>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/people') }}">people</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/people') !!}">people</a>
                         </li>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') }}">projects</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/projects') !!}">projects</a>
                         </li>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/company') }}">groups</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/company') !!}">groups</a>
                         </li>
                         <li>
-                            <a href="{{ url('/u/'.App\Util::idPad(Auth::id()).'/p/main') }}">billing</a>
+                            <a href="{!! url('/u/'.App\Util::idPad(Auth::id()).'/p/main') !!}">billing</a>
                         </li>
                         <li>
                             &nbsp;

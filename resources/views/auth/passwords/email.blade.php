@@ -4,16 +4,16 @@
 @section('content')
 
     @if (session('status'))
-        {{ session('status') }}
+        {!! session('status') !!}
     @endif
 
-    <form role="form" method="POST" action="{{ url('/password/email') }}">
+    <form role="form" method="POST" action="{!! url('/password/email') !!}">
         {!! csrf_field() !!}
 
-        <input type="email" name="email" value="{{ old('email') }}">
+        <input type="email" name="email" value="{!! old('email') !!}">
 
         @if ($errors->has('email'))
-            {{ $errors->first('email') }}
+            {!! $errors->first('email') !!}
         @endif
 
         <button type="submit">

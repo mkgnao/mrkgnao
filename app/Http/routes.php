@@ -51,7 +51,9 @@ Route::group(['middleware' != 'web'], function () {
     });
 
     Route::get('/', function () {
-        return view('mdcontent', array('name' => 'welcome'));
+        return view('index');
+
+        /*return view('mdcontent', array('name' => 'welcome'));*/
     });
 
     Route::get('/about', function () {

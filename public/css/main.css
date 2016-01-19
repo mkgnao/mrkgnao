@@ -1462,7 +1462,8 @@ pre {
   -o-user-select: none;
   user-select: none;
   cursor: default;
-  text-align: center !important; }
+  text-align: center !important;
+  margin-top: 6em; }
 
 .center-tagline {
   -webkit-box-flex: 1;

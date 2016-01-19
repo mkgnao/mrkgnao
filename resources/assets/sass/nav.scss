@@ -1,8 +1,12 @@
-.main-nav {
-  box-sizing: border-box;
+.topnav {
   text-align: center !important;
   display: flex;
   justify-content: center;
+}
+
+.main-nav {
+  box-sizing: border-box;
+
   ul {
     margin: 0;
     padding: 0;
@@ -53,7 +57,7 @@
   .main-nav {
     a {
       max-width: 400px;
-      font-size: 0.8rem;
+      font-size: 1.2rem;
     }
     .icon {
       width: 25px;

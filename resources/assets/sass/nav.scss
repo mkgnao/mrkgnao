@@ -1,12 +1,11 @@
-.topnav {
+.topnav2 {
   text-align: center !important;
   display: flex;
   justify-content: center;
 }
 
-.main-nav {
+.main-nav2 {
   box-sizing: border-box;
-
   ul {
     margin: 0;
     padding: 0;
@@ -53,7 +52,7 @@
 }
 
 @media (min-width: 1000px) {
-  .main-nav {
+  .main-nav2 {
     a {
       max-width: 400px;
       font-size: 1.2rem;

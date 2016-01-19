@@ -1,18 +1,18 @@
-.topnav {
+.topnav2 {
   text-align: center !important;
   display: flex;
   justify-content: center; }
 
-.main-nav {
+.main-nav2 {
   box-sizing: border-box; }
-  .main-nav ul {
+  .main-nav2 ul {
     margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     list-style: none; }
-  .main-nav a {
+  .main-nav2 a {
     padding: 1rem 0.5rem;
     max-width: 140px;
     text-decoration: none;
@@ -22,29 +22,29 @@
     opacity: 90;
     border-bottom: 1px solid silver;
     font-size: 1.2em; }
-    .main-nav a:hover, .main-nav a:focus {
+    .main-nav2 a:hover, .main-nav2 a:focus {
       color: black;
       opacity: 98; }
-      .main-nav a:hover span, .main-nav a:focus span {
+      .main-nav2 a:hover span, .main-nav2 a:focus span {
         color: black; }
-  .main-nav span {
+  .main-nav2 span {
     display: block;
     font-size: 1rem;
     font-weight: normal;
     margin: 0 0 0 0; }
-  .main-nav .icon {
+  .main-nav2 .icon {
     width: 40px;
     height: 40px;
     float: left;
     margin-right: 1rem; }
-  .main-nav.outlines * {
+  .main-nav2.outlines * {
     outline: 1px solid silver; }
 
 @media (min-width: 1000px) {
-  .main-nav a {
+  .main-nav2 a {
     max-width: 400px;
     font-size: 1.2rem; }
-  .main-nav .icon {
+  .main-nav2 .icon {
     width: 25px;
     height: 25px; } }
 

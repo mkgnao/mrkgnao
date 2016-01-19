@@ -23,7 +23,6 @@
     list-style: none;
   }
   a {
-    padding: 1rem 0.5rem;
     max-width: 140px;
     text-decoration: none;
     display: flex;
@@ -55,7 +54,6 @@
   }
   &.outlines {
     * {
-      outline: 1px solid silver;
     }
   }
 }

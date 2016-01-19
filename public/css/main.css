@@ -1464,6 +1464,25 @@ pre {
   cursor: default;
   text-align: center !important; }
 
+.center-tagline {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  font-size: 3.8em;
+  opacity: 0.82;
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  /* Rules below not implemented in browsers yet */
+  -o-user-select: none;
+  user-select: none;
+  cursor: default;
+  text-align: center !important; }
+
 .center-links {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -1473,16 +1492,16 @@ pre {
 
 .center-link {
   color: black;
-  font-size: 1.8em;
+  font-size: 1.4em;
   opacity: 0.82;
   text-decoration: underline;
-  margin: 0.2em 0.2em 0.2em 0.2em; }
+  margin: 0.4em 0.4em 0.4em 0.4em; }
 
 .center-link:link, .center-link:visited, .center-link:active {
-  text-decoration: none; }
+  text-decoration: underline; }
 
 .center-link:hover {
-  opacity: 0.92; }
+  opacity: 0.96; }
 
 .bla {
   font-size: 1.2em;

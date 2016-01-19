@@ -12,8 +12,8 @@
     </script>
 @endif
 
-{!! HTML::script('js/flexbox.js') !!}
-{!! HTML::script('https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js') !!}
+{!! Html::script('js/flexbox.js') !!}
+{!! Html::script('https://cdnjs.cloudflare.com/ajax/libs/html-inspector/0.8.2/html-inspector.js') !!}
 
 <script>
     HTMLInspector.rules.extend('unused-classes', function (config) {

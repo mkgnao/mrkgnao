@@ -162,7 +162,8 @@ return [
 
         'GrahamCampbell\Markdown\MarkdownServiceProvider',
 
-        Collective\Html\HtmlServiceProvider::class
+        Collective\Html\HtmlServiceProvider::class,
+	Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
     ],
 
     /*

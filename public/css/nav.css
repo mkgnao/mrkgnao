@@ -14,9 +14,12 @@
     max-width: 140px;
     text-decoration: none;
     display: flex;
-    align-items: flex-start; }
+    align-items: flex-start;
+    color: black;
+    opacity: 90; }
     .main-nav a:hover, .main-nav a:focus {
-      color: black; }
+      color: black;
+      opacity: 98; }
       .main-nav a:hover span, .main-nav a:focus span {
         color: black; }
   .main-nav span {
@@ -28,10 +31,9 @@
     width: 40px;
     height: 40px;
     float: left;
-    margin-right: 1rem;
-    fill: #999; }
+    margin-right: 1rem; }
   .main-nav.outlines * {
-    outline: 1px solid rgba(255, 0, 0, 0.5); }
+    outline: 1px solid silver; }
 
 @media (min-width: 1000px) {
   .main-nav a {

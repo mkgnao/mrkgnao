@@ -16,8 +16,11 @@
     text-decoration: none;
     display: flex;
     align-items: flex-start;
+    color: black;
+    opacity: 90;
     &:hover, &:focus {
       color: black;
+      opacity: 98;
       span {
         color: black;
       }
@@ -34,11 +37,10 @@
     height: 40px;
     float: left;
     margin-right: 1rem;
-    fill: #999;
   }
   &.outlines {
     * {
-      outline: 1px solid rgba(red, 0.5);
+      outline: 1px solid silver;
     }
   }
 }

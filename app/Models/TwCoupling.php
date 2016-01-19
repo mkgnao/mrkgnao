@@ -2,9 +2,17 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class TwCoupling extends Model
+class TwCoupling extends \Eloquent
 {
     protected $table = 'tw_couplings';
+
+    public function getName($value)
+    {
+        MdContent::findOrFail($value)->name;
+    }
+
+    public function formName($value)
+    {
+        MdContent::findOrFail($value)->name;
+    }
 }

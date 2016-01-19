@@ -6,8 +6,7 @@ use App\Http\BladeService as BladeService;
 use App\Http\Requests;
 use App\Http\TeamWorkPm;
 use App\Models\TwCoupling as TwCoupling;
-use Auth;
-use DB;
+use Laracasts\Utilities\JavaScript;
 
 class TwController extends Controller
 {
@@ -62,9 +61,7 @@ class TwController extends Controller
 
     public function jsPut($var, $value)
     {
-        $value = trim(preg_replace('/\s+/', ' ', $value));
-
-        \JavaScript::put([$var => $value]);
+        \Javascipt::put([$var => trim(preg_replace('/\s+/', ' ', $value))]);
     }
 
     public function setTwApiKey()

@@ -1,3 +1,5 @@
 <!-- BEGIN LAYOUTS/PARTIALS/APPJS -->
-<script src="/js/main.js"></script>
+
+{{ HTML::script('js/main.js') }}
+
 <!-- END LAYOUTS/PARTIALS/APPJS -->

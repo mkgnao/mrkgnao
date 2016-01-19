@@ -19,7 +19,7 @@ namespace {
          * @static 
          */
         public static function version(){
-            return \Illuminate\Foundation\Application::version();
+            return \Illuminate\Foundation\Application::VERSION;
         }
         
         /**

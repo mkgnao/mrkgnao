@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database;
 
-class MdContent extends Model
+
+class MdContent extends \Eloquent
 {
     protected $table = 'md_contents';
 

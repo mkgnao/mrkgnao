@@ -50,7 +50,10 @@ Route::group(['middleware' != 'web'], function () {
         //img
     });
 
-    Route::get('/', 'IndexController@show');
+    Route::get('/', function() {
+        \Log::info('yay yay');
+        return 'yay';
+    });
 
     Route::get('/about', function () {
         return view('mdcontent', array('name' => 'about'));

@@ -15,7 +15,7 @@
                             <div>We write like motherfuckers.</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>You lady poofta.</div>
+                            <div>(Lady poofta).</div>
                         </div>
                         <div class="center-tagline-content">
                             <div>The Wild Swans at Coole,</div>
@@ -71,26 +71,26 @@
                         </div>
 
                         <div class="center-tagline-content">
-                            <div>AI have looked upon those brilliant creatures,</div>
+                            <div>I have looked upon those brilliant creatures,</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AAnd now my heart is sore.</div>
+                            <div>And now my heart is sore.</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AAll's changed since I, hearing at twilight,</div>
+                            <div>All's changed since I, hearing at twilight,</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AThe first time on this shore,</div>
+                            <div>The first time on this shore,</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AThe bell-beat of their wings above my head,</div>
+                            <div>The bell-beat of their wings above my head,</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>ATrod with a lighter tread.</div>
+                            <div>Trod with a lighter tread.</div>
                         </div>
 
                         <div class="center-tagline-content">
-                            <div>AUnwearied still, lover by lover,</div>
+                            <div>Unwearied still, lover by lover,</div>
                         </div>
                         <div class="center-tagline-content">
                             <div>They paddle in the cold</div>

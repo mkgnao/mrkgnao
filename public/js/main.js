@@ -185,7 +185,7 @@ function motherFucker()
 {
     var tagLine;
 
-    if ($("#center-tagline").isMotherFucker)
+    if (!$("#center-tagline").isMotherFucker)
         tagLine = "We write like motherfuckers.";
     else
         tagLine = "The writing company.";

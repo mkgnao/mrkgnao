@@ -198,6 +198,6 @@ function motherFucker()
 }
 
 
-mkgnaoNs.addLoadEvent(motherFuckerInterval);
+mkgnaoNs.addLoadEvent(motherFucker);
 
 /* END public/js/main.js */

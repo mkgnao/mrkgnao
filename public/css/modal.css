@@ -24,7 +24,7 @@
   bottom: 0;
   left: 0;
   z-index: 999999;
-  opacity: 0.92 !important; }
+  opacity: 0.95 !important; }
 
 .Modal-row {
   width: auto; }
@@ -32,7 +32,7 @@
 .Modal-flex-item {
   width: 300px;
   background-color: rgba(245, 245, 245, 0.92);
-  opacity: 0.95;
+  opacity: 0.95 !important;
   text-align: center;
   padding: 20px; }
 

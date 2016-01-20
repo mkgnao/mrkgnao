@@ -12,7 +12,7 @@
 <body id="bodyTop" class="HolyGrail">
 @include('partials.mainbody')
 
-
+{{--
 <div id="Modal-flex-container-logout" class="Modal-flex-container-shown">
     <div id="Modal-row">
         <div class="Modal-flex-item">
@@ -54,6 +54,7 @@
         </div>
     </div>
 </div>
+    --}}
 </body>
 
 <!-- END LAYOUTS/APP -->

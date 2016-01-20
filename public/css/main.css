@@ -114,7 +114,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   padding: 0; }
 
 .opaque {
-  opacity: 0.10; }
+  opacity: 0.99; }
 
 input {
   line-height: normal; }

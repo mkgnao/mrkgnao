@@ -195,7 +195,7 @@ function motherFucker()
 
 function motherFuckerInterval()
 {
-    setInterval(motherFucker, 5000);
+    setInterval(motherFucker, 10000);
 }
 
 mkgnaoNs.addLoadEvent(motherFuckerInterval);

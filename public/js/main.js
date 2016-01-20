@@ -188,14 +188,14 @@ function motherFucker()
 
         console.log($("#center-tagline"));
 
-        if (!$("#center-tagline").getAttribute('ismotherfucker').value)
+        if (!$("#center-tagline").ismotherfucker)
             tagLine = "We write like motherfuckers.";
         else
             tagLine = "The writing company.";
 
         $("#center-tagline").innerHTML = tagLine;
 
-        $("#center-tagline").getAttribute('ismotherfucker').value = !$("#center-tagline").getAttribute('ismotherfucker').value;
+        $("#center-tagline").ismotherfucker = !$("#center-tagline").ismotherfucker;
 
         motherFucker();
     });

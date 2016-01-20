@@ -196,7 +196,7 @@ function centerTitle()
     });
 }
 
-mkgnaoNs.addLoadEvent(centerTitle);
+//mkgnaoNs.addLoadEvent(centerTitle);
 
 mkgnaoNs.addLoadEvent(motherFucker);
 

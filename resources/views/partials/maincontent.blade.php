@@ -52,22 +52,22 @@
                         </div>
 
                         <div class="center-tagline-content">
-                            <div>AThe nineteenth autumn has come upon me</div>
+                            <div>The nineteenth autumn has come upon me</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>ASince I first made my count;</div>
+                            <div>Since I first made my count;</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AI saw, before I had well finished,</div>
+                            <div>I saw, before I had well finished,</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AAll suddenly mount</div>
+                            <div>All suddenly mount</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AAnd scatter wheeling in great broken rings</div>
+                            <div>And scatter wheeling in great broken rings</div>
                         </div>
                         <div class="center-tagline-content">
-                            <div>AUpon their clamorous wings.</div>
+                            <div>Upon their clamorous wings.</div>
                         </div>
 
                         <div class="center-tagline-content">

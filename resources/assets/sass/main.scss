@@ -1888,9 +1888,10 @@ pre {
   cursor: default;
   text-align: center !important;
   margin-top: 2em;
-  display: flex;
+  /*display: flex;*/
   justify-content: center;
   flex-direction: column;
+  display: none;
 }
 
 .center-links {

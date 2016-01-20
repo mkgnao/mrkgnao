@@ -192,18 +192,18 @@ function motherFucker()
 
     $("#center-tagline").fadeOut();
     $("#center-tagline").fadeOut("slow");
-    $("#center-tagline").fadeOut(80000);
+    $("#center-tagline").fadeOut(10000);
     $("#center-tagline").innerHTML = tagLine;
     $("#center-tagline").fadeIn();
     $("#center-tagline").fadeIn("slow");
-    $("#center-tagline").fadeIn(80000);
+    $("#center-tagline").fadeIn(10000);
 
     $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
 }
 
 function motherFuckerInterval()
 {
-    setInterval(motherFucker, 10000);
+    setInterval(motherFucker, 20000);
 }
 
 mkgnaoNs.addLoadEvent(motherFuckerInterval);

@@ -8,7 +8,7 @@
                     <!-- should be in motherfucking md file -->
                     <div class="center-title">THE CATEGORY</div>
 
-                        <div id="center-tagline" class="center-tagline scrollable">
+                        <div id="center-tagline" class="center-tagline">
                             <div class="center-tagline-content">
                                 <div>The writing company.</div>
                             </div>

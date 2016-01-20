@@ -2,7 +2,7 @@
 <footer class="Site-footer opaque">
     <div class="Footer">
         <div class="Footer-credits">
-            <span class="Footer-credit">copyright © 2016 the category</span>
+            <span class="Footer-credit"></span>
         </div>
     </div>
 </footer>

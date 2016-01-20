@@ -15,7 +15,6 @@ html {
 body {
   margin: 0;
   height: 100%;
-  opacity: 0.10;
 }
 
 .scrollable {
@@ -143,6 +142,10 @@ button[disabled], html input[disabled] {
 button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0
+}
+
+.opaque {
+  opacity: 0.10;
 }
 
 input {

@@ -1871,6 +1871,10 @@ pre {
   margin-top: 0.7em;
 }
 
+.center-tagline-content {
+  display: none;
+}
+
 .center-tagline {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
@@ -1888,10 +1892,9 @@ pre {
   cursor: default;
   text-align: center !important;
   margin-top: 2em;
-  /*display: flex;*/
+  display: flex;
   justify-content: center;
   flex-direction: column;
-  display: none;
 }
 
 .center-links {

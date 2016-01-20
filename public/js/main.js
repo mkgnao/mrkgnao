@@ -190,21 +190,13 @@ function motherFucker()
     else
         tagLine = "The writing company.";
 
-    $("#center-tagline").fadeOut();
-    $("#center-tagline").fadeOut("slow");
-    $("#center-tagline").fadeOut(5000);
-    $("#center-tagline").innerHTML = tagLine;
-    $("#center-tagline").fadeIn();
-    $("#center-tagline").fadeIn("slow");
-    $("#center-tagline").fadeIn(5000);
 
-    $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
+    $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
+        $("#center-tagline").innerHTML = tagLine;
+        $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
+    });
 }
 
-function motherFuckerInterval()
-{
-    setInterval(motherFucker, 10010);
-}
 
 mkgnaoNs.addLoadEvent(motherFuckerInterval);
 

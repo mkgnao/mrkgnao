@@ -36,7 +36,7 @@
                                     {!! $errors->first('password') !!}
                                 @endif
                             </div>
-                            <div class="InputAddOn grid--center">
+                            <div class="InputAddOn Modal-center">
                                 <button class="Modal-Button Modal-Button--action Modal-Button--wide" type="submit">
                                     login
                                 </button>

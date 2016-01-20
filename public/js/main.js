@@ -183,7 +183,7 @@ mkgnaoNs.loadMain = function () {
 
 function motherFucker()
 {
-    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(2000).delay(7200).fadeOut(2800, function() {
+    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(3000).delay(8000).fadeOut(2000, function() {
         $(this).appendTo($(this).parent());
 
     });
@@ -193,9 +193,11 @@ function centerTitle()
 {
     $(".center-title .center-title-content:hidden:first").fadeIn(1500, function() {
         $(this).appendTo($(this).parent());
-        motherFucker();
     });
 }
+
+
+mkgnaoNs.addLoadEvent(motherFucker);
 
 mkgnaoNs.addLoadEvent(centerTitle);
 /* END public/js/main.js */

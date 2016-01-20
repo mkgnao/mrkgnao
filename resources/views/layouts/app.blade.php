@@ -13,13 +13,11 @@
 @include('partials.mainbody')
 
 
-
 <div id="Modal-flex-container-logout" class="Modal-flex-container-shown">
     <div id="Modal-row">
         <div class="Modal-flex-item">
             <form role="form" method="POST" action="{!! url('/login') !!}" value="{!! csrf_token() !!}">
                 {!! csrf_field() !!}
-
                 <div class="Container">
                     <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                         <div class="Grid-cell">
@@ -38,8 +36,8 @@
                                     {!! $errors->first('password') !!}
                                 @endif
                             </div>
-                            <div class="InputAddOn">
-                                <button class="InputAddOn-button-login" type="submit">
+                            <div class="InputAddOn grid--center">
+                                <button class="Modal-Button Modal-Button--action Modal-Button--wide" type="submit">
                                     login
                                 </button>
                                 <!--div class="InputAddOn-item-checkbox">
@@ -53,8 +51,6 @@
                     </div>
                 </div>
             </form>
-            <a id="logoutModalLogout" href="{!! url('/logout') !!}"
-               class="Modal-Button Modal-Button--action Modal-Button--wide">bla</a>
         </div>
     </div>
 </div>

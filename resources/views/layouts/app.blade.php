@@ -14,7 +14,7 @@
 
 
 
-<div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">
+<div id="Modal-flex-container-logout" class="Modal-flex-container-shown">
     <div id="Modal-row">
         <div class="Modal-flex-item">
             <form role="form" method="POST" action="{!! url('/login') !!}" value="{!! csrf_token() !!}">

@@ -186,7 +186,7 @@ function motherFucker()
     $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
         var tagLine;
 
-        alert($("#center-tagline"));
+        console.log($("#center-tagline"));
 
         if (!$("#center-tagline").isMotherFucker)
             tagLine = "We write like motherfuckers.";

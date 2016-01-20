@@ -183,14 +183,26 @@ mkgnaoNs.loadMain = function () {
 
 function motherFucker()
 {
-    var tagLine = document.getElementById("center-tagline");
+    var tagLine;
 
-    if (!tagLine.isMotherFucker)
-        tagLine.innerHTML = "We write like motherfuckers.";
+    if (!$("#center-tagline").isMotherFucker)
+        tagLine = "The writing company.";
     else
-        tagLine.innerHTML = "The writing company.";
+        tagLine = "We write like motherfuckers.";
 
-    tagLine.isMotherFucker = !tagLine.isMotherFucker;
+    if (!tagLine.isMotherFucker) {
+        $("#center-tagline").fadeOut();
+        $("#center-tagline").fadeOut("slow");
+        $("#center-tagline").fadeOut(80000);
+        $("#center-tagline").innerHTML = tagLine;
+    } else {
+        $("#center-tagline").fadeIn();
+        $("#center-tagline").fadeIn("slow");
+        $("#center-tagline").fadeIn(80000);
+        $("#center-tagline").innerHTML = tagLine;
+    }
+
+    $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
 }
 
 function motherFuckerInterval()

@@ -183,7 +183,7 @@ mkgnaoNs.loadMain = function () {
 
 function motherFucker()
 {
-    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(2000).delay(10000).fadeOut(2000, function() {
+    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(1000).delay(7000).fadeOut(3000, function() {
         $(this).appendTo($(this).parent());
         motherFucker();
     });

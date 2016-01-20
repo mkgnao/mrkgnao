@@ -8,7 +8,6 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   color: black;
-  opacity: 0.10;
   text-rendering: optimizeLegibility;
   height: 100%;
 }
@@ -16,6 +15,7 @@ html {
 body {
   margin: 0;
   height: 100%;
+  opacity: 0.10;
 }
 
 .scrollable {

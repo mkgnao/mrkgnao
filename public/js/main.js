@@ -186,16 +186,16 @@ function motherFucker()
     $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
         var tagLine;
 
-        console.log($("#center-tagline"));
+        console.log($("#center-tagline").attr('ismotherfucker'));
 
-        if (!$("#center-tagline").ismotherfucker)
+        if (!$("#center-tagline").attr('ismotherfucker'))
             tagLine = "We write like motherfuckers.";
         else
             tagLine = "The writing company.";
 
         $("#center-tagline").innerHTML = tagLine;
 
-        $("#center-tagline").ismotherfucker = !$("#center-tagline").ismotherfucker;
+        $("#center-tagline").attr('ismotherfucker', !$("#center-tagline").attr('ismotherfucker'));
 
         motherFucker();
     });

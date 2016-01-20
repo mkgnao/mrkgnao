@@ -190,17 +190,13 @@ function motherFucker()
     else
         tagLine = "We write like motherfuckers.";
 
-    if (!tagLine.isMotherFucker) {
-        $("#center-tagline").fadeOut();
-        $("#center-tagline").fadeOut("slow");
-        $("#center-tagline").fadeOut(80000);
-        $("#center-tagline").innerHTML = tagLine;
-    } else {
-        $("#center-tagline").fadeIn();
-        $("#center-tagline").fadeIn("slow");
-        $("#center-tagline").fadeIn(80000);
-        $("#center-tagline").innerHTML = tagLine;
-    }
+    $("#center-tagline").fadeOut();
+    $("#center-tagline").fadeOut("slow");
+    $("#center-tagline").fadeOut(80000);
+    $("#center-tagline").innerHTML = tagLine;
+    $("#center-tagline").fadeIn();
+    $("#center-tagline").fadeIn("slow");
+    $("#center-tagline").fadeIn(80000);
 
     $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
 }

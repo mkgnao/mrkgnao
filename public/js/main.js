@@ -196,8 +196,8 @@ function centerTitle()
     });
 }
 
+mkgnaoNs.addLoadEvent(centerTitle);
 
 mkgnaoNs.addLoadEvent(motherFucker);
 
-mkgnaoNs.addLoadEvent(centerTitle);
 /* END public/js/main.js */

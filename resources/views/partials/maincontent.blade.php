@@ -7,7 +7,10 @@
                 <div class="Grid-cell">
                     <!-- should be in motherfucking md file -->
                     <div class="center-title">THE CATEGORY</div>
-                    <div id="center-tagline" class="center-tagline" ismotherfucker="false" >The writing company.</div>
+                    <div id="center-tagline" class="center-tagline">
+                        <div id="center-tagline-content" class="center-tagline-company" >The writing company.</div>
+                        <div id="center-tagline-content" class="center-tagline-company" >We write like motherfuckers.</div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -183,21 +183,8 @@ mkgnaoNs.loadMain = function () {
 
 function motherFucker()
 {
-    $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
-        var tagLine;
-
-        console.log($("#center-tagline").attr('ismotherfucker'));
-
-        if (!$("#center-tagline").attr("ismotherfucker") == "false") {
-            tagLine = "We write like motherfuckers.";
-            $("#center-tagline").attr("ismotherfucker", "true");
-            $("#center-tagline").innerHTML = tagLine;
-        } else {
-            tagLine = "The writing company.";
-            $("#center-tagline").attr("ismotherfucker", "false");
-            $("#center-tagline").innerHTML = tagLine;
-        }
-
+    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(3000).delay(3000).fadeOut(1000, function() {
+        $(this).appendTo($(this).parent());
         motherFucker();
     });
 }

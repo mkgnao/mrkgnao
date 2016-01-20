@@ -191,9 +191,11 @@ function motherFucker()
         if (!$("#center-tagline").attr('ismotherfucker')) {
             tagLine = "We write like motherfuckers.";
             $("#center-tagline").attr("ismotherfucker", "true");
+            $("#center-tagline").innerHTML = tagLine;
         } else {
             tagLine = "The writing company.";
             $("#center-tagline").attr("ismotherfucker", "false");
+            $("#center-tagline").innerHTML = tagLine;
         }
 
         motherFucker();

@@ -1,4 +1,4 @@
-<div class="topnav2">
+<div class="topnav2 opaque">
     <nav role='navigation' class="main-nav2" id="main-nav2">
         <ul id="main-nav-list2">
             <li>

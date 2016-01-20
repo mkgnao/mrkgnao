@@ -11,7 +11,8 @@
 
 <body id="bodyTop" class="HolyGrail">
 @include('partials.mainbody')
-</body>
+
+
 
 <div id="Modal-flex-container-logout" class="Modal-flex-container-hidden">
     <div id="Modal-row">
@@ -57,6 +58,7 @@
         </div>
     </div>
 </div>
+</body>
 
 <!-- END LAYOUTS/APP -->
 </html>

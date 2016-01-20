@@ -188,7 +188,7 @@ function motherFucker()
 
         console.log($("#center-tagline").attr('ismotherfucker'));
 
-        if (!$("#center-tagline").attr('ismotherfucker')) {
+        if (!$("#center-tagline").attr("ismotherfucker") == "false") {
             tagLine = "We write like motherfuckers.";
             $("#center-tagline").attr("ismotherfucker", "true");
             $("#center-tagline").innerHTML = tagLine;

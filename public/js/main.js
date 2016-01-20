@@ -183,15 +183,14 @@ mkgnaoNs.loadMain = function () {
 
 function motherFucker()
 {
-    var tagLine;
-
-    if (!$("#center-tagline").isMotherFucker)
-        tagLine = "We write like motherfuckers.";
-    else
-        tagLine = "The writing company.";
-
-
     $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
+        var tagLine;
+
+        if (!$("#center-tagline").isMotherFucker)
+            tagLine = "We write like motherfuckers.";
+        else
+            tagLine = "The writing company.";
+
         $("#center-tagline").innerHTML = tagLine;
         $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
         motherFucker();

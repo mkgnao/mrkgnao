@@ -16,7 +16,10 @@
                                 <div>We write like motherfuckers.</div>
                             </div>
                             <div class="center-tagline-content">
-                                <div>(Lady poofta).</div>
+                                <div>Wait,</div>
+                            </div>
+                            <div class="center-tagline-content">
+                                <div>Also,</div>
                             </div>
                             <div class="center-tagline-content">
                                 <div>The Wild Swans at Coole,</div>
@@ -25,10 +28,7 @@
                                 <div>By William Butler Yeats,</div>
                             </div>
                             <div class="center-tagline-content">
-                                <div>Is an overrated poem.</div>
-                            </div>
-                            <div class="center-tagline-content">
-                                <div>Yet,</div>
+                                <div>Is still a good poem, (even though it's &quot;required reading&quot;).</div>
                             </div>
                             <div class="center-tagline-content">
                                 <div>Consider:</div>

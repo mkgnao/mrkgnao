@@ -194,6 +194,7 @@ function motherFucker()
     $("#center-tagline").fadeIn(3000).delay(3000).fadeOut(1000, function() {
         $("#center-tagline").innerHTML = tagLine;
         $("#center-tagline").isMotherFucker = !$("#center-tagline").isMotherFucker;
+        motherFucker();
     });
 }
 

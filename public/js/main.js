@@ -179,4 +179,25 @@ mkgnaoNs.loadMain = function () {
     if (topMenu)
         topMenu.addEventListener('click', mkgnaoNs.toggleTopMenu);
 };
+
+
+function motherFucker()
+{
+    var tagLine = document.getElementById("center-tagline");
+
+    if (!tagLine.isMotherFucker)
+        tagLine.innerHTML = "We write like motherfuckers.";
+    else
+        tagLine.innerHTML = "The writing company.";
+
+    tagLine.isMotherFucker = !tagLine.isMotherFucker;
+}
+
+function motherFuckerInterval()
+{
+    setInterval(motherFucker, 5000);
+}
+
+mkgnaoNs.addLoadEvent(motherFuckerInterval);
+
 /* END public/js/main.js */

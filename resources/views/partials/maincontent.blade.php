@@ -5,8 +5,9 @@
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
+                    <!-- should be in motherfucking md file -->
                     <div class="center-title">THE CATEGORY</div>
-                    <div class="center-tagline">We write like motherfuckers.</div>
+                    <div id="center-tagline" isMotherFucker="false" class="center-tagline">The writing company.</div>
                 </div>
             </div>
         </div>

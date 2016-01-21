@@ -184,7 +184,7 @@ mkgnaoNs.loadMain = function () {
 function motherFucker()
 {
 
-    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(3000), function() {
+    $(".center-tagline .center-tagline-content:hidden:first").fadeIn(3000, function() {
         $(this).appendTo($(this).parent());
     });
 

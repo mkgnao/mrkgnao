@@ -33,7 +33,9 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-
+Route::get('/calendar/{u}', function ($u) {
+    View::share('calendar', $u);
+});
 
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {

@@ -1,5 +1,5 @@
 <!-- BEGIN LAYOUTS/PARTIALS/MAINCONTENT -->
 
-
+@yield('content')
 
 <!-- END LAYOUTS/PARTIALS/MAINCONTENT -->

@@ -2,6 +2,6 @@
 
 @section('content')
 
-    {{ dd($u) }}
+    <p>{{ $u }}</p>
 
 @endsection

@@ -1906,6 +1906,19 @@ pre {
   flex-direction: column;
 }
 
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+  .center-title {
+    font-size: 2em;
+    opacity: 0.88;
+    margin-top: 0.2em;
+  }
+
+  .center-tagline {
+    margin-top: 1em;
+    margin-top: 1em;
+  }
+}
+
 .center-contact {
   -webkit-box-flex: 1;
   -webkit-flex: 1;

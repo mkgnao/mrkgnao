@@ -13,6 +13,10 @@
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+View::composer('*', function ($view) {
+    View::share('view_name', $view->getName());
+});
+
 Route::get('partials.appscriptvars', function () {
     return View::make('partials/appscriptvars');
 });
@@ -22,25 +26,12 @@ Route::get('partials.topnav', function () {
 });
 
 Route::get('/', function () {
-    return View::make('index');
+    return view('index');
 });
 
 Route::get('/contact', function () {
-    return View::make('contact');
+    return view('contact');
 });
-
-
-View::composer('*', function ($view) {
-    View::share('view_name', $view->getName());
-});
-
-/*
-Route::get('/form/writers', function () {
-    return view('upload', array('name' => 'writers'));
-});
-
-Route::post('/upload/writers', 'UploadController@saveWriters');
-*/
 
 
 Route::group(['middleware' != 'web'], function () {

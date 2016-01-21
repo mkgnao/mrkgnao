@@ -1906,7 +1906,7 @@ pre {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 480px) {
+@media (max-width: 480px) {
   [class*="center-title"] {
     font-size: 2em;
     opacity: 0.88;

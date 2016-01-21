@@ -66,6 +66,7 @@ Route::group(['middleware' != 'web'], function () {
 Route::group(['middleware' => 'web'], function ($view) {
     Route::auth();
 
+    /*
     Route::get('/', function () {
         return view('mdcontent', array('name' => 'index'));
     });
@@ -95,4 +96,5 @@ Route::group(['middleware' => 'web'], function ($view) {
     Route::get('/u/{id}/p/people', array('as' => '/u/p/people', 'uses' => 'PeopleController@index'));
 
     Route::get('/u/{id}/p/projects', array('as' => '/u/p/projects', 'uses' => 'ProjectsController@index'));
+    */
 });

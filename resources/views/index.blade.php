@@ -32,7 +32,7 @@
                                 <div>By William Butler Yeats,</div>
                             </div>
                             <div class="center-tagline-content">
-                                <div>Is still a good poem.</div>
+                                <div>Is still a good poem,</div>
                             </div>
                             <div class="center-tagline-content">
                                 <div>(Even though it's &quot;required reading&quot;).</div>

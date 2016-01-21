@@ -189,7 +189,9 @@ function motherFucker()
     });
 }
 
+motherFucker();
 
-mkgnaoNs.addLoadEvent(motherFucker);
+
+//mkgnaoNs.addLoadEvent(motherFucker);
 
 /* END public/js/main.js */

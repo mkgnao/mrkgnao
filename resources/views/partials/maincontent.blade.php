@@ -7,7 +7,6 @@
                 <div class="Grid-cell">
                     <!-- should be in motherfucking md file -->
                     <div class="center-title">THE CATEGORY</div>
-
                         <div id="center-tagline" class="center-tagline">
                             <div class="center-tagline-content">
                                 <div>The writing company.</div>
@@ -28,7 +27,10 @@
                                 <div>By William Butler Yeats,</div>
                             </div>
                             <div class="center-tagline-content">
-                                <div>Is still a good poem, (even though it's &quot;required reading&quot;).</div>
+                                <div>Is still a good poem.</div>
+                            </div>
+                            <div class="center-tagline-content">
+                                <div>(even though it's &quot;required reading&quot;).</div>
                             </div>
                             <div class="center-tagline-content">
                                 <div>Consider:</div>

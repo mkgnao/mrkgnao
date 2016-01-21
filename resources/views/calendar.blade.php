@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    @if ($u == "dk")
+    {{ dd($u) }}
+
+
+    @if ($u == 'dk")
         <iframe src="https://calendar.google.com/calendar/embed?src=dk%40thecategory.com&ctz=Europe/Berlin"
                 style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
     @elseif($u == "mk")

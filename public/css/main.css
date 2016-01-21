@@ -1499,7 +1499,16 @@ pre {
   justify-content: center;
   flex-direction: column; }
 
-@media (max-width: 768px) {
+@media all and (orientation: landscape) and (max-width: 700px) {
+  .center-title {
+    font-size: 2em;
+    opacity: 0.88;
+    margin-top: 0.2em; }
+
+  .center-tagline {
+    margin-top: 1em;
+    font-size: 1em; } }
+@media all and (orientation: portrait) and (max-width: 700px) {
   .center-title {
     font-size: 2em;
     opacity: 0.88;

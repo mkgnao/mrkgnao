@@ -21,6 +21,15 @@ Route::get('partials.topnav', function () {
     return View::make('partials/topnav');
 });
 
+Route::get('/', function () {
+    return View::make('index');
+});
+
+Route::get('/contact', function () {
+    return View::make('contact');
+});
+
+
 View::composer('*', function ($view) {
     View::share('view_name', $view->getName());
 });
@@ -50,9 +59,24 @@ Route::group(['middleware' != 'web'], function () {
     Route::get('/img', function () {
         //img
     });
+});
 
-    Route::get('/about', function () {
-        return view('mdcontent', array('name' => 'about'));
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| This route group applies the "web" middleware group to every route
+| it contains. The "web" middleware group is defined in your HTTP
+| kernel and includes session state, CSRF protection, and more.
+|
+*/
+
+Route::group(['middleware' => 'web'], function ($view) {
+    Route::auth();
+
+    Route::get('/', function () {
+        return view('mdcontent', array('name' => 'index'));
     });
 
     Route::get('/writers', function () {
@@ -67,41 +91,9 @@ Route::group(['middleware' != 'web'], function () {
         return view('mdcontent', array('name' => 'partners'));
     });
 
-    Route::get('/internships', function () {
-        return view('mdcontent', array('name' => 'internships'));
+    Route::get('/contact', function () {
+        return view('mdcontent', array('name' => 'contact'));
     });
-});
-
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| This route group applies the "web" middleware group to every route
-| it contains. The "web" middleware group is defined in your HTTP
-| kernel and includes session state, CSRF protection, and more.
-|
-*/
-
-
-Route::group(['middleware' => 'web'], function ($view) {
-    Route::auth();
-
-    Route::get('/', function () {
-        return view('mdcontent', array('name' => 'welcome'));
-    });
-
-    Route::post('/md/update/{id}', array('as' => 'md.post', 'uses' => 'MdController@update'));
-
-    Route::put('/md/put/{id}', array('as' => 'md.update', 'uses' => 'MdController@update'));
-
-    Route::patch('/md/patch/{id}', array('as' => 'md.update', 'uses' => 'MdController@update'));
-
-    Route::get('md/{id}/edit', array('as' => 'md.edit', 'uses' => 'MdController@edit'));
-
-    Route::get('md/{id}', array('as' => 'md.show', 'uses' => 'MdController@show'));
-
-    Route::resource('md', 'MdController');
 
     Route::get('/u/{id}/p/main', array('as' => '/u/p/main', 'uses' => 'MainController@index'));
 

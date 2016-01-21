@@ -1906,16 +1906,16 @@ pre {
   flex-direction: column;
 }
 
-@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
-  .center-title {
+@media only screen and (max-width: 480px) {
+  [class*="center-title"] {
     font-size: 2em;
     opacity: 0.88;
     margin-top: 0.2em;
   }
 
-  .center-tagline {
+  [class*="center-tagline"] {
     margin-top: 1em;
-    margin-top: 1em;
+    font-size: 1em;
   }
 }
 

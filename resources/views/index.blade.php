@@ -16,19 +16,6 @@
                             <div class="center-tagline-content">
                                 <div>The writing company.</div>
                             </div>
-                            <div class="center-tagline-content">
-                                <div>Time for you and time for me,</div>
-                            </div>
-                            <div class="center-tagline-content">
-                                <div>And time yet for a hundred indecisions,</div>
-                            </div>
-                            <div class="center-tagline-content">
-                                <div>And for a hundred visions and revisions,</div>
-                            </div>
-                            <div class="center-tagline-content">
-                                <div>Before the taking of a toast and tea.</div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
         <div class="Container">
             <div class="Grid Grid--guttersLg Grid--full med-Grid--fit">
                 <div class="Grid-cell">
-                    <div class="center-tagline-content">
+                    <div class="center-tagline">
                         <div>CONTACT THE CATEGORY</div>
                     </div>
                     <div class="center-contact">

@@ -34,6 +34,7 @@ Route::get('/contact', function () {
 });
 
 
+
 Route::group(['middleware' != 'web'], function () {
     Route::get('/fonts', function () {
         //fonts

@@ -16,6 +16,7 @@
                             <div class="center-tagline-content">
                                 <div>The writing company.</div>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>

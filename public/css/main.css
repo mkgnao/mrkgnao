@@ -1474,7 +1474,7 @@ pre {
   margin-top: 0.6em; }
 
 .center-tagline-content {
-  display: none; }
+  /*display: none;*/ }
 
 .center-tagline {
   -webkit-box-flex: 1;

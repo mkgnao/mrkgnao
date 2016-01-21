@@ -3,6 +3,7 @@
 <meta name="MobileOptimized" content="320">
 <meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 <meta name="description" content="">
+<meta name="google-site-verification" content="ChdULQojAk7SIiSaqFtarx-nHLs828UCpEzWAKY8tBI" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="{!! asset('/img/apple-icon-57x57.png') !!}">
 <link rel="apple-touch-icon" sizes="60x60" href="{!! asset('/img/apple-icon-60x60.png') !!}">
